@@ -1,0 +1,85 @@
+Java
+	Package
+		Class
+			Methods
+			Properties
+		Class2
+			...
+	Package declarations: reverse URL
+	Classes Pascal cased - "WordWord"
+	Methods Camel cased - "wordWord"
+	static final VARIABLE (all caps)
+		static - belongs at class level, not per instance
+		final 
+			Variable - cannot be reassigned (constant)
+			Methods - cannot be overridden
+			Classes - cannot have subclasses
+	Four Pillars of OOP:
+		Inheritance
+			Takes qualities of superclass and adds specifics
+			subclass extends superclass { ... }
+			Reduces redundancy
+		Abstraction
+			Less implementation, focus on functionality
+			Abstract
+				Can have implemented or abstract methods
+				Can have instance variables
+				Used to leave some methods generalized and some implemented
+				Classes can only inherit one Abstract/Implemented class
+				class extends abstract
+			Interface
+				Can only have abstract methods
+				No instance variables (final variables ok)
+				Used to define certain methods that must be implemented by inheriting classes
+				Classes can inherit multiple Interfaces
+				*can* have default implementation, however multiple inheritance makes you have to specify.
+				class implements interface
+			All inheriting classes must implement abstract methods
+			unless they are themselves abstract
+		Polymorphism
+			covariance
+				if "class extends superclass" you can use an instance of the class
+				the same as you could an instance of the superclass
+				superclass var_name = new class();
+				var_name can now be used as a "superclass" even though it is a "class" object.
+				CANNOT: class var_name = new superclass();
+					superclass may not have methods that class implements.
+			uses inheritance
+			method Override
+				if a class overrides a method from its superclass, an instance of the class will use
+				the classes method even if you are using the object as an instance of the superclass.
+			method Overload
+				Can have different implementations of a method, to give different types of
+				information upon use or different implementations of a method based on arguments
+				Same name for the method, different arguments
+		Encapsulation
+			Create methods to edit instance variables, limiting what is allowed to change.
+	Strictly-typed language
+		Any time you create a method/variable, you must specify a type
+		Primitive types
+			byte, short, int, long, float, double, char, boolean
+			are not objects.
+			Can use "void" to define no return type from a method
+			All have a "wrapper" class, which hold the primitive in an object 
+				Usually same name just capital first letter
+				Allow primitives to use Object methods.
+				Autobox/Autounbox to convert between primitives and wrappers
+		Objects
+			Inherit from Object class if not inheriting from another object
+			Object class has some methods that all objects can use
+	Constructors
+		No return type (not even void)
+		Used to create an instance of a class
+		Can have multiple overloaded constructors with different arguments
+		If no constructor exists in a class, a default constructor is created (no arguments)
+		If any constructor exists, compiler will not create a default constructor
+		Must have the same name as the class
+	Arrays
+		Holds one type of object/primitive
+		Can hold many instances under one identifier
+		Fixed size, declare on creation
+		Type[] var_name = new Type[##]; (array of ## length)
+		Initializes primitives to default values
+		Non-primitive types begin as Null in array
+		Can set values on instantiation
+		
