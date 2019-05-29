@@ -1,0 +1,57 @@
+Git
+	Local Repo
+		Repository on computer
+	Remote Repo
+		Repository in cloud
+	Commit
+		Single group of changes
+	Branch
+		Seperate group of commits from main
+		*branches* off main at some commit
+	'git init' - How to create repository
+	'git add <file>' - Add file(s) to staging (for next commit)
+	'git commit <message (o)>' Commit added changes
+	'git push' Push all new commits to remote repo
+	'git pull' Pull all new commits from remote repo
+	'git checkout <branch name> [-b]' - Change branches
+	.gitignore file
+		List of files for a commit and push to ignore
+		
+Java
+	JDK - Java Development Kit
+		Compiler (Java -> Bytecode)
+		Development Tools
+		JRE
+	JRE - Java runtime environment
+		Java libraries
+		JVM
+	JVM - Java Virtual Machine
+		Interpreter (Bytecode -> Machine code)
+	Object Oriented Programming
+		object - base unit of evaluation
+		class - blueprint to create objects
+			properties
+				variables that define the object when created
+				[modifier] <type> <identifier> [value];
+			methods
+				code to be run when called
+				[modifier] <return type] <identifier> ([arguments]) { return [value]; }
+			static - same between all object instances created from class
+	Scopes
+		block
+			exists as long as code block is running ( {...} )
+		local
+			exists as long as method is running
+		instance
+			exists as long as encapsulating instance exists
+		class
+			exists as long as program is running
+	Access Modifiers
+		Private
+			Only accessable within same class
+		Protected
+			Accessable within package and subclasses inheriting package
+		Public
+			Accessable by any class/package
+		(Default)
+			Accessable within same package
