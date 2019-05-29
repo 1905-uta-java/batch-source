@@ -10,5 +10,9 @@ public interface InterfaceA {
 	
 	void doSomething();
 	
+	default void doSomethingElse() {
+		System.out.println("InterfaceA is doing something else");
+	}
+	
 
 }
