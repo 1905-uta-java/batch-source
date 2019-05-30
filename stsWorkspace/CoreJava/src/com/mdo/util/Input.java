@@ -111,6 +111,7 @@ public class Input {
 				
 				inputD = Integer.parseInt(input); //convert string to int
 				
+			scan.close();
 			return inputD;
 		}
 		
@@ -136,7 +137,8 @@ public class Input {
 				
 				inputD = Integer.parseInt(input); //convert string to int
 			}while(inputD > max);
-				
+			
+			scan.close();
 			return inputD;
 		}
 		
@@ -158,7 +160,8 @@ public class Input {
 				}while(!isInputDouble(input));
 				
 				inputD = Double.parseDouble(input); //convert string to double
-				
+			
+			scan.close();
 			return inputD;
 		}
 		
@@ -182,7 +185,8 @@ public class Input {
 				
 				inputD = Double.parseDouble(input); //convert string to double
 			}while(inputD > max);
-				
+			
+			scan.close();
 			return inputD;
 		}
 		
@@ -200,6 +204,7 @@ public class Input {
 				input = scan.nextLine();
 			}while(input.equals(null) || input.equals(""));
 			
+			scan.close();
 			return input;
 		}
 		
@@ -234,6 +239,7 @@ public class Input {
 		 */
 		public static double wGetInputDouble(String prompt) {
 			String input = new String();
+			@SuppressWarnings("unused")
 			double dInput;
 			do {
 				input = JOptionPane.showInputDialog(prompt);
@@ -250,6 +256,7 @@ public class Input {
 		 */
 		public static int wGetInputInt(String prompt) {
 			String input = new String();
+			@SuppressWarnings("unused")
 			int intInput;
 			do {
 				input = JOptionPane.showInputDialog(prompt);
@@ -357,6 +364,8 @@ public class Input {
 			
 			return false;
 		}
+		
+		
 		
 		
 }//end of class

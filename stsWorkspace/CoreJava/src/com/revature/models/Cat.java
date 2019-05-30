@@ -1,6 +1,8 @@
 package com.revature.models;
 
-public class Cat extends Animals{
+import java.io.Serializable;
+
+public class Cat extends Animals implements Serializable, Cloneable {
 	//cat attributes
 	private int numOfWhiskers;
 	public Cat() {

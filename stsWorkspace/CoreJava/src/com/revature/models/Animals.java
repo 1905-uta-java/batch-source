@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import java.io.Serializable;
+
 import com.revature.exceptions.NegativeSizeException;
 
 public class Animals {
@@ -25,7 +27,15 @@ public class Animals {
 	
 	public void setSize(int size) {
 		if(size < 0)
-			throw new NegativeSizeException();
+			try {
+				throw new NegativeSizeException();
+			} catch(NegativeSizeException e) {
+				
+			} catch(Exception e) {
+				
+			} finally {
+				System.out.println("Hello World!");
+			}
 		else
 			this.size = size;
 	}
