@@ -18,7 +18,7 @@ public class ArrayDriver {
 //		}
 		
 		// accessing an index  out of the alloted elements gives us an ArrayIndexOutOfBoundsException
-//		System.out.println(intArray3[2]);
+		System.out.println(intArray3[2]);
 		
 		int[][] int2DArray = new int[3][4];
 		

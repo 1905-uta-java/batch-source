@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import com.revature.exception.NegativeSizeException;
+
 public class Animal {
 
 	private int legs;
@@ -40,8 +42,18 @@ public class Animal {
 	}
 
 	public void setSize(int size) {
-		if(size>0) {
-			this.size = size;			
+		if(size<1) {
+			try {
+				throw new NegativeSizeException();
+			} catch (NegativeSizeException e) {
+				// this code is excecuted if the NegativeSizeException is thrown within the execution of our try block
+				System.out.println("cannot set size to a negative value");
+			} finally {	
+				// anything included in a finally block will execute whether or not an exception is thrown in our try block -- this is generally used to close or clean up resources 
+				System.out.println("this was printed either way");
+			}
+		} else {
+			this.size = size;	
 		}
 	}
 
