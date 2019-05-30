@@ -32,3 +32,11 @@ Reflection
 	Used for debugging and in frameworks
 	We will not be using these ourselves very often
 	
+Scanner Class
+	Parse inputs
+	has... 
+		Checks to see if we have a type of input to read
+	next...
+		Reads next input of type
+		NumberFormatException if not of correct type
+	
