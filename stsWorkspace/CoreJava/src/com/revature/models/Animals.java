@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import com.revature.exceptions.NegativeSizeException;
+
 public class Animals {
 	//class attributes
 	private int legs;
@@ -22,7 +24,9 @@ public class Animals {
 	
 	
 	public void setSize(int size) {
-		if(size > 0)
+		if(size < 0)
+			throw new NegativeSizeException();
+		else
 			this.size = size;
 	}
 	

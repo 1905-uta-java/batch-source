@@ -23,6 +23,10 @@ public class Driver {
 		
 		//Only cast when you know for sure the casted object is an instance of the casting class
 		Cat d = (Cat) c;
+		d.setSize(11);
+		System.out.println(d.getSize());
+		d.setSize(-50); //throws NegativeSizeException
+		System.out.println(d.toString());
 		
 		//f is not an instance of cat so even though we cast cat to f it will still result in a ClassCastException error
 		//Cat e = (Cat) f;

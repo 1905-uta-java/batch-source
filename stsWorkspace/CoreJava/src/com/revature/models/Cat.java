@@ -24,7 +24,7 @@ public class Cat extends Animals{
 	
 	@Override
 	public String toString() {
-		return "Cat [numOfWhiskers=" + numOfWhiskers + "]";
+		return "Cat [numOfWhiskers=" + numOfWhiskers + "," + "legs=" +getLegs() + "," + "size=" + getSize() + "," + "hasFur=" + isHasFur() +"]";
 	}
 
 	@Override
