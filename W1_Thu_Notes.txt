@@ -1,0 +1,34 @@
+Exceptions
+	NullPointerException
+		Try to access part of a null object
+	ArrayOutOfBoundsException
+		Try to access element outside of array bounds
+	
+	Error
+		Cannot be recovered from
+		Rare, but often caused by out-of-code problems
+	Exception
+		Can be recovered from with the right implementation
+		Runtime Exception
+			Easily avoided
+		Checked Exception
+			May not be avoidable
+			Must be checked for if throwable code is reached.
+	
+	Recoverable:
+		Throws... clause to check for if an exception is thrown.
+		or
+		Wrap code in try {} catch(exception) {} [finally {}]
+		
+	Can create your own exception to test for problems specific to your code
+	Try/Catch
+		Can have multiple "catch" blocks to catch different exceptions/exception types
+			Careful with unreachable code
+		Can have "finally" block to clean up resources whether or not an exception occured
+		If your code doesn't catch the exception that occured, the try/catch block will fail to continue
+
+Reflection
+	Allows a java program to see classes and class members at runtime
+	Used for debugging and in frameworks
+	We will not be using these ourselves very often
+	
