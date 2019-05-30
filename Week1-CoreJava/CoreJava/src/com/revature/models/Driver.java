@@ -18,16 +18,20 @@ public class Driver {
 //		System.out.println(c2.hashCode());
 		
 		Animal a3 = new Cat();
-		System.out.println(a3.getLegs());
+//		System.out.println(a3.getLegs());
 		
 		//virtual method invocation -- this is runtime polymorphism because at runtime the method is not determined
-		System.out.println(a3.toString());
+//		System.out.println(a3.toString());
 		
 		// this throws a ClassCastException because the object instantiated is not a Cat
-		Cat c3 = (Cat) new Animal();
+//		Cat c3 = (Cat) new Animal();
 		
 		// because a3 was initialized as a cat, this cast would be okay
 		Cat c4 = (Cat) a3;
+		c4.setSize(10);
+		System.out.println(c4);
+		c4.setSize(-5);
+		System.out.println(c4);
 		
 		
 	}
