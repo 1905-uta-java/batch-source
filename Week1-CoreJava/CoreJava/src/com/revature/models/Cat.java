@@ -1,6 +1,8 @@
 package com.revature.models;
 
-public class Cat extends Animal {
+import java.io.Serializable;
+
+public class Cat extends Animal implements Serializable, Cloneable {
 	
 	private int numOfWhiskers;
 	
@@ -13,7 +15,9 @@ public class Cat extends Animal {
 	}
 
 	public void setNumOfWhiskers(int numOfWhiskers) {
-		this.numOfWhiskers = numOfWhiskers;
+		if(numOfWhiskers<21) {
+			this.numOfWhiskers = numOfWhiskers;
+		}
 	}
 
 	@Override

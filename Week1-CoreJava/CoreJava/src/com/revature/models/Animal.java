@@ -46,7 +46,7 @@ public class Animal {
 			try {
 				throw new NegativeSizeException();
 			} catch (NegativeSizeException e) {
-				// this code is excecuted if the NegativeSizeException is thrown within the execution of our try block
+				// this code is executed if the NegativeSizeException is thrown within the execution of our try block
 				System.out.println("cannot set size to a negative value");
 			} finally {	
 				// anything included in a finally block will execute whether or not an exception is thrown in our try block -- this is generally used to close or clean up resources 
