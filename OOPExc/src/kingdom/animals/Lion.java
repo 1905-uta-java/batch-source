@@ -4,7 +4,7 @@ package kingdom.animals;
  */
 public class Lion extends AnimalAbstract implements AnimalInterface{
 
-	//carnivore is a private boolean and can't be accessed outside of the Lion class.
+	//an example of encapsulation through the variable omnivore as a private boolean and can't be accessed outside of the Lion class
 	private boolean carnivore = true;
 	
 	public Lion() {
@@ -28,14 +28,24 @@ public class Lion extends AnimalAbstract implements AnimalInterface{
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return 0;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (carnivore ? 1231 : 1237);
+		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return false;
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Lion other = (Lion) obj;
+		if (carnivore != other.carnivore)
+			return false;
+		return true;
 	}
 
 }
