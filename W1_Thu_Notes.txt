@@ -40,3 +40,25 @@ Scanner Class
 		Reads next input of type
 		NumberFormatException if not of correct type
 	
+Maven
+	Uses .jar files
+	For now, we'll use it for Dependency Management
+	JUnit
+		Unit testing framework
+		Annotations:
+			@test
+			@BeforeClass
+			@AfterClass
+			@Before
+			@After
+			@Ignore
+		Assertions
+			Produces output into Console about test pass/fail states
+			assert<Type>(Condition);
+			fail(); will cause tests to instantly fail.
+		Application and integration tests
+		Application
+			Test new code
+		Integration
+			Old tests to make sure new code didn't break old code
+		
