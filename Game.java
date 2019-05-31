@@ -10,7 +10,7 @@ public class Game {
 		int randomNum = getRandomNumber();
 		int lowerBound = 0;
 		int upperBound = 100;
-		int attemp = 0;
+		int attempts = 0;
 		int input = 0;
 		Scanner sc = new Scanner(System.in);
 
@@ -29,14 +29,14 @@ public class Game {
 			} else if ((randomNum - input) > 0) {
 				lowerBound = input;
 				System.out.println("Too low");
-				attemp++;
+				attempts++;
 			} else if ((randomNum - input) < 0) {
 				upperBound = input;
 				System.out.println("Too high");
-				attemp++;
+				attempts++;
 			} else if (input == randomNum) {
-				attemp++;
-				System.out.println("You guessed right, after " + attemp + " attemps, the number is " + randomNum);
+				attempts++;
+				System.out.println("You guessed right, after " + attempts + " attemps, the number is " + randomNum);
 				break;
 			}
 		}
