@@ -11,21 +11,18 @@ public class Calculator {
 		System.out.println("Please enter the operation you'd like to perform:");
 		String operation = sc.nextLine();
 		
-		int[] nums;
+		int[] nums = getNums();
 		int result = 0;
 		
 //		System.out.println(operation);
 		switch(operation) {
 		case "addition":
-			nums = getNums();
 			result = nums[0]+nums[1];
 			break;
 		case "subtraction":
-			nums = getNums();
 			result = nums[0] - nums[1];
 			break;
 		case "division":
-			nums = getNums();
 			while(nums[1]==0) {
 				System.out.println("Cannot divide by 0, please enter valid operands");
 				nums = getNums();
