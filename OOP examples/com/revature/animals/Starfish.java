@@ -98,7 +98,7 @@ public class Starfish extends ColdBlood{
 	@Override
 	public String toString() {
 		return "Information on Starfish  \r\n [currentDepth=" + currentDepth + ", underRock=" + underRock + ", bestFriendName="
-				+ bestFriendName + ", "+ super.toString() +" ]\r\n";
+				+ bestFriendName + ", "+ super.toString() +" ]";
 	}
 
 	

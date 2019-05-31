@@ -117,7 +117,7 @@ public class Snake extends ColdBlood {
 	@Override
 	public String toString() {
 		return "Information on Snake \r\n [numScales=" + getNumScales() + ", fangLength=" + getFangLength() + 
-				", shedding=" + getShedding()+ ", slither="+ getSlither() + ", " + super.toString() + "]\r\n";
+				", shedding=" + getShedding()+ ", slither="+ getSlither() + ", " + super.toString() + "]";
 	}
 
 

@@ -24,6 +24,8 @@ public class Driver {
 		d.setAwake(false);
 		//more abstraction with the toString
 		System.out.println(d.toString());	
+		System.out.println("d Hash Code: " + d.hashCode());
+		System.out.println();
 		
 		
 		// Snake
@@ -39,6 +41,11 @@ public class Driver {
 		sn.setSlither("A sssssssssssslithery sneek");
 		
 		System.out.println(sn.toString());
+		System.out.println("sn Hash Code: " +sn.hashCode());
+		System.out.println("sn Equals d: " + sn.equals(d)); // is a snake a dog?
+		System.out.println("d Equals sn: " + d.equals(sn)); // is a dog a snake?
+		System.out.println();
+		
 		
 		
 		// Starfish
@@ -53,6 +60,9 @@ public class Driver {
 		st.setBestFriendName("Squidward");
 		
 		System.out.println(st.toString());
+		System.out.println("st Hash Code: " + st.hashCode());
+		System.out.println("st Equals sn: " + st.equals(sn)); // is a starfish the same as a snake?
+		System.out.println();
 		
 		
 		
@@ -62,19 +72,22 @@ public class Driver {
 		WarmBlood wd = new Dog();
 		Dog d2 = (Dog) wd;
 		
-		d2.setNumLegs(4);
-		d2.setTopSpeed(14);
-		d2.setAge(8);
+		d2.setNumLegs(3);
+		d2.setTopSpeed(40);
+		d2.setAge(3);
 		d2.setAlive(true);
 		d2.setSciName("Canis lupus familiaris");
-		d2.setNoise("Bark, woof, bow-wow");
-		d2.setPlaying("Catch");
-		d2.setEat("Kibble");
-		d2.setTimeSlept(12);
+		d2.setNoise("Yip!");
+		d2.setPlaying("rope pull");
+		d2.setEat("from the can");
+		d2.setTimeSlept(20);
 		d2.setAwake(false);
 		
 		System.out.println(d2.toString());
+		System.out.println("d2 Hash Code: " + d2.hashCode());
+		System.out.println("d2 Equals d: " + d2.equals(d)); // is d2 the same as d?
 		
+		System.out.println();
 		
 		d2.copyright();
 		// Example of inheritance

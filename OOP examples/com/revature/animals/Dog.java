@@ -101,7 +101,7 @@ public class Dog extends WarmBlood{
 	@Override
 	public String toString() {
 		return "Information on Dog \r\n [playing=" + getPlaying() + ", eat=" + getEat() + ", timeSlept=" + getTimeSlept() + 
-				", awake=" + getAwake() +", " + super.toString() + "]\r\n";
+				", awake=" + getAwake() +", " + super.toString() + "]";
 	}
 
 
