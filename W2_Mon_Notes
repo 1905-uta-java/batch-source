@@ -1,2 +1,53 @@
 Threads
+	Smaller parts of a program running at the same time
+	Multiple threads can run the same code
+	Often used on websites where each concurrent user has their own thread on the server
+	Can cause problems if multiple threads view/edit the same value at the same time
+		Can cause 50+50=50
+	Threads have their own Stack, but all share the Heap
+	Thread types:
+	User Threads:
+		Keeps application alive as long as one thread is running
+	Daemon Threads
+		Background threads that continue even after a program ends
+		Not tied to any application's life
+		Ex. Garbage Collection
+			Can be requested but not forced
+	Creating a thread:
+		(1) create a class that extends Thread
+		override run() method
+			Determines what will happen when first created
+		Create instance of class, then invoke start(); on instance
+			Don't use run(), or thread will not be created.
+			Main will run code instead
+		(2) create a class that implements Runnable (Preffered)
+		implement run() method
+		Pass object as argument into Thread class
+		invoke start();
+	Thread class:
+		Set/get daemon information
+		set/get name
+		isAlive
+		join()
+			Enter WAITING state until another thread terminates
+		run()
+		start() - create thread and run()
+		states:
+			getState
+			NEW - initializing, not run() yet
+			RUNNABLE - waiting for resources to run / currently running
+			BLOCKED - waiting for synchronized method
+			WAITING - waiting to be woken up or terminated
+			TIMED_WAITING - waiting to be woken up or for time to run out
+			TERMINATED - finished running, waiting to be cleaned up
+		From Object:
+			wait
+			notify
+			notifyAll
+		synchronized modifier
+			Method will only be accessed by one thread at a time
+	Deadlock
+		Two threads waiting for each other to release a lock
+	Starvation
+		Low priority threads may never run if they're waiting for resources
 	
