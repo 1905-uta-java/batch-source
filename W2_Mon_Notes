@@ -50,4 +50,14 @@ Threads
 		Two threads waiting for each other to release a lock
 	Starvation
 		Low priority threads may never run if they're waiting for resources
+Lambdas:
+	Implementing a functional interface without creating a whole class
+	Arrow notation
+		Func_Interface instance_name = () -> { method implementation };
+Design Patterns:
+	Factory
+		"Factory" object creates all other objects
+		Singleton
+			Only one instance of an object that exists until application ends
+			Is static - all accesses to object go to the same one
 	
