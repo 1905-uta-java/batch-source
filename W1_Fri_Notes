@@ -4,4 +4,5 @@ Files and Serialization
 		Byte or Character streams
 		Buffer
 	Serialization
+		Converts Java objects to stream information
 		
