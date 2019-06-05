@@ -1,5 +1,6 @@
 package com.revature.collections;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -79,6 +80,18 @@ public class SetDemo {
 			System.out.println(it.next());
 		}
 		
+		Comparator<RaceHorse> rankComparator = (RaceHorse rh1, RaceHorse rh2) -> {
+			return rh1.getRank() - rh2.getRank();
+		};
+		
+		TreeSet<RaceHorse> horseSet2 = new TreeSet<RaceHorse>(rankComparator);
+		horseSet2.add(new RaceHorse(100, 7, "Secretariat", 2));
+		horseSet2.add(new RaceHorse(40, 5, "Sea Biscuit", 1));
+		horseSet2.add(new RaceHorse(10, 12, "Lightning", 3));
+		
+		for(RaceHorse r: horseSet2) {
+			System.out.println(r);
+		}
 
 	}
 

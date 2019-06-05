@@ -18,3 +18,4 @@ What is abstraction?
 What is inheritance?
 What is encapsulation?
 What is Reflection?
+What is the difference between interpreting and compiling a language?
