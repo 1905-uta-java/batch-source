@@ -1,0 +1,154 @@
+Relational Databases
+	Data Management System
+	Tables
+		columns:
+			Column name - Defines what you call the column to query it
+			Column type - What type of data goes there (int, string, double...)
+			Candidate Key - column(s) that could act as identifier (unique per row)
+			Composite Key - multiple columns that when put together are unique per row
+			Primary Key - column(s) that are used to define a row uniquely
+				Constraints: NOT NULL, UNIQUE
+			Foreign Key - column(s) that relate to data in another table
+				Almost always another table's Primary Key.
+			Constraints - Limit data that is allowed in a column
+				Keys, NOT NULL, UNIQUE, CHECK(...)
+		rows:
+			Each row contains one set of data
+	SQL:
+		"Structured Query Language"
+		Requests sent to database to read or change data
+		Can create new tables, as well as edit stored data
+		When editing data/tables, cannot break constraints, must change them first.
+		DDL
+			Data Definition Language
+			Used to Create/Remove/Update Table Structures
+			CREATE
+				CREATE TABLE [table_name] ( [column_name] [column_type] [extra_params], ... )
+				extra_params: Primary Key, Constraints, etc.
+			ALTER
+				Add/remove columns
+				change constriants
+			DROP
+				Remove table entirely
+				Data is lost with the table
+			TRUNKATE
+				Clears records but keeps table
+			RETNAME
+			COMMENT
+				Add information to column/table for people looking at it
+		DML
+			Data Manipulation Language
+			Used to Insert/Retrieve/Update/Delete data into a table
+			Changes must be explicitly committed to database, unlike DDL
+				Because of this, unwanted changes can be rolled back before commit
+			Changes must follow constraints to be accepted.
+			INSERT
+				Insert a single row into a table
+				INSERT INTO table_name VALUE (...)
+					Do not need to specify all columns as long as they are not "NOT NULL"
+			UPDATE
+				Change one or more rows with new information
+				UPDATE table_name SET (...) WHERE [condition]
+				If you do not specify WHERE, all rows will be changed
+			SELECT (considred DQL, defined there)
+			DELETE
+				Deletes one or more rows from table
+				DELETE FROM table_name WHERE [condition]
+				If you do not specify WHERE, all rows will be deleted
+		DQL
+			Data Query Language
+			Used to Extract data from a table
+			Sometimes just part of DML Retrieve
+			SELECT
+				Retrieve information from database
+				Does not change data, does not need to be committed
+				SELECT [wanted columns | *] FROM table_name WHERE [condition]
+				Has more optional clauses
+					ORDER BY [column] <ascending/descending>
+					GROUP BY [column] HAVING [condition]
+				If you do not specify WHERE, all rows will be returned
+				Does not have to return a row/list of rows
+					Can return a number if asked
+					Can return nothing if there are no results
+		DCL
+			Data Control Language
+			Used to determine who can access the database, and how much they can access
+			GRANT/REVOKE TO user
+				Used to give/remove permissions from a user
+		TCL
+			Transaction Control Language
+			Used to group DML statements together
+			One "unit" of update
+			ACID
+				Atomicity
+					Cannot break apart a transaction
+					All parts must complete or no parts will
+				Consistency
+					Transaction will not break constraints
+					If valid state before, will be valid state after
+				Isolation
+					Transactions will not interfere with each other
+					Think "Thread Safe" but with transactions
+				Durability
+					When a transaction is committed, it cannot be undone
+					Even after a crash, if it completed the changes will be there
+			COMMIT
+				Permanently makes given changes to database
+				Cannot be reverted
+			ROLLBACK
+				Undo uncommitted changes in transaction
+				Returns to last COMMIT/SAVEPOINT
+			SAVEPOINT
+				Allows you to return to savepoint without committing changes
+				Makes changes undoable, but harder to accidentally lose
+		Multiplicity relationships
+			1-1 (one to one) A-B
+				A---B
+				A---B
+				A---B
+				A---B
+				Can have reference in either table
+				Ex. Person <-> Passport
+			1-* (one to many) A-B
+				A---B
+				 \--B
+				  --B
+				A---B
+				References should be in Table B
+				Ex. Supplier to Product
+			*-1 (many to one) A-B
+				A---B
+				A--/
+				A--
+				A---B
+				References should be in Table A
+				Ex. Associates to Trainers
+			*-* (many to many) A-B
+				A--B
+				 \/
+				 /\
+				A--B
+				Relationship should be in its own table that links A and B
+				Ex. Associates to Clients
+	Normalization
+		Design to reduce redundancy and prevent anomalies
+		Level 1:
+			Atomic values - Break apart information into logical tables
+			Avoid lists
+			Avoid repetition
+			Has a primary key
+		Level 2: 
+			No partial dependencies
+				Data that relies on only part of a composite key within same table
+		Level 3:
+			No transitive dependencies
+				Data that can be derived from other data within same table
+		May be worth denormalizing sometimes
+	Scalar/Aggregate
+		Scalar
+			Takes specific number of inputs (often one)
+		Aggregate
+			Performs operation on a full set of data
+			Unknown number of inputs
+			SUM, AVG, COUNT, MIN, MAX...
+		
