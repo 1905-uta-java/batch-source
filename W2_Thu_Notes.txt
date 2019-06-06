@@ -1,0 +1,85 @@
+SQL Set Operations
+	Query Operations
+		UNION
+			Contains all values from both queries, no duplicates
+		UNION ALL
+			Contains all values from both queries, with duplicates
+		INTERSECT
+			Contains values that only both queries have
+		MINUS
+			Contains values in the first query that aren't in the second
+	Join Operations
+		Used to combine tables to get information from both
+		Condition is usually Foreign Keys
+		Condition matches elements to each other
+		Ex	LEFT1 1		RIGHT1 1
+			LEFT3 3		RIGHT2 2
+		FULL JOIN (OUTER)
+			Get a table containing everything from both tables on condition
+			Will set values to null to include elements with no matching elements in the other table
+				LEFT1 - RIGHT1			
+				(null) - RIGHT2			
+				LEFT3 - (null)
+		RIGHT JOIN 
+			Get a table containing everything from both tables on condition
+			Will not set values to null if there are no matching elements in the RIGHT table
+			Will set values to null if there are no matching elements in the LEFT table
+				LEFT1 - RIGHT1
+				(null) - RIGHT2
+				XX [LEFT3 - (null)] XX - Not included
+		LEFT JOIN
+			Get a table containing everything from both tables on condition
+			Will set values to null if there are no matching elements in the RIGHT table
+			Will not set values to null if there are no matching elements in the LEFT table
+				LEFT1 - RIGHT1
+				XX [(null) - RIGHT2] XX - Not included
+				LEFT3 - (null)
+		(INNER) JOIN
+			Get a table containing everything from both tables on condition
+			Will not set values to null if there are no matching elements in the other table
+				LEFT1 - RIGHT1
+				XX [(null) - RIGHT2] XX - Not included
+				XX [LEFT3 - (null)] XX - Not included
+		NATURAL JOIN
+			Get a table containing everything from the tables auto-matching rows with same values in columns
+			Columns that are joined on must be of same type and name
+			Columns that are matched together only have one copy in the result
+			Will not set values to null if there are no matching elements in the other table
+				LEFT1 - RIGHT1
+				XX [(null) - RIGHT2] XX - Not included
+				XX [LEFT3 - (null)] XX - Not included
+		CARTESIAN JOIN
+			Gives a combination of every column in LEFT matched with every column in RIGHT
+			Fastest join, as all joins do this then limit the results
+				LEFT1 - RIGHT1
+				LEFT1 - RIGHT2
+				LEFT3 - RIGHT1
+				LEFT3 - RIGHT2
+		SELF JOIN
+			Join with LEFT and RIGHT being the same table
+			Joined on column that contains a reference to its own key
+PLSQL
+	Procedural Language SQL
+	Can define own functions (like count, sum, etc.)
+	Can define both scalar and aggregate functions
+	Can only use SELECT functions
+	Known number of returns
+Stored Procedures
+	Can define functions .
+	Can use all DML functions.
+	Cannot use them within SELECT statements
+	Unknown number of returns
+	Cannot use DDL, as DDL is not meant to be repeated
+	Trigger Procedure:
+		Activates automatically when something happens in DB
+		Can happen before or after event that triggers procedure
+		Before triggers will occur even if the event that triggers it would normally fail
+Cursors:
+	Allows you to iterate through data tables
+	Implicit/Explicit cursor
+	Always created when performing an operation
+	Can create your own to sift through data yourself
+Indexing
+	Can keep an index on a specific column if you are checking it often
+	Costs less to search, but more to insert/edit/delete
+	Can cause isolation levels to go faster as well
