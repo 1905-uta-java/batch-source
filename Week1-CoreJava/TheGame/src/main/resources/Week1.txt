@@ -1,0 +1,21 @@
+Under what conditions are we provided with a default constructor? What is that constructor going to include? Why is it important?
+What is the difference between the JVM, JRE, and JDK?
+What is version control? Why is it important? How have you used it? 
+What are some git commands you've used?
+What is a Collection? What are some characteristics of them? How are they different from arrays?
+What is the difference between a HashSet and a TreeSet?
+What is the difference between a checked and an unchecked exception? Give examples of each. 
+What is Maven? Explain the role it has in our development project. What are the benefits of using it? How do we provide its configuration? 
+Explain the concept of the string pool. What are the benefits and drawbacks of the string pool? 
+Compare and contrast the benefits and methods available to Strings, StringBuffers, and StringBuilders. 
+How is memory management handled in Java? Is it pass by value or pass by reference? Explain.
+In what two ways can we determine ordering of Java objects? Explain specifically how we would implement and use each one.
+What are the ways we can handle exceptions? 
+What is JUnit? What is considered a "unit"? Explain assert methods and the available annotations.
+What is the difference between the Collection Framework, Collection, and Collections?
+What is polymorphism?
+What is abstraction?
+What is inheritance?
+What is encapsulation?
+What is Reflection?
+What is the difference between interpreting and compiling a language?
