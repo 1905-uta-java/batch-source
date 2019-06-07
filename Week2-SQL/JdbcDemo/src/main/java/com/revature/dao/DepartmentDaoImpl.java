@@ -92,7 +92,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
 				+ "MONTHLY_BUDGET = ? "
 				+ "WHERE DEPT_ID = ?";
 		
-		try (Connection con = ConnectionUtil.getConnection();
+		try (Connection con = ConnectionUtil.getHardCodedConnection();
 				PreparedStatement ps = con.prepareStatement(sql)){
 			
 			//con.setAutoCommit(false);
@@ -115,7 +115,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
 		
 		String sql = "DELETE FROM DEPARTMENT WHERE DEPT_ID = ?";
 		
-		try(Connection con = ConnectionUtil.getConnection();
+		try(Connection con = ConnectionUtil.getHardCodedConnection();
 				PreparedStatement ps = con.prepareStatement(sql)){
 			
 			ps.setInt(1, id);
@@ -133,7 +133,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
 		
 		String sql = "{call INCREASE_BUDGET(?,?)}";
 		
-		try(Connection con = ConnectionUtil.getConnection();
+		try(Connection con = ConnectionUtil.getHardCodedConnection();
 				CallableStatement cs = con.prepareCall(sql)){
 			
 			cs.setInt(1, d.getId());
