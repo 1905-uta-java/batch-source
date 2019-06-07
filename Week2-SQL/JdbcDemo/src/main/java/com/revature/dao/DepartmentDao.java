@@ -11,5 +11,5 @@ public interface DepartmentDao {
 	public int createDepartment(Department d);
 	public int updateDepartment(Department d);
 	public int deleteDepartment(int id);
-
+	public void increaseDepartmentBudget(Department d, double increaseAmount);
 }

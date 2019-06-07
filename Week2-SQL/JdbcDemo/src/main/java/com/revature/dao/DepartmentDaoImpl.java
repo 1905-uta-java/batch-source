@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -82,17 +83,67 @@ public class DepartmentDaoImpl implements DepartmentDao {
 		
 		return departmentsCreated;
 	}
-
 	@Override
 	public int updateDepartment(Department d) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int departmentsUpdated = 0;
+		String sql = "UPDATE DEPARTMENT "
+				+ "SET DEPT_NAME = ?, "
+				+ "MONTHLY_BUDGET = ? "
+				+ "WHERE DEPT_ID = ?";
+		
+		try (Connection con = ConnectionUtil.getConnection();
+				PreparedStatement ps = con.prepareStatement(sql)){
+			
+			//con.setAutoCommit(false);
+			ps.setString(1, d.getName());
+			ps.setDouble(2, d.getMonthlyBudget());
+			ps.setInt(3, d.getId());
+			departmentsUpdated = ps.executeUpdate();
+			//con.commit();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return departmentsUpdated;
 	}
 
 	@Override
 	public int deleteDepartment(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		int rowsDeleted = 0;
+		
+		String sql = "DELETE FROM DEPARTMENT WHERE DEPT_ID = ?";
+		
+		try(Connection con = ConnectionUtil.getConnection();
+				PreparedStatement ps = con.prepareStatement(sql)){
+			
+			ps.setInt(1, id);
+			rowsDeleted = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rowsDeleted;
+	}
+
+	@Override
+	public void increaseDepartmentBudget(Department d, double increaseAmount) {
+		
+		String sql = "{call INCREASE_BUDGET(?,?)}";
+		
+		try(Connection con = ConnectionUtil.getConnection();
+				CallableStatement cs = con.prepareCall(sql)){
+			
+			cs.setInt(1, d.getId());
+			cs.setDouble(2, increaseAmount);
+			cs.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

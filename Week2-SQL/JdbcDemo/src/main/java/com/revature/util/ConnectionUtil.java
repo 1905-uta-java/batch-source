@@ -13,7 +13,7 @@ public class ConnectionUtil {
 	private static Connection connection;
 	
 	public static Connection getHardCodedConnection() throws SQLException {
-		String url = "jdbc:oracle:thin:@java-may28.cw1bezk6gvor.us-west-2.rds.amazonaws.com:1521:ORCL";
+		String url = "jdbc:oracle:thin:@[url]:1521:ORCL";
 		String username = "admin";
 		String password = "p4ssw0rd";
 		if(connection == null || connection.isClosed()) {
