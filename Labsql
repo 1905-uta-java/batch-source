@@ -1,0 +1,337 @@
+--2.1 SELECT
+--a SELECT all records from Employee Table
+SELECT * FROM CHINOOK.EMPLOYEE;
+
+--b SELECT all records from Employee Table with Last Name King
+SELECT * FROM CHINOOK.EMPLOYEE WHERE LASTNAME = 'King';
+
+--c SELECT all records from Employee Table where firstname is Andrew and REPORTSTO is null
+SELECT * FROM CHINOOK.EMPLOYEE WHERE FIRSTNAME = 'Andrew' AND REPORTSTO IS NULL;
+
+--d SELECT all albums in Album table and sort result set in descending order by title
+SELECT * FROM CHINOOK.ALBUM ORDER BY TITLE DESC;
+
+--e SELECT first name from Customer and sort result set in ascending oder by city
+SELECT FIRSTNAME FROM CHINOOK.CUSTOMER ORDER BY CITY ASC;
+
+--f SELECT all invoices with a billing address like "T%"
+SELECT * FROM CHINOOK.INVOICE WHERE BILLINGADDRESS LIKE 'T%';
+
+
+--2.2 INSERT INTO
+--a INSERT two new records into the Genre Table
+INSERT INTO CHINOOK.GENRE VALUES(26,'Country');
+INSERT INTO CHINOOK.GENRE VALUES(27,'J-Pop');
+
+--b INSERT two new records into the Employee Table
+INSERT INTO CHINOOK.EMPLOYEE VALUES (9, 'Fredrick', 'Tom', 'IT Staff', 6, TO_DATE('1995-6-5 00:00:00','yyyy-mm-dd hh24:mi:ss'), TO_DATE('2019-06-08 00:00:00','yyyy-mm-dd hh24:mi:ss'), '5745 Tim lane', 'Three Lakes', 'WI', 'USA', '54562', '+1 (715) 546 1592', '+1 (715) 546 1592', 'tim@chinookcorp.com');
+INSERT INTO CHINOOK.EMPLOYEE VALUES (10, 'Fredrick', 'Chad', 'IT Staff', 6, TO_DATE('1993-3-29 00:00:00','yyyy-mm-dd hh24:mi:ss'), TO_DATE('2019-06-08 00:00:00','yyyy-mm-dd hh24:mi:ss'), '5745 Tim lane', 'Three Lakes', 'WI', 'USA', '54562', '+1 (715) 546 6743', '+1 (715) 546 3456', 'chad@chinookcorp.com');
+
+--c INSERT two new records into the Customer Table
+INSERT INTO CHINOOK.Customer VALUES (60, 'Minal', 'Max', '3453 Ford Street', 'Eagle River', 'WI', 'USA', '54563', '+1 (345) 245-2323', 'MAXTHETAX@yachoo.ca', 3);
+INSERT INTO CHINOOK.Customer VALUES (61, 'Nimal', 'Jim', '3453 Ford Street', 'Eagle River', 'WI', 'USA', '54563', '+1 (234) 986-6567', 'jimmynimmy@yachoo.ca', 3);
+
+--2.3 UPDATE
+--a UPDATE Aaron Mitchell in Customer Table to Robert Walter
+UPDATE  CHINOOK.CUSTOMER 
+SET FIRSTNAME = 'Robert' , LASTNAME = 'Walter' 
+WHERE FIRSTNAME = 'Aaron' AND LASTNAME = 'Mitchell'; 
+
+--b UPDATE name of artist in the Artist Table "Creedence Clearwater Revival" to "CCR"
+UPDATE CHINOOK.ARTIST
+SET NAME = 'CCR'
+WHERE NAME = 'Creedence Clearwater Revival';
+
+--3.1 INNER
+--a Create an INNER JOIN that joins customers and orders and specifies the name of the customer and the invoiceID
+SELECT CHINOOK.CUSTOMER.FIRSTNAME, CHINOOK.CUSTOMER.LASTNAME, CHINOOK.INVOICE.INVOICEID
+FROM CHINOOK.CUSTOMER
+JOIN CHINOOK.INVOICE
+ON CHINOOK.CUSTOMER.CUSTOMERID = CHINOOK.INVOICE.CUSTOMERID;
+
+--3.2 OUTER
+--a Create an OUTER JOIN that joins the customer and invoice table, specifying the CustomerID, firstname, lastname, invoiceID,and total
+SELECT C.CUSTOMERID, C.FIRSTNAME, C.LASTNAME, I.INVOICEID, I.TOTAL
+FROM CHINOOK.CUSTOMER C
+FULL JOIN CHINOOK.INVOICE I
+ON C.CUSTOMERID = I.INVOICEID;
+
+--3.3 RIGHT
+--a Create a RIGHT JOIN that joins album and artist specifying artist name and title
+SELECT ART.NAME, ALB.TITLE
+FROM CHINOOK.ARTIST ART
+RIGHT JOIN CHINOOK.ALBUM ALB
+ON ART.ARTISTID = ALB.ARTISTID;
+
+--3.4 CROSS
+--a Create a CROSS JOIN that joins album and artist and sorts by artist name in ascending order
+SELECT ART.NAME, ALB.TITLE
+FROM CHINOOK.ALBUM ALB
+CROSS JOIN CHINOOK.ARTIST ART;
+
+--3.5 SELF
+--a Preform a SELF JOIN on the employee table, joining on the reportsto column
+SELECT E1.FIRSTNAME, E1.LASTNAME, E2.FIRSTNAME, E2.LASTNAME
+FROM CHINOOK.EMPLOYEE E1, CHINOOK.EMPLOYEE E2
+WHERE E1.REPORTSTO = E2.REPORTSTO;
+
+--3.6 JOINED QUERIES
+--a Create a query that shows the customer first name and last name as FULL_NAME with the total amount of money that have spent as TOTAL
+SELECT CONCAT(CONCAT(C.FIRSTNAME, ' '),C.LASTNAME)  AS FULL_NAME, SUM(I.TOTAL) TOTAL
+FROM CHINOOK.CUSTOMER C
+JOIN CHINOOK.INVOICE I ON C.CUSTOMERID = I.CUSTOMERID
+GROUP BY CONCAT(CONCAT(C.FIRSTNAME, ' '),C.LASTNAME);
+
+--b Create a query that shows the employeee that has made the highest total value of sales(total of all invoices)
+SELECT E.EMPLOYEEID ID, SUM(I.TOTAL) TOTAL
+FROM CHINOOK.CUSTOMER C
+INNER JOIN CHINOOK.INVOICE I ON C.CUSTOMERID = I.CUSTOMERID
+INNER JOIN CHINOOK.EMPLOYEE E ON E.EMPLOYEEID = C.SUPPORTREPID
+GROUP BY E.EMPLOYEEID
+HAVING SUM(I.TOTAL)=(SELECT MAX(SUM(I.TOTAL)) TOTAL
+    FROM CHINOOK.CUSTOMER C
+    INNER JOIN CHINOOK.INVOICE I ON C.CUSTOMERID = I.CUSTOMERID
+    INNER JOIN CHINOOK.EMPLOYEE E ON E.EMPLOYEEID = C.SUPPORTREPID
+    GROUP BY E.EMPLOYEEID);
+
+--c Create a query which shows the number of purchases per each genre. Display the name of each genre and number of purchases. Show the most popular genre first.
+SELECT G.NAME, SUM(IL.QUANTITY) TOTAL
+FROM CHINOOK.GENRE G
+INNER JOIN CHINOOK.TRACK T ON G.GENREID = T.GENREID
+INNER JOIN CHINOOK.INVOICELINE IL ON T.TRACKID = IL.TRACKID
+GROUP BY G.GENREID, G.NAME
+ORDER BY TOTAL DESC;
+
+--4.1 SYSTEM DEFINED FUNCTIONS
+SET SERVEROUTPUT ON;
+--a Create a function that returns the current time
+CREATE OR REPLACE FUNCTION getTimeStamp
+RETURN TIMESTAMP
+IS
+BEGIN
+    RETURN LOCALTIMESTAMP;
+END;
+/
+
+SELECT getTimeStamp() FROM DUAL;
+
+--b Create a function that returns the length of name in MEDIATYPE table
+CREATE OR REPLACE FUNCTION NAMELength(n VARCHAR2)
+RETURN NUMBER
+IS
+BEGIN
+    RETURN LENGTH(n);
+END;
+/
+
+Select M.MEDIATYPEID, NAMELENGTH(M.NAME)
+FROM CHINOOK.MEDIATYPE M;
+
+--4.2 SYSTEM DEFINED AGGREGATE FUNCTIONS
+--a Create a function that returns the average total of all invoices
+CREATE OR REPLACE FUNCTION AVERAGETOTAL
+RETURN NUMBER
+IS
+    average NUMBER;
+BEGIN
+    SELECT AVG(I.TOTAL) INTO average
+    FROM CHINOOK.INVOICE I;
+    RETURN average;
+END;
+/
+
+SELECT AVERAGETOTAL() FROM DUAL;
+
+--b Create a function that returns the most expensive track
+CREATE OR REPLACE FUNCTION MAXTRACK
+RETURN VARCHAR2
+IS
+    track VARCHAR2(256);
+    maximum NUMBER;
+BEGIN
+    SELECT MAX(T.UNITPRICE) INTO maximum
+    FROM CHINOOK.TRACK T
+    GROUP BY T.TRACKID;
+    
+    SELECT T.NAME INTO track
+    FROM CHINOOK.TRACK T
+    HAVING T.UNITPRICE = maximum;
+    RETURN track;
+END;
+/
+
+SELECT MAXTRACK() FROM DUAL;
+
+--4.3 USER DEFINED SCALAR FUNCTIONS
+--a Create a function that returns the average price of invoiceline items in the invoiceline table
+CREATE OR REPLACE FUNCTION AVERAGEINVOICE
+RETURN NUMBER
+IS
+    average NUMBER;
+BEGIN
+    SELECT AVG(I.UNITPRICE) INTO average
+    FROM CHINOOK.INVOICELINE I;
+    RETURN average;
+END;
+/
+
+SELECT AVERAGEINVOICE() FROM DUAL;
+
+--4.4 USER DEFINED TABLE VALUED FUNCTIONS
+--a Create a function that returns a cursor with all employeees who are born after 1968
+CREATE OR REPLACE FUNCTION EMPLOYEEAFTER1968
+RETURN SYS_REFCURSOR
+AS
+    acursor SYS_REFCURSOR;
+BEGIN
+    OPEN acursor FOR SELECT * FROM CHINOOK.EMPLOYEE E WHERE E.BIRTHDATE > TO_DATE('31/DEC/1968','dd/mon/yyyy');
+    RETURN acursor;
+END;
+/
+
+SELECT EMPLOYEEAFTER1968() FROM DUAL;
+
+--5.1 BASIC STORED PROCEDURE
+--a Create a stored procedure that selects the first and last names of all employees
+CREATE OR REPLACE PROCEDURE FULLNAME(S OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN S FOR
+    SELECT E.FIRSTNAME, E.LASTNAME
+    FROM CHINOOK.EMPLOYEE E
+    ORDER BY E.FIRSTNAME;
+END;
+/
+
+DECLARE
+    SVAR SYS_REFCURSOR;
+    TEMP_FIRST CHINOOK.EMPLOYEE.FIRSTNAME%TYPE;
+    TEMP_LAST CHINOOK.EMPLOYEE.LASTNAME%TYPE;
+BEGIN 
+    FULLNAME(SVAR);
+    LOOP
+        FETCH SVAR INTO TEMP_FIRST, TEMP_LAST;
+        EXIT WHEN SVAR%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('FULL NAME: '||TEMP_FISRT||' '||TEMP_LAST);
+    END LOOP;
+    CLOSE SVAR;
+END;
+/
+
+--5.2 STORED PROCEDURE INPUT PARAMETERS
+--a Create a stored procedure that updates the personal information of an employee
+CREATE OR REPLACE PROCEDURE CHANGEPHONE(ID IN CHINOOK.EMPLOYEE.EMPLOYEEID%TYPE, VAL IN CHINOOK.EMPLOYEE.PHONE%TYPE)
+IS
+BEGIN
+    UPDATE CHINOOK.EMPLOYEE
+    SET CHINOOK.EMPLOYEE.PHONE = VAL
+    WHERE CHINOOK.EMPLOYEE.EMPLOYEEID = ID;
+END;
+/
+
+BEGIN
+    CHANGEPHONE(1,'+1 (715) 546 3456');
+END;
+/
+
+--b Create a stored procedure that returns the managers of an employee.ge
+CREATE OR REPLACE PROCEDURE MANAGER(EMP_ID IN CHINOOK.EMPLOYEE.EMPLOYEEID%TYPE, S OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN S FOR
+    SELECT E.FIRSTNAME, E.LASTNAME
+    FROM CHINOOK.EMPLOYEE E
+    WHERE E.EMPLOYEEID = (SELECT E.REPORTSTO 
+        FROM CHINOOK.EMPLOYEE E
+        WHERE E.EMPLOYEEID = EMP_ID);
+END;
+/
+
+--5.3 STORED PROCEDURE OUTPUT PARAMETERS
+--a Create a stored procedure that returns the name and company of a customer
+CREATE OR REPLACE PROCEDURE Customer(CUS_ID IN CHINOOK.CUSTOMER.CUSTOMERID%TYPE, S OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN S FOR
+    SELECT E.FIRSTNAME, C.LASTNAME, C.COMPANY
+    FROM CHINOOK.CUSTOMER C
+    WHERE C.CUSTOMERID = CUS_ID;
+END;
+/
+
+--6.0 TRANSACTIONS
+--a Create a transaction that given an invoiceID will delete that invoice\
+SET TRANSACTION NAME 'DELETE_INVOICE';
+DELETE FROM CHINOOK.INVOICE I
+WHERE I.INVOICEID = 2;
+COMMIT;
+
+--b Create a transaction nested within a stored procedure that inserts a new record in the Customer Table
+CREATE OR REPLACE PROCEDURE NEWCUSTOMER(CUS_ID IN CHINOOK.CUSTOMER.CUSTOMERID%TYPE, CUS_FIRSTNAME IN CHINOOK.CUSTOMER.FIRSTNAME%TYPE,
+CUS_LASTNAME IN CHINOOK.CUSTOMER.LASTNAME%TYPE, CUS_COMPANY IN CHINOOK.CUSTOMER.COMPANY%TYPE, CUS_ADDRESS IN CHINOOK.CUSTOMER.ADDRESS%TYPE,
+CUS_CITY IN CHINOOK.CUSTOMER.CITY%TYPE, CUS_STATE IN CHINOOK.CUSTOMER.STATE%TYPE, CUS_COUNTRY IN CHINOOK.CUSTOMER.COUNTRY%TYPE,
+CUS_POSTALCODE IN CHINOOK.CUSTOMER.POSTALCODE%TYPE, CUS_PHONE IN CHINOOK.CUSTOMER.PHONE%TYPE, CUS_FAX IN CHINOOK.CUSTOMER.FAX%TYPE,
+CUS_EMAIL IN CHINOOK.CUSTOMER.EMAIL%TYPE, CUS_SUPPORTREPID IN CHINOOK.CUSTOMER.SUPPORTREPID%TYPE)
+AUTHID CURRENT_USER
+IS
+BEGIN
+    INSERT INTO CHINOOK.CUSTOMER 
+    VALUES(CUS_ID, CUS_FIRSTNAME, CUS_LASTNAME, CUS_COMPANY,
+    CUS_ADDRESS, CUS_CITY, CUS_STATE, CUS_COUNTRY, CUS_POSTALCODE,
+    CUS_PHONE,CUS_FAX,CUS_EMAIL,CUS_SUPPORTREPID);
+    
+    COMMIT;
+END;
+/
+
+--7.1 AFTER/FOR
+--a Create an after insert trigger on the employee table fired after a new record is inserted into the table
+CREATE OR REPLACE TRIGGER TR_INSERT_EMPLOYEE
+AFTER INSERT ON CHINOOK.EMPLOYEE
+BEGIN
+     DBMS_OUTPUT.PUT_LINE('NEW ENTRY ADDED TO EMPLOYEE TABLE');
+END;
+/
+
+--b Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER TR_UPDATE_ALBUM
+AFTER UPDATE ON CHINOOK.ALBUM
+BEGIN
+     DBMS_OUTPUT.PUT_LINE('ALBUM UPDATED');
+END;
+/
+
+--c Create an after delete trigger on the customer table that fires after a row is deleted from the table
+CREATE OR REPLACE TRIGGER TR_DELETE_CUSTOMER
+AFTER DELETE ON CHINOOK.CUSTOMER
+BEGIN
+     DBMS_OUTPUT.PUT_LINE('CUSTOMER DELETED');
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
