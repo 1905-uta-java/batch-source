@@ -35,9 +35,9 @@ WHERE BILLINGADDRESS LIKE 'T%';
 
 /*********************************************
 2.2 INSERT INTO
-Insert two new records into Genre table
-Insert two new records into Employee table
-Insert two new records into Customer table 
+a Insert two new records into Genre table
+b Insert two new records into Employee table
+c Insert two new records into Customer table 
 
 **********************************************/
 INSERT INTO GENRE(GENREID, NAME)
@@ -138,25 +138,36 @@ ON ALBUM.ARTISTID = ARTIST.ARTISTID;
 
 /*********************************************
 3.4 CROSS
-Create a cross join that joins album and artist and sorts by artist name in ascending order.
+Create a cross join that joins album and artist a
+and sorts by artist name in ascending order.
 
 **********************************************/
-
+SELECT * 
+FROM ALBUM 
+CROSS JOIN ARTIST
+ORDER BY ARTIST.NAME ASC;
 /*********************************************
 3.5 SELF
-Perform a self-join on the employee table, joining on the reportsto column.
+Perform a self-join on the 
+employee table, joining on the reportsto column.
 
 **********************************************/
+SELECT A.FIRSTNAME AS "first name", A.LASTNAME AS "last name", 
+  B.REPORTSTO AS "id of supervisor"
+FROM EMPLOYEE A, EMPLOYEE B;
 
 /*********************************************
 3.6 Joined Queries
-a Create a query that shows the customer first name and last name 
-    as FULL_NAME with the total amount of money they have spent as TOTAL.
-b Create a query that shows the employee that has made the highest total 
-    value of sales (total of all invoices).
-c Create a query which shows the number of purchases per each genre. 
-    Display the name of each genre and number of purchases. 
-    Show the most popular genre first.
+a Create a query that shows the customer first name
+ and last name as FULL_NAME with the total amount
+  of money they have spent as TOTAL.
+b Create a query that shows the employee that has
+ made the highest total value of
+  sales (total of all invoices).
+c Create a query which shows the number
+ of purchases per each genre. Display the name
+  of each genre and number of purchases. Show
+   the most popular genre first.
 
 **********************************************/
 --a
@@ -170,10 +181,10 @@ c Create a query which shows the number of purchases per each genre.
 
 --CHINOOK.EMPLOYEE.LASTNAME || ` ´ || CHINOOK.EMPLOYEE.FIRSTNAME FULL_NAME
 
-SELECT CU.FIRSTNAME || ' ' || CU.LASTNAME FULL_NAME, SUM(CHINOOK.INVOICE.TOTAL) TOTAL
-FROM CHINOOK.CUSTOMER CU
-INNER JOIN CHINOOK.INVOICE
-ON CU.CUSTOMERID = CHINOOK.INVOICE.CUSTOMERID
+SELECT CU.FIRSTNAME || ' ' || CU.LASTNAME FULL_NAME, SUM(INVOICE.TOTAL) TOTAL
+FROM CUSTOMER CU
+INNER JOIN INVOICE
+ON CU.CUSTOMERID = INVOICE.CUSTOMERID
 GROUP BY CU.LASTNAME, CU.FIRSTNAME;
 
 
@@ -208,8 +219,10 @@ WHERE ROWNUM = 1;
 
 
 --c
--- c Create a query which shows the number of purchases per each genre. 
---     Display the name of each genre and number of purchases. 
+-- c Create a query which shows the number of
+-- purchases per each genre. 
+--     Display the name of each genre and 
+-- number of purchases. 
 --     Show the most popular genre first.
 -- use invoice line
 SELECT G.NAME GENRE, COUNT(IL.INVOICEID) PURCHASES
@@ -223,8 +236,10 @@ ORDER BY PURCHASES DESC;
 
 /*********************************************
 4.0 SQL Functions
-In this section you will be using the Oracle system functions, 
-as well as your own functions, to perform various actions against 
+In this section you will be using the Oracle 
+system functions, 
+as well as your own functions, 
+to perform various actions against 
 the database
 4.1 System Defined Functions
 Create a function that returns the current time.	
@@ -232,41 +247,101 @@ create a function that returns the length of
 name in MEDIATYPE table
 
 **********************************************/
-SELECT CURRENT_TIMESTAMP FROM DUAL;
--- SELECT TO_CHAR
---     (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "NOW"
---      FROM DUAL;
--- SELECT CURRENT_TIME();
-SELECT LENGTH(NAME)
-FROM MEDIATYPE;
+CREATE OR REPLACE FUNCTION GET_CURRENT_TIME 
+RETURN TIMESTAMP
+IS 
+CURRENT_TIME TIMESTAMP;
+BEGIN 
+    SELECT CURRENT_TIMESTAMP INTO CURRENT_TIME FROM DUAL;
+    RETURN CURRENT_TIME;
+END;
+/
+SELECT GET_CURRENT_TIME FROM DUAL;
+
+CREATE OR REPLACE FUNCTION GET_STRING_LENGTH(ROWNUMBER IN INT)
+RETURN INT
+IS
+STRINGLENGTH INT;
+BEGIN
+    SELECT LENGTH(NAME)
+    INTO STRINGLENGTH
+    FROM MEDIATYPE
+    WHERE MEDIATYPEID = ROWNUMBER;
+    RETURN STRINGLENGTH;
+END;
+/
+SELECT GET_STRING_LENGTH(3) FROM DUAL;
 /*********************************************
 4.2 System Defined Aggregate Functions
 Create a function that returns the average total 
 of all invoices 
 Create a function that returns the most expensive track
 **********************************************/
-SELECT ROUND(AVG(TOTAL), 3)
-FROM INVOICE
+CREATE OR REPLACE FUNCTION AVG_TOTAL_OF_INVOICES
+RETURN NUMBER
+IS
+AVG_TOTAL NUMBER;
+BEGIN
+    SELECT ROUND(AVG(TOTAL),3)
+    INTO AVG_TOTAL
+    FROM INVOICE;
+    RETURN AVG_TOTAL;
+END;
+/
+SELECT AVG_TOTAL_OF_INVOICES as AVG_INVOICE_TOTAL
+FROM DUAL;
 
-SELECT MAX(TOTAL)
-FROM INVOICE
+CREATE OR REPLACE FUNCTION FIND_MAXPRICE_TRACK
+RETURN INT
+IS 
+MAXPRICE INT;
+BEGIN
+    SELECT MAX(UNITPRICE)
+    INTO MAXPRICE
+    FROM INVOICELINE;
+    RETURN MAXPRICE;
+END;
+/
+SELECT FIND_MAXPRICE_TRACK AS "MOST COSTLY TRACKS COST IN USD"
+FROM DUAL;
 /*********************************************
 4.3 User Defined Scalar Functions
 Create a function that returns the
  average price of invoiceline items 
  in the invoiceline table
 **********************************************/
-SELECT ROUND(AVG(UNITPRICE),3)
-FROM INVOICELINE;
-
+CREATE OR REPLACE FUNCTION CALC_AVG_PRICE
+RETURN NUMBER
+IS
+AVG_PRICE NUMBER;
+BEGIN
+    SELECT ROUND(AVG(UNITPRICE),4)
+    INTO AVG_PRICE
+    FROM INVOICELINE;
+    RETURN AVG_PRICE;
+END;
+/
+SELECT CALC_AVG_PRICE AS "AVG UNIT PRICE"
+FROM DUAL;
 /*********************************************
 4.4 User Defined Table Valued Functions
 Create a function that returns all employees who are born after 1968.
 
 **********************************************/
-SELECT * 
-FROM EMPLOYEE
-WHERE BIRTHDATE > '01-JAN-68';
+CREATE OR REPLACE FUNCTION POST_68_EMPLOYEES
+RETURN SYS_REFCURSOR
+IS
+CURS SYS_REFCURSOR;
+BEGIN
+    OPEN CURS FOR
+    SELECT EMPLOYEEID, LASTNAME, FIRSTNAME, BIRTHDATE
+    FROM EMPLOYEE
+    WHERE EMPLOYEE.BIRTHDATE >= TO_DATE('01-JAN-1969', 'DD-MM-YYYY');
+    RETURN CURS;
+END;
+/
+SELECT POST_68_EMPLOYEES
+FROM DUAL;
 
 /*********************************************
 5.0 Stored Procedures
@@ -278,36 +353,116 @@ In this section you will be creating and
 Create a stored procedure that selects the first and last names of all the employees.
 
 **********************************************/
-
+CREATE OR REPLACE PROCEDURE GET_FULL_NAMES (CURS OUT SYS_REFCURSOR)
+AS
+BEGIN
+OPEN CURS FOR
+SELECT FIRSTNAME, LASTNAME FROM EMPLOYEE;
+END;
+/
 /*********************************************
 5.2 Stored Procedure Input Parameters
 Create a stored procedure that updates the personal information of an employee.
 Create a stored procedure that returns the managers of an employee.
 
 **********************************************/
+CREATE OR REPLACE PROCEDURE CHANGE_EMPLOYEE_TITLE(EMPID IN INT, NEW_TITLE VARCHAR2)
+AS
+BEGIN 
+    UPDATE EMPLOYEE
+    SET TITLE = NEW_TITLE
+    WHERE EMPLOYEEID = EMPID;
+ END;
 
+CREATE OR REPLACE PROCEDURE SHOW_MANAGER(EMPID IN NUMBER, MANAGERS_ID OUT NUMBER)
+IS
+BEGIN
+    SELECT REPORTSTO
+    INTO MANAGERS_ID
+    FROM EMPLOYEE
+    WHERE EMPLOYEEID = EMPID;
+END;
+/
 /*********************************************
 5.3 Stored Procedure Output Parameters
 Create a stored procedure that returns the name and company of a customer.
 
 **********************************************/
+CREATE OR REPLACE PROCEDURE GET_CUSTOMER_INFO(EMPID INT, LNAME OUT VARCHAR2,
+FNAME OUT VARCHAR2, COMP OUT VARCHAR2)
+IS
+BEGIN
+    SELECT LASTNAME, FIRSTNAME, COMPANY
+    INTO LNAME, FNAME, COMP
+    FROM CUSTOMER
+    WHERE CUSTOMERID = EMPID;
+END;
+/
 
 
 /*********************************************
 6.0 Transactions
 In this section you will be working with transactions. Transactions are usually nested within a stored procedure.
-Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them).
+Create a transaction that given a invoiceId will delete
+ that invoice (There may be constraints that rely on this
+ , find out how to resolve them).
 Create a transaction nested within a stored procedure that inserts a new record in the Customer table
 
 **********************************************/
+CREATE OR REPLACE PROCEDURE DELETE_INVOICE(INVOICENUM INT)
+AS
+BEGIN
+    DELETE FROM INVOICE
+    WHERE INVOICEID = INVOICENUM;
+    COMMIT;
+END;
 
+CREATE OR REPLACE PROCEDURE CREATE_CUSTOMER(
+  CUSTOMERSID INT, FNAME VARCHAR2, LNAME VARCHAR2, COMPNAME VARCHAR2, 
+  ADDRES VARCHAR2, CITY VARCHAR2, ST VARCHAR2, COUNTR VARCHAR2, POST VARCHAR2, 
+  PHON VARCHAR2, FAX VARCHAR2, EMAIL VARCHAR2, REPSID NUMBER)
+IS
+BEGIN
+    INSERT INTO CUSTOMER VALUES(CUSTOMERSID, FNAME, LNAME, COMPNAME, 
+    ADDRES, CITY, ST, COUNTR, POST, 
+    PHON, FAX, EMAIL, REPSID);
+END;
 
 /*********************************************
 7.0 Triggers
 In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
 7.1 AFTER/FOR
-Create an after insert trigger on the employee table fired after a new record is inserted into the table.
-Create an after update trigger on the album table that fires after a row is inserted in the table
-Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+Create an after insert trigger on the employee table
+ fired after a new record is inserted into the table.
+Create an after update trigger on the album table that 
+fires after a row is inserted in the table
+Create an after delete trigger on the customer table that
+ fires after a row is deleted from the table.
 
 **********************************************/
+CREATE OR REPLACE TRIGGER EMPLOYEE_WAS_ADDED
+    AFTER INSERT ON EMPLOYEE
+DECLARE
+BEGIN
+    IF INSERTING THEN
+        DBMS_OUTPUT.PUT_LINE('An employee has been added.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER NEW_ALBUM_ADDED
+    AFTER UPDATE ON ALBUM
+DECLARE
+BEGIN
+    IF UPDATING THEN
+        DBMS_OUTPUT.PUT_LINE('A new album was added.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER CUSTOMER_WAS_DELETED
+    AFTER DELETE ON CUSTOMER
+DECLARE
+BEGIN
+    IF DELETING THEN
+        DBMS_OUTPUT.PUT_LINE('A customer was deleted.');
+    END IF;
+END;
