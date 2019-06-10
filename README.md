@@ -9,8 +9,9 @@ Week 2
 DB persistence
 SQL
 JDBC
+Project 0
 
-Week3
+Week 3
 Front end
 HTML, CSS, JavaScript
 
