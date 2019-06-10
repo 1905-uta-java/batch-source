@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TRACK" directorySegmentName="seg_0" id="53770F89-B87B-8112-A47C-DD96507B3402">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4AE513B8-E6F2-8F8D-0738-0A5408C1161E</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ALBUMID" id="0420F679-7662-9075-5B62-27E2B88BE8AE">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEDIATYPEID" id="15AAECB7-8962-97AC-68A4-98E9A1172D23">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="3E476F5E-5291-BBA1-D1AE-16D085B9F21B">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMPOSER" id="4E955D25-09CF-5600-1B51-307D5A5EF65F">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRACKID" id="6FF0776B-4E56-B46F-262B-E558432406CA">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BYTES" id="A4095AA6-9DFB-55AA-F779-7732327E0F0D">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UNITPRICE" id="B1A045D7-E8ED-5F59-A202-5A9E10F4DD18">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GENREID" id="C47A78A0-5863-E7B6-68B8-D9DB6015DDBB">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MILLISECONDS" id="DE893008-5288-2BAB-647C-33D7BBD29FF1">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_TRACK" id="A878536C-F436-A371-6843-EAA1974B28EA">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:05 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TRACKMEDIATYPEID" id="753FF292-9936-39B0-777F-53827BD47D69">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TRACKALBUMID" id="9EAA6BB4-C3DC-9A46-0333-E38E437FFD5C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TRACKGENREID" id="ACC5DFF9-C40F-3615-B669-BD3D6DA97575">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_TRACK" id="AD8D619C-BC7F-2098-BD31-C76C032D53B7">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:07 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<existingIndex>A878536C-F436-A371-6843-EAA1974B28EA</existingIndex>
+<indexSegment>2A17211A-7A49-EE82-2149-497DDC94BDB3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

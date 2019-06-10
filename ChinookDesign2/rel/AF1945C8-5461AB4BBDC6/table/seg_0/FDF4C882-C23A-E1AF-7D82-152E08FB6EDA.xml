@@ -1,0 +1,245 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDF4C882-C23A-E1AF-7D82-152E08FB6EDA" schemaObject="F69D71B5-31DC-C4EC-7838-B35EB10CCA0D" name="CUSTOMER">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>CUSTOMER</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:54 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTOMERID" id="455DBA93-4C5A-B443-9E72-C770CA942A3A">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTOMERID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FIRSTNAME" id="1128F3CB-C510-43F4-9A27-D02F374DB52A">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>FIRSTNAME</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LASTNAME" id="1611F1E3-69DA-7D15-6150-36CB0FE593E3">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>LASTNAME</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPANY" id="2AB68F00-F2E7-D1BD-A39E-BA66594B9119">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>COMPANY</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 BYTE</dataTypeSize>
+<ownDataTypeParameters>80 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS" id="12C81F84-8404-58CC-466F-3746E9836942">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>ADDRESS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CITY" id="F8FAB298-3B20-3A61-9159-680C37F68A85">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>CITY</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATE" id="161C970E-9A95-9434-2C61-B84F8137AB09">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>STATE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRY" id="ABD62D1A-75C5-B575-AC68-003862EE373E">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>COUNTRY</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTALCODE" id="2E0E72C4-BBCA-2726-0C74-C402866BF074">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>POSTALCODE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE" id="69E64F4E-0A1A-FFFA-C754-D9D912D52740">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>PHONE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24 BYTE</dataTypeSize>
+<ownDataTypeParameters>24 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FAX" id="77FFC6B6-5E88-F728-7F81-33E13144C2C1">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>FAX</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24 BYTE</dataTypeSize>
+<ownDataTypeParameters>24 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="8659C03C-BB2D-181D-68D7-A67692CE19AB">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 BYTE</dataTypeSize>
+<ownDataTypeParameters>60 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUPPORTREPID" id="E327DE73-41B0-7A9D-449C-5D0972B10BB1">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>SUPPORTREPID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A016F1C-CE28-1D14-BA84-155350DC1F0F" referredColumn="B78C0A3D-B1BE-491D-1EB3-CACBFFCABD05"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4B24B7B8-8850-D923-08D9-1D8A3D3392D8" name="PK_CUSTOMER">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_CUSTOMER</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:59 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="455DBA93-4C5A-B443-9E72-C770CA942A3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="114850AD-E878-A239-33E7-8A068BE7E9DB" schemaObject="F69D71B5-31DC-C4EC-7838-B35EB10CCA0D" name="PK_CUSTOMER">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_CUSTOMER</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:57 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="455DBA93-4C5A-B443-9E72-C770CA942A3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DCD181EB-DC72-E21B-7883-A29724531FC8" name="FK_CUSTOMERSUPPORTREPID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E327DE73-41B0-7A9D-449C-5D0972B10BB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

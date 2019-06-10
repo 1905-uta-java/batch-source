@@ -1,0 +1,684 @@
+-----------------------------------------------
+-- 2.1a DESCRIPTIVE COMMENT
+--Select all records from the Employee table.
+-------------------------------------------------
+SELECT * 
+FROM EMPLOYEE;
+
+ROLLBACK;
+
+-----------------------------------------------
+-- 2.1b DESCRIPTIVE COMMENT
+-- Select all records from the Employee table where last name is King.
+-------------------------------------------------
+SELECT *
+FROM EMPLOYEE
+WHERE LASTNAME = 'King';
+
+ROLLBACK;
+
+-----------------------------------------------
+-- 2.1c DESCRIPTIVE COMMENT
+-- Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL.
+-------------------------------------------------
+SELECT *
+FROM EMPLOYEE
+WHERE FIRSTNAME = 'Andrew' 
+AND REPORTSTO IS NULL;
+
+ROLLBACK;
+
+-----------------------------------------------
+-- 2.1d DESCRIPTIVE COMMENT
+--Select all albums in Album table and sort result set in descending order by title.
+-------------------------------------------------
+SELECT *
+FROM ALBUM
+ORDER BY(TITLE) DESC;
+
+ROLLBACK;
+
+-----------------------------------------------
+-- 2.1e DESCRIPTIVE COMMENT
+--Select first name from Customer and sort result set in ascending order by city.
+-------------------------------------------------
+SELECT FIRSTNAME
+FROM CUSTOMER
+ORDER BY(CITY) ASC;
+
+ROLLBACK;
+
+-----------------------------------------------
+-- 2.1f DESCRIPTIVE COMMENT
+--Select all invoices with a billing address like “T%”
+-------------------------------------------------
+SELECT * FROM INVOICE
+WHERE BILLINGADDRESS
+LIKE 'T%';
+
+ROLLBACK;
+
+
+
+-----------------------------------------------
+-- 2.2a DESCRIPTIVE COMMENT
+--Insert two new records into Genre table
+-------------------------------------------------
+INSERT INTO GENRE(GENREID, NAME)
+VALUES(26, 'Ambient');
+
+INSERT INTO GENRE(GENREID, NAME)
+VALUES(27, 'Chilhop');
+
+
+-----------------------------------------------
+-- 2.2b DESCRIPTIVE COMMENT
+--Insert two new records into Employee table
+-------------------------------------------------
+
+INSERT INTO EMPLOYEE
+(EMPLOYEEID, LASTNAME,
+FIRSTNAME, TITLE, 
+REPORTSTO, BIRTHDATE, 
+HIREDATE,ADDRESS, 
+CITY, STATE, 
+COUNTRY, POSTALCODE,
+PHONE, FAX, 
+EMAIL) 
+VALUES(9, 'Carmine',
+'Marcus', 'Lawyer',
+null, '05-MAY-90',
+'08-AUG-05', '2211 Caraby Lane,',
+'Calgary', 'AB',
+'Canada', 'T2P 5M5',
+'+1 (403) 404 - 5566',
+NULL, 'mcarmine@chinookcorp.com');
+
+
+INSERT INTO EMPLOYEE
+(EMPLOYEEID, LASTNAME,
+FIRSTNAME, TITLE, 
+REPORTSTO, BIRTHDATE, 
+HIREDATE,ADDRESS, 
+CITY, STATE, 
+COUNTRY, POSTALCODE,
+PHONE, FAX, 
+EMAIL) 
+VALUES(10, 'Dalloway',
+'Reinhardt', 'Security',
+null, '09-MAY-37',
+'05-MAR-57', '106 Studert Street,',
+'Calgary', 'AB',
+'Canada', 'T2P 5M5',
+'+1 (403) 607 - 1634',
+NULL, 'rdalloway@chinookcorp.com');
+
+SELECT * FROM EMPLOYEE;
+
+ROLLBACK;
+
+
+-----------------------------------------------
+-- 2.2c DESCRIPTIVE COMMENT
+--Insert two new records into Customer table
+-------------------------------------------------
+
+SELECT * FROM CUSTOMER;
+
+INSERT INTO CUSTOMER
+(CUSTOMERID, FIRSTNAME,
+LASTNAME, COMPANY,
+ADDRESS, CITY, 
+STATE, COUNTRY, 
+POSTALCODE,PHONE, FAX, 
+EMAIL, SUPPORTREPID) 
+VALUES(60, 'Ludovici',
+'Luigi', NULL, '1253 Markeet Blvd,',
+'Calgary', 'AB',
+'Canada', 'T2P 5M5',
+'+1 (403) 345 - 8483',
+NULL, 'lludovici@yasper.com', 8);
+
+INSERT INTO CUSTOMER
+(CUSTOMERID, FIRSTNAME,
+LASTNAME, COMPANY,
+ADDRESS, CITY, 
+STATE, COUNTRY, 
+POSTALCODE,PHONE, FAX, 
+EMAIL, SUPPORTREPID) 
+VALUES(61, 'Hegovitch',
+'Hassan', NULL, '4939 Reedman Rd,',
+'Calgary', 'AB',
+'Canada', 'T2P 5M5',
+'+1 (403) 968 - 4373',
+NULL, 'hhassan@somecompany.com', 8);
+
+ROLLBACK;
+
+
+-----------------------------------------------
+-- 2.3a DESCRIPTIVE COMMENT
+--Update Aaron Mitchell in Customer table to Robert Walter
+-------------------------------------------------
+SELECT * FROM CUSTOMER;
+
+UPDATE CUSTOMER 
+SET FIRSTNAME = 'Robert',
+LASTNAME = 'Walter'
+WHERE CUSTOMERID = 32;
+
+-----------------------------------------------
+-- 2.3b DESCRIPTIVE COMMENT
+--Update name of artist in the Artist table “Creedence Clearwater Revival” to “CCR”
+-------------------------------------------------
+SELECT *
+FROM ARTIST 
+WHERE NAME = 'Creedence Clearwater Revival';
+
+UPDATE ARTIST
+SET NAME = 'CCR'
+WHERE ARTISTID = 76;
+
+------------------
+-- BEGIN SECTION 3.0- JOINS
+------------------
+-----------------------------------------------------------------------------------------------------------------
+-- 3.1 DESCRIPTIVE COMMENT 
+-- Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+-----------------------------------------------------------------------------------------------------------------
+SELECT C.FIRSTNAME, C.LASTNAME, I.INVOICEID
+FROM CUSTOMER C
+INNER JOIN INVOICE I
+ON C.CUSTOMERID = I.INVOICEID;
+
+-----------------------------------------------------------------------------------------------------------------
+-- 3.2a DESCRIPTIVE COMMENT 
+-- Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total.
+-----------------------------------------------------------------------------------------------------------------
+SELECT C.CUSTOMERID, C.FIRSTNAME,
+C.LASTNAME, I.INVOICEID, I.TOTAL
+FROM CUSTOMER C
+FULL JOIN INVOICE I
+ON C.CUSTOMERID = I.INVOICEID;
+ 
+ROLLBACK;
+
+-----------------------------------------------------------------------------------------------------------------
+-- 3.3a DESCRIPTIVE COMMENT 
+-- RIGHT JOIN -- Create a right join that joins album and artist specifying artist name and title.
+-----------------------------------------------------------------------------------------------------------------
+SELECT ALBUM.TITLE, ARTIST.NAME
+FROM ALBUM
+RIGHT JOIN ARTIST
+ON ALBUM.ARTISTID = ARTIST.ARTISTID;
+
+-----------------------------------------------------------------------------------------------------------------
+-- 3.4a DESCRIPTIVE COMMENT
+-- CROSS JOIN-- Create a cross join that joins album and artist and sorts by artist name in ascending order.
+-----------------------------------------------------------------------------------------------------------------
+SELECT *
+FROM ALBUM
+CROSS JOIN ARTIST
+ORDER BY ARTIST.NAME
+ASC;
+
+-----------------------------------------------------------------------------------------------------------------
+-- 3.5 DESCRIPTIVE COMMENT
+-- SELF JOIN-- Perform a self-join on the employee table, joining on the reportsto column.
+-----------------------------------------------------------------------------------------------------------------
+SELECT a.EMPLOYEEID, b.REPORTSTO 
+FROM EMPLOYEE a, EMPLOYEE b
+WHERE a.EMPLOYEEID = b.REPORTSTO;
+
+ROLLBACK;
+
+-----------------------------------------------------------------------------------------------------------------
+--3.6a DESCRIPTIVE COMMENT
+-- Create a query that shows the customer first name and last name as FULL_NAME with the total amount of money they have spent as TOTAL.
+-----------------------------------------------------------------------------------------------------------------
+
+SELECT CUST.FIRSTNAME || ' ' || CUST.LASTNAME FULL_NAME, 
+SUM(I.TOTAL) TOTAL
+FROM CUSTOMER CUST
+INNER JOIN INVOICE I
+ON  CUST.CUSTOMERID = I.INVOICEID 
+GROUP BY CUST.FIRSTNAME || ' ' || CUST.LASTNAME;
+
+-----------------------------------------------------------------------------------------------------------------
+--3.6b DESCRIPTIVE COMMENT
+-- Create a query that shows the employee that has made the highest total value of sales (total of all invoices).
+-----------------------------------------------------------------------------------------------------------------
+
+SELECT EMPLOYEEID, A.TOTAL
+FROM(
+    SELECT E.EMPLOYEEID,
+    SUM(I.TOTAL) TOTAL
+    FROM EMPLOYEE E
+    INNER JOIN CUSTOMER C
+    ON C.SUPPORTREPID = E.EMPLOYEEID
+    INNER JOIN INVOICE I
+    ON C.CUSTOMERID = I.CUSTOMERID
+    GROUP BY E.EMPLOYEEID
+    ORDER BY TOTAL DESC
+    )
+A
+WHERE ROWNUM = 1;
+
+COMMIT;
+
+-----------------------------------------------------------------------------------------------------------------
+--3.6c
+-- Create a query which shows the number of purchases per each genre. Display the name of each genre and number of purchases. Show the most popular genre first.
+-----------------------------------------------------------------------------------------------------------------
+SELECT GEN.NAME GENRE, COUNT(IL.QUANTITY) PURCHASES
+FROM GENRE GEN 
+FULL OUTER JOIN TRACK T 
+ON GEN.GENREID = T.GENREID
+FULL OUTER JOIN INVOICELINE IL
+ON IL.TRACKID = T.TRACKID
+GROUP BY GEN.NAME
+ORDER BY PURCHASES DESC;
+
+
+-----------------------------------------------------------------------------------------------------------------
+-- 4.1a DESCRIPTIVE COMMENT
+-- Create a function that returns the current time.
+-----------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION RETURNTIME
+RETURN VARCHAR2
+IS
+BEGIN
+    RETURN CURRENT_TIMESTAMP;
+END;
+
+COMMIT;
+
+-----------------------------------------------------------------------------------------------------------------
+-- 4.1b DESCRIPTIVE COMMENT
+-- Create a function that returns the length of name in MEDIATYPE table
+-----------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION RETURN_LENGTH_NAME(MEDIA_NAME IN VARCHAR2)
+RETURN VARCHAR2
+IS LENGTH_OF_NAME NUMBER;
+BEGIN
+    SELECT LENGTH(MEDIATYPE.NAME)
+    INTO LENGTH_OF_NAME
+    FROM MEDIATYPE
+    WHERE MEDIATYPE.NAME = MEDIA_NAME;
+    RETURN LENGTH_OF_NAME;
+END;
+
+-----------------------------------------------------------------------------------------------------------------
+--4.2a DESCRIPTIVE COMMENT
+--Create a function that returns the average total of all invoices 
+-----------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION AVG_INVOICE_TOTAL
+RETURN NUMBER
+IS AVG_TOTAL NUMBER;
+BEGIN
+    SELECT AVG(INVOICE.TOTAL)
+    INTO AVG_TOTAL
+    FROM INVOICE;
+    RETURN AVG_TOTAL;
+END;
+
+SELECT AVG_INVOICE_TOTAL FROM DUAL;
+/
+
+-----------------------------------------------------------------------------------------------------------------
+--4.2b
+-- Create a function that returns the most expensive track
+-----------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION MOST_EXPENSIVE_TRACK RETURN VARCHAR2
+AS 
+EXPENSIVE_TRACK NUMBER;
+HIGHEST_PRICE NUMBER;
+BEGIN
+
+    SELECT MAX(UNITPRICE)
+    INTO HIGHEST_PRICE
+    FROM TRACK;
+    
+    SELECT TRACKID
+    INTO EXPENSIVE_TRACK
+    FROM TRACK
+    WHERE TRACK.UNITPRICE = HIGHEST_PRICE
+    AND ROWNUM = 1;
+  
+    RETURN EXPENSIVE_TRACK;
+END;
+/
+
+
+-----------------------------------------------------------------------------------------------------------------
+-- 4.3a DESCRIPTIVE COMMENT
+--Create a function that returns the average price of invoiceline items in the invoiceline table
+-----------------------------------------------------------------------------------------------------------------
+ CREATE OR REPLACE FUNCTION AVG_PRICE_IL_ITEMS
+ RETURN NUMBER
+ IS AVG_PRICE NUMBER;
+ BEGIN 
+   SELECT AVG(UNITPRICE)
+   INTO AVG_PRICE
+    FROM INVOICELINE;
+   RETURN AVG_PRICE;
+END;
+/
+
+-----------------------------------------------------------------------------------------------------------------
+--4.4
+-- Create a function that returns a cursor with all employees who are born after 1968.
+-----------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE RECENT_EMPLOYEE(S OUT SYS_REFCURSOR)
+IS
+BEGIN 
+    OPEN S FOR
+    SELECT FIRSTNAME FROM EMPLOYEE;
+END;
+/
+SET SERVEROUTPUT ON;
+DECLARE
+    CURSOR1 SYS_REFCURSOR;
+    TEMP_NAME EMPLOYEE.FIRSTNAME%TYPE;
+BEGIN 
+    RECENT_EMPLOYEE(CURSOR1);
+    LOOP
+        FETCH CURSOR1 INTO TEMP_NAME;
+        EXIT WHEN CURSOR1%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE(TEMP_NAME||' IS BORN AFTER 1969');
+    END LOOP;
+    CLOSE CURSOR1;
+END;
+/
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+--5.1 DESCRIPTIVE COMMENT
+-- Create a stored procedure that selects the first and last names of all the employees.
+-----------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE EMPLOYEE_NAMES(S OUT SYS_REFCURSOR)
+IS
+BEGIN 
+    OPEN S FOR
+    SELECT FIRSTNAME, LASTNAME FROM EMPLOYEE;
+END;
+/
+
+DECLARE
+    CURSOR1 SYS_REFCURSOR;
+    TEMP_FIRSTNAME EMPLOYEE.FIRSTNAME%TYPE;
+    TEMP_LASTNAME EMPLOYEE.LASTNAME%TYPE;
+    
+BEGIN 
+    EMPLOYEE_NAMES(CURSOR1);
+    LOOP
+        FETCH CURSOR1 INTO TEMP_FIRSTNAME, TEMP_LASTNAME;
+        EXIT WHEN CURSOR1%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('EMPLOYEE IS REGISTERED IN OUR SYSTEM!');
+    END LOOP;
+    CLOSE CURSOR1;
+END;
+/
+
+----------------------------------------------------
+--5.2a DESCRIPTIVE COMMENT
+--Create a stored procedure that updates the personal information of an employee.
+----------------------------------------------------
+
+SELECT * FROM EMPLOYEE;
+
+CREATE OR REPLACE PROCEDURE UPDATE_EMPLOYEE(ID IN NUMBER) 
+IS
+BEGIN
+    UPDATE EMPLOYEE
+    SET FIRSTNAME = 'Ted', 
+    LASTNAME = 'Hughes',
+    TITLE = 'Dead Guy',
+    REPORTSTO = '1',
+    BIRTHDATE = '17-AUG-30',
+    HIREDATE = '14-JUL-66',
+    ADDRESS = '310 Fantasy Lane'
+    WHERE EMPLOYEEID = ID;
+END;
+/
+
+
+BEGIN
+    UPDATE_EMPLOYEE(2);
+END;
+    
+BEGIN
+UPDATE_EMPLOYEE(2);
+END;
+/
+
+
+----------------------------------------------------
+--5.2b DESCRIPTIVE COMMENT
+--Create a stored procedure that returns the managers of an employee
+----------------------------------------------------
+SELECT * FROM EMPLOYEE;
+
+CREATE OR REPLACE PROCEDURE MANAGER_IS(EMP_ID IN NUMBER, 
+MAN_ID OUT NUMBER, 
+MAN_FIRSTNAME OUT VARCHAR2, 
+MAN_LASTNAME OUT VARCHAR2)
+
+IS
+BEGIN
+SELECT b.EMPLOYEEID
+INTO MAN_ID
+FROM EMPLOYEE a, EMPLOYEE b
+WHERE a.REPORTSTO = b.EMPLOYEEID AND a.EMPLOYEEID = EMP_ID;
+END;
+/
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+EMP_ID EMPLOYEE.EMPLOYEEID%TYPE := 7;
+MAN_ID EMPLOYEE.EMPLOYEEID%TYPE;
+MAN_FIRSTNAME EMPLOYEE.FIRSTNAME%TYPE;
+MAN_LASTNAME EMPLOYEE.LASTNAME%TYPE;
+
+BEGIN
+MANAGER_IS(7, MAN_FIRSTNAME, MAN_LASTNAME, MAN_ID);
+DBMS_OUTPUT.PUT_LINE('EMPLOYEE WITH ID: ' || EMP_ID || ' ' || 'REPORTS TO: '  || MAN_FIRSTNAME || ' ' || MAN_LASTNAME);
+END;
+/
+
+------------------------------------------------------------------
+--5.3b DESCRIPTIVE COMMENT
+--Create a stored procedure that returns the name and company of a customer.
+------------------------------------------------------------------
+
+SELECT * FROM CUSTOMER;
+
+CREATE OR REPLACE PROCEDURE CUSTOMER_INFO(CUST_ID IN NUMBER, 
+CUST_COMPANY OUT VARCHAR2, 
+CUST_FIRSTNAME OUT VARCHAR2,
+CUST_LASTNAME OUT VARCHAR2)
+
+IS
+BEGIN
+SELECT CUST_FIRSTNAME,
+CUST_LASTNAME, CUST_COMPANY
+INTO CUST_FIRSTNAME, CUST_LASTNAME, CUST_COMPANY
+FROM CUSTOMER
+WHERE CUST_ID = CUSTOMERID;
+END;
+/
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+CUST_ID CUSTOMER.CUSTOMERID%TYPE := 7;
+CUST_FIRSTNAME CUSTOMER.FIRSTNAME%TYPE;
+CUST_LASTNAME CUSTOMER.LASTNAME%TYPE;
+CUST_COMPANY CUSTOMER.COMPANY%TYPE;
+BEGIN
+CUSTOMER_INFO(CUST_ID, CUST_FIRSTNAME, CUST_LASTNAME, CUST_COMPANY);
+DBMS_OUTPUT.PUT_LINE('CUSTOMER WITH ID: ' || CUST_ID || ' ' || 'NAME: '  || CUST_FIRSTNAME || ' ' || CUST_LASTNAME || 'COMPANY: ' || CUST_COMPANY);
+END;
+
+---------------------------------------
+--6.0 DESCRIPTIVE COMMENT
+-- Create a transaction that given a invoiceId will delete that invoice.
+--------------------------------------
+SELECT * FROM INVOICE;
+
+CREATE OR REPLACE PROCEDURE DELETE_INVOICE(INVOICE_ID IN NUMBER)
+IS 
+BEGIN
+     DELETE FROM INVOICE WHERE INVOICE_ID = INVOICE.INVOICEID;
+END;
+
+SET SERVEROUTPUT ON;
+DECLARE
+INVOICE_ID INVOICE.INVOICEID%TYPE;
+BEGIN
+    DELETE_INVOICE(1);
+    DBMS_OUTPUT.PUT_LINE('INVOICE ' || INVOICE_ID || ' HAS BEEN DELETED!');
+    COMMIT;
+END;
+/
+
+-----------------------------------------------------------------------------------------------------
+--6.0b DESCRIPTIVE COMMENT
+--Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+-----------------------------------------------------------------------------------------------------------------
+SELECT * FROM CUSTOMER;
+
+CREATE OR REPLACE PROCEDURE INSERT_CUSTOMER(
+P_ID IN VARCHAR2, 
+P_FIRSTNAME IN CUSTOMER.FIRSTNAME%TYPE, 
+P_LASTNAME IN CUSTOMER.LASTNAME%TYPE,
+P_COMPANY IN CUSTOMER.COMPANY%TYPE, 
+P_ADDRESS IN CUSTOMER.ADDRESS%TYPE, 
+P_CITY IN CUSTOMER.CITY%TYPE,
+P_STATE IN CUSTOMER.STATE%TYPE, 
+P_COUNTRY IN CUSTOMER.COUNTRY%TYPE, 
+P_POSTALCODE IN CUSTOMER.POSTALCODE%TYPE,
+P_PHONE IN CUSTOMER.PHONE%TYPE, 
+P_FAX IN CUSTOMER.FAX%TYPE,
+P_EMAIL IN CUSTOMER.EMAIL%TYPE,
+P_SUPPORTREPID IN CUSTOMER.SUPPORTREPID%TYPE)
+
+IS 
+BEGIN 
+    INSERT INTO CUSTOMER
+    (P_ID, 
+    P_FIRSTNAME, 
+    P_LASTNAME,
+    P_COMPANY,
+    P_ADDRESS,
+    P_CITY,
+    P_STATE,
+    P_COUNTRY, 
+    P_POSTALCODE,
+    P_PHONE,
+    P_FAX,
+    P_EMAIL,
+    P_SUPPORTREPID)
+    
+    VALUES
+    
+    ('62',
+    'Tim',
+    'Absol',
+    'Oracle',
+    'The Seventh Ring',
+    'Asgard',
+    'Liquid',
+    'USA',
+    '123456',
+    '777-7777',
+    '9876543',
+    'fakeemail@chinookcorps',
+    '6');
+END;
+/
+
+--------------------------------------------------
+--7.1a DESCRIPTIVE COMMENT
+-- Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+--------------------------------------------------
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE TRIGGER WARN_BEFORE_INSERT
+BEFORE INSERT ON EMPLOYEE
+    FOR EACH ROW
+    BEGIN
+    DBMS_OUTPUT.PUT_LINE('YOU ARE INSERTING A NEW EMPLOYEE!');
+    END;
+    /
+    
+INSERT INTO EMPLOYEE
+(EMPLOYEEID, LASTNAME,
+FIRSTNAME, TITLE, 
+REPORTSTO, BIRTHDATE, 
+HIREDATE,ADDRESS, 
+CITY, STATE, 
+COUNTRY, POSTALCODE,
+PHONE, FAX, 
+EMAIL) 
+VALUES(11, 'TEST',
+'FOR TRIGGER', null,
+null, null,
+null, null,
+null, null,
+null, null,
+null,
+null, null);
+    
+--------------------------------------------------
+--7.1b DESCRIPTIVE COMMENT
+-- Create an after update trigger on the album table fired after a new row is inserted into the table.
+--------------------------------------------------
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE TRIGGER WARN_AFTER_UPDATE
+AFTER UPDATE ON ALBUM
+    FOR EACH ROW
+    BEGIN
+    DBMS_OUTPUT.PUT_LINE('YOU ARE UPDATING AN EXISTING ALBUM!');
+    END;
+    /
+
+UPDATE ALBUM SET TITLE = 'UPDATED SONG'
+WHERE ALBUMID = 300;
+
+--------------------------------------------------
+--7.1c DESCRIPTIVE COMMENT
+-- Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+--------------------------------------------------
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE TRIGGER WARN_AFTER_DELETE
+AFTER DELETE ON CUSTOMER
+    FOR EACH ROW
+    BEGIN
+    DBMS_OUTPUT.PUT_LINE('YOU HAVE DELETED A ROW IN CUSTOMER!');
+    END;
+    /
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

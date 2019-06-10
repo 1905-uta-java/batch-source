@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DEE6BBCF-1086-510F-416F-AEAE6E61D830" containerWithKeyObject="86A048FE-6949-364B-BF29-D7B6046AF340" localFKIndex="8912492D-72EC-0528-D56C-B1EF6936B6D2" name="FK_BANKING_INFO">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>FK_BANKING_INFO</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:52 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<referredTableLongName>ADMIN.BANKING_INFO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D83E2374-3274-69EB-3086-19EE8F1BEECD</referredTableID>
+<keyObject>58A0FADF-DCEF-2218-9BE1-9350A508F656</keyObject>
+<referredKeyID>58A0FADF-DCEF-2218-9BE1-9350A508F656</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ACCOUNT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B9BE1532-2D78-2E30-B785-5B2B52B730B2" containerWithKeyObject="74239875-0238-C0B8-D48F-3162D2775E72" localFKIndex="A2A1F37E-7071-2FD1-2DE0-090A5D35DE20" name="FK_TRACKMEDIATYPEID">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>FK_TRACKMEDIATYPEID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:46 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<referredTableLongName>CHINOOK.MEDIATYPE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>33604DEF-A25B-DC22-036E-59F2DAFB187B</referredTableID>
+<keyObject>F4F4D5FB-F550-DCFD-2531-C66E2F69B0B3</keyObject>
+<referredKeyID>F4F4D5FB-F550-DCFD-2531-C66E2F69B0B3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MEDIATYPEID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

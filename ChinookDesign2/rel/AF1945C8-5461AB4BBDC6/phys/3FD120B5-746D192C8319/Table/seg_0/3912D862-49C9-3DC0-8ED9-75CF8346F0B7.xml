@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="MEDIATYPE" directorySegmentName="seg_0" id="3912D862-49C9-3DC0-8ED9-75CF8346F0B7">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:55 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C727A131-6AB1-FDB6-D74B-7CEFF898561C</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MEDIATYPEID" id="79BE02F8-FFAE-4859-D7E2-C06C25081DE0">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="E6427388-F83F-29C3-8F6C-5F8B40E71A8F">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_MEDIATYPE" id="93556DF4-6F58-B4D2-6497-F9C98F347D4A">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:59 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_MEDIATYPE" id="08546D07-46FA-F451-AE2D-02D8ECA44044">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:00 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<existingIndex>93556DF4-6F58-B4D2-6497-F9C98F347D4A</existingIndex>
+<indexSegment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

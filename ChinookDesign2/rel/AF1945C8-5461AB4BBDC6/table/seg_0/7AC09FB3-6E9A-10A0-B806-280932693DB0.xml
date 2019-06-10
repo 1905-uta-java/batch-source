@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7AC09FB3-6E9A-10A0-B806-280932693DB0" schemaObject="F69D71B5-31DC-C4EC-7838-B35EB10CCA0D" name="ARTIST">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>ARTIST</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:54 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ARTISTID" id="8AD7184E-9645-9CCB-295C-CA8AD4A9E580">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>ARTIST</sourceObjSchema>
+<sourceObjName>ARTISTID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="73B7AC08-559C-1B54-9777-801074A76AD7">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>ARTIST</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120 BYTE</dataTypeSize>
+<ownDataTypeParameters>120 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="203B1FEE-532E-D681-572E-8A42661CF606" name="PK_ARTIST">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ARTIST</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:59 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AD7184E-9645-9CCB-295C-CA8AD4A9E580"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C516C47E-A91B-22FF-18F4-B9D34AC867CC" schemaObject="F69D71B5-31DC-C4EC-7838-B35EB10CCA0D" name="PK_ARTIST">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ARTIST</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:57 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8AD7184E-9645-9CCB-295C-CA8AD4A9E580"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

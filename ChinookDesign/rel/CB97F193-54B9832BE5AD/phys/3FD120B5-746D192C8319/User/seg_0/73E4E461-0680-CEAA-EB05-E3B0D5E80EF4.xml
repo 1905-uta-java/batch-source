@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="CHINOOK" directorySegmentName="seg_0" id="73E4E461-0680-CEAA-EB05-E3B0D5E80EF4">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjName>CHINOOK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:47 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+<schemaObject>9B7AC2BB-C210-BC47-ACFA-305057A2A786</schemaObject>
+</UserOraclev10g>

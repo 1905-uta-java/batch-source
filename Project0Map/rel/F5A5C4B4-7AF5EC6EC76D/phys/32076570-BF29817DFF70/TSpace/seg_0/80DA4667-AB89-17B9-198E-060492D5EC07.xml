@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="USERS" directorySegmentName="seg_0" id="80DA4667-AB89-17B9-198E-060492D5EC07">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>USERS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<emUniformSize>0</emUniformSize>
+<extentManagement>LOCAL</extentManagement>
+</TableSpaceOraclev10g>

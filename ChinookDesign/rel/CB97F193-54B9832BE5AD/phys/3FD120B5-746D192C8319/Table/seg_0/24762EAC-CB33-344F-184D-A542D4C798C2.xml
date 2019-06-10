@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="EMPLOYEE" directorySegmentName="seg_0" id="24762EAC-CB33-344F-184D-A542D4C798C2">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:47 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+<schemaObject>9B7AC2BB-C210-BC47-ACFA-305057A2A786</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>B70AECCA-D554-0D52-D562-74C536591EA8</segment>
+<tableSpace>97E8D666-537D-1CA1-8797-41F692EF13F7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CITY" id="16E87240-A1A0-6C4C-554D-E7B0A3C6D5D3">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATE" id="2A7966FB-3AE4-7DDE-FCAF-86A812EC2616">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMPLOYEEID" id="3118485C-DCF1-49AA-0D23-0650DF203753">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY" id="40A027FC-A342-C572-8A01-DD99913A2166">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FIRSTNAME" id="4122A731-3975-C362-23C6-A5430EC8FA60">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PHONE" id="612F670B-8337-C42B-220A-9A3A958C2E99">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BIRTHDATE" id="7796306F-C49D-7512-673A-2F56A83729AA">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITLE" id="8CAE1873-5559-8BAC-F0DF-D54C32F255CA">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="9E3314B1-186D-793D-3A64-51F84B9DCDBF">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="POSTALCODE" id="B54009BD-BDC3-F952-E8FF-5051D5AD6C02">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LASTNAME" id="C153692D-5EE3-9F87-CD79-0BE86806A10B">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REPORTSTO" id="C52D3FD9-F5CD-E95A-62BA-17DC7A708BB2">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FAX" id="CEC2592C-4428-A66F-01C8-0D50FB9BB0AB">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS" id="D5E064B9-5767-9DBC-991D-2ABD666FACB3">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HIREDATE" id="F9071CA6-CFF0-F168-E5D3-561D15C7A777">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:49 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_EMPLOYEE" id="9B4C22AC-BD62-F67B-870D-0658F7D1DA99">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:50 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+<schemaObject>9B7AC2BB-C210-BC47-ACFA-305057A2A786</schemaObject>
+<segment>26076F67-724C-D957-6E6E-43574722ED1D</segment>
+<tableSpace>97E8D666-537D-1CA1-8797-41F692EF13F7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_EMPLOYEEREPORTSTO" id="98077722-8079-53D7-B070-7E4FC4F8EF02">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:54 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_EMPLOYEE" id="10970C63-9F64-7FF7-2142-EFA48A53DED2">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 18:36:52 UTC</createdTime>
+<ownerDesignName>ChinookDesign</ownerDesignName>
+<segment>26076F67-724C-D957-6E6E-43574722ED1D</segment>
+<tableSpace>97E8D666-537D-1CA1-8797-41F692EF13F7</tableSpace>
+<existingIndex>9B4C22AC-BD62-F67B-870D-0658F7D1DA99</existingIndex>
+<indexSegment>26076F67-724C-D957-6E6E-43574722ED1D</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

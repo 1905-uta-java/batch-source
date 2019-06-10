@@ -1,0 +1,207 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="53770F89-B87B-8112-A47C-DD96507B3402" schemaObject="09A25B1A-CD36-D9F5-AA01-E669B1FCFA57" name="TRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>TRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRACKID" id="6FF0776B-4E56-B46F-262B-E558432406CA">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>TRACKID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="3E476F5E-5291-BBA1-D1AE-16D085B9F21B">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALBUMID" id="0420F679-7662-9075-5B62-27E2B88BE8AE">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>ALBUMID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C41A909A-A9A4-5AD3-95DC-CF48C1547F8D" referredColumn="47F07DBF-3233-2994-E685-B5F70F26BE09"/>
+</associations>
+</Column>
+<Column name="MEDIATYPEID" id="15AAECB7-8962-97AC-68A4-98E9A1172D23">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>MEDIATYPEID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="456C9DAA-B291-A167-121D-41B2AA1A2B61" referredColumn="1A13C155-18A0-4073-92CB-CAD4F2EE223C"/>
+</associations>
+</Column>
+<Column name="GENREID" id="C47A78A0-5863-E7B6-68B8-D9DB6015DDBB">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>GENREID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="85CD4462-FA92-9C07-A132-1C6988926C87" referredColumn="46F61A1D-96A8-FFAE-A9DF-6C105A542D46"/>
+</associations>
+</Column>
+<Column name="COMPOSER" id="4E955D25-09CF-5600-1B51-307D5A5EF65F">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>COMPOSER</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>220 BYTE</dataTypeSize>
+<ownDataTypeParameters>220 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MILLISECONDS" id="DE893008-5288-2BAB-647C-33D7BBD29FF1">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>MILLISECONDS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BYTES" id="A4095AA6-9DFB-55AA-F779-7732327E0F0D">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>BYTES</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNITPRICE" id="B1A045D7-E8ED-5F59-A202-5A9E10F4DD18">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>UNITPRICE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AD8D619C-BC7F-2098-BD31-C76C032D53B7" name="PK_TRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_TRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:07 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FF0776B-4E56-B46F-262B-E558432406CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A878536C-F436-A371-6843-EAA1974B28EA" schemaObject="09A25B1A-CD36-D9F5-AA01-E669B1FCFA57" name="PK_TRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_TRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:05 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FF0776B-4E56-B46F-262B-E558432406CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9EAA6BB4-C3DC-9A46-0333-E38E437FFD5C" name="FK_TRACKALBUMID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0420F679-7662-9075-5B62-27E2B88BE8AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACC5DFF9-C40F-3615-B669-BD3D6DA97575" name="FK_TRACKGENREID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C47A78A0-5863-E7B6-68B8-D9DB6015DDBB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="753FF292-9936-39B0-777F-53827BD47D69" name="FK_TRACKMEDIATYPEID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15AAECB7-8962-97AC-68A4-98E9A1172D23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

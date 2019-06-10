@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B44E740B-0191-DBE4-011A-1F23EC9875C3" containerWithKeyObject="40B37499-126F-44EB-25DE-C73995E15F4D" localFKIndex="8D034482-243B-D13A-DBC3-3D16F77B8F30" name="FK_INVOICECUSTOMERID">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>FK_INVOICECUSTOMERID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<referredTableLongName>CHINOOK.CUSTOMER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FDF4C882-C23A-E1AF-7D82-152E08FB6EDA</referredTableID>
+<keyObject>4B24B7B8-8850-D923-08D9-1D8A3D3392D8</keyObject>
+<referredKeyID>4B24B7B8-8850-D923-08D9-1D8A3D3392D8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CUSTOMERID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

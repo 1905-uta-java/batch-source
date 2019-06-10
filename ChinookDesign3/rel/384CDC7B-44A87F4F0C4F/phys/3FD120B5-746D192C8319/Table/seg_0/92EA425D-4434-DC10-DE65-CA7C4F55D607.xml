@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ALBUM" directorySegmentName="seg_0" id="92EA425D-4434-DC10-DE65-CA7C4F55D607">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4AE513B8-E6F2-8F8D-0738-0A5408C1161E</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ALBUMID" id="47F07DBF-3233-2994-E685-B5F70F26BE09">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITLE" id="9E8533B0-DE32-E018-E110-07B290ED37D5">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ARTISTID" id="CB389E24-F391-2BBC-1D88-6985E4D31AA2">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_ALBUM" id="56346F58-51E2-A4B7-B1FB-0995FEABF5A7">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:04 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ALBUMARTISTID" id="0FDBDA5A-E1DB-53AD-775F-D3AC59FC599A">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_ALBUM" id="E35D31DC-1361-7B04-3E1A-53F69CF0DB85">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:06 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<existingIndex>56346F58-51E2-A4B7-B1FB-0995FEABF5A7</existingIndex>
+<indexSegment>2A17211A-7A49-EE82-2149-497DDC94BDB3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

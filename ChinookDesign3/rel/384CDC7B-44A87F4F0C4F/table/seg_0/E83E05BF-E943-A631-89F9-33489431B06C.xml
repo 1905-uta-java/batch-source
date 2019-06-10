@@ -1,0 +1,186 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E83E05BF-E943-A631-89F9-33489431B06C" schemaObject="09A25B1A-CD36-D9F5-AA01-E669B1FCFA57" name="INVOICE">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>INVOICE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INVOICEID" id="5FFD2230-A2A8-7ABD-FE2A-4919E8B0A80A">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>INVOICEID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMERID" id="985D9290-3358-9DAB-BD91-E42D8606C804">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>CUSTOMERID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4A2BB687-E282-A4D0-3494-CAF56A02C64A" referredColumn="A805E99E-2A8E-518E-6EB4-4463DBB7B060"/>
+</associations>
+</Column>
+<Column name="INVOICEDATE" id="0C18B662-FAC8-3C2A-2C3C-1A0400850B79">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>INVOICEDATE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGADDRESS" id="EBD2E02D-CBDD-E3FF-590B-8275A831B42E">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGADDRESS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGCITY" id="1E5FD71E-E93D-7CF7-1C31-198BBCEE1DB0">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGCITY</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGSTATE" id="E2A5F0C5-F80F-E630-4F80-B4BB0F926F53">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGSTATE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGCOUNTRY" id="93362CA0-C686-F4E1-8E80-9280A11D8E66">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGCOUNTRY</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGPOSTALCODE" id="FE714BBD-7496-F72F-4A6B-F4BD42CB4433">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGPOSTALCODE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL" id="E41F4284-CEA2-694B-8FD6-D4D2EDBFCB52">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>TOTAL</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="93DFA73F-E492-CF71-B2C5-E59F8559D536" name="PK_INVOICE">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_INVOICE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:06 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FFD2230-A2A8-7ABD-FE2A-4919E8B0A80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D685B051-6114-4B43-5581-34B24F201B2E" schemaObject="09A25B1A-CD36-D9F5-AA01-E669B1FCFA57" name="PK_INVOICE">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_INVOICE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:04 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FFD2230-A2A8-7ABD-FE2A-4919E8B0A80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11E8DAC3-0076-43F3-347D-468E5C7561CC" name="FK_INVOICECUSTOMERID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="985D9290-3358-9DAB-BD91-E42D8606C804"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

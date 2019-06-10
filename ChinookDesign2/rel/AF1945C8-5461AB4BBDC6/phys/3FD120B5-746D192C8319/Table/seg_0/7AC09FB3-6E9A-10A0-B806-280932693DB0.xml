@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ARTIST" directorySegmentName="seg_0" id="7AC09FB3-6E9A-10A0-B806-280932693DB0">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:54 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C727A131-6AB1-FDB6-D74B-7CEFF898561C</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NAME" id="73B7AC08-559C-1B54-9777-801074A76AD7">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ARTISTID" id="8AD7184E-9645-9CCB-295C-CA8AD4A9E580">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_ARTIST" id="C516C47E-A91B-22FF-18F4-B9D34AC867CC">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:57 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_ARTIST" id="203B1FEE-532E-D681-572E-8A42661CF606">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:59 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<existingIndex>C516C47E-A91B-22FF-18F4-B9D34AC867CC</existingIndex>
+<indexSegment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

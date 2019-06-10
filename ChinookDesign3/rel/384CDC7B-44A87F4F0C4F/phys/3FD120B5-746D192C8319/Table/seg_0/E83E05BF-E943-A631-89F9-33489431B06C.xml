@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="INVOICE" directorySegmentName="seg_0" id="E83E05BF-E943-A631-89F9-33489431B06C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4AE513B8-E6F2-8F8D-0738-0A5408C1161E</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="INVOICEDATE" id="0C18B662-FAC8-3C2A-2C3C-1A0400850B79">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BILLINGCITY" id="1E5FD71E-E93D-7CF7-1C31-198BBCEE1DB0">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INVOICEID" id="5FFD2230-A2A8-7ABD-FE2A-4919E8B0A80A">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BILLINGCOUNTRY" id="93362CA0-C686-F4E1-8E80-9280A11D8E66">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMERID" id="985D9290-3358-9DAB-BD91-E42D8606C804">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BILLINGSTATE" id="E2A5F0C5-F80F-E630-4F80-B4BB0F926F53">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TOTAL" id="E41F4284-CEA2-694B-8FD6-D4D2EDBFCB52">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BILLINGADDRESS" id="EBD2E02D-CBDD-E3FF-590B-8275A831B42E">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BILLINGPOSTALCODE" id="FE714BBD-7496-F72F-4A6B-F4BD42CB4433">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_INVOICE" id="D685B051-6114-4B43-5581-34B24F201B2E">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:04 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_INVOICECUSTOMERID" id="11E8DAC3-0076-43F3-347D-468E5C7561CC">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_INVOICE" id="93DFA73F-E492-CF71-B2C5-E59F8559D536">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:06 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<existingIndex>D685B051-6114-4B43-5581-34B24F201B2E</existingIndex>
+<indexSegment>2A17211A-7A49-EE82-2149-497DDC94BDB3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

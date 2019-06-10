@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="68D535D8-0C48-0232-ABA1-08BB0DF140D6" containerWithKeyObject="C5EB2D48-7A8B-0CD5-A26F-D70D7EE3506C" localFKIndex="AFFED8E0-9C8E-A7C1-8A1C-43AC7925BD2D" name="FK_PLAYLISTTRACKTRACKID">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>FK_PLAYLISTTRACKTRACKID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<referredTableLongName>CHINOOK.TRACK</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>53770F89-B87B-8112-A47C-DD96507B3402</referredTableID>
+<keyObject>AD8D619C-BC7F-2098-BD31-C76C032D53B7</keyObject>
+<referredKeyID>AD8D619C-BC7F-2098-BD31-C76C032D53B7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>TRACKID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

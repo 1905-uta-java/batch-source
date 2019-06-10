@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PLAYLIST" directorySegmentName="seg_0" id="B05D521D-9A06-E1F1-4C50-B82D262D9CF2">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:40 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<schemaObject>F98F62DF-7D04-8051-9FD1-DC97219669ED</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>15D6E6D1-A010-7E8D-4EBC-46A1F9FA8A95</segment>
+<tableSpace>CA2DC7C6-905A-FB7F-A8DE-AB34BEECDFB8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PLAYLISTID" id="2176C01F-ABE6-5F00-1C57-8DF4BF70F0DB">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:42 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="C3BE6293-7A36-0170-79AF-8630391C95B9">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:42 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_PLAYLIST" id="890C5EF9-52C5-9CCA-EE72-FA93403BF482">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:43 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<schemaObject>F98F62DF-7D04-8051-9FD1-DC97219669ED</schemaObject>
+<segment>43CB90CF-A8E8-5F2B-1BEA-377BDE806B3B</segment>
+<tableSpace>CA2DC7C6-905A-FB7F-A8DE-AB34BEECDFB8</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_PLAYLIST" id="DBF81224-0E1F-72DD-C468-888E5E71441B">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:45 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<segment>43CB90CF-A8E8-5F2B-1BEA-377BDE806B3B</segment>
+<tableSpace>CA2DC7C6-905A-FB7F-A8DE-AB34BEECDFB8</tableSpace>
+<existingIndex>890C5EF9-52C5-9CCA-EE72-FA93403BF482</existingIndex>
+<indexSegment>43CB90CF-A8E8-5F2B-1BEA-377BDE806B3B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

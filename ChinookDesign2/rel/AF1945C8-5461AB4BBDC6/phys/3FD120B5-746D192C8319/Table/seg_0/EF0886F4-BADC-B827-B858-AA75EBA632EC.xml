@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="INVOICELINE" directorySegmentName="seg_0" id="EF0886F4-BADC-B827-B858-AA75EBA632EC">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:55 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C727A131-6AB1-FDB6-D74B-7CEFF898561C</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="UNITPRICE" id="13A7E893-A486-F6BB-857D-033EBDF46FAB">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INVOICELINEID" id="22364151-5A2C-C103-6207-68447B81F3E6">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRACKID" id="833E959E-B40C-9547-7573-056347FC8046">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INVOICEID" id="95499010-197A-EC9D-D728-D82CA8589369">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="QUANTITY" id="ACD2C6A1-E216-02FE-B1FA-C62AD8E91456">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:56 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_INVOICELINE" id="FC9FCCEC-1768-5F8F-1D07-4A130A71F06F">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:04:59 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<schemaObject>F69D71B5-31DC-C4EC-7838-B35EB10CCA0D</schemaObject>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_INVOICELINETRACKID" id="47CCCEA5-DD18-10EA-37A6-E379ECC6659F">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_INVOICELINEINVOICEID" id="EC28CBA9-349E-E8A3-6089-29C6027EB264">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:01 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_INVOICELINE" id="DE448A9B-9FC0-FF7E-B852-6F90DC18611C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-06 19:05:00 UTC</createdTime>
+<ownerDesignName>ChinookDesign2</ownerDesignName>
+<segment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</segment>
+<tableSpace>AF65C7B7-A6DF-1D8F-8901-2530E4641327</tableSpace>
+<existingIndex>FC9FCCEC-1768-5F8F-1D07-4A130A71F06F</existingIndex>
+<indexSegment>69CAE1D4-7F0E-5CBA-D4A2-FB7987B92E9A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

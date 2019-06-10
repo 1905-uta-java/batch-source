@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C23ADABF-8571-FDED-E890-75E8E6C45904" schemaObject="F98F62DF-7D04-8051-9FD1-DC97219669ED" name="ALBUM">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>ALBUM</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:40 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ALBUMID" id="495DD44F-6517-CFBF-92F2-3BE2E6EF60EA">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>ALBUM</sourceObjSchema>
+<sourceObjName>ALBUMID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:41 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TITLE" id="1B2EAFD4-3E81-E498-A28F-D5EDDAB43952">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>ALBUM</sourceObjSchema>
+<sourceObjName>TITLE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:41 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>160 BYTE</dataTypeSize>
+<ownDataTypeParameters>160 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARTISTID" id="2D210E04-728D-D093-E109-464C0EAFC671">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>ALBUM</sourceObjSchema>
+<sourceObjName>ARTISTID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:41 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32CF9747-80C1-96A3-1623-EE952CE646A6" referredColumn="8229B885-71CA-FC0E-03B0-B6BEC753A434"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0A85E695-EDE7-81A0-D32E-8AC062A64D6B" name="PK_ALBUM">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ALBUM</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:44 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="495DD44F-6517-CFBF-92F2-3BE2E6EF60EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8FDCCB2-9D18-A1C6-20C5-C1A421C9DD26" schemaObject="F98F62DF-7D04-8051-9FD1-DC97219669ED" name="PK_ALBUM">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ALBUM</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:42 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="495DD44F-6517-CFBF-92F2-3BE2E6EF60EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FA0D077-E329-FC9F-C6C7-898AEC59751F" name="FK_ALBUMARTISTID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:46 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D210E04-728D-D093-E109-464C0EAFC671"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

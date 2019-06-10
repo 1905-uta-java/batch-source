@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D83E2374-3274-69EB-3086-19EE8F1BEECD" schemaObject="10634585-11D4-92BD-34CA-41AD0675DC2B" name="BANKING_INFO">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>BANKING_INFO</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACCOUNT_ID" id="9EE50525-8BE3-E656-4160-B3ED42FD3353">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>BANKING_INFO</sourceObjSchema>
+<sourceObjName>ACCOUNT_ID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,15,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BALANCE" id="FD878904-BD66-9C24-0071-23B76E6DF17E">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>BANKING_INFO</sourceObjSchema>
+<sourceObjName>BALANCE</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,15,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="58A0FADF-DCEF-2218-9BE1-9350A508F656" name="PK_BANKING_INFO">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_BANKING_INFO</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:52 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EE50525-8BE3-E656-4160-B3ED42FD3353"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E0E5F80-B0DF-1FCA-03A8-321DCB1F376C" schemaObject="10634585-11D4-92BD-34CA-41AD0675DC2B" name="PK_BANKING_INFO">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_BANKING_INFO</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EE50525-8BE3-E656-4160-B3ED42FD3353"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

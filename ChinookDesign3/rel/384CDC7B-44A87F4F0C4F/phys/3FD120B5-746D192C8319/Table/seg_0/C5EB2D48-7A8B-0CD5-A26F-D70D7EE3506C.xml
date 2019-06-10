@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PLAYLISTTRACK" directorySegmentName="seg_0" id="C5EB2D48-7A8B-0CD5-A26F-D70D7EE3506C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:02 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4AE513B8-E6F2-8F8D-0738-0A5408C1161E</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PLAYLISTID" id="6C3DDD17-C70E-ED8B-A18D-61442A5EA02C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TRACKID" id="9661524F-B47F-CA8F-9C12-F3E1954F42BC">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:03 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_PLAYLISTTRACK" id="E628950E-61A0-E50A-912E-9A3B719148AD">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:05 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<schemaObject>09A25B1A-CD36-D9F5-AA01-E669B1FCFA57</schemaObject>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PLAYLISTTRACKPLAYLISTID" id="0094B120-638A-3519-2B67-69E6AF077939">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PLAYLISTTRACKTRACKID" id="AFFED8E0-9C8E-A7C1-8A1C-43AC7925BD2D">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:08 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_PLAYLISTTRACK" id="14E9CCEE-B171-5AFE-F967-6FBF6D5E38AB">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-07 01:34:07 UTC</createdTime>
+<ownerDesignName>ChinookDesign3</ownerDesignName>
+<segment>2A17211A-7A49-EE82-2149-497DDC94BDB3</segment>
+<tableSpace>7A9DC6D0-4D72-4A6D-CD6A-3500387C973D</tableSpace>
+<existingIndex>E628950E-61A0-E50A-912E-9A3B719148AD</existingIndex>
+<indexSegment>2A17211A-7A49-EE82-2149-497DDC94BDB3</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

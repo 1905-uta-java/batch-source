@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="86A048FE-6949-364B-BF29-D7B6046AF340" schemaObject="10634585-11D4-92BD-34CA-41AD0675DC2B" name="USER_ACCOUNTS">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>USER_ACCOUNTS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USERNAME" id="A258C8B4-20C5-BB04-02D2-2D97A0AEB8AC">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>USER_ACCOUNTS</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD" id="8DE908A7-76FA-14A0-3EDB-C96B8CE94BD3">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>USER_ACCOUNTS</sourceObjSchema>
+<sourceObjName>PASSWORD</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_ID" id="B2ECC83E-F7D3-11E3-255B-12B22A49D9E2">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>USER_ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNT_ID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,15,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEE6BBCF-1086-510F-416F-AEAE6E61D830" referredColumn="9EE50525-8BE3-E656-4160-B3ED42FD3353"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42B9B6ED-1448-6045-9F6E-3ADB5676E4A0" name="PK_USER_ACCOUNTS">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_USER_ACCOUNTS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:52 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A258C8B4-20C5-BB04-02D2-2D97A0AEB8AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A7B2B16-CF53-2220-C016-ECB1D325CC18" schemaObject="10634585-11D4-92BD-34CA-41AD0675DC2B" name="PK_USER_ACCOUNTS">
+<sourceConnName>Project Zero Connection</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_USER_ACCOUNTS</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A258C8B4-20C5-BB04-02D2-2D97A0AEB8AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8912492D-72EC-0528-D56C-B1EF6936B6D2" name="FK_BANKING_INFO">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:52 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2ECC83E-F7D3-11E3-255B-12B22A49D9E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

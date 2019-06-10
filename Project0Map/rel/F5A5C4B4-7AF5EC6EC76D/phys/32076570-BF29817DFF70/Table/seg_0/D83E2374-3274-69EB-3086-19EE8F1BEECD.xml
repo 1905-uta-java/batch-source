@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="BANKING_INFO" directorySegmentName="seg_0" id="D83E2374-3274-69EB-3086-19EE8F1BEECD">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<schemaObject>10634585-11D4-92BD-34CA-41AD0675DC2B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>64558732-52F8-77B9-5D4F-BA3FB7C2F84B</segment>
+<tableSpace>80DA4667-AB89-17B9-198E-060492D5EC07</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACCOUNT_ID" id="9EE50525-8BE3-E656-4160-B3ED42FD3353">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BALANCE" id="FD878904-BD66-9C24-0071-23B76E6DF17E">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_BANKING_INFO" id="0E0E5F80-B0DF-1FCA-03A8-321DCB1F376C">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:51 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<schemaObject>10634585-11D4-92BD-34CA-41AD0675DC2B</schemaObject>
+<segment>F9F72938-7086-C710-85F4-5FCA870A7587</segment>
+<tableSpace>80DA4667-AB89-17B9-198E-060492D5EC07</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_BANKING_INFO" id="58A0FADF-DCEF-2218-9BE1-9350A508F656">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-10 01:59:52 UTC</createdTime>
+<ownerDesignName>Project0Map</ownerDesignName>
+<segment>F9F72938-7086-C710-85F4-5FCA870A7587</segment>
+<tableSpace>80DA4667-AB89-17B9-198E-060492D5EC07</tableSpace>
+<existingIndex>0E0E5F80-B0DF-1FCA-03A8-321DCB1F376C</existingIndex>
+<indexSegment>F9F72938-7086-C710-85F4-5FCA870A7587</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

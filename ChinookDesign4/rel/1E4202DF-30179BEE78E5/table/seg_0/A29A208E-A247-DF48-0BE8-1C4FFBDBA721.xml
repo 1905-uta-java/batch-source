@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A29A208E-A247-DF48-0BE8-1C4FFBDBA721" schemaObject="F98F62DF-7D04-8051-9FD1-DC97219669ED" name="PLAYLISTTRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PLAYLISTTRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:40 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PLAYLISTID" id="62B991FD-3BD4-2ED1-DE01-62B36931D29E">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>PLAYLISTTRACK</sourceObjSchema>
+<sourceObjName>PLAYLISTID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:42 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C1E25515-E83C-43BE-19F2-ECC7B3C9F13E" referredColumn="2176C01F-ABE6-5F00-1C57-8DF4BF70F0DB"/>
+</associations>
+</Column>
+<Column name="TRACKID" id="890AC0DF-854C-3B55-E388-8DD3ECA2BC25">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>PLAYLISTTRACK</sourceObjSchema>
+<sourceObjName>TRACKID</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:42 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A098A48-3A77-6964-043B-A518946ED6B3" referredColumn="F8E8EE3A-9D73-EE59-31F6-06E717ECAC5C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4DB0EC32-BCE0-24D4-7294-1F82DB9866C9" name="PK_PLAYLISTTRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_PLAYLISTTRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:45 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62B991FD-3BD4-2ED1-DE01-62B36931D29E"/>
+<colUsage columnID="890AC0DF-854C-3B55-E388-8DD3ECA2BC25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8175C191-5008-59AB-98C2-A8F3FAB0F4FE" schemaObject="F98F62DF-7D04-8051-9FD1-DC97219669ED" name="PK_PLAYLISTTRACK">
+<sourceConnName>ChinookConnection</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_PLAYLISTTRACK</sourceObjName>
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:43 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62B991FD-3BD4-2ED1-DE01-62B36931D29E"/>
+<colUsage columnID="890AC0DF-854C-3B55-E388-8DD3ECA2BC25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D700FBE1-1358-EA63-CF1F-FCB739050E40" name="FK_PLAYLISTTRACKPLAYLISTID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:46 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62B991FD-3BD4-2ED1-DE01-62B36931D29E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E0B1885-24BF-B277-3618-429F698E7880" name="FK_PLAYLISTTRACKTRACKID">
+<createdBy>admin</createdBy>
+<createdTime>2019-06-09 22:24:46 UTC</createdTime>
+<ownerDesignName>ChinookDesign4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="890AC0DF-854C-3B55-E388-8DD3ECA2BC25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
