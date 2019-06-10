@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C78EFABA-B17B-3745-BC32-19D93721423D" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="ARTIST">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>ARTIST</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:19 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ARTISTID" id="6D9410E1-09F0-1805-AA56-6CD790673462">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>ARTIST</sourceObjSchema>
+<sourceObjName>ARTISTID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:20 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="61BEA293-67BD-0849-9D2B-4E02EF8517B4">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>ARTIST</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:20 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120 BYTE</dataTypeSize>
+<ownDataTypeParameters>120 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFEAB426-467C-AC0A-82A5-4608D6B81401" name="PK_ARTIST">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ARTIST</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:22 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D9410E1-09F0-1805-AA56-6CD790673462"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90D7557D-C700-3DFD-B6C6-5C121A266811" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="PK_ARTIST">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_ARTIST</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D9410E1-09F0-1805-AA56-6CD790673462"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

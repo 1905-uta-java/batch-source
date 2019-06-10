@@ -1,0 +1,186 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="41B33DB0-D924-FFBC-95F6-39691D5F9EB6" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="INVOICE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>INVOICE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:20 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INVOICEID" id="4AF6B564-B2C6-F2E7-345C-6025D0298B1B">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>INVOICEID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMERID" id="6DDDD9D0-EB5A-47C1-135C-08EBB1BCB579">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>CUSTOMERID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD0C38C9-1F0F-3422-96D5-98E20C0B69A0" referredColumn="F51BAB2E-7AC8-C841-F839-173ECCE72872"/>
+</associations>
+</Column>
+<Column name="INVOICEDATE" id="3D8BF2C7-72A9-6787-D330-89A187BA789E">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>INVOICEDATE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGADDRESS" id="DF573DE6-CC06-79E0-7489-E07ADD44D1BC">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGADDRESS</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 BYTE</dataTypeSize>
+<ownDataTypeParameters>70 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGCITY" id="5628D989-8F85-A460-253F-8D259CA5BFD2">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGCITY</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGSTATE" id="CB8D9C2E-7EDA-2C6B-FA32-BC6A5AD23E65">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGSTATE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGCOUNTRY" id="CC436D07-86A3-23B1-519B-F8481A79A7D5">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGCOUNTRY</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BILLINGPOSTALCODE" id="1A86D080-6CE2-64AC-03DB-89605A156545">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>BILLINGPOSTALCODE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL" id="A27F915F-9AE0-13A3-88F1-22C3959853A6">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>INVOICE</sourceObjSchema>
+<sourceObjName>TOTAL</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0286C4AE-414B-E46A-9976-F6754F38AA60" name="PK_INVOICE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_INVOICE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:23 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AF6B564-B2C6-F2E7-345C-6025D0298B1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C21C76C-1CFB-B13A-2BC2-3B9FE0FC2860" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="PK_INVOICE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_INVOICE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:22 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4AF6B564-B2C6-F2E7-345C-6025D0298B1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C2E5915B-50D8-E8A0-3328-03D6562D99A3" name="FK_INVOICECUSTOMERID">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:24 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DDDD9D0-EB5A-47C1-135C-08EBB1BCB579"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

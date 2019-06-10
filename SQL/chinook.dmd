@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="chinook" id="8116705F-B137-BBBF-6316-D61476F6C2A2" version="3.5">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:27:02 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>8116705F-B137-BBBF-6316-D61476F6C2A2</designId>
+</OSDM_Design>

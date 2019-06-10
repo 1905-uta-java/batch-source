@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B7DCB487-E224-B469-DC4F-271EB17905DB" containerWithKeyObject="88347324-646A-8718-D70D-4BBD46DEC303" localFKIndex="0E292CEA-1981-28D0-0B55-4462C5C03E29" name="FK_ALBUMARTISTID">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>FK_ALBUMARTISTID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:24 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<referredTableLongName>CHINOOK.ARTIST</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C78EFABA-B17B-3745-BC32-19D93721423D</referredTableID>
+<keyObject>BFEAB426-467C-AC0A-82A5-4608D6B81401</keyObject>
+<referredKeyID>BFEAB426-467C-AC0A-82A5-4608D6B81401</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ARTISTID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

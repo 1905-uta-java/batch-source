@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EEEA3DF8-1BBD-228D-5558-B47B3A8B6327" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="GENRE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>GENRE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:20 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GENREID" id="10D5A527-11E0-3C59-5925-C0F51AA50677">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>GENRE</sourceObjSchema>
+<sourceObjName>GENREID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="D61DFBC8-3C50-916E-25C5-A7E3F4D5B57B">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>GENRE</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120 BYTE</dataTypeSize>
+<ownDataTypeParameters>120 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F506273-7446-F263-5311-5D185D6295DB" name="PK_GENRE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_GENRE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:23 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10D5A527-11E0-3C59-5925-C0F51AA50677"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6D4E0DB2-5FDE-A259-1C54-2C0ADA5A6FDB" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="PK_GENRE">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_GENRE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10D5A527-11E0-3C59-5925-C0F51AA50677"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

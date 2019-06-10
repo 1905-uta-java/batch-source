@@ -1,0 +1,207 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB6AB1FB-818F-DF96-6FDD-43E3B7BF01AC" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="TRACK">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>TRACK</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:20 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TRACKID" id="4EC9BD5D-6200-6B4E-B1A1-195AD2A4464C">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>TRACKID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="07E900AB-4148-A54D-3CB1-B03F2D144E63">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALBUMID" id="814C8E1E-0C22-4AF4-FCD9-F6E167E0C7FC">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>ALBUMID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A720373-6E12-C90A-92AA-B34B0DE20B36" referredColumn="D13185BF-C5D5-CEB4-7A90-CF280CBB8DB5"/>
+</associations>
+</Column>
+<Column name="MEDIATYPEID" id="ED1002BB-1CCA-0BDB-8E2E-BFB657BCE9E4">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>MEDIATYPEID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BFD365BB-8332-F428-021D-232F6A36EA65" referredColumn="DA9A70CC-BD44-E21F-D116-7D150BBE37C1"/>
+</associations>
+</Column>
+<Column name="GENREID" id="05DDF142-7E48-CF62-C531-FE9B8860A79A">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>GENREID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C285CB38-312D-ECA2-7D80-F18082AFA083" referredColumn="10D5A527-11E0-3C59-5925-C0F51AA50677"/>
+</associations>
+</Column>
+<Column name="COMPOSER" id="587FA933-EE98-838D-9287-F2F7441D32E3">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>COMPOSER</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>220 BYTE</dataTypeSize>
+<ownDataTypeParameters>220 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MILLISECONDS" id="0B82E731-362D-F0C0-6E15-B0312181EA3A">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>MILLISECONDS</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BYTES" id="B5509DE9-14B1-AD32-BA9F-369ECCA2E01F">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>BYTES</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UNITPRICE" id="8E8812A7-A6CF-1674-B73E-6DFB9063B1FB">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>TRACK</sourceObjSchema>
+<sourceObjName>UNITPRICE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:21 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="90052C4F-3B15-CBA5-0DD6-387107E95346" name="PK_TRACK">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_TRACK</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:23 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EC9BD5D-6200-6B4E-B1A1-195AD2A4464C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC2EF18D-C61D-E37C-CD30-8EDC9EA254EE" schemaObject="4B1F054F-AFB0-5936-2B98-BD3EEA2BA2CD" name="PK_TRACK">
+<sourceConnName>basDB</sourceConnName>
+<sourceObjSchema>CHINOOK</sourceObjSchema>
+<sourceObjName>PK_TRACK</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:22 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EC9BD5D-6200-6B4E-B1A1-195AD2A4464C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B776515A-DCF2-66AF-6C06-49C1F708787E" name="FK_TRACKALBUMID">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:24 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="814C8E1E-0C22-4AF4-FCD9-F6E167E0C7FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34E3C4BE-652F-FB4C-21F4-95A2798C859A" name="FK_TRACKGENREID">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:24 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05DDF142-7E48-CF62-C531-FE9B8860A79A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5ABED40D-E4C5-215D-A052-A382D57C168C" name="FK_TRACKMEDIATYPEID">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-06 18:28:24 UTC</createdTime>
+<ownerDesignName>chinook</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED1002BB-1CCA-0BDB-8E2E-BFB657BCE9E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
