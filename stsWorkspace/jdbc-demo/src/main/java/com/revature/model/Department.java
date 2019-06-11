@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Department implements Serializable {
 	
+	private static final long serialVersionUID = 3848462898024013861L;
 	private int id;
 	private String name;
 	private double monthlyBudget;
