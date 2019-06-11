@@ -1,0 +1,47 @@
+HTML
+	Hyper Text Markup Language
+	Used to create web pages
+	Tags seperate elements and define structure of webpage
+	Similar to XML notation
+	Tags:
+		<doctype html>
+		<html>
+		<head> ... </head>
+			Defines Metadata
+			Page information not displayed on page (tab title, image, etc.)
+		<body> ... </body>
+			Defines what will be shown on the page
+			<h1> (header) </h1>
+			<p> (paragraph of text) </p>
+			<img url=... /> (image) (self closig, no inner information)
+			<ul> (unordered list) </ul> <l> (ordered list) </l>
+			<table> (visual table of data) </table>
+		</html>
+		Block vs Inline tags
+			Used to define some structure in HTML instead of CSS
+			Block will take up space normally on its own
+			Inline will share space with other inline tags
+			Can sometimes define which a tag is, however mostly covered in CSS
+		Other tags exist
+		Form tags
+			User input
+	Attributes:
+		Used along side tags to define information in addition to the normal tag's effects
+		src - normally image source
+		href - used to make text/images link to another page or file
+		alt - used on images to define what text to show if image cannot be shown
+		name
+		style
+CSS
+	Cascading Style Sheets
+	Adds positioning, sizing, recoloring to HTML
+	Inline CSS - STYLE attribute - Takes precidence over others if defined
+	Internal - <style> tag
+	External - Seperate CSS file referenced by HTML - Most common
+		SELECTOR PROPERTY VALUE
+		ex. h1 { fontsize 50px, }
+	More specific will be chosen over less specific if there are multiple CSS affecting HTML
+	Padding
+		Buffer of area which will be between an HTML item and its border
+	Margin
+		Buffer of area which will be around the border of an HTML item
