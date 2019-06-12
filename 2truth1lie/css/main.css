@@ -1,0 +1,78 @@
+body{
+    font-family: Helvetica, Ebrima, Arial, sans-serif;
+    background-color: papayawhip;
+}
+
+#lorem{
+    width: 75%;
+    margin: 30px auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#myFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+.centerText{
+    text-align: center;
+}
+
+#truthLieDiv{
+    text-align: center;
+}
+
+.tuthLieRadio{
+    display: none;
+}
+
+#beaLabel, #presLabel, #lonLabel{
+    cursor: pointer;
+    text-align: center;
+    display: table-cell;
+    padding: 10px;
+    background-color: rgb(238, 211, 167);
+    box-shadow: 0 0 8px #888888;
+}
+
+#lonDiv, #presDiv, #beaDiv{
+    height: 50px;
+    display:table;
+    width: 55%;
+    margin: 0 auto 10px;
+}
+
+#beaLabel, #presLabel, #lonLabel{
+    padding-top: 15px;
+    background: linear-gradient(to left, rgb(238, 211, 167) 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease;
+}
+
+input[type="radio"]:checked + #lonLabel, input[type="radio"]:checked + #presLabel{
+    background: linear-gradient(to left, rgb(13, 182, 13) 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease;
+}
+
+input[type="radio"]:checked + #beaLabel{
+    background: linear-gradient(to left, rgb(216, 12, 12) 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+
+    transition: all .3s ease;
+}
+
+
+
+#beaLabel:hover, #presLabel:hover, #lonLabel:hover{
+/*ul.tabmenu.formtab:hover*/
+  color: white;
+  background-position: 0 -100%;
+}
+
