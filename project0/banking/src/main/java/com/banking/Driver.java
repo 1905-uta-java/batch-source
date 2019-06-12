@@ -6,9 +6,16 @@ import com.banking.dao.UserDao;
 import com.banking.dao.UserDaoImpl;
 import com.banking.util.ConnectionUtil;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
+
 public class Driver {
+	final static Logger logger = Logger.getLogger(Driver.class);
 
 	public static void main(String[] args) {
+        BasicConfigurator.configure();
+
 		UserDao u = new UserDaoImpl();
 		int input = 0;
 		String username = "";
@@ -20,7 +27,7 @@ public class Driver {
 			System.out.print("Press 1 to log in. Press 2 to open an account. Press any other number to quit: ");
 			while (!sc.hasNextInt()) {
 				if (!sc.hasNextInt()) {
-					System.out.print("Please input a number only: ");
+					logger.error("Please input a number only: ");
 					sc.next();
 				}
 			}
@@ -36,7 +43,7 @@ public class Driver {
 
 				} catch (SQLException e) {
 					e.getMessage();
-					System.out.println("Wrong username or password");
+					logger.error("Wrong username or password");
 					System.out.println();
 					flag = false;
 				}
@@ -52,7 +59,7 @@ public class Driver {
 
 					while (!sc.hasNextInt()) {
 						if (!sc.hasNextInt()) {
-							System.out.print("Please input a number only: ");
+							logger.error("Please input a number only: ");
 							sc.next();
 						}
 					}
@@ -67,7 +74,7 @@ public class Driver {
 						System.out.print("Please enter the amount you wish to deposit: ");
 						while (!sc.hasNextInt()) {
 							if (!sc.hasNextInt()) {
-								System.out.print("Please input a number only: ");
+								logger.error("Please input a number only: ");
 								sc.next();
 							}
 						}
@@ -79,13 +86,13 @@ public class Driver {
 						System.out.print("Please enter the amount you wish to withdraw: ");
 						while (!sc.hasNextInt()) {
 							if (!sc.hasNextInt()) {
-								System.out.print("Please input a number only: ");
+								logger.error("Please input a number only: ");
 								sc.next();
 							}
 						}
 						input = sc.nextInt();
 						if (u.checkBalance_forWithdraw(username) - input < 0) {
-							System.out.println("You balance will be negative after the withdrawal");
+							logger.info("You balance will be negative after the withdrawal. Can't proceed.");
 							break;
 						}
 						u.withdraw(username, input);
@@ -106,7 +113,7 @@ public class Driver {
 					password = sc.next();
 
 					if (!u.isAvailable(username)) {
-						System.out.println("This username already exists");
+						logger.info("This username already exists");
 						System.out.println();
 					} else {
 						u.createUser(username, password);
