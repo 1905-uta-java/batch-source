@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="085BE4BA-83BA-C4D7-68CF-DCBB0545BB9A" schemaObject="EF600C91-990F-C060-6100-264032AC3FFB" name="ACCOUNTS">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>ACCOUNTS</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTOMERID" id="20355F39-C15D-FCC9-CB2D-B88DC8A6B653">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ACCOUNTS</sourceObjSchema>
+<sourceObjName>CUSTOMERID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="15A0D76B-B086-A937-BF14-06882AC8C7C7" referredColumn="52CB8006-61B9-8FF4-4D48-860FCAE6FB3B"/>
+</associations>
+</Column>
+<Column name="ACCOUNTNUM" id="594D4500-016E-2756-7A05-13EC61D194D7">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNTNUM</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNTTYPE" id="E3379177-AC8E-D4F5-1C6F-4A4FBCD4B545">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNTTYPE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNTBALANCE" id="F2BE664F-2CA0-00A2-9BBF-C48580F7EFA4">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNTBALANCE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7814DA36-87F7-0691-10EB-3EC53BECF9AE" name="ACCOUNTSFK">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:50 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="20355F39-C15D-FCC9-CB2D-B88DC8A6B653"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0BA0D63D-923A-46FD-FFF0-B95B3826270F" schemaObject="EF600C91-990F-C060-6100-264032AC3FFB" name="USERACCOUNT">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>USERACCOUNT</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USERID" id="259DC089-7AC9-8C52-0DE2-A6BEB476191D">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>USERACCOUNT</sourceObjSchema>
+<sourceObjName>USERID</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C33F41A-F29C-50B0-C9D1-88933F6B6F03" referredColumn="52CB8006-61B9-8FF4-4D48-860FCAE6FB3B"/>
+</associations>
+</Column>
+<Column name="USERNAME" id="5BCFB639-9C37-3713-34AE-71E76F0F074E">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>USERACCOUNT</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERPASS" id="E32A1F74-E2FC-DE48-8A5C-3F965F29DEC6">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>USERACCOUNT</sourceObjSchema>
+<sourceObjName>USERPASS</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF92B28B-0871-E14C-4639-140857029B0B" name="USERFK">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:50 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="259DC089-7AC9-8C52-0DE2-A6BEB476191D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

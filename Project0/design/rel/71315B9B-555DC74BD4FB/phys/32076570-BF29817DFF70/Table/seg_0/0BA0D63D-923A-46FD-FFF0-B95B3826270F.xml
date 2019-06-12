@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="USERACCOUNT" directorySegmentName="seg_0" id="0BA0D63D-923A-46FD-FFF0-B95B3826270F">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<schemaObject>EF600C91-990F-C060-6100-264032AC3FFB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EBA75F42-753E-C718-758D-7E02E1FE7458</segment>
+<tableSpace>85CFBC1B-96BE-41B0-D57F-8C604AA4A133</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="USERID" id="259DC089-7AC9-8C52-0DE2-A6BEB476191D">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERNAME" id="5BCFB639-9C37-3713-34AE-71E76F0F074E">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERPASS" id="E32A1F74-E2FC-DE48-8A5C-3F965F29DEC6">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="USERFK" id="FF92B28B-0871-E14C-4639-140857029B0B">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:50 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ACCOUNTS" directorySegmentName="seg_0" id="085BE4BA-83BA-C4D7-68CF-DCBB0545BB9A">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<schemaObject>EF600C91-990F-C060-6100-264032AC3FFB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EBA75F42-753E-C718-758D-7E02E1FE7458</segment>
+<tableSpace>85CFBC1B-96BE-41B0-D57F-8C604AA4A133</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CUSTOMERID" id="20355F39-C15D-FCC9-CB2D-B88DC8A6B653">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNTNUM" id="594D4500-016E-2756-7A05-13EC61D194D7">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNTTYPE" id="E3379177-AC8E-D4F5-1C6F-4A4FBCD4B545">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNTBALANCE" id="F2BE664F-2CA0-00A2-9BBF-C48580F7EFA4">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ACCOUNTSFK" id="7814DA36-87F7-0691-10EB-3EC53BECF9AE">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:50 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

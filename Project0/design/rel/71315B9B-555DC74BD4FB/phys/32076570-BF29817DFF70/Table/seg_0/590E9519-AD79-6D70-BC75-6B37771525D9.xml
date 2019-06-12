@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CUSTOMER" directorySegmentName="seg_0" id="590E9519-AD79-6D70-BC75-6B37771525D9">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<schemaObject>EF600C91-990F-C060-6100-264032AC3FFB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EBA75F42-753E-C718-758D-7E02E1FE7458</segment>
+<tableSpace>85CFBC1B-96BE-41B0-D57F-8C604AA4A133</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACCOUNTID" id="0227668A-91DD-8FAC-ACD3-ECE9F810CBCD">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="2B9991DD-5B3C-3455-9D1B-1B9EBD1D63BA">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LASTNAME" id="51A349CB-187E-56A2-1D39-5BC50DB22CAE">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CUSTOMERID" id="52CB8006-61B9-8FF4-4D48-860FCAE6FB3B">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SS" id="778AA350-9352-09C8-DA96-5B86683EA887">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BIRTHDATE" id="96846D1B-FF6C-8C7F-0BF0-88FADB0B1857">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FIRSTNAME" id="AD54F55E-1D37-D916-2BCF-4F36A817914A">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="CUSTOMERPK" id="F26E413D-F321-FD6B-23F1-EBE686838F11">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:49 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<schemaObject>EF600C91-990F-C060-6100-264032AC3FFB</schemaObject>
+<segment>A7C43461-1C87-01B6-4282-6733F1B3B315</segment>
+<tableSpace>85CFBC1B-96BE-41B0-D57F-8C604AA4A133</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CUSTOMERPK" id="48EA70F8-026E-7A86-2962-535B29FB278C">
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:49 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<segment>A7C43461-1C87-01B6-4282-6733F1B3B315</segment>
+<tableSpace>85CFBC1B-96BE-41B0-D57F-8C604AA4A133</tableSpace>
+<existingIndex>F26E413D-F321-FD6B-23F1-EBE686838F11</existingIndex>
+<indexSegment>A7C43461-1C87-01B6-4282-6733F1B3B315</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="540CAC7D-D4BA-CB4D-3D18-0E37E44F83D1" schemaObject="EF600C91-990F-C060-6100-264032AC3FFB" name="TRANSACTIONLOG">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>TRANSACTIONLOG</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACCOUNTNUM" id="FA61A5CB-D3FB-E243-8318-2EA8EACC2DE9">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>TRANSACTIONLOG</sourceObjSchema>
+<sourceObjName>ACCOUNTNUM</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSTYPE" id="F1645B8D-5F30-C9EE-2930-A05F5351B53C">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>TRANSACTIONLOG</sourceObjSchema>
+<sourceObjName>TRANSTYPE</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSTIME" id="C4F2BBF0-64B7-159B-9D45-7BB39D3805F6">
+<sourceConnName>project0</sourceConnName>
+<sourceObjSchema>TRANSACTIONLOG</sourceObjSchema>
+<sourceObjName>TRANSTIME</sourceObjName>
+<createdBy>keish</createdBy>
+<createdTime>2019-06-09 23:58:48 UTC</createdTime>
+<ownerDesignName>design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
