@@ -2,14 +2,12 @@ package com.revature.accountutil;
 
 import java.util.List;
 
-import com.revature.accountdao.AccountDaoImp;
 import com.revature.accountdao.UserDaoImp;
 import com.revature.accountmodel.User;
 
 // Used for validating input from the user
 public class ValidateUtil {
 	private UserDaoImp uDao = new UserDaoImp();
-	private AccountDaoImp aDao = new AccountDaoImp();
 	/*
 	 * These are methods to handle validating input
 	 *  - Make sure that the user has put in a valid password/username
@@ -64,6 +62,18 @@ public class ValidateUtil {
 			return true;
 		}
 		return false;
+	}
+	
+	// Make sure the user isn't injecting SQL
+	public boolean isSQL (String input) {
+		char[] arr = input.toCharArray();
+		boolean semiColon = false;
+		for (char c : arr) {
+			if(c == ';') {
+				semiColon = true;
+			}
+		}
+		return semiColon;
 	}
 	
 	// Try to parse the input into a pin value

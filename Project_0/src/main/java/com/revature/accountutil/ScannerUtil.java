@@ -73,6 +73,10 @@ public class ScannerUtil {
 				return null;
 			}
 			
+			if(validate.isSQL(input)) {
+				System.out.println("Error: ';' is an invalid character");
+			}
+			
 			if(validate.isUsername(input)) {
 				uName = input;
 			} else {
@@ -84,6 +88,10 @@ public class ScannerUtil {
 			input = sc.nextLine();
 			if(input.toUpperCase().equals("EXIT")) {
 				return null;
+			}
+			
+			if(validate.isSQL(input)) {
+				System.out.println("Error: ';' is an invalid character");
 			}
 			
 			if(validate.correctPass(input, uName)) {
@@ -112,6 +120,10 @@ public class ScannerUtil {
 				return null;
 			}
 			
+			if(validate.isSQL(input)) {
+				System.out.println("Error: ';' is an invalid character");
+			}
+			
 			if(!validate.isUsername(input) && input != "") {
 				uName = input;
 				newName = true;
@@ -125,6 +137,10 @@ public class ScannerUtil {
 			input = sc.nextLine();
 			if(input.toUpperCase().equals("EXIT")) {
 				return null;
+			}
+			
+			if(validate.isSQL(input)) {
+				System.out.println("Error: ';' is an invalid character");
 			}
 			
 			if(validate.isPassword(input)) {
@@ -141,6 +157,10 @@ public class ScannerUtil {
 				return null;
 			}
 	
+			if(validate.isSQL(input)) {
+				System.out.println("Error: ';' is an invalid character");
+			}
+			
 			if(validate.isEmail(input)) {
 				eMail = input;
 			} else {
