@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 2 Truths and a Lie</title>
+    <style>
+    .page{
+        text-align:center;
+        padding: 4px;
+        background-color:linen;
+    }
+    .classsel {
+        margin: 0 auto 1em;
+        align-content: center;
+        text-align:center;
+        width: 45%;
+        border: 5px;
+        padding: 5px;
+        background-color:lightblue;
+        border-radius:5px;
+    }
+    </style>
+</head>
+<body class="page">
+    <h2> 2 Truths and a Lie </h2>
+    <div class="classsel" id="tru1"> 
+        <p>As a hobby, I paint plastic minatures.</p>
+    </div>
+    <div class="classsel" id="tru2"> 
+        <p>My degree was in Computer Science and Engineering.</p>
+    </div>
+    <div class="classsel" id="tru3"> 
+        <p>My first name is short for Wolfgang.</p>
+    </div>
+            
+
+    <script>
+        function tru1call()
+        {
+            document.getElementById("tru1").style.backgroundColor = "green";
+            document.getElementById("tru1").textContent = "It is true that I paint plastic miniatures as a hobby."
+        }
+
+        function tru2call()
+        {
+            document.getElementById("tru2").style.backgroundColor = "green";
+            document.getElementById("tru2").textContent = "It is true that my degree was in Computer Science and Engineering."
+        }
+
+        function tru3call()
+        {
+            document.getElementById("tru3").style.backgroundColor = "red";
+            document.getElementById("tru3").textContent = "It is not true that my first name is short for Wolfgang."
+        }
+
+        document.getElementById("tru1").addEventListener("click", tru1call);
+        document.getElementById("tru2").addEventListener("click", tru2call);
+        document.getElementById("tru3").addEventListener("click", tru3call);        
+    </script>
+</body>
+</html>
+
+
+
