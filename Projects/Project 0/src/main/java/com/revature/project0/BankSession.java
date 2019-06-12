@@ -76,7 +76,7 @@ public class BankSession {
 				System.out.println();
 				
 				if("c".equals(username)) {
-					System.out.println("Account Creation Canceled");
+					System.out.println("Account Creation Cancelled");
 					return;
 				}
 				
@@ -94,7 +94,7 @@ public class BankSession {
 					System.out.println();
 					
 					if("c".equals(username)) {
-						System.out.println("Account Creation Canceled");
+						System.out.println("Account Creation Cancelled");
 						return;
 					}
 				}
@@ -106,7 +106,7 @@ public class BankSession {
 				System.out.println();
 				
 				if("c".equals(email)) {
-					System.out.println("Account Creation Canceled");
+					System.out.println("Account Creation Cancelled");
 					return;
 				}
 				
@@ -124,7 +124,7 @@ public class BankSession {
 					System.out.println();
 					
 					if("c".equals(email)) {
-						System.out.println("Account Creation Canceled");
+						System.out.println("Account Creation Cancelled");
 						return;
 					}
 				}
@@ -136,7 +136,7 @@ public class BankSession {
 				System.out.println();
 				
 				if("c".equals(password)) {
-					System.out.println("Account Creation Canceled");
+					System.out.println("Account Creation Cancelled");
 					return;
 				}
 				
@@ -155,7 +155,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("x".equals(command)) {
@@ -170,7 +170,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else {
@@ -218,13 +218,13 @@ public class BankSession {
 				} else {
 					
 					System.out.println("Can't access that account or account doesn't exist");
-					System.out.println("Command Canceled");
+					System.out.println("Command Cancelled");
 				}
 				
 			} catch(NumberFormatException e) {
 				
 				System.out.println("Invalid accountID: \'" + accountIDString + "\'");
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("c".equals(command)) {
@@ -239,7 +239,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("l".equals(command)) {
@@ -254,7 +254,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("x".equals(command)) {
@@ -269,7 +269,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("close".equals(command)) {
@@ -314,7 +314,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else {
@@ -355,7 +355,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("s".equals(input)) {
@@ -370,7 +370,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("x".equals(input)) {
@@ -385,7 +385,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("d".equals(input)) {
@@ -398,23 +398,31 @@ public class BankSession {
 				
 				double amount = Double.parseDouble(amountText);
 				
-				System.out.print("Desposit $" + amount + " into account #" + dao.getCurrentAccount() + "? (y to confirm): ");
-				
-				String confirm = sc.nextLine();
-				
-				if("y".equals(confirm)) {
+				if(amount <= 0) {
 					
-					dao.depositAmount(amount);
+					System.out.println("The ammount must be a non-zero positive value");
+					System.out.println("Command Cancelled");
 					
 				} else {
 					
-					System.out.println("Command Canceled");
+					System.out.print("Desposit $" + amount + " into account #" + dao.getCurrentAccount() + "? (y to confirm): ");
+					
+					String confirm = sc.nextLine();
+					
+					if("y".equals(confirm)) {
+						
+						dao.depositAmount(amount);
+						
+					} else {
+						
+						System.out.println("Command Cancelled");
+					}
 				}
 				
 			} catch(NumberFormatException e) {
 				
 				System.out.println("Invalid amount: \'" + amountText + "\'");
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("w".equals(input)) {
@@ -427,30 +435,38 @@ public class BankSession {
 				
 				double amount = Double.parseDouble(amountText);
 				
-				if(dao.getBalance() < amount) {
+				if(amount <= 0) {
 					
-					System.out.println("Can't withdraw more than the balance");
-					System.out.println("Command Canceled");
+					System.out.println("The ammount must be a non-zero positive value");
+					System.out.println("Command Cancelled");
 					
 				} else {
-				
-					System.out.print("Withdraw $" + amount + " from account #" + dao.getCurrentAccount() + "? (y to confirm): ");
 					
-					String confirm = sc.nextLine();
-					
-					if("y".equals(confirm)) {
+					if(dao.getBalance() < amount) {
 						
-						dao.withdrawAmount(amount);
+						System.out.println("Can't withdraw more than the balance");
+						System.out.println("Command Cancelled");
 						
 					} else {
+					
+						System.out.print("Withdraw $" + amount + " from account #" + dao.getCurrentAccount() + "? (y to confirm): ");
 						
-						System.out.println("Command Canceled");
+						String confirm = sc.nextLine();
+						
+						if("y".equals(confirm)) {
+							
+							dao.withdrawAmount(amount);
+							
+						} else {
+							
+							System.out.println("Command Cancelled");
+						}
 					}
 				}
 			} catch(NumberFormatException e) {
 				
 				System.out.println("Invalid amount: \'" + amountText + "\'");
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("t".equals(input)) {
@@ -463,51 +479,59 @@ public class BankSession {
 				
 				double amount = Double.parseDouble(amountText);
 				
-				if(dao.getBalance() < amount) {
+				if(amount <= 0) {
 					
-					System.out.println("Can't transfer more than the balance out of the current account");
+					System.out.println("The ammount must be a non-zero positive value");
+					System.out.println("Command Cancelled");
 					
 				} else {
-					
-					System.out.print("Account to transfer to: ");
-					
-					String accountIDText = sc.nextLine();
-					
-					try {
+				
+					if(dao.getBalance() < amount) {
 						
-						int accountID = Integer.parseInt(accountIDText);
+						System.out.println("Can't transfer more than the balance out of the current account");
 						
-						if(dao.canUserAccessAccount(accountID)) {
+					} else {
+					
+						System.out.print("Account to transfer to: ");
+						
+						String accountIDText = sc.nextLine();
+						
+						try {
 							
-							System.out.print("Transfer $" + amount + " from account #" + dao.getCurrentAccount() + " to account #" + accountID + "? (y to confirm): ");
+							int accountID = Integer.parseInt(accountIDText);
 							
-							String confirm = sc.nextLine();
-							
-							if("y".equals(confirm)) {
+							if(dao.canUserAccessAccount(accountID)) {
 								
-								dao.transferAmount(accountID, amount);
+								System.out.print("Transfer $" + amount + " from account #" + dao.getCurrentAccount() + " to account #" + accountID + "? (y to confirm): ");
+								
+								String confirm = sc.nextLine();
+								
+								if("y".equals(confirm)) {
+									
+									dao.transferAmount(accountID, amount);
+									
+								} else {
+									
+									System.out.println("Command Cancelled");
+								}
 								
 							} else {
 								
-								System.out.println("Command Canceled");
+								System.out.println("You don't have access to account #" + accountID + " if it exists");
+								System.out.println("Command Cancelled");
 							}
 							
-						} else {
+						} catch(NumberFormatException e) {
 							
-							System.out.println("You don't have access to account #" + accountID + " if it exists");
-							System.out.println("Command Canceled");
+							System.out.println("Invalid account#: \'" + accountIDText + "\'");
+							System.out.println("Command Cancelled");
 						}
-						
-					} catch(NumberFormatException e) {
-						
-						System.out.println("Invalid account#: \'" + accountIDText + "\'");
-						System.out.println("Command Canceled");
 					}
 				}
 			} catch(NumberFormatException e) {
 				
 				System.out.println("Invalid amount: \'" + amountText + "\'");
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("h".equals(input)) {
@@ -535,7 +559,7 @@ public class BankSession {
 			
 			if("c".equals(altUsername)) {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 				
 			} else if(dao.userExists(altUsername)) {
 				
@@ -546,12 +570,12 @@ public class BankSession {
 			} else {
 				
 				System.out.println("Invalid username: \'" + altUsername + "\'");
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else if("del".equals(input)) {
 			
-			System.out.print("Delete accoutn #" + dao.getCurrentAccount() + "? (y to confirm): ");
+			System.out.print("Delete account #" + dao.getCurrentAccount() + "? (y to confirm): ");
 			
 			String confirm = sc.nextLine();
 			
@@ -573,7 +597,7 @@ public class BankSession {
 				
 			} else {
 				
-				System.out.println("Command Canceled");
+				System.out.println("Command Cancelled");
 			}
 			
 		} else {
