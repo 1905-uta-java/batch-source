@@ -9,6 +9,8 @@ public interface UserDao {
 	public int deposit(String name, double amount);
 
 	public int withdraw(String name, double amount);
+	
+	public int transfer(String name, double amount);
 
 	public double checkBalance(String name);
 

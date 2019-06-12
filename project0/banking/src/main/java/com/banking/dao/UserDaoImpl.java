@@ -95,7 +95,22 @@ public class UserDaoImpl implements UserDao {
 		}
 		return rowsAffected;
 	}
-
+	
+	@Override
+	public int transfer(String name, double amount) {
+		int rowsAffected = 0;
+		String deposit = "UPDATE MANTU." + name + "_info SET BALANCE = BALANCE + " + amount + " WHERE USERNAME = ?";
+		try (Connection con = ConnectionUtil.getHardCodedConnection();
+				PreparedStatement ps = con.prepareStatement(deposit)) {
+			ps.setString(1, name);
+			rowsAffected = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+	
+	
 	@Override
 	public double checkBalance_forDeposit(String name) {
 		double balance = 0.0;
@@ -113,6 +128,7 @@ public class UserDaoImpl implements UserDao {
 		}
 		return balance;
 	}
+	
 
 	@Override
 	public int withdraw(String name, double amount) {

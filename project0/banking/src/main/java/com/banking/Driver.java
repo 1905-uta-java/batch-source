@@ -82,6 +82,7 @@ public class Driver {
 						u.deposit(username, input);
 						System.out.println();
 						break;
+						
 					case 3:
 						System.out.print("Please enter the amount you wish to withdraw: ");
 						while (!sc.hasNextInt()) {
@@ -97,10 +98,37 @@ public class Driver {
 						}
 						u.withdraw(username, input);
 						break;
-
+					
+					case 4:
+						System.out.print("Please enter the receiver's username: ");
+						String uname = sc.next();
+						if (u.isAvailable(uname)) {
+							logger.info("This user doesn't exist");
+							System.out.println();
+							break;
+						} else {
+							System.out.print("Please enter the amount you wish to withdraw: ");
+							while (!sc.hasNextInt()) {
+								if (!sc.hasNextInt()) {
+									logger.error("Please input a number only: ");
+									sc.next();
+								}
+							}
+							input = sc.nextInt();
+							if (u.checkBalance_forWithdraw(username) - input < 0) {
+								logger.info("You balance will be negative after the withdrawal. Can't proceed.");
+								break;
+							}
+							u.withdraw(username, input);
+							u.transfer(uname, input);
+							System.out.println();
+							break;
+						}
 					case 5:
 						flag = false;
 						break;
+					default: 
+						flag = true;
 					}
 
 				}
