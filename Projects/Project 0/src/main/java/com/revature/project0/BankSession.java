@@ -3,6 +3,8 @@ package com.revature.project0;
 import java.util.List;
 import java.util.Scanner;
 
+import com.revature.project0.util.MathUtil;
+
 public class BankSession {
 	
 	private BankSessionDao dao;
@@ -291,9 +293,18 @@ public class BankSession {
 						dao.setCurrentAccount(account);
 						
 						double remainingBalance = dao.getBalance();
-						dao.withdrawAmount(remainingBalance);
+						System.out.print("Account #" + account + " was closed.");
+						if(!MathUtil.approxEqual(remainingBalance, 0)) {
+
+							dao.withdrawAmount(remainingBalance);
+							System.out.println( "the remainging $" + remainingBalance + " balance was withdrawn before closing.");
+							
+						} else {
+							
+							System.out.println();
+						}
+						
 						dao.deleteAccount();
-						System.out.println("Account #" + account + " was closed. the remainging $" + remainingBalance + " balance was withdrawn before closing.");
 						System.out.println();
 					}
 				}
@@ -549,9 +560,16 @@ public class BankSession {
 				int accountID = dao.getCurrentAccount();
 				
 				double remainingBalance = dao.getBalance();
-				dao.withdrawAmount(remainingBalance);
+				
+				System.out.print("Account #" + accountID + " was closed.");
+				if(!MathUtil.approxEqual(remainingBalance, 0)) {
+					dao.withdrawAmount(remainingBalance);
+					System.out.println(" the remainging $" + remainingBalance + " balance was withdrawn before closing.");
+				} else {
+					System.out.println();
+				}
+				
 				dao.deleteAccount();
-				System.out.println("Account #" + accountID + " was closed. the remainging $" + remainingBalance + " balance was withdrawn before closing.");
 				
 			} else {
 				
