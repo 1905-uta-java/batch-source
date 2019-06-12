@@ -14,7 +14,6 @@ import com.revature.accountutil.ConnectionUtil;
 //Class to implement the AccountDao interface
 public class UserDaoImp implements UserDao {
 
-	// ADMIN METHOD
 	// Get a list of the users in the table
 	@Override
 	public List<User> getUsers() {
