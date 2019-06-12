@@ -1,6 +1,7 @@
 package com.revature.pZero.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mdo.util.Input;
@@ -23,6 +24,7 @@ public class BankUser implements Serializable {
 	
 	public BankUser() {
 		super();
+		ba = new ArrayList<>();
 	}
 	
 	public BankUser(int id, String firstName, String lastName, String username, String password, String email) {
@@ -32,7 +34,8 @@ public class BankUser implements Serializable {
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
-		this.email = email;;
+		this.email = email;
+		ba = new ArrayList<>();
 	}
 	
 	
@@ -179,13 +182,17 @@ public class BankUser implements Serializable {
 					System.out.println("Failed to create account.");
 				break;
 			case 3:
+				System.out.println(ba.size());
 				if(ba.size() > 0)
 					this.existingAcctOps();
 				else
 					System.out.println("You do not have any open accounts.");
 				break;
 			case 4:
-				System.out.println(this.getStatements());
+				if(ba.size() > 0)
+					System.out.println(this.getStatements());
+				else
+					System.out.println("You do not have any open accounts.");
 				break;
 			case 0:
 				break;
@@ -200,7 +207,7 @@ public class BankUser implements Serializable {
 	public String getStatements() {
 		String statements = "";
 		for(int x = 0; x < ba.size(); x++)
-			statements += ba.get(x).getStatement() + "\n";
+			statements += ba.get(x).getStatement() + "\n\n";
 		return statements;
 	}
 	
