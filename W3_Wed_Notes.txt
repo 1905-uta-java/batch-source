@@ -1,0 +1,41 @@
+Bootstrap
+	CSS Framework
+	Seperation of CSS for different resolution browsers (phones, iPads, pcs)
+	Grid system
+	Connects to closest Bootstrap server
+	Look up documentation for details
+JavaScript
+	Runs in the browser
+	Started as interpreted, but moved to JIT compilation
+	UNLIKE JAVA - loosely typed
+		Do not need to declare a variable's type.
+		Can interpret a variable as a different type later
+		No compile-time error checking
+		Using a variable as something it isn't is dangerous
+	Type coercion:
+		implicit coercion
+		JavaScript will attempt to change a variable's type to fit the context
+		4+true=5
+		while("bananas"); -> while(true);
+		true:	Anything other than VVV
+		false:	"", 0, undefined, null, NaN, false
+		Strings take priority on a+b if either a or b are a string
+		Strings will convert to a number if possible with other operators (*, -, /)
+		If a string fails to convert, the result will become NaN
+		7 == "7" : True ; 7 === "7" : False
+	Primitive types:
+		number		(Which includes NaN)
+		boolean
+		string
+		undefined 	(Not yet delcared)
+		null		(Explicitly set)
+		symbol
+		Others are objects
+	var variable_name - declares variable in current scope (method minimum)
+		Can "use" variable outside declaration scope, however it won't have a value.
+	let variable_name... - declare variable in current scope, including block scope
+		Cannot use variable outside declaration scope.
+	; are optional, as they are autoplaced at the end of a line
+		Can cause problems.
+	Can use JavaScript inline in HTML with <script> ... </script>
+		Generally put at the bottom of the <body>
