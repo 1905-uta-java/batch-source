@@ -1,5 +1,6 @@
 package com.revature.frontend;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,7 +40,10 @@ public class FrontEnd {
 				System.out.println("Enter a password that is longer than 8 characters");
 				 password = sc.nextLine();}
 				 while(password.length() < 8);
-				 newUser(username, password);
+				 try {
+					newUser(username, password);
+				} catch (SQLIntegrityConstraintViolationException e) {
+				}
 				 break;
 			} else if(input.equals("exit")){
 				break;
@@ -52,7 +56,7 @@ public class FrontEnd {
 			
 			
 		}
-		public void login(String username, String password) {
+		public int login(String username, String password) {
 			Scanner sc = new Scanner(System.in);
 
 			System.out.println("Logging you in...");
@@ -60,13 +64,13 @@ public class FrontEnd {
 			int userExists = user.checkCreds(username, password);
 			if(userExists > 0) {
 				System.out.println("Success!");
-				//move on into login state commands
 				System.out.println("List of commands: 'new profile', 'myprofile', 'open account', 'my balance', 'withdraw', 'deposit', 'logout'");
 				String input = sc.nextLine();
 				postLogin(userExists, input);
 			} else { 
 				System.out.println("Username and password not found");
 				init(); }
+			return userExists;
 		}
 		public void postLogin(int id, String input) {
 			Scanner sc = new Scanner(System.in);
@@ -135,7 +139,7 @@ public class FrontEnd {
 			}
 		}
 		
-		public  void newUser(String username, String password) {
+		public void newUser(String username, String password) throws SQLIntegrityConstraintViolationException{
 			UniqueUserDAO user = new UniqueUserDAOImpl();
 			List<String> userExists = user.getAllUserNames();
 			if(!userExists.contains((String)username)) {
