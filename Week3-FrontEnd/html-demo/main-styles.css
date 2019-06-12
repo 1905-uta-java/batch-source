@@ -1,0 +1,75 @@
+figure {
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 45px;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+body{
+    background-color: rgb(206, 252, 252) !important
+}
+
+img{
+    border: solid black 10px;
+    padding: 10px;
+    margin: 50px;
+    background-color: white;
+}
+
+body .formatted-par {
+    background-color: cornflowerblue;
+    border: solid cornflowerblue 10px;
+    border-radius: 10px;
+}
+
+/*
+[attribute] 
+#id
+.class
+*
+tagname
+outer inner
+[attribute=value]
+element:property
+*/
+
+a:active{
+    color: yellow;
+}
+
+img:hover{
+    background-color: brown;
+}
+
+
+img:hover{
+    background-color: green;
+}
+
+#submit-btn {
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: azure;
+    font-weight: 800;
+
+}
+
+
+tr, th, td {
+    padding: 5px;
+    border: solid 2px;
+}
+
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
