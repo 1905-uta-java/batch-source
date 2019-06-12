@@ -63,7 +63,9 @@ public class AccountMenuUtil {
 			// Create a variable to hold the account's pin and the account
 			Account a = aDao.getAccountByUId(u.getId());
 			
+			double bal = aDao.checkBalance(a);
+			
 			System.out.println("The current balance in your account is $" + 
-					String.format("%.2f", a.getBalance()));
+					String.format("%.2f", bal));
 		}
 }

@@ -1,5 +1,6 @@
 package com.revature.accountdao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -122,6 +123,26 @@ public class AccountDaoImp implements AccountDao {
 			e.printStackTrace();
 		}
 		return rowsDel;
+	}
+	
+	// Use a callable statement to check balance
+	@Override
+	public double checkBalance(Account a) {
+		String sql = "{CALL GET_BALANCE (?, ?)}";
+		double bal = -1;
+		
+		// Attempt to call the prepared statement to get the balance
+		try(Connection con = ConnectionUtil.getConnection();
+				CallableStatement cs = con.prepareCall(sql);) {
+			cs.setInt(1, a.getId());
+			cs.registerOutParameter(2, java.sql.Types.DOUBLE);
+			cs.executeQuery();
+			bal = cs.getDouble(2);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return bal;
 	}
 
 	// Deposit funds into the specified account

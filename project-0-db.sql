@@ -88,3 +88,10 @@ insert into USER_TABLE (USERID, USERNAME, USERPASSWORD, EMAIL) values (67, 'nfid
 insert into USER_TABLE (USERID, USERNAME, USERPASSWORD, EMAIL) values (68, 'tstoite1v', 'WYnBz9E3LYlo', 'mfortun1v@xinhuanet.com');
 insert into USER_TABLE (USERID, USERNAME, USERPASSWORD, EMAIL) values (69, 'ehamman1w', 'LDz0zAxuIls', 'gmines1w@stanford.edu');
 commit;
+
+CREATE OR REPLACE PROCEDURE GET_BALANCE (A_ID IN NUMBER, B OUT NUMBER) AS
+BEGIN
+    SELECT BALANCE INTO B
+    FROM ACCOUNT_TABLE
+    WHERE ACCOUNTID = A_ID;
+END;

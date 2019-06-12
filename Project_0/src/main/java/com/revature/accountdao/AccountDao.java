@@ -13,6 +13,7 @@ public interface AccountDao {
 	public int createAccount(Account a);
 	public int deleteAccount(int id);
 	public int changePin(Account a, int pin);
+	public double checkBalance(Account a);
 	public int depositFunds(Account a, double funds);
 	public int withdrawFunds(Account a, double funds);
 }
