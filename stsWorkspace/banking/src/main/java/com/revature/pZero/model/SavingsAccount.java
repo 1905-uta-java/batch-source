@@ -46,8 +46,8 @@ public class SavingsAccount extends BankAccount {
 
 	@Override
 	public String toString() {
-		return "SavingsAccount [interestRate=" + interestRate + ", getId()=" + getId() + ", getUserId()=" + getUserId()
-				+ ", getAmount()=" + getAmount() + "]";
+		return "SavingsAccount [Account ID= " + getId() + ", User ID= " + getUserId() + ", Balance= " + getAmount()
+		+ ", Interest Rate= " + getInterestRate() +"]";
 	}
 
 	public String getStatement() {

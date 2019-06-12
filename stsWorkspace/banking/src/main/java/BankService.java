@@ -39,7 +39,7 @@ public class BankService {
 				break;
 			case 2: //Account creation
 				bu = new BankUser(
-						userDAO.getNextUserId(),
+						0,
 						Input.getInputString("Please enter your first name: "),
 						Input.getInputString("Please input your last name: "),
 						Input.getInputString("Please enter your desired username: "),

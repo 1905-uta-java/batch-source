@@ -12,7 +12,7 @@ public class CheckingAccount extends BankAccount {
 
 	@Override
 	public String toString() {
-		return "CheckingAccount [getId()=" + getId() + ", getUserId()=" + getUserId() + ", getAmount()=" + getAmount()
+		return "CheckingAccount [Account ID= " + getId() + ", User ID= " + getUserId() + ", Balance= " + getAmount()
 				+ "]";
 	}
 

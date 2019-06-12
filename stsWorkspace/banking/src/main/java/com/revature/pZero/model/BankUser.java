@@ -140,28 +140,68 @@ public class BankUser implements Serializable {
 	
 	//Displays account operation menu and calls said operations
 	public void acctOps() {
-		boolean opsMenu = false;
+		int opsMenu = 0;
 		BankAccount tempAcct = null;
 		
 		do {
-			System.out.println("Welcome " + this.getFirstName() + " " + this.getLastName() + "."
-					+ "\nPlease select an account you wish to access:"
-					+ "\n" + this.getAcctList()
-					+ "0. Logout.");
-			int acctSelection = Input.getInputInt("");
-			if(acctSelection <= 0)
-				opsMenu = false; //User wishes to exit acctOps()
-			else if(acctSelection >= ba.size())
-				opsMenu = true; //loop back to menu
-			else {
-				tempAcct = ba.get(acctSelection - 1); //Menu starts at 1 but index starts at 0
-				
-				if(this.operateOnAcct(tempAcct)) //Run operations on the account. If there are changes then return true.
-					dao.updateBankAccount(tempAcct); //changes have occured, not update the db.
-				opsMenu = true; //sets to true so that menu can be looped back.
+			opsMenu = Input.getInputInt( //Display options that this user can perform
+					"Welcome " + this.getFirstName() + " " + this.getLastName() + "."
+							+ "\nWhat would you like to do today?"
+							+ "\n1. Create a new checking account."
+							+ "\n2. Create a new savings account."
+							+ "\n3. Access current accounts."
+							+ "\n4. Get a statement of all existing accounts."
+							+ "\n0. Log out."
+							);
+			//option selection
+			switch(opsMenu) {
+			case 1:
+				tempAcct = new CheckingAccount(
+						dao.getNextBankId(((BankAccount) new CheckingAccount())),
+						this.getId(),
+						Input.getInputDouble("How much would you like to initially deposit?")
+						);
+				if(dao.createBankAccount(tempAcct) >= 1)
+					System.out.println("Checking account created.");
+				else
+					System.out.println("Failed to create account.");
+				break;
+			case 2:
+				tempAcct = new SavingsAccount(
+						dao.getNextBankId(((BankAccount) new SavingsAccount())),
+						this.getId(),
+						Input.getInputDouble("How much would you like to initially deposit?"),
+						Input.getInputDouble("What would you like your interest rate to be?")
+						);
+				if(dao.createBankAccount(tempAcct) >= 1)
+					System.out.println("Saving account created.");
+				else
+					System.out.println("Failed to create account.");
+				break;
+			case 3:
+				if(ba.size() > 0)
+					this.existingAcctOps();
+				else
+					System.out.println("You do not have any open accounts.");
+				break;
+			case 4:
+				System.out.println(this.getStatements());
+				break;
+			case 0:
+				break;
+			default:
+				break;
 			}
-			
-		} while (opsMenu);//loop while true until user wants to exit operations
+			this.getAccounts();
+		} while (opsMenu != 0);
+	}
+	
+	//returns a String of statements from the BankAccounts held by the ba arraylist
+	public String getStatements() {
+		String statements = "";
+		for(int x = 0; x < ba.size(); x++)
+			statements += ba.get(x).getStatement() + "\n";
+		return statements;
 	}
 	
 	
@@ -225,5 +265,30 @@ public class BankUser implements Serializable {
 		return aChangeHasOccured;
 	}
 	
+	public void existingAcctOps() {
+		boolean opsMenu = false;
+		BankAccount tempAcct = null;
+		
+		do {
+			System.out.println(
+					"Please select an account you wish to access: "
+					+ "\n" + this.getAcctList()
+					+ "0. Exit.");
+			int acctSelection = Input.getInputInt("");
+			if(acctSelection <= 0)
+				opsMenu = false; //User wishes to exit acctOps()
+			else if(acctSelection >= ba.size())
+				opsMenu = true; //loop back to menu
+			else {
+				tempAcct = ba.get(acctSelection - 1); //Menu starts at 1 but index starts at 0
+				
+				if(this.operateOnAcct(tempAcct)) //Run operations on the account. If there are changes then return true.
+					dao.updateBankAccount(tempAcct); //changes have occured, not update the db.
+				opsMenu = true; //sets to true so that menu can be looped back.
+			}
+			
+		} while (opsMenu);//loop while true until user wants to exit operations
+	}
+	
 
-}
+}//end of class

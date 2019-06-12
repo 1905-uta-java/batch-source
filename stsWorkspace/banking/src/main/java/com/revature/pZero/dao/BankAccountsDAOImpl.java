@@ -65,6 +65,9 @@ public class BankAccountsDAOImpl implements BankAccountsDAO {
 		int bankAccountCreated = 0;
 		String sql;
 		boolean savings = false;
+		
+		int nextKey = getNextBankId(b); //get the next primary key available
+		
 		if(b instanceof SavingsAccount) {
 			sql = "INSERT INTO SAVING_ACCT VALUES (?, ?, ?, ?)";
 			savings = true;
@@ -74,9 +77,10 @@ public class BankAccountsDAOImpl implements BankAccountsDAO {
 		
 		try(Connection con = ConnectionUtil.getHardCodedConnection(); //try to establish a connection to db
 				PreparedStatement ps = con.prepareStatement(sql)){
-			ps.setInt(1, getNextBankId(b));
+			ps.setInt(1, nextKey);
 			ps.setInt(2, b.getUserId());
 			ps.setDouble(3, b.getAmount());
+			
 			if(savings) {
 				SavingsAccount s = (SavingsAccount) b;
 				ps.setDouble(4, s.getInterestRate());
@@ -166,15 +170,18 @@ public class BankAccountsDAOImpl implements BankAccountsDAO {
 		String sql;
 		
 		if(b instanceof SavingsAccount)
-			sql = "SELECT MAX(SAVING_ACCT.SAVNG_ID) AS COUNT FROM SAVING_ACCT";
+			sql = "SELECT MAX(SAVING_ACCT.SAVING_ID) AS COUNT FROM SAVING_ACCT";
 		else 
-			sql = "SELECT MAX(CHECKING_ACCT.CHECKNG_ID) AS COUNT FROM CHECKING_ACCT";
+			sql = "SELECT MAX(CHECKING_ACCT.CHECKING_ID) AS COUNT FROM CHECKING_ACCT";
 		
 		try (Connection con = ConnectionUtil.getHardCodedConnection(); //try to establish a connection to db
 				PreparedStatement ps = con.prepareCall(sql)) {
 			ResultSet rs = ps.executeQuery();
 			
-			index = rs.getInt("COUNT") + 1; //Get the current highest value in primary key and INCREMENT FOR NEXT PKEY
+			while(rs.next())
+				index = rs.getInt("COUNT") + 1; //Get the current highest value in primary key and INCREMENT FOR NEXT PKEY
+			
+			rs.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

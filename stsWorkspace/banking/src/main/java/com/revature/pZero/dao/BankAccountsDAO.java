@@ -10,5 +10,6 @@ public interface BankAccountsDAO {
 	public int createBankAccount(BankAccount b);
 	public int updateBankAccount(BankAccount b);
 	public int deleteBankAccount(BankAccount b);
+	public int getNextBankId(BankAccount b);
 	
 }

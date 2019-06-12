@@ -71,7 +71,7 @@ public class BankAccount {
 
 	@Override
 	public String toString() {
-		return "BankAccount [id=" + id + ", userId=" + userId + ", amount=" + amount + "]";
+		return "BankAccount [Account ID=" + id + ", User ID=" + userId + ", Balance=" + amount + "]";
 	}
 	
 	public boolean deposit(double deposit) {

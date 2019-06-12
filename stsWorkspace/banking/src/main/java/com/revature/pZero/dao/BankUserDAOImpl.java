@@ -55,11 +55,12 @@ public class BankUserDAOImpl implements BankUserDAO{
 		//String for query
 		String sql = "INSERT INTO BANKUSER VALUES (?, ?, ?, ?, ?, ?)";
 		int bankUserCreated = 0;
+		int nextKey = getNextUserId();//get the next primary key available
 		
 		try(Connection con = ConnectionUtil.getHardCodedConnection(); //try to establish a connection to db
 				PreparedStatement ps = con.prepareStatement(sql)){
 			
-			ps.setInt(1, getNextUserId());
+			ps.setInt(1, nextKey);
 			ps.setString(2, b.getFirstName());
 			ps.setString(3, b.getLastName());
 			ps.setString(4, b.getUsername());
@@ -114,7 +115,10 @@ public class BankUserDAOImpl implements BankUserDAO{
 				PreparedStatement ps = con.prepareCall(sql)) {
 			ResultSet rs = ps.executeQuery();
 			
-			index = rs.getInt("COUNT") + 1; //Get the current highest value in primary key and INCREMENT FOR NEXT PKEY
+			while(rs.next())
+				index = rs.getInt("COUNT") + 1; //Get the current highest value in primary key and INCREMENT FOR NEXT PKEY
+			
+			rs.close();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

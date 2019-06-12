@@ -69,6 +69,11 @@ public class BankAccountTest {
 	}
 	
 	@Test
+	public void testInputNegativeDoubleExpected() {
+		assertTrue(Input.isInputDouble("-52.00"));
+	}
+	
+	@Test
 	public void testInputDoubleUnexpected() {
 		assertFalse(Input.isInputDouble("Hello World"));
 	}
@@ -90,6 +95,11 @@ public class BankAccountTest {
 	@Test
 	public void testInputIntExpected() {
 		assertTrue(Input.isInputInt("52"));
+	}
+	
+	@Test
+	public void testNegativeInputIntExpected() {
+		assertTrue(Input.isInputInt("-52"));
 	}
 	
 	@Test
