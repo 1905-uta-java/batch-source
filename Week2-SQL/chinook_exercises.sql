@@ -366,7 +366,7 @@ Create a stored procedure that updates the personal information of an employee.
 Create a stored procedure that returns the managers of an employee.
 
 **********************************************/
-CREATE OR REPLACE PROCEDURE CHANGE_EMPLOYEE_TITLE(EMPID IN INT, NEW_TITLE VARCHAR2)
+CREATE OR REPLACE PROCEDURE CHANGE_EMPLOYEE_TITLE(EMPID IN INT, NEW_TITLE OUT VARCHAR2)
 AS
 BEGIN 
     UPDATE EMPLOYEE
