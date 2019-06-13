@@ -1,0 +1,4 @@
+DOM
+	Document Object Model
+	window is global object
+	branches into a tree from HTML tags
