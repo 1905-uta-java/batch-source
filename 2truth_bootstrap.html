@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 2 Truths and a Lie, But It's Using Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+</head>
+<body class="bg-light">
+    <div class="container">
+        <h2 class="row justify-content-center py-2"> 2 Truths and a Lie </h2>
+        <div class="row justify-content-center bg-info py-2 my-2 rounded" id="tru1"> 
+            <p>As a hobby, I paint plastic minatures.</p>
+        </div>
+        <div class="row justify-content-center bg-info py-2 my-2 rounded" id="tru2"> 
+            <p>I worked with an microkernel for an entire year.</p>
+        </div>
+        <div class="row justify-content-center bg-info py-2 my-2 rounded" id="tru3"> 
+            <p>I studied under a clown school instructor for a few weeks.</p>
+        </div>
+    </div>
+
+    <script>
+        function tru1call()
+        {
+            document.getElementById("tru1").setAttribute("class", "row justify-content-center bg-success py-2 my-2 rounded");
+            document.getElementById("tru1").textContent = "It is true that I paint plastic miniatures as a hobby."
+        }
+
+        function tru2call()
+        {
+            document.getElementById("tru2").setAttribute("class", "row justify-content-center bg-success py-2 my-2 rounded");
+            document.getElementById("tru2").textContent = "It is true that I worked with an microkernel for an entire year."
+        }
+
+        function tru3call()
+        {
+            document.getElementById("tru3").setAttribute("class", "row justify-content-center bg-danger py-2 my-2 rounded");
+            document.getElementById("tru3").textContent = "It is not true that I studied under a clown school instructor for a few weeks."
+        }
+
+        document.getElementById("tru1").addEventListener("click", tru1call);
+        document.getElementById("tru2").addEventListener("click", tru2call);
+        document.getElementById("tru3").addEventListener("click", tru3call);        
+    </script>
+</body>
+</html>
+
+
+
