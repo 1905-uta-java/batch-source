@@ -30,4 +30,11 @@ function addRow(make, model, year){
     row.appendChild(cell3);
     row.appendChild(cell4);
 
+    cell1.innerHTML = counter++;
+    cell2.innerHTML = make;
+    cell3.innerHTML = model;
+    cell4.innerHTML = year;
+
+    document.getElementById("car-table").appendChild(row);
+
 }
