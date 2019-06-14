@@ -1,0 +1,21 @@
+body{
+    background-color: #e9ecef !important;
+}
+#submit_btn{
+    margin-top: 15px;
+}
+
+#factContainer{
+    margin-top: 25px;
+}
+
+.jumbotron{
+    padding-bottom: 10px !important;
+    background-color: white !important;
+}
+
+#copyright{
+    bottom: 0;
+    left:0;
+    position: fixed;
+}

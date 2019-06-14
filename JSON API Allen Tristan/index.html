@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JSON API Example</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script src='main.js'></script>
+    </head>
+<body>
+    <div class = 'container text-center'>
+        <div class = 'jumbotron'>
+            <h1>Numbers API Example</h1>
+            <hr>
+            <h3>Pick Something:</h3>
+            
+            <div class = 'row justify-content-md-center'>
+                <div class = 'col-sm-3 col-sm-pull-2'>
+                    <select id = 'optionAPIs' class = 'form-control'>
+                        <option name = 'trivia' selected>Trivia</option>
+                        <option name = 'year'>Year</option>
+                        <option name = 'date'>Date</option>
+                        <option name = 'math'>Math</option>
+                    </select>
+                </div>
+                <div class = 'col-sm-3'>
+                        <input type ='text' id = 'input' class = 'form-control hidden' maxlength = 10 placeholder="Enter a value" required/>
+                    </div>
+                </div>
+            <button id = 'submit_btn' class = 'btn btn-primary btn-lg'>Submit</button>
+        
+            <div class = 'contianer justify-content-md-center' id = factContainer>
+                <p id = 'fact'></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id = 'copyright'>
+            &#169; Copyright 2019 -- I Own all the Rights
+        </div>
+    </footer>
+    <script src='main.js'></script>
+</body>
+</html>

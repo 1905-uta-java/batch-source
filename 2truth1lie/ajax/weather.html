@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Today's Weather</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script src='main.js'></script>
+</head>
+<body>
+    <div class = 'container text-center'>
+        <div class = 'jumbotron'>
+            <h1>Weather</h1>
+            <p>Enter the zip code you would like to view: </p>
+            <div class = 'form-group form-inline justify-content-center'>
+                <input type="number" id = 'zip' class = 'form-control' placeholder = 'Zip Code'>
+                <button id = 'submitButton' class = 'btn btn-info'>Submit</button>
+            </div>
+            
+            <div id = 'resuslt'>
+                <h3 id = 'loc'></h3>
+                <img id = 'icon'/>
+                <h4 id = 'condition'></h4>
+                <h4 id = 'temp'></h4>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src='weatherController.js'></script>
+</body>
+</html>
