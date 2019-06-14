@@ -180,6 +180,152 @@ function isPalindrome(input) {
     return true;
 }
 
+// Problem 10
+function drawShape(shapeName, height, char) {
+    
+    if(typeof(shapeName) !== "string") {
+        
+        console.log(`Invalid input: first parameter must be a string ("Triangle", "Square", or "Diamond")`);
+        return;
+    }
+
+    if(typeof(height) !== "number") {
+
+        console.log("Invalid input: second parameter must be a number");
+        return;
+    }
+
+    if(typeof(char) !== "string" || char.length !== 1) {
+
+        console.log("Invalid input: third parameter must be a single character string")
+        return;
+    }
+    
+    shapeName = shapeName.toLowerCase();
+
+    if(shapeName === "triangle")
+        drawTriangle(height, char);
+    else if(shapeName === "square")
+        drawSquare(height, char);
+    else if(shapeName === "diamond")
+        drawDiamond(height, char);
+    else
+        console.log(`Unsuported shape: ${shapeName}`);
+}
+
+function drawTriangle(height, char) {
+    
+    let output = "";
+    
+    for(i = 0; i < height; i++) {
+        
+        for(j = 0; j < height; j++) {
+            
+            if(j <= i)
+                output += char;
+        }
+
+        output += "\n";
+    }
+
+    console.log(output);
+}
+
+function drawSquare(height, char) {
+
+    let output = "";
+    
+    for(i = 0; i < height; i++) {
+        
+        for(j = 0; j < height; j++) {
+            
+            output += char;
+        }
+
+        output += "\n";
+    }
+
+    console.log(output);
+}
+
+function drawDiamond(height, char) {
+
+    let output = "";
+    let x;
+
+    for(i = 0; i < height; i++) {
+        
+        for(j = 0; j < height; j++) {
+            
+            x = Math.floor(Math.abs(i - (height - 1) / 2));
+
+            if(j >= x && j < height - x)
+                output += char;
+            else
+                output += " ";
+        }
+
+        output += "\n";
+    }
+
+    console.log(output);
+}
+
+// Problem 11
+function rotate(array, n) {
+    if(!Array.isArray(array))
+        return null;
+    
+    if(typeof(n) !== "number")
+        return null;
+    
+    let copyArr = array.slice(0);
+
+    for(i = 0; i < copyArr.length; i++) {
+        copyArr[i] = array[((i + n) % copyArr.length + copyArr.length) % copyArr.length];
+    }
+
+    return copyArr;
+}
+
+// Problem 12
+function balanced(string) {
+    if(typeof(string) !== "string")
+        return false;
+    
+    let chars = string.split("");
+    let stack = [];
+
+    for(char of chars) {
+        
+        // console.log(`       Current character: ${char}`);
+        // console.log(`       Current stack ${stack}`);
+        // console.log("");
+
+        if(char === '(' || char === '{' || char === '[') {
+
+            stack.push(char);
+        
+        } else if(char === ')' || char === '}' || char === ']') {
+
+            if(stack.length === 0)
+                return false;
+
+
+            if(char === ')' && stack.pop() !== '(')
+                return false;
+
+            if(char === '}' && stack.pop() !== '{')
+                return false;
+            
+            if(char === ']' && stack.pop() !== '[')
+                return false;
+        }
+    }
+
+    return stack.length === 0;
+}
+
 // Tests
 function test() {
     console.log("Running Tests");
@@ -276,4 +422,41 @@ function test() {
     console.log(`   isPalindrome("Hi") = ${isPalindrome("Hi")} (expect false)`);
     console.log(`   isPalindrome("A man, a plan, a canal – Panama") = ${isPalindrome("A man, a plan, a canal – Panama")} (expect true)`);
     console.log(`   isPalindrome("Able was I ere I saw Elba") = ${isPalindrome("Able was I ere I saw Elba")} (expect true)`);
+
+    console.log("Problem 10");
+    console.log(`   drawShape("Square", 4, "L");`);
+    drawShape("Square", 4, "L");
+    console.log(`   drawShape("Triangle", 3, "3");`);
+    drawShape("Triangle", 3, "3");
+    console.log(`   drawShape("Square", 5, 2);`);
+    drawShape("Square", 5, 2);
+    console.log(`   drawShape(1, 5, "L");`);
+    drawShape(1, 5, "L");
+    console.log(`   drawShape("Diamond", 5, "#");`);
+    drawShape("Diamond", 5, "#");
+    console.log(`   drawShape("Diamond", 5, "'");`);
+    drawShape("Diamond", 4, "'");
+    console.log(`   drawShape("Diamond", 5, "+");`);
+    drawShape("Diamond", 11, "+");
+    console.log("");
+
+    console.log("Problem 11");
+    console.log(`   rotate([1,2,3,4,5], 3) = ${rotate([1,2,3,4,5], 3)}`);
+    console.log(`   rotate([1,2,3,4,5], 4) = ${rotate([1,2,3,4,5], 4)}`);
+    console.log(`   rotate([1,2,3,4,5], 10) = ${rotate([1,2,3,4,5], 10)}`);
+    console.log(`   rotate([1,2,3,4,5], 1) = ${rotate([1,2,3,4,5], 1)}`);
+    console.log(`   rotate([1,2,3,4,5], -2) = ${rotate([1,2,3,4,5], -2)}`);
+
+    console.log("Problem 12");
+    console.log("The following are balanced brackets:");
+    console.log(`   balanced("()") = ${balanced("()")}`);
+    console.log(`   balanced("()()") = ${balanced("()()")}`);
+    console.log(`   balanced("(())") = ${balanced("(())")}`);
+    console.log(`   balanced("({[]})") = ${balanced("({[]})")}`);
+     
+    console.log("The following are NOT balanced brackets:");
+    console.log(`   balanced("(") = ${balanced("(")}`);
+    console.log(`   balanced(")") = ${balanced(")")}`);
+    console.log(`   balanced("(()i") = ${balanced("(()i")}`);
+    console.log(`   balanced("([)]") = ${balanced("([)]")}`);
 }
