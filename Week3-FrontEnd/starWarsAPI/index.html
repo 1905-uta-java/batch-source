@@ -13,14 +13,12 @@
 </head>
 <body>
     <h1>Star Wars Character Search</h1>
-    <!-- <form > -->
         <div class="form-group">
             <label for="userInput">Character Number</label>
             <input type="number" class="form-control" id="characterNumber" placeholder="Luke Skywalker">
             <button id="submitButton" class="btn btn-dark">submit</button>
         </div>
-    <!-- </form> -->
-    <table class="table table-dark">
+    <table class="table table-dark" id="resultsTable" hidden>
         <thead>
             <tr>
               <th scope="col">name</th>
@@ -38,8 +36,11 @@
             </tr>
           </tbody>
     </table>
-    <div id="error" hidden>
-        <p>bad input</p>
+    <div id="messageToUser" class="card" hidden>
+    </div>
+    <div id="error" class="card" hidden>
+    </div>
+    <div id="errorPart2" class="card" hidden>
     </div>
     <script src="main.js"></script>
 </body>

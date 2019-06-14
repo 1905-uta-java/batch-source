@@ -11,16 +11,19 @@ function searchByCharacterNumber(){
 
 function sendAjaxGet(url, callback){
     let xhr = new XMLHttpRequest();
-
     xhr.open("GET", url);
-
     xhr.onreadystatechange = function(){
         if(this.readyState===4 && this.status===200){
             let returnedObject=JSON.parse(this.response);
-            callback(returnedObject);
             console.log(returnedObject);
+            callback(returnedObject);
         } else if (this.readyState===4){
-            console.log("error message 4");
+            let readyStateMessage = this.readyState;
+            let HTTPResponse = this.status;
+            console.log(`An error occured. Ready state complete with no returned object.\n
+            Ready state returned status code: ${this.readyState}\n
+            HTTP response returned status code: ${this.status}`);
+            errorMessage(readyStateMessage, HTTPResponse);
         }
     }
     xhr.send();
@@ -28,14 +31,19 @@ function sendAjaxGet(url, callback){
 
 function displayCharacter(returnedObject){
     console.log(returnedObject);
+    document.getElementById("resultsTable").hidden=false;
     document.getElementById("result").hidden=false;
-    // add boot strap class to new row
     document.getElementById("name").innerHTML = `${returnedObject.name}`;
     document.getElementById("height").innerHTML = `${returnedObject.height}`;
     document.getElementById("mass").innerHTML = `${returnedObject.mass}`;
     document.getElementById("birthYear").innerHTML = `${returnedObject.birth_year}`;
 
 }
-function errorMessage(){
-
+function errorMessage(readyStateMessage, HTTPResponse){
+    document.getElementById("messageToUser").hidden=false;
+    document.getElementById("error").hidden=false;
+    document.getElementById("errorPart2").hidden=false;
+    document.getElementById("messageToUser").innerHTML = `That was not a valid character number.`;
+    document.getElementById("error").innerHTML = `Ready state is: ${readyStateMessage}`;
+    document.getElementById("errorPart2").innerHTML = `HTTP response returned status code: ${HTTPResponse}`;
 }
