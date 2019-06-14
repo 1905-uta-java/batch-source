@@ -11,17 +11,16 @@
         node.removeChild(node.firstChild);
     }
 
-    let film = document.getElementById("filmName");
+    let film = document.getElementById("filmName").value;
     let id = getFilmID(film).toString();
+
     ajaxGet(swapiUrl+id+"/",displayCharacters);
 
  }
 
  function getFilmID(name){
     let filmTitle = ["A New Hope","Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "The Empire Strikes Back", "The Force Awakens"]
-    let count = 1;
-
-    return filmTitle.indexOf(name) + 2;
+    return filmTitle.indexOf(name) + 1;
  }
 
 
@@ -45,7 +44,7 @@
 
  function displayCharacters(movie){
     let chars = movie.characters;
-    for(i of chars){
+    for(let i of chars){
         ajaxGet(i, getCharacterName)
     }
 
