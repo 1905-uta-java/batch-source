@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+        function revealButton1() {
+            var button1 = document.getElementById("button1");
+            button1.innerHTML = "True";
+            button1.classList.add("btn-danger");
+        }
+        function revealButton2() {
+            var button2 = document.getElementById("button2");
+            button2.innerHTML = "False";
+            button2.classList.add("btn-success");
+        }
+        function revealButton3() {
+            var button3 = document.getElementById("button3");
+            button3.innerHTML = "True";
+            button3.classList.add("btn-danger");
+        }
+        function resetButtons() {
+            var button1 = document.getElementById("button1");
+            button1.innerHTML = "Reveal";
+            button1.classList.remove("btn-danger");
+
+            var button2 = document.getElementById("button2");
+            button2.innerHTML = "Reveal";
+            button2.classList.remove("btn-success");
+
+            var button3 = document.getElementById("button3");
+            button3.innerHTML = "Reveal";
+            button3.classList.remove("btn-danger");
+        }
+        </script>
+    
+    </head>
+    <body class="m-5 p-5 bg-secondary">
+        <div class="table">
+            <div class="mx-auto">
+                <h1>Two truths and one lie!</h1>
+                <hr>
+                <h3>
+                    Hi! My name is Josh.
+                    Can you figure out which claim about me below is the lie?
+                </h3>
+                <button class="btn btn-dark", onclick="resetButtons()">Reset</button>
+                <hr>
+                <table class="table-dark">
+                    <thead>
+                        <th>Claim</th>
+                        <th>True or False</th>
+                    </thead>
+                    <tr>
+                        <td>I have 9 younger siblings</td>
+                        <td><button class="btn btn-light", id="button1", onclick="revealButton1()">Reveal</button></td>
+                    </tr>
+                    <tr>
+                        <td>I am originally from Canada</td>
+                        <td><button class="btn btn-light", id="button2", onclick="revealButton2()">Reveal</button></td>
+                    </tr>
+                    <tr>
+                        <td>I originally went to college for Computer Engineering</td>
+                        <td><button class="btn btn-light", id="button3", onclick="revealButton3()">Reveal</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
