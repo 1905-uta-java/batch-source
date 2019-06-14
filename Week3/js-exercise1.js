@@ -176,7 +176,7 @@ function isPalindrome(input) {
         if(input[i] !== input[input.length - 1 - i])
             return false;
     }
-
+    
     return true;
 }
 
