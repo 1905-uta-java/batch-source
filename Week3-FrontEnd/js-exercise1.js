@@ -181,6 +181,17 @@ function isPalindrome(someStr){
 // f([1,2,3,4,5], 1) = [2,3,4,5,1]
 // f([1,2,3,4,5], 6) = [2,3,4,5,1]
 // f([1,2,3,4,5], 3) = [4,5,1,2,3]
+function rotate(array, n){
+  while (n--){
+    let temp = array.shift();
+    array.push(temp);
+  }
+  return array;
+}
+
+// rotate([1,2,3,4,5], 1);
+// rotate([1,2,3,4,5], 6);
+// rotate([1,2,3,4,5], 3);
 
 // 12.   Balanced Brackets
 //  	Define function: balanced(string)
