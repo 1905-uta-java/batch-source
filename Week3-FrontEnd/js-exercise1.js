@@ -37,14 +37,14 @@ function reverseArray(anArray){
 // 3.     Count Vowels 
 // 	Define function: vowelCount(string)
 // 	 Write a JavaScript function to count the number of vowels in a given string.
-let myArray = "Alligators";
+let myString = "Alligators";
 function vowelCount(aString){
   let vowelsFound = aString.match(/[aeiou]/g);
   vowelsFound === null ? 0 : vowelsFound.length;
   return vowelsFound;
 }
 
-// vowelCount(myArray);
+// vowelCount(myString);
 
 // 4.      Find Leap Year
 // Define function: isLeapYear(date)
