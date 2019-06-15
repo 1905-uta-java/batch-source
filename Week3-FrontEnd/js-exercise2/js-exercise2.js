@@ -132,10 +132,15 @@ function getRandomColor(){
   }
     
 function changeBackgroundToRandomColor(){
+    console.log("color change in 3 seconds !")
     let randomColor = getRandomColor();
-    document.body.style.backgroundColor = randomColor;
+    function changeColor(){
+        document.body.style.backgroundColor = randomColor;
+    }
+    setTimeout(changeColor, 3000);
 }
-changeBackgroundToRandomColor();
+let interGalacticDirectory = document.querySelector(".container h1");
+interGalacticDirectory.addEventListener("click", changeBackgroundToRandomColor);
  
 // 10.When the submit button is pressed, get the values from all of the input into a new row in the table below.  Make sure no input is empty, check that first and last name are at least 
 // two letters each. Validate for valid phone number and email structure. This should continue to work for multiple entries and rows. 

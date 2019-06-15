@@ -10,7 +10,7 @@ function maxLength(anArray){
   let lengthOfLongestWord = 0;
   let longestWord = ""; 
   for (i=0;i<anArray.length;i++){
-    if(anArray[i].length > lengthOfLongestWord) {
+    if(anArray[i].length > lengthOfLongestWord){
       lengthOfLongestWord = anArray[i].length;
       longest = anArray[i];
     }
@@ -72,7 +72,7 @@ function isValidEmail(emailToCheck){
 // 6.     Remove Character
 // 	Define function: removeChar(string, index)
 // Write a JavaScript function to remove a character at the specified position of a given string and return the new string.
-function removeChar(aString, anIndex) {
+function removeChar(aString, anIndex){
   let firstChunkMinusALetter = aString.substring(0, anIndex);
   let lastChunk = aString.substring(anIndex + 1, aString.length);
   return (firstChunkMinusALetter + lastChunk);
@@ -112,7 +112,7 @@ function bubble_Sort(anArrayOfNumbers){
 // Do not use % operator.
 function isEven(someNum){ 
   return !(someNum & 1); 
-};
+}
 
 // isEven(7);
 // isEven(6);
@@ -127,12 +127,12 @@ function isPalindrome(someStr){
 	if(cleanedString === ""){
 		return false;
 	}
-	if((cleanedString.length) % 2 === 0) {
+	if((cleanedString.length) % 2 === 0){
 		letterCount = (cleanedString.length) / 2;
-	}else{
+	} else{
 		if(cleanedString.length === 1){
 			return true;
-		}else{
+		} else{
 			letterCount = (cleanedString.length - 1) / 2;
 		}
 	}
@@ -219,17 +219,17 @@ function balanced(string){
     "{": "}"
   }
   for (let i = 0; i < string.length; i++){
-    if (string[i] === '(' || string[i] === '{' || string[i] === '[' ) {
+    if (string[i] === '(' || string[i] === '{' || string[i] === '[' ){
       stack.push(string[i]);
     }
-    else {
+    else{
       let last = stack.pop();
       if (string[i] !== map[last]) {return false};
     }
   }
   if (stack.length !== 0){
     return false;
-  } else {
+  } else{
   return true;
   }
 }
