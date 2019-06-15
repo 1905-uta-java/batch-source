@@ -218,7 +218,7 @@ function balanced(string){
     "[": "]",
     "{": "}"
   }
-  for (let i = 0; i < string.length; i++) {
+  for (let i = 0; i < string.length; i++){
     if (string[i] === '(' || string[i] === '{' || string[i] === '[' ) {
       stack.push(string[i]);
     }
