@@ -41,7 +41,6 @@ console.log(isLeapYear(1989));
 
 // 5. isValidEmail(string)
 function isValidEmail(str) {
-    let regex = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
     if(str.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
         return true;
     return false;
