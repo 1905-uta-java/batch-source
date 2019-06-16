@@ -35,19 +35,14 @@ console.log(vowelCount(" "));
 function isLeapYear(date) {
     return (date % 100 === 0) ? (date % 400 === 0) : (date % 4 === 0);
 }
+console.log("4. isLeapYear(date)");
 console.log(isLeapYear(2016));
 console.log(isLeapYear(1989));
 
 // 5. isValidEmail(string)
 function isValidEmail(str) {
-    let lastChar = str[str.length-1];
-    let len = str.match(/@/g).length;
-    console.log(len);
-    if(0 < str.match(/@/g).length < 2 && str[0] != '@' && lastChar != '@') {
-        if(str.match(/^(?!\.)(?!.*\.$)(?!.*?\.\.)[a-zA-Z0-9_.]+/gi)) {
-            return true;
-        }
-    }
+    if(str.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+        return true;
     return false;
 }
 console.log("5. isValidEmail");
@@ -59,8 +54,6 @@ console.log(isValidEmail("abc@@gmail.com"));
 console.log(isValidEmail("@abc@gmail.com"));
 console.log(isValidEmail("abc@gmail.com@"));
 
-
-
 // 6. removeChar(string, index)
 function removeChar(str, index) {
     if(index == 0)
@@ -69,6 +62,7 @@ function removeChar(str, index) {
         return str.substring(0, str.length-1);
     return str.slice(0,index) + str.slice(index+1, str.length);
 }
+console.log("6. removeChar(string, index)");
 console.log(removeChar("0123456789", 0));
 console.log(removeChar("0123456789", 9));
 console.log(removeChar("0123456789", 4));
@@ -90,6 +84,7 @@ function bubbleSort(numArray) {
     } while(flag)
     return numArray;
 }
+console.log("7. bubbleSort(numArray)");
 console.log(bubbleSort([3,2,5,6,4,1]));
 console.log(bubbleSort([9,8,7,6,5,4,3,2,1]));
 console.log(bubbleSort([1,2,3,4,5,6,7,8,9]));
@@ -99,6 +94,7 @@ function isEven(num) {
     let n = num / 2;
     return parseInt(n) == n;
 }
+console.log("8. Even Number");
 console.log(isEven(8));
 console.log(isEven(10));
 console.log(isEven(3.5));
@@ -113,6 +109,7 @@ function isPalindrome(str) {
     }
     return str == revertStr;
 }
+console.log("9. isPalindrome");
 console.log(isPalindrome("abba"));
 console.log(isPalindrome("haah"));
 console.log(isPalindrome("haha"));
@@ -178,6 +175,5 @@ function balanced(str) {
     //console.log(arr);
     if(arr.length % 2 != 0)
         return false;
-    for() 
 }
-balanced("{[]}");
+//balanced("{[]}");
