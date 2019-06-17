@@ -1,20 +1,3 @@
-/* Create Banking Database */
-
---CREATE USER project0
---IDENTIFIED BY yO60$qKFo#RT
---DEFAULT TABLESPACE users
---TEMPORARY TABLESPACE temp
---QUOTA 10M ON users;
-
---GRANT connect to project0;
---GRANT resource to project0;
---GRANT create session TO project0;
---GRANT create table TO project0;
---GRANT create view TO project0;
-
---conn project0/yO60$qKFo#RT;
---/
-
 /* Create Tables */
 
 CREATE TABLE BANK_USER(
