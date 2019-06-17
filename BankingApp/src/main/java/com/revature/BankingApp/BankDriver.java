@@ -13,19 +13,7 @@ import com.revature.BankingApp.window.WelcomeWindow;
 
 public class BankDriver {
 	Connection c;
-	public static void main(String[]args) {
-				/*
-				Connection c = ConnectionUtil.getHardCodedConnection();
-				
-				System.out.println(c.getMetaData().getDriverName());
-				AccountDoaImpl ad = new AccountDoaImpl();
-				CustomerDoaImpl cd = new CustomerDoaImpl();
-				EmployeeDoaImpl ed = new EmployeeDoaImpl();
-				System.out.println(ad.getAccount().get(0).toString());
-				System.out.println(cd.getCustomerById(2));
-				System.out.println(ed.getEmployeeById(8));
-			*/
-			
+	public static void main(String[]args) {	
 			WelcomeWindow ww = new WelcomeWindow();
 	}
 	
@@ -113,5 +101,26 @@ public class BankDriver {
 	public static List<Account>getCustomerAccounts(Customer c){
 		AccountDoaImpl acl = new AccountDoaImpl();
 		return acl.getAccountByCustomerId(c.getCustomerId());
+	}
+	
+	public static boolean isAccountType(String account) {
+		if(account.equalsIgnoreCase("Checking") || account.equalsIgnoreCase("Saving")) {
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	public static boolean isSSN(String ssn) {
+		if(ssn.length() == 8) {
+			for(int i = 0; i < ssn.length(); i++) {
+				if(!Character.isDigit(ssn.charAt(i))) {
+					return false;					}		
+			}
+		}
+		else {
+			return true;
+		}
+		return false;
 	}
 }

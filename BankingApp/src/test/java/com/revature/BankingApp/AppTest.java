@@ -40,5 +40,26 @@ public class AppTest {
     public void testEmailDoesNotExist() {
     	assertEquals(BankDriver.emailExist(" "), false);
     }
+    @Test
+    public void testIsAccountTypeTrue() {
+    	assertEquals(BankDriver.isAccountType("Checking"), true);
+    }
+    @Test
+    public void testIsAccountTypeTrueSavings(){
+    	assertEquals(BankDriver.isAccountType("Saving"), true);
+    	
+    }
+    @Test
+    public void testIsAccountTypeFalse() {
+    	assertEquals(BankDriver.isAccountType("Not Account"), false);
+    }
+    @Test
+    public void testIsSSNTrue() {
+    	assertEquals(BankDriver.isSSN("982769887"), true);
+    }
+    @Test
+    public void testIsSSNFalse() {
+    	assertEquals(BankDriver.isSSN("9867"), false);
+    }
     
 }

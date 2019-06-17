@@ -43,7 +43,9 @@ public class CreateAccount extends JFrame {
 		createAccount.addActionListener(e -> {
 			String accType = accountTypetf.getText();
 			String balStr = balancetf.getText();
-			if(accType.equalsIgnoreCase("Checking") || accType.equalsIgnoreCase("Saving") && Double.valueOf(balStr) > 0) {
+			
+			
+			if(BankDriver.isAccountType(accType) && BankDriver.isDouble(balStr) && Double.valueOf(balStr) > 0) {
 				BankDriver.createNewAccount(c, Double.valueOf(balStr), accType);
 				report.setText("Account created");
 			}

@@ -34,9 +34,11 @@ public class DepositWindow extends JFrame{
 		JButton exit = new JButton("Logout");
 		
 		depositb.addActionListener(e -> {
-			if(BankDriver.isDouble(deposittf.getText()) && Double.valueOf(deposittf.getText()) > 0) {
-				report.setText("Money has been added to the account");
+			String depoNumStr = deposittf.getText();
+			
+			if(BankDriver.isDouble(depoNumStr) && Double.valueOf(depoNumStr) > 0) {
 				BankDriver.deposit(a, Double.valueOf(deposittf.getText()));
+				report.setText("Money has been added to the account");
 			}
 			else 
 				report.setText("Your amount must be more than 1 and must be a number");

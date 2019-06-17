@@ -65,15 +65,7 @@ public class NewCustomerWindow extends JFrame{
 			String userTest = usertf.getText();
 			boolean flag = true;
 			
-			if(ssnTest.length() < 12 && ssnTest.length() > 8) {
-				for(int i = 0; i < ssnTest.length(); i++) {
-					if(!Character.isDigit(ssnTest.charAt(i))) {
-						errorReport.setText("SSN must be 9 numbers long.'-' is not acceptable.");
-						flag = false;
-						return;					}		
-				}
-			}
-			else {
+			if(!BankDriver.isSSN(ssnTest)) {
 				errorReport.setText("SSN not Long enough or too long");
 				flag = false;
 			}
