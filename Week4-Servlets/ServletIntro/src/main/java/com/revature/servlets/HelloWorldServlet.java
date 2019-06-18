@@ -18,10 +18,16 @@ public class HelloWorldServlet extends HttpServlet {
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		System.out.println("service method called with a "+request.getMethod()+" request");	
-		PrintWriter pw = response.getWriter();
-		pw.print("Hello World");
-		pw.close();
+		System.out.println("service method called to "+request.getRequestURL()+" with a "+request.getMethod()+" request");	
+		if("POST".equals(request.getMethod())) {
+			response.setStatus(201);
+		} else if ("DELETE".equals(request.getMethod())){
+			response.setStatus(405);
+		} else {
+			PrintWriter pw = response.getWriter();
+			pw.print("Hello World");
+			pw.close();			
+		}
 	}
 	
 	public void destroy() {
