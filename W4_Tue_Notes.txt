@@ -1,0 +1,50 @@
+HTTP methods
+	GET - return resource from site 
+	POST - give new information to site
+	PUT - update information on site
+	DELETE - remove information from site
+	TRACE - debugging, recieves information sent
+	OPTIONS - returns what other methods you can use
+	HEAD - returns head metadata and not body information
+	What the website does with these is up to it, but most common practice
+Servlets and Client-Server communication
+	JS AJAX --XmlHttpRequest-> Tomcat Server --Creates-> Servlet 
+	Client <-HttpResponse-- Server
+	Deployment descriptor (webXML)
+		Determines what http request creates which servlet
+	WebXML
+		<web-app> (ROOT)
+			(Extra parameters)
+			<servlet>
+				<servlet-name> name1 </servlet-name>
+				<servlet-class> com.().() </servlet-class>
+				(Init parameters)
+				(Load on startup tag)
+			</servlet>
+			<servlet-mapping>
+				<servlet-name> name1 </servlet-name>
+				<url-pattern> /name </url-pattern>
+			</servlet-mapping>
+		</web-app>
+	Our servlets are classes that extend HTTPServlet
+	Servlet service method invoked with ServletRequest/ServletResponse
+	Another method determines what handler method should be invoked
+		Handler methods are overloaded on our servlets
+		protected void do[Method](HTTPServletRequest req, HTTPServletResponse rsp) throws IOException, ServletException {.}
+			Method is Get, Post, Put...
+	HTTPServletResponse
+		Can redirect client (300 code with URL)
+		Change response values (headers, body, etc.)
+		Give response code (200 success, 300 redirect, 400 error)
+		PrintWriter can write directly on HTTP body
+	PrintWriter
+		Jackson Databind - Convert between java objects and JSON/XML
+		WriteValue - Object -> String
+		ReadValue - String -> Object
+	Forwarding
+		Servlets can "forward" information to other servlets
+		User doesn't notice, fully server-side and does not change URL
+			A redirect would change URL, forwarding doesn't
+		Response comes from servlet that was forwarded to
+		Include - Gives response from both servlets instead of just second one
+		
