@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Event Propagation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #inner, #outer, #middle{
+            text-align: center;
+            font-size: 50px;
+            font-weight: 600;
+            padding: 50px;
+        }
+        #inner {
+            background-color: darkturquoise
+        }
+        #middle {
+            background-color: lightsalmon
+        }
+        #outer {
+            background-color: lightgreen
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="outer">
+        OUTER
+        <div id="middle">
+            MIDDLE
+            <div id="inner">
+                INNER
+            </div>
+        </div>
+    </div>
+
+    
+<script src='main.js'></script>
+</body>
+</html>

@@ -27,7 +27,7 @@ let jsonCars = `[
 window.onload = function(){
     document.getElementById("addCarBtn").addEventListener("click", addNew);
     let initialCars = JSON.parse(jsonCars);
-    for(car of initialCars){
+    for(let car of initialCars){
         addRow(car.make, car.model, car.year, car.id);
     }
 }
