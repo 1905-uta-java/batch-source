@@ -1,0 +1,3 @@
+this is my file full of data
+we'll use our FileReader and BufferedReader to read from it
+don't forget to handle your IOExceptions!
