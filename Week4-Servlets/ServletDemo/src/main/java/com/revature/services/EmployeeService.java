@@ -18,6 +18,10 @@ public class EmployeeService {
 		return empDao.getEmployeeById(id);
 	}
 	
+	public int create(Employee e) {
+		return empDao.createEmployee(e);
+	}
+	
 	/// implement for the rest of our crud methods
 
 }

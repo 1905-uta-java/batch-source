@@ -8,9 +8,9 @@ import com.revature.models.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	
-	List<Employee> employees = new ArrayList<>();
+	private List<Employee> employees = new ArrayList<>();
 	
-	DepartmentDao deptDao = new DepartmentDaoImpl();
+	private DepartmentDao deptDao = new DepartmentDaoImpl();
 	
 	public EmployeeDaoImpl() {
 		employees.add(new Employee(1, "Lisa Jones", 1300, 2));
@@ -18,7 +18,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		employees.add(new Employee(3, "Cindy Jenkins", 2000, 1));
 		employees.add(new Employee(4, "Julie Smith", 1600, 3));
 		employees.add(new Employee(5, "Ron Mitchell", 1250, 3));
-		employees.add(new Employee(5, "Paul Paulson", 1500, 4));
+		employees.add(new Employee(6, "Paul Paulson", 1500, 4));
 		
 	}
 
@@ -31,7 +31,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				}
 			}
 		}
-		return employees;
+		return new ArrayList<Employee>(employees);
 	}
 
 	@Override

@@ -7,18 +7,18 @@ import com.revature.models.Department;
 
 public class DepartmentDaoImpl implements DepartmentDao {
 	
-	List<Department> departments = new ArrayList<>();
+	private List<Department> departments = new ArrayList<>();
 
 	public DepartmentDaoImpl() {
 		departments.add(new Department(1,"Marketing",13000));
 		departments.add(new Department(2,"Human Resources",10000));
-		departments.add(new Department(3,"Information Technology",8000));
+//		departments.add(new Department(3,"Information Technology",8000));
 		departments.add(new Department(4,"Legal",9000));
 	}
 	
 	@Override
 	public List<Department> getDepartments() {
-		return departments;
+		return new ArrayList<Department>(departments);
 	}
 
 	@Override

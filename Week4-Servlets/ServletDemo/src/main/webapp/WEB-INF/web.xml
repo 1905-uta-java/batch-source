@@ -18,4 +18,24 @@
     <servlet-name>EmployeeServlet</servlet-name>
     <url-pattern>/employees</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateServlet</display-name>
+    <servlet-name>CreateServlet</servlet-name>
+    <servlet-class>com.revature.servlets.CreateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateServlet</servlet-name>
+    <url-pattern>/new</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DepartmentServlet</display-name>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <servlet-class>com.revature.servlets.api.DepartmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <url-pattern>/departments</url-pattern>
+  </servlet-mapping>
 </web-app>

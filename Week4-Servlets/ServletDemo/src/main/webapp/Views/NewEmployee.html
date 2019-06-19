@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Directory</title>
+<title>Add a New Employee</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -14,16 +14,23 @@
 <body>
 
 <div class="container">
-	<h4>Employee Directory</h4>
-	
-	<table id="table" class="table">
-		<tr id="header-row">
-			<th>Name</th>
-			<th>Department</th>
-		</tr>
-	</table>
+	<h3>Create a New Employee</h3>
+	<form action="employees" method="POST">
+		<label>Name:</label> <br>
+		<input type="text" name="name" class="form-control">
+		<br><br>
+		<label>Department:</label> <br>
+		<select name="department" class="form-control" id="dpt-select">
+			<!--  <option value="1">Marketing</option>
+			<option value="2">Human Resources</option>
+			<option value="3">Information Technology</option>
+			<option value="4">Legal</option>  -->
+		</select>
+		<br>
+		<input type="submit" value="Add!" class="btn btn-primary">
+	</form>
 </div>
 
-<script src="Scripts/Directory.js"></script>
+<script type="text/javascript" src="Scripts/DepartmentOptions.js"></script>
 </body>
 </html>
