@@ -1,0 +1,13 @@
+Front Controller Pattern
+	One servlet handles all requests
+	Based on requests, delegates to other servlets
+	Use RequestHelpers to determine delegate to process request
+Authorization
+	Best practice: Client session holds authentication
+	Steps:
+		Send authentication request
+		Wait for auth token response / fail state
+		Keep given token in session storage
+		Send token for all subsequent requests
+	Can redirect anyone without a token to another page before it loads
+	
