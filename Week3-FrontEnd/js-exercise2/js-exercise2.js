@@ -110,7 +110,7 @@ function getSpanElements() {
     for(let sElement of spanElements) {
         result += sElement.innerHTML;
     }
-
+    
     console.log(result);
 }
 
@@ -119,6 +119,9 @@ function getEarthTime() {
 
     earthTimeSpan.innerHTML = new Date().toTimeString();
 }
+
+// Part 8
+
 
 window.onload = function() {
 

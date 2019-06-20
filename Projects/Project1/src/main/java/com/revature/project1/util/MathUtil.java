@@ -1,4 +1,4 @@
-package com.revature.project0.util;
+package com.revature.project1.util;
 
 public class MathUtil {
 	
