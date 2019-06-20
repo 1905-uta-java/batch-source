@@ -1,0 +1,79 @@
+REST architecture
+	REpresentational State Transfer
+	Semantics and naming conventions for web services
+	Uniform interface
+	Statelessness
+	Specific to HTTP
+	Not specific to data type (XML, JSON, ...)
+Angular
+	NOT Angular.js
+	Front-end framework which uses Typescript, HTML, CSS, and built on components
+	Creates single-page applications
+	User gets all HTML at once and swaps between them as needed
+		Injects HTML into main-page body as needed
+	Typescript
+		Javascript with type checking
+		HTML cannot understand Typescript, must be transpiled into Javascript
+	node.js
+		Allows JavaScript to be run anywhere
+		Comes with NPM (Node Package Manager)
+	Components
+		Basic building block of angular modules
+	Modules
+		Groups of components that work together for one task
+		Routing, application, ...
+		Made up of components, pipes, services, smaller modules, ...
+	<app-root> HTML Directive
+		Not normally implemented in HTML, added by Angular
+	Decorators
+		Functions that manage class metadata
+		Denoted by @DecoratorName
+		Syntax:
+			@Name ({
+				declarations
+				imports
+				providers
+				bootstrap
+			})
+			export class Name{
+				...
+			}
+	Webpack bundling tool
+		Combines CSS, HTML, and Typescript/Javascript into a JavaScript bundle.
+	Pipes
+		Data formatting
+	Built in directives and data binding
+		{{var_name}} allows Typescript variables to be displayed in HTML
+			Variable value replaces {{...}} entirely, even within <> (can use as a URL)
+			String interpolation
+			One way, only from Typescript to HTML
+		Property binding
+			<img [src]='var_name'>
+			[] makes attribute need to get value from variable var_name
+			One way from Typescript to HTML
+		Event binding
+			<button (click)='func()'>...
+			(event) chooses which event will fire the 'func()' function
+			One way from HTML to Typescript
+		NG Model
+			Combination of Property and Event binding
+			"Banana in a box notation"
+			[(html_id)]='var_name'
+			Both ways between HTML and 
+			Value changed in one place will change in the other
+	Directives
+		Components
+			See Above
+		Structural
+			Change the structure of the visible page
+			NGIF Boolean
+				If true: Will be rendered, if false will not be rendered
+			NGFOR Collection
+				For each element, make a row (possibly with changes to values)
+			NGSWITCH condition
+				Switch out elements based on condition
+		Attribute
+			Change how elements are shown on the page
+			Style elements
+			NGSTYLE
+			NGCLASS
