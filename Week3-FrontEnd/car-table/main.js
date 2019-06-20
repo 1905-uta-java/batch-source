@@ -1,5 +1,35 @@
+
+let jsonCars = `[
+{
+    "id" : 354,
+    "make" : "toyota",
+    "model" : "camry",
+    "year" : 2010
+
+},{
+    "id" : 358,
+    "make" : "chevy",
+    "model" : "silverado",
+    "year" : 2008
+},{
+    "id" : 456,
+    "make" : "ford",
+    "model" : "explorer",
+    "year" : 2015
+},{
+    "id" : 987,
+    "make" : "toyota",
+    "model" : "prius",
+    "year" : 2017
+}]`;
+
+
 window.onload = function(){
     document.getElementById("addCarBtn").addEventListener("click", addNew);
+    let initialCars = JSON.parse(jsonCars);
+    for(let car of initialCars){
+        addRow(car.make, car.model, car.year, car.id);
+    }
 }
 
 let counter = 1000;
@@ -17,7 +47,8 @@ function addNew(){
     }
 }
 
-function addRow(make, model, year){
+
+function addRow(make, model, year, id){
 
     let row = document.createElement("tr");
     let cell1 = document.createElement("td");
@@ -30,7 +61,13 @@ function addRow(make, model, year){
     row.appendChild(cell3);
     row.appendChild(cell4);
 
-    cell1.innerHTML = counter++;
+    if(id===undefined){
+        cell1.innerHTML = counter++;    
+    } else {
+        cell1.innerHTML = id;
+    }
+    
+
     cell2.innerHTML = make;
     cell3.innerHTML = model;
     cell4.innerHTML = year;
