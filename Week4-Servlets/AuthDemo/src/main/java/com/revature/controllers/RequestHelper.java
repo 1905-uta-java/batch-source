@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.delegates.AuthDelegate;
+import com.revature.delegates.UserDelegate;
 import com.revature.delegates.ViewDelegate;
 
 public class RequestHelper {
 	
 	private ViewDelegate vd = new ViewDelegate();
 	private AuthDelegate ad = new AuthDelegate();
+	private UserDelegate ud = new UserDelegate();
 	
 	/* 
 	 * This method is invoked for every GET request sent to a path not beginning with "static"
@@ -25,6 +27,28 @@ public class RequestHelper {
 		String uri = request.getRequestURI().substring(request.getContextPath().length());
 		if(uri.startsWith("/api/")) {
 			// some resource based delegate should handle this request
+			
+			// validate that the request is coming from an authorized user
+			String authToken = request.getHeader("Authorization");
+			System.out.println("Auth Header: "+authToken);
+			
+			// once we get Authorization header check that it's not null and that it's a 
+				// valid combination of id and role
+			if(!ad.isAuthorized(authToken)) {
+				response.sendRedirect(request.getContextPath()+"/login");
+				return;
+			}
+			
+			String record = uri.substring(5);
+			switch(record) {
+			case "users":
+				// request appropriate user(s) from UserDelegate
+				ud.getUsers(request, response);
+				break;
+			default:
+				response.sendError(404, "Record Not Supported");
+			}
+			
 		} else {
 			// if the uri does not start with "/api/" or "/static/" the view delegate is used to attempt to redirect the path to a corresponding static resource
 			vd.returnView(request,response);
