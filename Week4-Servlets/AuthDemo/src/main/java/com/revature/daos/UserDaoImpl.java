@@ -28,4 +28,21 @@ public class UserDaoImpl implements UserDao {
 		return null;
 	}
 
+	@Override
+	public List<User> getAll() {
+		List<User> userCopy = new ArrayList<>(users);
+//		userCopy.stream().forEach(u->u.setPassword("*****"));
+		return userCopy;
+	}
+
+	@Override
+	public User getById(int id) {
+		for(User u: users) {
+			if(u.getId() == id) {
+				return u;
+			}
+		}
+		return null;
+	}
+
 }
