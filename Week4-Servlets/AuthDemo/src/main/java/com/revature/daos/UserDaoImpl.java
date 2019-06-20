@@ -16,6 +16,7 @@ public class UserDaoImpl implements UserDao {
 		users.add(new User(4,"mikeross","keysmash","admin"));
 	}
 	
+	// called in the AuthDelegate to accomplish /login post when attempting to login
 	public User authenticatedUser(String username, String password) {
 		for(User u: users) {
 			if(u.getUsername()!=null && u.getUsername().equals(username)) {
