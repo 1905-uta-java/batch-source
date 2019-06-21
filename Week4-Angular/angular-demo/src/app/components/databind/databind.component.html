@@ -1,0 +1,26 @@
+<h2> One way databinding </h2>
+
+<form>
+    <label>Name</label>
+    <input type="text" value='{{name}}' />
+    <br>
+    <label>Email</label>
+    <input type="text" value="{{email}}">
+</form>
+
+<p>{{name}}</p>
+<p>{{email}}</p>
+
+
+<h2>Two way databinding</h2>
+
+<form>
+    <label>Name</label>
+    <input type="text" [(ngModel)]='person.name' name='person.name' />
+    <br>
+    <label>Email</label>
+    <input type="text" [(ngModel)]='person.email' name='person.email' >
+</form>
+
+<p>{{person.name}}</p>
+<p>{{person.email}}</p>

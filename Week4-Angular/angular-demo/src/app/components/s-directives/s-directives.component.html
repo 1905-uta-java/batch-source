@@ -1,0 +1,31 @@
+<h2>Structural Directives</h2>
+
+
+<p *ngIf='condition'>Condition is met</p>
+<p *ngIf='!condition'>Condition is not met</p>
+<button class="btn btn-warning" (click)='changeCondition()' >Change Condition</button>
+
+<br> <br>
+
+<div style="text-align:left" *ngIf='cats.length>0'>
+<h4> look at all my cats</h4>
+<ul>
+  <li *ngFor='let cat of cats'>{{cat.id}} : {{cat.name}} </li>
+</ul>
+</div>
+
+<div>
+<h4> here are my cats in a table</h4>
+
+<table class="table table-hover">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor='let cat of cats'>
+    <td>{{cat.id}}</td>
+    <td>{{cat.name}}</td>
+  </tr>
+</table>
+
+</div>
