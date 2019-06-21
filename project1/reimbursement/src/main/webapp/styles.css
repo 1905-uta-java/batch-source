@@ -1,0 +1,97 @@
+html,
+body {
+    height: 100%;
+    background-image: url(background.jpg)
+}
+
+/* CSS only for examples not required for centering */
+.container {
+    height: 100%;
+}
+
+.line {
+    font-size: 40px;
+    font-style: italic
+}
+
+.line-right {
+    text-align: right
+}
+
+.error,
+.success {
+    text-align: center
+}
+
+form {
+    margin: 0 auto;
+    width: 150px;
+    text-align: center
+}
+
+input,
+button {
+    display: inline-block;
+    margin-top: 10px
+}
+
+label.singleLined {
+    white-space: nowrap
+}
+
+img {
+    margin-top: 20px
+}
+
+.center {
+    margin: auto;
+    border: 1px solid green;
+}
+
+input[type=text]
+{
+    background-color: #f5efef;
+    width: 10rem;
+    padding: 1px 1px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid rgb(36, 31, 31);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    background-color: #f5efef;
+    width: 10rem;
+    padding: 1px 1px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid rgb(36, 31, 31);
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button[type=submit] {
+    letter-spacing: .1em;
+    transition: text-shadow .3s;
+    background-color: #f5efef;
+    padding: 2px 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(36, 31, 31);
+    border-radius: 3px;
+}
+
+input[type=text]:hover {
+    background-color: #ffffff;
+}
+
+input[type=password]:hover {
+    background-color: #ffffff;
+}
+
+button[type=submit]:hover {
+    text-shadow: 0 0 .4px #333, 0 0 .4px #333;
+}
+
+  
