@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="jumbotron">
+    <h4> HTTP Example </h4>
+    <p> Click the button to get all of the posts: </p>
+    <button class="btn btn-primary" (click)='getPosts()'>Get Posts!</button>
+  </div>
+
+  <div *ngIf='posts.length>0'>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+      </tr>
+      <tr *ngFor='let post of posts' routerLink='/posts/{{post.id}}'>
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,9 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { ConvertToSpacePipe } from './pipes/convert-to-space.pipe';
 import { NavComponent } from './components/nav/nav.component';
 import { DirectivesComponent } from './components/directives/directives.component';
-
+import { PostService } from './services/post.service';
+import { HttpDemoComponent } from './components/http-demo/http-demo.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 
 @NgModule({
@@ -27,14 +30,19 @@ import { DirectivesComponent } from './components/directives/directives.componen
     PipeDemoComponent,
     ConvertToSpacePipe,
     NavComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    HttpDemoComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
