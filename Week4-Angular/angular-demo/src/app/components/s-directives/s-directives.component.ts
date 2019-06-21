@@ -9,22 +9,22 @@ export class SDirectivesComponent implements OnInit {
 
   condition: boolean = true;
 
-  cats = [];
-  //   {
-  //   id: 4,
-  //   name: 'Fluffy'
-  // },
-  // {
-  //   id: 6,
-  //   name: 'Socks'
-  // }, {
-  //   id: 8,
-  //   name: 'Chips'
-  // },{
-  //   id: 13,
-  //   name: 'Jack'
-  // }]
+  cats = [{
+    id: 4,
+    name: 'Fluffy'
+  },
+  {
+    id: 6,
+    name: 'Socks'
+  }, {
+    id: 8,
+    name: 'Chips'
+  },{
+    id: 13,
+    name: 'Jack'
+  }]
 
+  time: string='dawn';
 
   constructor() { }
 
@@ -33,6 +33,14 @@ export class SDirectivesComponent implements OnInit {
 
   changeCondition(){
     this.condition = !this.condition;
+  }
+
+  changeToDay(){
+    this.time = 'day';
+  }
+
+  changeToNight(){
+    this.time = 'night';
   }
 
 }

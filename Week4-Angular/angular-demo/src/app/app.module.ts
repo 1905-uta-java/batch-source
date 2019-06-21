@@ -8,6 +8,11 @@ import { FirstComponent } from './components/first/first.component';
 import { DatabindComponent } from './components/databind/databind.component';
 import { ClickerComponent } from './components/clicker/clicker.component';
 import { SDirectivesComponent } from './components/s-directives/s-directives.component';
+import { ADirectivesComponent } from './components/a-directives/a-directives.component';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { ConvertToSpacePipe } from './pipes/convert-to-space.pipe';
+import { NavComponent } from './components/nav/nav.component';
+import { DirectivesComponent } from './components/directives/directives.component';
 
 
 
@@ -17,7 +22,12 @@ import { SDirectivesComponent } from './components/s-directives/s-directives.com
     FirstComponent,
     DatabindComponent,
     ClickerComponent,
-    SDirectivesComponent
+    SDirectivesComponent,
+    ADirectivesComponent,
+    PipeDemoComponent,
+    ConvertToSpacePipe,
+    NavComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

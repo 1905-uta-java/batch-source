@@ -28,4 +28,20 @@
   </tr>
 </table>
 
+<div [ngSwitch]='time'>
+  <span *ngSwitchCase="'night'">
+    It's night time
+    <button class="btn btn-primary" (click)='changeToDay()'>Change to Day</button>
+  </span>
+  <span *ngSwitchCase="'day'">
+    It's daytime
+    <button class="btn btn-primary" (click)='changeToNight()'>Change to Night</button>
+  </span>
+  <span *ngSwitchDefault>
+    It's ? time
+    <button class="btn btn-primary" (click)='changeToDay()'>Change to Day</button>
+    <button class="btn btn-primary" (click)='changeToNight()'>Change to Night</button>
+  </span>
+</div>
+
 </div>

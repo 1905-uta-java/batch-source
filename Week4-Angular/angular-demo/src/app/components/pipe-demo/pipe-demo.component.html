@@ -1,0 +1,20 @@
+<div class="container">
+
+  <h3>Pipes</h3>
+
+  <p>{{str}} <br>  {{str | lowercase}} </p> <hr>
+  <p>{{num}} <br> {{num | currency:'EUR'}} </p> <hr>
+  <p>{{day}} <br> {{day | date}} <br> {{day | date:'MM/dd/yyyy'}} </p> <hr>
+
+  <ul>
+    <li *ngFor='let str of strArr'>{{str}}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor='let str of strArr'>{{str | uppercase}}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor='let str of strArr2'>{{str | convertToSpace:'o'}}</li>
+  </ul>
+</div>
