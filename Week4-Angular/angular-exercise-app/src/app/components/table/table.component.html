@@ -1,0 +1,24 @@
+<div class = "container center-block bg-success rounded">
+    <h2 class = "text-center text-white">Table Component</h2>
+    <hr>
+    <div class = "center-block text-center">
+      <button class = "btn bg-white float-left mx-2" (click) = "toggleFormat()">Toggle Format</button>
+      <br>
+      <br>
+      <div class = "bg-white mx-2 rounded text-center flex-container">
+        <table [ngClass] = "pretty ? 'table text-center' : ''">
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Birthday</th>
+          </tr>
+          <tr *ngFor = "let person of people">
+            <td>{{person.firstName | titlecase}} {{person.lastName | titlecase}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.birthday | date: "MMMM dd"}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br>
+  </div>

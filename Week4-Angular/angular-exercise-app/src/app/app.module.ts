@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HighlightComponent } from './components/highlight/highlight.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SelectComponent } from './components/select/select.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HighlightComponent,
-    ProfileComponent
+    ProfileComponent,
+    SelectComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

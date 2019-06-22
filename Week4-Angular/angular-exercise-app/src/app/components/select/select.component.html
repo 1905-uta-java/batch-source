@@ -1,0 +1,16 @@
+<div class = "container center-block bg-secondary rounded">
+  <h2 class = "text-center text-white">Select Component</h2>
+  <hr>
+  <div class = "center-block text-center">
+    <button class = "btn btn-primary w-25 mx-2" (click) = "selectList('animals')">Animals</button><button class = "btn btn-primary w-25 mx-2" (click) = "selectList('colors')">Colors</button><button class = "btn btn-primary w-25 mx-2" (click) = "selectList('days')">Days</button>
+    <br>
+    <br>
+    <div class = "bg-white mx-2 rounded text-center flex-container">
+      <ul class = "mx-2 text-center">
+        <li *ngFor = "let element of selectedList">{{element}}</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div>
+  
