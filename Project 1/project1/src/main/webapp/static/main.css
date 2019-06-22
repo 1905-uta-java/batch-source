@@ -1,0 +1,50 @@
+html {
+    height: 100%
+}
+
+body {
+    margin-top: 0px;
+    padding: 0px;
+    background-image: url("https://fortunedotcom.files.wordpress.com/2018/07/starting-new-business-e1530648542386.jpg");
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    text-shadow: 0 0 4px #ffffff;
+}
+
+header {
+    font-size: 3em;
+    text-align: center;
+    background-color: #74c2e086;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border: solid;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+form{
+    background-color: rgba(214, 210, 210, 0.89);
+    padding: 2em;
+    border-radius: .2em;
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.664);
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-image: radial-gradient( rgb(192, 190, 190), rgb(161, 151, 151));
+    }
+
+    header{
+        width: 95%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        border: solid;
+    }
+    form{
+        border-radius: .3em;
+    }
+  }
