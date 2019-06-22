@@ -33,7 +33,7 @@ public class BankSessionDaoImpl implements BankSessionDao {
 	
 	public boolean createNewUser(String username, String email, String password) {
 		
-		PasswordResult result = PasswordUtil.HashPassword(password);
+		PasswordResult result = PasswordUtil.hashPassword(password);
 		
 		BankUser newUser = new BankUser(username, email, result.getHash(), result.getSalt());
 		

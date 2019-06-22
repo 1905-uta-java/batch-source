@@ -37,7 +37,7 @@ public class DatabaseManager {
 			
 			PasswordResult storedPass = new PasswordResult(result.getBytes("PASS_HASH"), result.getBytes("PASS_SALT"));
 			
-			PasswordResult enteredPass = PasswordUtil.HashPassword(password, result.getBytes("PASS_SALT"));
+			PasswordResult enteredPass = PasswordUtil.hashPassword(password, result.getBytes("PASS_SALT"));
 			
 			if(!enteredPass.equals(storedPass))
 				return null;

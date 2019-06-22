@@ -27,40 +27,25 @@ public class EmployeeService {
 		return dao.getSubordinates(managerId);
 	}
 	
-	public boolean updateEmployee(Employee employee) {
+	public void updateEmployee(Employee employee) {
 		
-		if(employee.hasValidValues()) {
-			
-			dao.updateEmployee(employee);
-			
-			return true;
-		}
-		
-		return false;
+		dao.updateEmployee(employee);
 	}
 	
-	public boolean updateEmail(int employeeId, String email) {
-		
-		if(email == null || email.length() == 0)
-			return false;
+	public void updateEmail(int employeeId, String email) {
 		
 		Employee otherEmp = dao.getEmployeeByEmail(email);
 		
 		if(otherEmp != null)
-			return false;
+			return;
 		
 		Employee currentUser = dao.getEmployee(employeeId);
 		
 		currentUser.setEmail(email);
 		dao.updateEmployee(currentUser);
-		
-		return true;
 	}
 	
-	public boolean updatePassword(int employeeId, String password) {
-		
-		if(!PasswordUtil.isValidPassword(password))
-			return false;
+	public void updatePassword(int employeeId, String password) {
 		
 		Employee currentUser = dao.getEmployee(employeeId);
 		
@@ -69,12 +54,10 @@ public class EmployeeService {
 		currentUser.setPasswordSalt(passResult.getSalt());
 		
 		dao.updateEmployee(currentUser);
-		
-		return true;
 	}
 	
-	@Override
-	public String toString() {
-		return "EmployeeService [dao=" + dao + "]";
+	public boolean isEmailTaken(String email) {
+		
+		return dao.getEmployeeByEmail(email) != null;
 	}
 }

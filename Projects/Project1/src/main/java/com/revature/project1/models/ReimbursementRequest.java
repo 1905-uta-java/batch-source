@@ -69,7 +69,7 @@ public class ReimbursementRequest {
 		this.managerID = managerID;
 	}
 	
-	public boolean isWasApproved() {
+	public boolean getWasApproved() {
 		return wasApproved;
 	}
 	
@@ -81,12 +81,7 @@ public class ReimbursementRequest {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Float.floatToIntBits(amount);
-		result = prime * result + ((dateRequested == null) ? 0 : dateRequested.hashCode());
-		result = prime * result + employeeID;
-		result = prime * result + managerID;
 		result = prime * result + requestID;
-		result = prime * result + (wasApproved ? 1231 : 1237);
 		return result;
 	}
 
@@ -99,41 +94,8 @@ public class ReimbursementRequest {
 		if (getClass() != obj.getClass())
 			return false;
 		ReimbursementRequest other = (ReimbursementRequest) obj;
-		if (Float.floatToIntBits(amount) != Float.floatToIntBits(other.amount))
-			return false;
-		if (dateRequested == null) {
-			if (other.dateRequested != null)
-				return false;
-		} else if (!dateRequested.equals(other.dateRequested))
-			return false;
-		if (employeeID != other.employeeID)
-			return false;
-		if (managerID != other.managerID)
-			return false;
 		if (requestID != other.requestID)
 			return false;
-		if (wasApproved != other.wasApproved)
-			return false;
-		return true;
-	}
-	
-	public boolean hasValidValues() {
-		
-		if(requestID <= 0)
-			return false;
-		
-		if(employeeID <= 0)
-			return false;
-					
-		if(amount <= 0f)
-			return false;
-		
-		if(dateRequested == null)
-			return false;
-		
-		if(managerID <= 0)
-			return false;
-		
 		return true;
 	}
 	

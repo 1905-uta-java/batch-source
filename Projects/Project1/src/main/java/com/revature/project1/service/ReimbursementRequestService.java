@@ -1,11 +1,9 @@
 package com.revature.project1.service;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import com.revature.project1.dao.ReimbursementDAO;
-import com.revature.project1.models.Employee;
 import com.revature.project1.models.ReimbursementRequest;
 
 public class ReimbursementRequestService {
@@ -16,18 +14,9 @@ public class ReimbursementRequestService {
 		this.dao = dao;
 	}
 	
-	public List<ReimbursementRequest> getSubordinateRequests(int managerId) {
+	public List<ReimbursementRequest> getSubordinateRequests(int managerID) {
 		
-		List<ReimbursementRequest> subordinateRequests = new ArrayList<ReimbursementRequest>();
-		
-		List<Employee> subordinates = dao.getSubordinates(managerId);
-		
-		if(subordinates == null || subordinates.isEmpty())
-			return subordinateRequests;
-		
-		subordinateRequests = dao.getRequestsForEmployees(subordinates);
-		
-		return subordinateRequests;
+		return dao.getRequestsForManager(managerID);
 	}
 	
 	public List<ReimbursementRequest> getUsersRequests(int employeeId) {
@@ -63,5 +52,15 @@ public class ReimbursementRequestService {
 		request.setWasApproved(approve);
 		
 		dao.updateReimbursementRequest(request);
+	}
+	
+	public ReimbursementRequest getReimbursementRequest(int requestID) {
+		
+		return dao.getReimbursementRequest(requestID);
+	}
+	
+	public void removeRequest(int requestID) {
+		
+		dao.removeReimbursementRequest(requestID);
 	}
 }

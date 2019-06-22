@@ -46,10 +46,145 @@ ALTER TABLE REIMBURSEMENT_REQUEST
     FOREIGN KEY (MANAGER_ID) REFERENCES EMPLOYEE (EMPLOYEE_ID);
 /
 
+INSERT INTO EMPLOYEE
+    VALUES(1, 'Trstram', 'Eliesco', 'Cost Accountant', NULL, 'teliesco0@nyu.edu', '619-828-9941', HEXTORAW('25ed9580e752efcc729a265da601637916caec35ee0b6ef28330b110b0761bba53426f5060d1428623755045db6dd079744faf86ad3bd344087d2307428eddd6'), HEXTORAW('3240e4d0fb2369720fe765d789db266c'), TO_DATE('11/25/2018', 'MM/DD/YYYY'), '74479 Prairieview Circle', 'San Diego', 'California', 'United States', '92105');
+
+INSERT INTO EMPLOYEE
+    VALUES(2, 'Parrnell', 'Wemyss', 'Assistant Media Planner', 1, 'pwemyss1@desdev.cn', '915-512-5590', HEXTORAW('891546027a234eedef21429fa3d90fd2db0432de5f88dccd261f152ff1ddb441ffa5c5a04b09a3d6e4cce75f6e9783700b913e3a6a4eb98ed5fab1a32449751e'), HEXTORAW('336fb8cb183b7d5211e2cca91af31200'), TO_DATE('3/10/2019', 'MM/DD/YYYY'), '330 Leroy Way', 'El Paso', 'Texas', 'United States', '88563');
+
+INSERT INTO EMPLOYEE
+    VALUES(3, 'Marya', 'Boise', 'Speech Pathologist', 1, 'mboise2@stumbleupon.com', '216-802-3429', HEXTORAW('6cf6ccf8bf2f1396b4057e159d3b20d0144dcbbda5f0f781afcf711f40e95a6250e94ade0f4fae3c2f9a42e958a668d7e9bd56ba08aa0090222a18b481f3c016'), HEXTORAW('ce89cfce82b8a84af014b77056f2f284'), TO_DATE('9/2/2018', 'MM/DD/YYYY'), '3329 Morning Way', 'Cleveland', 'Ohio', 'United States', '44185');
+
+INSERT INTO EMPLOYEE
+    VALUES(4, 'Lorrie', 'Blackston', 'Project Manager', 1, 'lblackston3@posterous.com', '661-763-6979', HEXTORAW('ffbc324ddc1c52dcd77c15c57f8763715808f4b1e2a6bb6664fd8bd6dc422883d3046fbd2073e981c9397e10b902b38cbd750958c1146614f5d75703cfd841c4'), HEXTORAW('1f112fab7086ec69b3e633a8a2af0063'), TO_DATE('8/17/2018', 'MM/DD/YYYY'), '428 Meadow Vale Street', 'Bakersfield', 'California', 'United States', '93381');
+
+INSERT INTO EMPLOYEE
+    VALUES(5, 'Ana', 'Exer', 'Physical Therapy Assistant', 1, 'aexer4@dyndns.org', '915-534-3299', HEXTORAW('0eefcae5033ef3efeb4a177dd2750c0a045fffd9b3ac14c9d92f8cb84400c0bf0c1fbfba8c501197cf45a6ecf87893142cc47bcfa294fdf62b23b8c9e31988da'), HEXTORAW('1f809a68a09efa534ec9ad597f16922c'), TO_DATE('12/30/2018', 'MM/DD/YYYY'), '6153 Elgar Circle', 'El Paso', 'Texas', 'United States', '79945');
+
+INSERT INTO EMPLOYEE
+    VALUES(6, 'Ringo', 'Olivello', 'Librarian', 2, 'rolivello5@yolasite.com', '816-576-2463', HEXTORAW('2b1421a0af2821468ec7734eb6b6ad787fbd0e7b2cb122e17a9a314db126f7fa8264bbe4be796f1c4f519c24bacd33d3ddcd5af0d25a974d2d16e57b76cfccf9'), HEXTORAW('903bc64841d55e70a7a08cba15ecc282'), TO_DATE('11/11/2018', 'MM/DD/YYYY'), '9923 Mayer Way', 'Kansas City', 'Missouri', 'United States', '64125');
+
+INSERT INTO EMPLOYEE
+    VALUES(7, 'Kala', 'Bowton', 'Executive Secretary', 2, 'kbowton6@slashdot.org', '972-282-5640', HEXTORAW('00ac5513662c18cab062f62667322ad97982d209bb19170c23e15949abf0da1498b4db4a2634c6f4f24c1dcacd6cedd95317db48b71f412c100b2ce8209daf66'), HEXTORAW('3bc2c78f9d60abd23aadec2637cb4c9a'), TO_DATE('7/7/2018', 'MM/DD/YYYY'), '687 Barby Trail', 'Plano', 'Texas', 'United States', '75074');
+
+INSERT INTO EMPLOYEE
+    VALUES(8, 'Sylvan', 'Lamey', 'Actuary', 2, 'slamey7@nymag.com', '505-920-7700', HEXTORAW('62abd68fb6a844cf6b26eca2b0adf4c9061c6d33b8aef9ce868bde6c2b465be9265eb96ab886bb90a92f897976db59f2cf3cc0bb88a3a9a1ed3ba37d011b0a94'), HEXTORAW('b9f077c669e74534f2d20ec961c70520'), TO_DATE('6/2/2019', 'MM/DD/YYYY'), '597 Sunbrook Park', 'Albuquerque', 'New Mexico', 'United States', '87115');
+
+INSERT INTO EMPLOYEE
+    VALUES(9, 'Jordanna', 'Petersen', 'Developer III', 3, 'jpetersen8@ning.com', '919-367-0707', HEXTORAW('f2ba01098ef0882501ea7fc302aeb3abc627a198a4faebb70c2b1abeb7ab433495e4f92706489db13fa91596027f11483d9970e3e109aa89da5298b2214db67d'), HEXTORAW('f0c4900ed498150a28f85bfe97dd5b39'), TO_DATE('12/29/2018', 'MM/DD/YYYY'), '49550 Mccormick Park', 'Raleigh', 'North Carolina', 'United States', '27605');
+
+INSERT INTO EMPLOYEE
+    VALUES(10, 'Amy', 'Jugging', 'Director of Sales', 3, 'ajugging9@taobao.com', '505-349-0625', HEXTORAW('a7a0248f1a5fb310b717b9c47e5320730b11d2460ee767e8d25b769b89fe7fdb9163ec5c082efe2cc2ace2c2dc392ca6a12b69bbd7467220cd67b72a6aa78f4c'), HEXTORAW('37b70f58166d5cda7955208343d1e9b7'), TO_DATE('5/22/2019', 'MM/DD/YYYY'), '171 Warner Hill', 'Albuquerque', 'New Mexico', 'United States', '87115');
+
+INSERT INTO EMPLOYEE
+    VALUES(11, 'Joice', 'Gilson', 'Mechanical Systems Engineer', 3, 'jgilsona@purevolume.com', '318-344-1766', HEXTORAW('d7550d5c11b69cc498474c39b5bc4ce2a3d82c6c8ed8d897d80dcc0e162c2a53eb576473a57913a146a06355e5aa193d021639a82717f31a82062c8a146b3de7'), HEXTORAW('87f6a52917919c5c08511c562c6fd179'), TO_DATE('10/1/2018', 'MM/DD/YYYY'), '4375 Butternut Parkway', 'Shreveport', 'Louisiana', 'United States', '71161');
+
+INSERT INTO EMPLOYEE
+    VALUES(12, 'Emilia', 'Easseby', 'Staff Accountant III', 4, 'eeassebyb@google.es', '202-556-5962', HEXTORAW('ab1951391bae55e225b2ebad18c0805bb9f77924e4da1ea8f19d79c4b34b7ece803ff16f6089b71a2ac8ab6f02bc4bdec499b40565710c9e2e4a6ba08f9790f2'), HEXTORAW('36dea548e8c54335143f4ecc07cac6da'), TO_DATE('10/15/2018', 'MM/DD/YYYY'), '32 Truax Plaza', 'Washington', 'District of Columbia', 'United States', '20409');
+
+INSERT INTO EMPLOYEE
+    VALUES(13, 'Verla', 'Esselen', 'Assistant Professor', 4, 'vesselenc@ning.com', '571-290-0273', HEXTORAW('550f5d373f21d4ef694b85f1673238a99a3b8d59739bdd010b10ec118d56dcc4ff4ff891d088908f4e4c329a2b0997f9f933cebc09069607e677173aabd5f5f4'), HEXTORAW('0f67621ff188c291baa4a6e8b815d827'), TO_DATE('7/8/2018', 'MM/DD/YYYY'), '1 Eastwood Place', 'Arlington', 'Virginia', 'United States', '22205');
+
+INSERT INTO EMPLOYEE
+    VALUES(14, 'Valencia', 'Shackesby', 'Web Designer I', 4, 'vshackesbyd@ning.com', '419-527-6968', HEXTORAW('292ef282a8fcca827944b4fe324f77735e50484b93a49c4b90a53a3f98c30230ec97008474cb485d30358c4cc19a20ccb632787fb591d5d7ae7ced89ca8cac3e'), HEXTORAW('04d116ba61039c126c17d34fe1a57afb'), TO_DATE('3/24/2019', 'MM/DD/YYYY'), '91042 Randy Park', 'Toledo', 'Ohio', 'United States', '43699');
+
+INSERT INTO EMPLOYEE
+    VALUES(15, 'Rickert', 'Pomery', 'Nurse Practicioner', 5, 'rpomerye@e-recht24.de', '952-688-4955', HEXTORAW('60b6350d74320820453ec691e836c1c0d9a7cb7369d6055b42697cb6d28de498480ef0c1435154be6a5fc126a8f0d468045e4b91e14e84e077e31d52b75880c2'), HEXTORAW('7fd3670f47868102a4ce8adbb3d491b4'), TO_DATE('6/12/2019', 'MM/DD/YYYY'), '65 Algoma Point', 'Young America', 'Minnesota', 'United States', '55573');
+
+INSERT INTO EMPLOYEE
+    VALUES(16, 'Savina', 'Levensky', 'Product Engineer', 5, 'slevenskyf@mashable.com', '615-623-3019', HEXTORAW('037785eccf8118daa18fbb977afb445bb5e66bfab2ccff37075107ea37534da5d22d994d658f4a6f1bc2c72f1fc92132713891fcdc2702b1f6d48334efcfdf32'), HEXTORAW('70ae2942f8d0cd99fcbc59c3187fbed4'), TO_DATE('4/5/2019', 'MM/DD/YYYY'), '6687 Forest Dale Pass', 'Nashville', 'Tennessee', 'United States', '37210');
+
+INSERT INTO EMPLOYEE
+    VALUES(17, 'Lenee', 'Goozee', 'Programmer IV', 5, 'lgoozeeg@independent.co.uk', '859-458-9938', HEXTORAW('20a22e37b9ddf8859da6c85940f63ea2797ea748d19d7818b5df3affd7ffe40f4e25cb8717d453095c2b336df4c30f77e408c13f7842b0d5453bc53a8ac20039'), HEXTORAW('89d2b9568bf2be7a2862b705946d1e88'), TO_DATE('11/30/2018', 'MM/DD/YYYY'), '0 Thierer Drive', 'Lexington', 'Kentucky', 'United States', '40524');
+
+INSERT INTO EMPLOYEE
+    VALUES(18, 'Leupold', 'ONeal', 'Office Assistant II', 15, 'lonealh@domainmarket.com', '315-381-1266', HEXTORAW('a9f6f507b09ffb4b1cbc32517cee03e5e359f34cd9f19c71ed8d8235a6b37df4684fcfb00e56fe17f64561f362b585127f4b65e08d37f2c56f4490195e257862'), HEXTORAW('cb206059493eb349672a30d600855e8e'), TO_DATE('1/8/2019', 'MM/DD/YYYY'), '57718 Swallow Alley', 'Utica', 'New York', 'United States', '13505');
+
+INSERT INTO EMPLOYEE
+    VALUES(19, 'Chrissie', 'Frampton', 'Internal Auditor', 15, 'cframptoni@mozilla.com', '260-919-5148', HEXTORAW('95315b0ebd920327b25c473026fef1e671b43b80a424c70db434cabcf4de95df4a7785ea51093b704edebaa1867ba24a46de0b65f722ca40524fb4a755f5dbfa'), HEXTORAW('5172810abadfa0b47e2e78d02559777f'), TO_DATE('7/30/2018', 'MM/DD/YYYY'), '3462 Fulton Circle', 'Fort Wayne', 'Indiana', 'United States', '46825');
+
+INSERT INTO EMPLOYEE
+    VALUES(20, 'Mar', 'Domenichini', 'Office Assistant II', 17, 'mdomenichinij@disqus.com', '803-473-3173', HEXTORAW('92868c2cb60533b6ebc0bdbd9223c922aad88cd015e4680540e26ab2a6b39263a77e17272ed2ad0ce72c748621d4da32ca30f39df846edacb81dcd9fc3447912'), HEXTORAW('1d186025ddad1b21ee96cd0e7f7d58c0'), TO_DATE('7/29/2018', 'MM/DD/YYYY'), '96 American Junction', 'Columbia', 'South Carolina', 'United States', '29208');
 
 
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(1, 15, 87.59, TO_DATE('1/10/2019', 'MM/DD/YYYY'), 5, 0);
 
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(2, 15, 11.54, TO_DATE('3/15/2019', 'MM/DD/YYYY'), NULL, 0);
 
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(3, 15, 69.05, TO_DATE('10/25/2018', 'MM/DD/YYYY'), 1, 1);
 
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(4, 16, 85.86, TO_DATE('3/18/2019', 'MM/DD/YYYY'), NULL, 0);
 
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(5, 13, 73.69, TO_DATE('12/26/2018', 'MM/DD/YYYY'), 4, 0);
+    
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(6, 8, 48.56, TO_DATE('7/11/2018', 'MM/DD/YYYY'), 1, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(7, 10, 13.09, TO_DATE('12/11/2018', 'MM/DD/YYYY'), 7, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(8, 11, 94.29, TO_DATE('8/15/2018', 'MM/DD/YYYY'), 3, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(9, 8, 19.01, TO_DATE('11/20/2018', 'MM/DD/YYYY'), NULL, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(10, 12, 90.55, TO_DATE('9/24/2018', 'MM/DD/YYYY'), 4, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(11, 12, 39.06, TO_DATE('6/18/2019', 'MM/DD/YYYY'), 4, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(12, 11, 69.02, TO_DATE('3/9/2019', 'MM/DD/YYYY'), 1, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(13, 9, 61.07, TO_DATE('3/6/2019', 'MM/DD/YYYY'), NULL, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(14, 18, 37.57, TO_DATE('10/22/2018', 'MM/DD/YYYY'), 15, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(15, 18, 80.40, TO_DATE('1/24/2019', 'MM/DD/YYYY'), 15, 1);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(16, 18, 55.16, TO_DATE('1/29/2019', 'MM/DD/YYYY'), NULL, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(17, 4, 79.79, TO_DATE('1/3/2019', 'MM/DD/YYYY'), NULL, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(18, 7, 88.21, TO_DATE('9/21/2018', 'MM/DD/YYYY'), 2, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(19, 6, 4.17, TO_DATE('10/17/2018', 'MM/DD/YYYY'), NULL, 0);
+
+INSERT INTO REIMBURSEMENT_REQUEST
+    VALUES(20, 6, 88.70, TO_DATE('8/27/2018', 'MM/DD/YYYY'), 2, 1);
+/
+
+CREATE OR REPLACE PROCEDURE SUBMIT_REQUEST(EMPLOYEE_ID IN NUMBER, AMOUNT IN NUMBER)
+IS
+    NEW_REQUEST_ID NUMBER;
+    CURRENT_DATE DATE;
+BEGIN
+    SELECT COALESCE(MAX(REQUEST_ID), 0) + 1
+        INTO NEW_REQUEST_ID
+        FROM REIMBURSEMENT_REQUEST;
+    
+    SELECT
+        SYSDATE
+        INTO CURRENT_DATE
+        FROM DUAL;
+    
+    INSERT
+        INTO REIMBURSEMENT_REQUEST
+        VALUES(NEW_REQUEST_ID, EMPLOYEE_ID, AMOUNT, CURRENT_DATE, NULL, 0);
+END;
+/
 
