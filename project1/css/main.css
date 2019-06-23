@@ -1,0 +1,94 @@
+#signInHead{
+    margin-bottom: 20px;
+}
+#login_btn, #create_btn{
+    width: 100%;
+}
+
+#logout_btn{
+    display: inline-block;
+    
+}
+
+/*#remInfo{
+    display: none;
+}*/
+
+#reburseNav, #empInfoNav{
+    cursor:pointer;
+}
+
+.bigContainer{
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#infoContainer{
+    margin-top: 10px;
+}
+
+#refContainer{
+    margin-top: 10px;
+}
+
+.contain{
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#yourInfoTitle{
+    margin-bottom: 25px;
+}
+
+.headers{
+    margin-bottom: 15px;
+}
+
+#pendReqTable, #resReqTable{
+    width: 100%;
+}
+
+.rejected{
+    color: red;
+}
+
+.accepted{
+    color: green;
+}
+
+.empLabel{
+    /*line-height: -12px;*/
+    margin-bottom: -10px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.empView{
+    font-size: 15pt;
+}
+
+section{
+    margin-top: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.modal-dialog{
+    max-width: 700px !important;
+}
+
+
+/******* MEDIA QUERIES *******/
+@media only screen and (max-width: 992px){
+    #create_btn{
+        margin-top: 15px !important;
+    }
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type='text/css' href="css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+</head>
+<body>
+    <div class = 'clearfix'>
+        <nav id = 'nav' class ='navbar navbar-expand-lg bg-light navbar-light'>
+            <div class = 'collapse navbar-collapse'>
+                <ul class = 'navbar-nav'>
+                    <li class = 'nav-item active' id = 'empInfoLi'>
+                        <a id = 'empInfoNav' class = 'nav-link'>Employee Information</a>
+                    </li>
+                    <li class = 'nav-item' id = 'remInfoLi'>
+                        <a id = 'reburseNav' class = 'nav-link'>Reimbursement Requests</a>
+                    </li>
+                </ul>
+            </div>
+            <button id = 'edit_btn' class = 'float-right btn-default btn'>Edit Info</button>
+            <button id = 'logout_btn' class = 'float-right btn-danger btn'>Logout</button>
+        </nav>
+    </div>
+    
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = "empInfo">
+        <div class = 'clearfix bg-light contain'>
+            <h1 id= 'yourInfoTitle'>Your Information</h1>
+            <hr>
+            <div class = 'container' id = 'infoContainer'>
+                <section id = 'personalInfoSec'>
+                    <div class = 'row'>
+                        <div class = 'col-12'>
+                            <h4 id = 'personalInfoHead' class = 'headers'>Personal Information</h4>
+                        </div>
+                    </div>
+                    <div class = 'row justify-content-center form-group'>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'firstNameDiv'>
+                            <label for = 'fNameView' id = 'lNameLbl' class = 'empLabel'>
+                                First Name
+                            </label>
+                            <div id = 'fNameView' class = 'empView'>Jequel</div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'lastNameDiv'>
+                            <label for = 'lNameView' id = 'lNameLbl' class = 'empLabel'>
+                                Last Name
+                            </label>
+                            <div id = 'lNameView' class = 'empView'>the Jequel</div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'bdayDiv'>
+                            <label for = 'bdayView' id = 'bdayLbl' class = 'empLabel'>
+                                Birth Date
+                            </label>
+                            <div id = 'bdayView' class = 'empView'>01/05/1996</div>
+                        </div>
+                    </div>
+                    <div class = 'row justify-content-center form-group'>
+                        <div class = 'col-lg-12 col-md-12 col-sm-12' id = 'firstNameDiv'>
+                            <label for = 'addrView' id = 'addrLbl' class = 'empLabel'>
+                                Address
+                            </label>
+                            <div id = 'addrView' class = 'empView'>123 Seseme Street, New York, NY 12345</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <section id = 'empLoginSec'>
+                    <div class = 'row'>
+                        <div class = 'col-12'>
+                            <h4 id = 'loginInfoHead' class = 'headers'>Login Information</h4>
+                        </div>
+                    </div>
+                    <div class = 'row form-group' >
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'usernameDiv'>
+                            <label for = 'usernameView' id = 'usernameLbl' class = 'empLabel'>
+                                Username
+                            </label>
+                            <div id = 'usernameView' class = 'empView'>
+                                jjTheJetPlane
+                            </div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'passwordDiv'>
+                            <label for = 'passwordView' id = 'passwordLbl' class = 'empLabel'>
+                                Password
+                            </label>
+                            <div id = 'passwordView' class = 'empView'>
+                                &#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                            </div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-12 col-sm-12' id = 'emailDiv'>
+                            <label for = 'emailView' id = 'emailLbl' class = 'empLabel'>
+                                Email Address
+                            </label>
+                            <div id = 'emailView' class = 'empView'>jequel@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class = 'row form-group'>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'empIdDiv'>
+                            <label for = 'empIdView' id = 'empIdLbl' class = 'empLabel'>
+                                Employee ID
+                            </label>
+                            <div id = 'empIdView' class = 'empView'>
+                                159982
+                            </div>
+                        </div>
+                        <div class = 'col-lg-4'>
+                            <label for = 'manNameView' id = 'manNameLbl' class = 'empLabel'>
+                                Manager
+                            </label>
+                            <div id = 'manNameView' class = 'empView'>
+                                George Newman
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = 'remInfo' hidden>
+        <div class = 'clearfix bg-light' id = 'contain'>
+            <div class = 'container' id = 'infoContainer'>
+                <div class = 'row' id = 'headAndBtn'>
+                    <div class = 'col-6'>
+                        <h1>Pending Requests</h1>
+                    </div>
+                    <div id = 'refContainer' class = 'col-lg-6 text-right'>
+                        <button id = 'ref-btn' class = 'btn btn-default'>Refresh</button>
+                        <button id = 'new-req-btn' class = 'btn btn-primary' data-toggle = 'modal' data-target = '#newReqModal'>New Request</button>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <table id = 'pendReqTable'>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date Issued</th>
+                            <th>Status</th>
+                            <tr>
+                                <td>12345</td>
+                                <td>Gas for California Trip</td>
+                                <td>$650</td>
+                                <td>01/13/19</td>
+                            </tr>
+                            <tr>
+                                <td>46268</td>
+                                <td>Workers Compensation</td>
+                                <td>$6500</td>
+                                <td>05/19/20</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = 'clearfix bg-light' id = 'contain'>
+            <div class = 'container' id = 'infoContainer'>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <h1>Resolved Requests</h1>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <table id = 'resReqTable'>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date Issued</th>
+                            <th>Date Responded</th>
+                            <th>Status</th>
+                            <tr>
+                                <td>0927</td>
+                                <td>Gas for Trip Home</td>
+                                <td>$850</td>
+                                <td>01/13/19</td>
+                                <td>01/14/19</td>
+                                <td class = 'rejected'>Rejected</td>
+                            </tr>
+                            <tr>
+                                <td>2998</td>
+                                <td>Expensive Lunch and stuff</td>
+                                <td>$50</td>
+                                <td>09/13/18</td>
+                                <td>01/14/19</td>
+                                <td class = 'accepted'>Accepted</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = 'newReqModal' class = 'modal' tabindex="-1" role='dialog'>
+        <div class = 'modal-dialog' role = 'document'>
+            <div class = 'modal-content'>
+                <div class = 'modal-header'>
+                    <h5 class = 'modal-title'>New Reimbursement Request</h5>
+                    <button type = 'button' class = 'close' data-dismiss = 'modal' aria-labelledby='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class = 'modal-body'>
+                    <div class = 'row'>
+                        <div class = 'col-lg-3'>
+                            <label for = 'idIn'>Request ID</label>
+                            <input type = 'number' maxlength='5' minlength='5' class = 'form-control' id = 'idIn' value = '12345' disabled>
+                        </div>
+                        <div class = 'col-lg-6'>
+                            <label for = 'descInput'>Description</label>
+                            <input type = 'text' maxlength ='50' value = 0 class = 'form-control' id = 'descInput'>
+                        </div>
+                        <div class = 'col-lg-3'>
+                            <label for = 'amtInput'>Amount</label>
+                            $<input type = 'number' maxlength='6' value = 0 class = 'form-control' id = 'amtInput'>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'modal-footer'>
+                    <button type = 'button' class = 'btn btn-primary'>Send Request</button>
+                    <button type = 'button' class = 'btn btn-default' data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='js/main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
