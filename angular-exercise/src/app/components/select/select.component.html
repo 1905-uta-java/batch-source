@@ -1,0 +1,26 @@
+<form>
+  <input type="radio" (click)="checkAnims()" name="radioButton">Animals
+  <input type="radio" (click)="checkColor()" name="radioButton">Colors
+  <input type="radio" (click)="checkDays()" name="radioButton">Days
+</form>
+
+<div *ngIf="animSel">
+  Animals
+  <ul *ngFor="let item of animals">
+    <li>{{item}}</li>
+  </ul>
+</div>
+
+<div *ngIf="colSel">
+  Colors
+  <ul *ngFor="let item of colors">
+    <li>{{item}}</li>
+  </ul>
+</div>
+
+<div *ngIf="daySel">
+  Days
+  <ul *ngFor="let item of days">
+    <li>{{item}}</li>
+  </ul>
+</div>

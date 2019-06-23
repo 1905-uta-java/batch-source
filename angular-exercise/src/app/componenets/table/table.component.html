@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <td>Name</td>
+      <td>Birthday</td>
+      <td>Email</td>
+    </tr>
+    <tr *ngFor="let person of people" [class]="addForm">
+      <td>{{person.first | titlecase}} {{person.last | titlecase}}</td>
+      <td>{{person.birthday | date:"MM/dd/yy"}}</td>
+      <td>{{person.email}}</td>
+    </tr>
+</table>
+
+<button (click)="addBootstrap()">Switch Format</button>
