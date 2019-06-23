@@ -1,0 +1,36 @@
+<div class = "container center-block bg-danger rounded">
+  <h2 class = "text-center text-white pt-3">User Component</h2>
+  <hr>
+  <div class = "bg-white rounded text-center flex-container p-2">
+    <table class = "table p-2 userText">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company Name</th>
+        <th>Company Catch-Phrase</th>
+        <th>Company B.S.</th>
+      </tr>
+      <tr *ngFor = "let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address.street}} {{user.address.suite}}<br>
+            {{user.address.city}} {{user.address.zipcode}}<br>
+            {{user.address.geo.lat}}, {{user.address.geo.lng}}
+        </td>
+        <td>{{user.phone}}</td>
+        <td>{{user.website}}</td>
+        <td>{{user.company.name}}</td>
+        <td>{{user.company.catchPhrase}}</td>
+        <td>{{user.company.bs}}</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+</div>

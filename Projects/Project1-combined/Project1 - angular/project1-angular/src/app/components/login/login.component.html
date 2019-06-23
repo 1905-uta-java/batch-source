@@ -1,0 +1,15 @@
+<div class = "container bg-primary rounded text-white p-2 text-center">
+  <form (submit) = "submitLogin()">
+    <label class = "p-2">Email</label>
+    <input type = "text" [(ngModel)] = "email" name = "email">
+    <label class = "p-2">Password</label>
+    <input type = "password" [(ngModel)] = "password" name = "password">
+    <input type = "submit" class = "mx-2">
+  </form>
+  <br>
+  <ul *ngIf = "authToken">
+    <li>UserID: {{authToken.userId}}</li>
+    <li>Is Manager: {{authToken.isManager}}</li>
+    <li>Timestamp: {{authToken.timestamp}}</li>
+  </ul>
+</div>

@@ -1,4 +1,4 @@
-package com.revature.project0.Data;
+package com.revature.project0.data;
 
 public class UserAccess {
 	
