@@ -1,0 +1,22 @@
+<p>
+  Q5 works!
+</p>
+
+<div class = 'container'>
+  <button (click)='getPosts()'>Api Access</button>
+  <table class = 'table'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Phone #</th>
+    </tr>
+    <tr *ngFor='let person of people'>
+      <td>{{person.id}}</td>
+      <td>{{person.name}}</td>
+      <td>{{person.username}}</td>
+      <td>{{person.phone}}</td>
+    </tr>
+  </table>
+</div>
+

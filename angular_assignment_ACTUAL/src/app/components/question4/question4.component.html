@@ -1,0 +1,18 @@
+<p>
+  Q4 works!
+</p>
+
+
+<table class = 'table'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+  </tr>
+  <tr *ngFor = 'let element of tblInfo'>
+    <td>{{element.firstName | titlecase}} {{element.lastName | titlecase}}</td>
+    <td>{{element.email}}</td>
+    <td>{{element.birthdate}}</td>
+  </tr>
+
+</table>

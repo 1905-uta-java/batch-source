@@ -1,0 +1,28 @@
+<p>
+  Q3 
+</p>
+
+<input id = 'animals' type = 'radio' name='radio-group' (change)='handle("animals")'>
+<label for = 'animals'>Animals</label><br>
+
+<input id = 'colors' type = 'radio' name='radio-group'(change)='handle("colors")'>
+<label for = 'colors'>Colors</label><br>
+
+<input id='days' type = 'radio' name='radio-group'(change)='handle("days")'>
+<label for = 'days'>Days</label><br>
+
+
+<ul *ngIf='animalClass'>
+  <li *ngFor='let animal of animalArr'>{{animal}}</li>
+</ul>
+
+<ul *ngIf='colorClass'>
+  <li *ngFor='let color of colorArr'>{{color}}</li>
+</ul>
+
+<ul *ngIf='dayClass'>
+  <li *ngFor='let day of dayArr'>{{day}}</li>
+</ul>
+<br>
+<br>
+<br>
