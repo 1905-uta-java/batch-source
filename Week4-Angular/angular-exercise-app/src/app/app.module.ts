@@ -7,6 +7,10 @@ import { HighlightComponent } from './components/highlight/highlight.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SelectComponent } from './components/select/select.component';
 import { TableComponent } from './components/table/table.component';
+import { UserComponent } from './components/user/user.component';
+import { NavComponent } from './components/nav/nav.component';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +18,18 @@ import { TableComponent } from './components/table/table.component';
     HighlightComponent,
     ProfileComponent,
     SelectComponent,
-    TableComponent
+    TableComponent,
+    UserComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
