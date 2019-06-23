@@ -1,0 +1,8 @@
+<button (click)="toggle()" id="bt">
+  {{buttonName}}
+</button>
+<ng-container *ngIf="show">
+    <ul>
+      <li *ngFor="let i of userInfo">{{i.name}} {{i.email}} {{i.address}}</li>
+    </ul>
+</ng-container>
