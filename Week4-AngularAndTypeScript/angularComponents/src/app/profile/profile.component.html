@@ -1,0 +1,12 @@
+<!-- 2. Profile Component a. Create a component that displays user information - 
+populated from a user object in its class
+ b. Create a button which toggles the visibility of this information.
+  Button text should also toggle between saying “hide” and “show” -->
+<ul *ngIf='hide'>
+  <li>user first name: {{userInfo.firstName}}</li>
+  <li>user last name: {{userInfo.lastName}}</li>
+  <li>title: {{userInfo.title}}</li>
+</ul>
+  <br>
+<button [value]='hide' (click)='toggleVisibility()'>{{value}}</button>
+  

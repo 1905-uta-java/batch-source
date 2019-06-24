@@ -1,0 +1,13 @@
+<table class = 'table table-dark'>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>username</th>
+  </tr>
+  <tr *ngFor='let person of persons'>
+    <td>{{person.id}}</td>
+    <td>{{person.name}}</td>
+    <td>{{person.username}}</td>
+  </tr>
+</table>
+<button class='btn btn-dark' (click)='getPosts()'>use angular service to retrieve table data</button>

@@ -1,0 +1,25 @@
+<!-- Select Component a. Create a component with three radio buttons: 
+  one labeled “animals,” the next labeled “colors,” and the last labeled “days”  
+  b. When selected, a list (generated from arrays in the class) will be displayed 
+  containing a few animals, colors, or days respectively  -->
+
+<input id = 'animals' type = 'radio' name='radio-group' (change)='select("animals")'>
+<label for = 'animals'>Animals</label><br>
+
+<input id = 'colors' type = 'radio' name='radio-group'(change)='select("colors")'>
+<label for = 'colors'>Colors</label><br>
+
+<input id='days' type = 'radio' name='radio-group'(change)='select("days")'>
+<label for = 'days'>Days</label><br>
+
+<ul *ngIf='animalClass'>
+  <li *ngFor='let animal of animalsArray'>{{animal}}</li>
+</ul>
+
+<ul *ngIf='colorClass'>
+  <li *ngFor='let color of colorsArray'>{{color}}</li>
+</ul>
+
+<ul *ngIf='dayClass'>
+  <li *ngFor='let day of daysArray'>{{day}}</li>
+</ul>

@@ -1,0 +1,24 @@
+<!-- . Table Component: a. Create a component which dynamically creates a table of 
+  people with name email and birthday 
+  b. The table should pull from an array of people objects with fields: 
+  first name, last name, email, and birthday and should display full name, email and birthday 
+  c. Use a pipe to capitalize their first and last name, 
+  and to specify a date format 
+  d. Include a button in the component which toggles between an unformatted
+   HTML table and a nicely formatted bootstrap table 
+  -->
+
+<table id = "theTable">
+  <tr>
+    <th>name</th>
+    <th>email</th>
+    <th>birthday</th>
+  </tr>
+  <tr *ngFor = 'let person of peopleArray'>
+    <td>{{person.firstName | titlecase}} {{person.lastName | titlecase}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.dob}}</td>
+  </tr>  
+</table>
+<button class = 'btn btn-dark' (click)='toggleBootstrapStyle()'>click to toggle bootstrap table</button>
+

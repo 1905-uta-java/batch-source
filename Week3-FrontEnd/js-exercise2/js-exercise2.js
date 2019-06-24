@@ -116,15 +116,15 @@ document.getElementById("earth_time_check").addEventListener("click", displayEar
 //(there are other dark colors it could change to where we also couldn’t see the 
 // text but it’s enough to just accommodate for a black background) 
 function getRandomColor(){
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++){
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++){
       color += letters[Math.floor(Math.random() * 16)];
     }
     // while color returns a range of black get another one
     while(color.startsWith("0") || color.startsWith("1") || 
         color.startsWith("2") || color.startsWith("3")){
-        for (var i = 0; i < 6; i++) {
+        for (let i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }   
     }

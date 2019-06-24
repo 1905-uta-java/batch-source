@@ -11,6 +11,9 @@ function searchByCharacterNumber(){
 
 function sendAjaxGet(url, callback){
     let xhr = new XMLHttpRequest();
+    // optional async param can go after url
+    // if we needed to wait on the response
+    // is 
     xhr.open("GET", url);
     xhr.onreadystatechange = function(){
         if(this.readyState===4 && this.status===200){
