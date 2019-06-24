@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button class="navbar-toggle" data-target="#primary-menu" data-toggle="collapse"><div style="color:chocolate">Menu</div></button>
+            <a class="navbar-brand">Rayal paint</a>
+          </div>
+          <div class="collapse navbar-collapse" id="primary-menu">
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/Home']">Home</a></li>
+            <li><a [routerLink]="['/Orders']">Orders</a></li>
+            <li><a [routerLink]="['/Products']">Products</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          </div>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>

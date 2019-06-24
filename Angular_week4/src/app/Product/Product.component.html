@@ -1,0 +1,43 @@
+<div class="panel panel-primary" style="width:70%; margin:auto ">
+    <div class="panel-heading">
+        <h3 class="panel-title">Products</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="control-label col-lg-4" for="search">Filter By:</label>
+                <div class="col-md-8"><input type="text" id="search" class="form-control" [(ngModel)]="FilterProduct"></div>
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center"><b>Test Search:{{FilterProduct}}</b></div>
+        <br>
+        <div style="text-align:center"><b>Rating is:</b>{{Rate}}</div>
+        <hr>
+        <br>
+        <div class="table-responsive">
+            <table class="table" style="width:80%">
+                <thead>
+                    <tr>
+                        <th><button class="btn btn-primary"(click)="ToggleImage()">{{ShowImage?"Hide Image":"Show Image"}}</button></th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Release</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Product of Products|ProductFilter:FilterProduct">
+                        <td><img [src]="Product.imageUrl" *ngIf="ShowImage"></td>
+                        <td><a [routerLink]="['/Products',Product.productId]"[queryParams]="{Name:Product.productName,desc:Product.description,img:Product.imageUrl}">{{Product.productName|uppercase}}</a></td>
+                        <td>{{Product.productCode}}</td>
+                        <td>{{Product.releaseDate|date}}</td>
+                        <td>{{Product.price|currency:"GBP"}}</td>
+                        <td><Star-edu [Rating]="Product.starRating" (RatingClicked)="star($event)"></Star-edu></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
