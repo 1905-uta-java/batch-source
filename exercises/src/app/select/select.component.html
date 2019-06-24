@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <input type="radio" name="option" (click)="setList('animals')"> Animals<br>
+    <input type="radio" name="option" (click)="setList('colors')"> Colors<br>
+    <input type="radio" name="option" (click)="setList('days')"> Days<br>
+  </div>
+  <ul>
+    <li *ngFor="let e of list">{{e}}</li>
+  </ul>
+</div>

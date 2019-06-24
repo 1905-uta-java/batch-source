@@ -1,0 +1,11 @@
+
+<div id = "highlightBox">
+  <label for="select-highlight">Select Highlight: </label>
+  <select [(ngModel)]='color' name="color" id="select-highlight">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+
+  <h3 (mouseover)="hover=true" (mouseleave)="hover=false" [ngStyle]="{backgroundColor: hover==true ? color:''}">Hover over this to highlight!</h3>
+</div>

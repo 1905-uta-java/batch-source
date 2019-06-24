@@ -1,0 +1,23 @@
+<div>
+  <button (click)="showUsers()">Get Users</button>
+  <table class="table">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Address</td>
+      <td>Phone #</td>
+      <td>Wesbsite</td>
+      <td>Company</td>
+    </tr>
+    <tr *ngFor="let u of users">
+      <td>{{u.id}}</td>
+      <td>{{u.name}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.address.street}} {{u.address.suite}} {{u.address.city}} {{u.address.zipcode}}</td>
+      <td>{{u.phone}}</td>
+      <td>{{u.website}}</td>
+      <td>{{u.company.name}}</td>
+    </tr>
+  </table>
+</div>

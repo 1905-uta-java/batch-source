@@ -1,0 +1,12 @@
+
+<div id="profileBox">
+  <button (click)="toggleText()">{{btnText}}</button>
+  <br>
+  <div [hidden]="hideInfo">
+    <p>
+      Name: {{user.firstName}} {{user.lastName}}<br>
+      Birthday: {{user.birthday}}<br>
+      Favorite Food: {{user.favFood}};
+    </p>
+  </div>
+</div>

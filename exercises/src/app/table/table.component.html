@@ -1,0 +1,15 @@
+<div>
+  <button (click)="bootstrap=!bootstrap">Toggle Bootstrap</button>
+  <table [ngClass]="{table: bootstrap}">
+    <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Birthday</td>
+    </tr>
+    <tr *ngFor = "let p of people">
+      <td>{{p.firstName | titlecase}} {{p.lastName | titlecase}}</td>
+      <td>{{p.email}}</td>
+      <td>{{p.birthday | date}}</td>
+    </tr>
+  </table>
+</div>
