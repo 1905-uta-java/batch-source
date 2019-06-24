@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   
   authToken: AuthToken;
 
+  errorMessage: string;
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
@@ -24,23 +26,16 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.email, this.password)
       .then((result) => {
 
-        if(result.userId) {
+        console.log(`
+        userId: ${result.userId}
+        isManager: ${result.isManager}
+        timestamp: ${result.timestamp}`);
 
-          console.log(`
-          userId: ${result.userId}
-          isManager: ${result.isManager}
-          timestamp: ${result.timestamp}`);
+        this.authToken = result;
 
-          this.authToken = result;
-          
-        } else {
-
-          console.log(`login failed with reason: ${result}`);
-        }
-
-      }).catch((reason) => {
-
-        console.log(reason);
+      }).catch((error) => {
+        this.errorMessage = error.error;
+        this.authToken = null;
       });
   }
 }

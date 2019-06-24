@@ -12,4 +12,7 @@
     <li>Is Manager: {{authToken.isManager}}</li>
     <li>Timestamp: {{authToken.timestamp}}</li>
   </ul>
+  <p *ngIf = "!authToken" class = "text-danger bg-white">
+    {{errorMessage}}
+  </p>
 </div>
