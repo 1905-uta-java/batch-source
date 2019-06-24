@@ -49,7 +49,8 @@ public class LoginServlet extends HttpServlet {
 			
 		} else {
 			
-			writer.append("{}");
+			response.setStatus(400);
+			writer.append("invalid credentials");
 		}
 		
 		writer.close();

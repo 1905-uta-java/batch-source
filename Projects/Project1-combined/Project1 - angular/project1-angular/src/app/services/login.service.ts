@@ -10,18 +10,18 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
   
-  login(email: string, password: string): Promise<AuthToken> {
+  login(email: string, password: string): Promise<any> {
     let body = new HttpParams()
       .set("email", email)
       .set("password", password);
     
-    return this.http.post<AuthToken>(
+    return this.http.post(
         this.url,
         body.toString(),
         {
           headers: new HttpHeaders()
           .set("Content-Type", "application/x-www-form-urlencoded")
         }
-      ).toPromise<AuthToken>();
+      ).toPromise();
   }
 }

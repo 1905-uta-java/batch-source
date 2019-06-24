@@ -22,22 +22,22 @@ export class LoginComponent implements OnInit {
     console.log(this.email + " " + this.password);
 
     this.loginService.login(this.email, this.password)
-      .then((resultToken) => {
+      .then((result) => {
 
-        console.log(`
-        userId: ${resultToken.userId}
-        isManager: ${resultToken.isManager}
-        timestamp: ${resultToken.timestamp}`);
+        if(result.userId) {
 
-        if(resultToken.userId) {
+          console.log(`
+          userId: ${result.userId}
+          isManager: ${result.isManager}
+          timestamp: ${result.timestamp}`);
 
-          this.authToken = resultToken;
-
+          this.authToken = result;
+          
         } else {
 
-          this.authToken = null;
+          console.log(`login failed with reason: ${result}`);
         }
-      
+
       }).catch((reason) => {
 
         console.log(reason);
