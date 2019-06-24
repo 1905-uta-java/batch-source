@@ -29,11 +29,15 @@ export class LoginComponent implements OnInit {
         isManager: ${resultToken.isManager}
         timestamp: ${resultToken.timestamp}`);
 
-        if(resultToken.isManager && resultToken.userId && resultToken.timestamp)
-          this.authToken = resultToken;
-        else
-          this.authToken = null;
+        if(resultToken.userId) {
 
+          this.authToken = resultToken;
+
+        } else {
+
+          this.authToken = null;
+        }
+      
       }).catch((reason) => {
 
         console.log(reason);

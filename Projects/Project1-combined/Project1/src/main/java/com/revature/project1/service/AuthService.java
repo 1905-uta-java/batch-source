@@ -10,10 +10,12 @@ import com.revature.project1.util.PasswordUtil;
 
 public class AuthService {
 	
+	private static final long ONE_HOUR_IN_MILLISECONDS = 3600000L;
+	
 	private ReimbursementDAO dao;
 	
 	public AuthService(ReimbursementDAO dao) {
-		System.out.println("AuthService constructor");
+//		System.out.println("AuthService constructor");
 		this.dao = dao;
 	}
 	
@@ -43,5 +45,21 @@ public class AuthService {
 			
 			return null;
 		}
+	}
+	
+	public boolean verifyToken(AuthToken token) {
+		
+		if(token == null)
+			return false;
+		
+		if(token.getUserId() == 0)
+			return false;
+		
+		if(token.getTimestamp() == null)
+			return false;
+		
+		long timeSinceToken = System.currentTimeMillis() - token.getTimestamp().getTime();
+		
+		return timeSinceToken > 0L && timeSinceToken < ONE_HOUR_IN_MILLISECONDS;
 	}
 }

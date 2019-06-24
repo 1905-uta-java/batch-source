@@ -2,7 +2,7 @@ package com.revature.project1.service;
 
 import com.revature.project1.dao.ReimbursementDAO;
 import com.revature.project1.dao.ReimbursementDummyDAO;
-import com.revature.project1.dao.RimbursementDatabaseDAO;
+import com.revature.project1.dao.ReimbursementDatabaseDAO;
 
 public class ServiceManager {
 	
@@ -16,7 +16,7 @@ public class ServiceManager {
 //		if(dao == null)
 //			dao = new ReimbursementDummyDAO();
 		if(dao == null)
-			dao = new RimbursementDatabaseDAO();
+			dao = new ReimbursementDatabaseDAO();
 		
 		return dao;
 	}

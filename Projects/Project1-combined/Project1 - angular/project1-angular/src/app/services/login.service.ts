@@ -9,7 +9,7 @@ export class LoginService {
   url: string = "http://localhost:8080/Project1/login"
 
   constructor(private http: HttpClient) { }
-
+  
   login(email: string, password: string): Promise<AuthToken> {
     let body = new HttpParams()
       .set("email", email)
@@ -21,7 +21,6 @@ export class LoginService {
         {
           headers: new HttpHeaders()
           .set("Content-Type", "application/x-www-form-urlencoded")
-          .set("Access-Control-Allow-Origin", "*")
         }
       ).toPromise<AuthToken>();
   }

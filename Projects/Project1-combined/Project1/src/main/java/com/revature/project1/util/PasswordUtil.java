@@ -20,6 +20,9 @@ public class PasswordUtil {
 		
 		PasswordResult result = new PasswordResult();
 		
+		if(password == null)
+			return null;
+		
 		try {
 			
 			MessageDigest mDigest = MessageDigest.getInstance("SHA-512");

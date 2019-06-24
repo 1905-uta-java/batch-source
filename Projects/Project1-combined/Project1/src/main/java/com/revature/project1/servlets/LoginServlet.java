@@ -1,6 +1,5 @@
 package com.revature.project1.servlets;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -29,10 +28,12 @@ public class LoginServlet extends HttpServlet {
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-    	System.out.println("doPost");
+//    	System.out.println("LoginServlet.doPost");
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		
+		System.out.println("Email: " + email + ", Password: " + password);
 		
 		AuthToken token = authService.verifyPassword(password, email);
 		

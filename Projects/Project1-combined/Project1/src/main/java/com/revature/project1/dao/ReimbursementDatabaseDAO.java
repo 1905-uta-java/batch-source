@@ -13,11 +13,11 @@ import com.revature.project1.models.Employee;
 import com.revature.project1.models.ReimbursementRequest;
 import com.revature.project1.util.ConnectionUtil;
 
-public class RimbursementDatabaseDAO implements ReimbursementDAO {
+public class ReimbursementDatabaseDAO implements ReimbursementDAO {
 	
-	public RimbursementDatabaseDAO() {
+	public ReimbursementDatabaseDAO() {
 		super();
-		System.out.println("DAO constructor");
+//		System.out.println("DAO constructor");
 	}
 	
 	private Employee getEmployeeFromResultSet(ResultSet result) throws SQLException {
@@ -128,10 +128,13 @@ public class RimbursementDatabaseDAO implements ReimbursementDAO {
 		
 		return employee.getManagerID() != 0;
 	}
-
+	
 	public Employee getEmployeeByEmail(String email) {
 		
 		Employee emp = null;
+		
+		if(email == null)
+			return emp;
 		
 		try {
 			
