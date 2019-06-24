@@ -1,0 +1,16 @@
+<div class = "container">
+  <table [ngClass]='class'>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Birthday</th>
+    </tr>
+
+    <tr *ngFor='let person of people'>
+      <td>{{person.firstname | uppercase}} {{person.lastname | uppercase}}</td>
+      <td>{{person.email}}</td>
+      <td>{{person.birthday | date:'mm/dd/yyyy'}} </td>
+    </tr>
+  </table>
+  <button (click)='changeTable()' class="btn btn-primary">Prettify</button>
+</div>

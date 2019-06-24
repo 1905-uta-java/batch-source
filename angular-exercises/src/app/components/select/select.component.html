@@ -1,0 +1,18 @@
+<div class="container">
+
+  <label>Animals</label>
+  <input type="radio" (click)=aniVis()> <br>
+  <select *ngIf='anivis'>
+    <option *ngFor='let animal of animals' [value]='animal'>{{animal}}</option>
+  </select><br>
+  <label>Colors</label>
+  <input type="radio" (click)=colVis()> <br>
+  <select *ngIf='colvis'>
+    <option *ngFor='let color of colors' [value]='color'>{{color}}</option>
+  </select><br>
+  <label>Days</label>
+  <input type="radio" (click)=dayVis()> <br>
+  <select *ngIf='dayvis'>
+    <option *ngFor='let day of days' [value]='day'>{{day}}</option>
+  </select><br>
+</div>
