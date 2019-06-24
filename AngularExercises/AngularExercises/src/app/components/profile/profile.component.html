@@ -1,0 +1,13 @@
+<button (click) = "toggleVisibility()"> {{state}} </button>
+
+<p *ngIf = " visibility">
+    User: {{user.username}} 
+    <br>
+    Password: {{user.password}}
+    <br>
+    Address: {{user.address}}
+    <br>
+    Job: {{user.job}}
+
+</p>
+

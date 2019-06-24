@@ -1,0 +1,17 @@
+
+<button class = "btn btn-success" (click) = "formatted = !formatted"> Toggle Formatting</button>
+
+<table>
+  <tr>
+    <th> Fullname</th>
+    <th> Email</th>
+    <th> Birthday </th>
+  </tr>
+
+  <tr *ngFor = "let person of people" [ngClass] = "formatted ? ' table text-center' : ''">
+    <td> {{person.firstname | titlecase}} {{person.lastname | titlecase}}</td>
+    <td> {{person.email}}</td>
+    <td> {{person.birthday | date: "MM/dd/yyyy"}} </td>
+    
+  </tr> 
+</table>

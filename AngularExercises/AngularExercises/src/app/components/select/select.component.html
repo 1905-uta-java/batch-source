@@ -1,0 +1,10 @@
+
+<form>
+  <input type = "radio" name = selection (click) = "currentList = animals"> Animals
+  <input type = "radio" name = selection (click) = "currentList = colors"> Colors 
+  <input type = "radio" name = selection (click) = "currentList = days"> Days
+</form>
+
+<ul *ngFor = "let item of currentList">
+  <li> {{item}} </li>
+</ul>

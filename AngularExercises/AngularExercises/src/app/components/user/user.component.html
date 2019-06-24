@@ -1,0 +1,20 @@
+<table>
+  <li *ngFor = "let userObject of userArray">
+      {{userObject.id}},
+      {{userObject.name}},
+      {{userObject.username}},
+      {{userObject.email}},
+      {{userObject.address.street}},
+      {{userObject.address.suite}},
+      {{userObject.address.city}},
+      {{userObject.address.zipcode}},
+      {{userObject.address.geo.lat}},
+      {{userObject.address.geo.lng}},
+      {{userObject.phone}},
+      {{userObject.website}},
+      {{userObject.company.name}},
+      {{userObject.company.catchPhrase}},
+      {{userObject.company.bs}}
+
+  </li>
+</table>
