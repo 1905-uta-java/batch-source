@@ -1,0 +1,8 @@
+<h1>Profile Component</h1>
+<br><Br>
+
+  <button (click) = "reveal()" >{{changeText}}</button>
+  <br>
+  <ul *ngIf = 'show'>
+    <li *ngFor = 'let user of users'>Name: {{user.name}}<br>Age: {{user.age}}</li>
+  </ul>

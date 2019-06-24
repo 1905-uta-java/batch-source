@@ -1,0 +1,22 @@
+<h1>Users Component</h1>
+<br>
+
+<table class="table table-striped" *ngIf= 'users'>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>COMPANY</th>
+    <th>USERNAME</th>
+    <th>CITY</th>
+    <th>EMAIL</th>
+  </tr>
+  <tr *ngFor =  'let user of users'>
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.company.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.address.city}}</td>
+    <td>{{user.email}}</td>
+    
+  </tr> 
+</table>

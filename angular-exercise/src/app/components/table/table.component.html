@@ -1,0 +1,16 @@
+<h1>Table Component</h1>
+<br>
+<button (click) = "makeHtml()">Format table</button> <br> <br>
+<table [ngClass]="{
+  'table table-striped' : striped}">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+  </tr>
+  <tr *ngFor = 'let p of people'>
+    <td>{{p.firstN | uppercase}} {{p.lastN | uppercase}}</td>
+    <td>{{p.email}}</td>
+    <td>{{p.birth | date: 'shortDate'}}</td>
+  </tr>
+</table>

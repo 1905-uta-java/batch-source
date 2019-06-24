@@ -1,0 +1,10 @@
+<h1>Highlight Component</h1>
+<br><br>
+
+<div class = "container">
+  <label>Color Select:</label>
+    <select [(ngModel)]='selectedColor' name='selectedColor' >
+      <option *ngFor='let color of colors' [value]='color'> {{color}} </option>
+    </select>
+    <p style="font-size:2.5em;" [ngStyle]='{ "background-color" : selectedColor}'><b>Highlight color is {{selectedColor}} </b></p>
+</div>

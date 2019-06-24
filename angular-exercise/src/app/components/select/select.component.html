@@ -1,0 +1,24 @@
+<h1>Select Component</h1>
+<br>
+<form >
+  
+    <input (click)="selected(1)" name = "select" type="radio" value="animal" >Animals <br>
+    <input (click)="selected(2)" name = "select" type="radio"  value="color" >Colors <br>
+    <input (click)="selected(3)" name = "select" type="radio"  value="day" >Days <br>
+
+    <br>
+      <ul *ngIf="aIsChosen">
+        <li *ngFor="let a of animals">{{a}}</li>
+      </ul>
+    
+    
+      <ul *ngIf="cIsChosen">
+        <li *ngFor="let c of colors">{{c}}</li>
+      </ul>
+    
+    
+      <ul *ngIf="dIsChosen">
+        <li *ngFor="let d of days">{{d}}</li>
+      </ul>
+    
+  </form>
