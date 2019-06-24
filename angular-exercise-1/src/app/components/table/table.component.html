@@ -1,0 +1,28 @@
+<br> <hr>
+
+<button type="button" (click)='showInfo()'>Format Table</button> <br><br>
+<table class="table table-hover" *ngIf='show'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+  </tr>
+  <tr *ngFor='let person of people'>
+    <td>{{person.firstname | titlecase}} {{person.lastname | titlecase}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.birthday | date:"MM/dd/yy"}}</td>
+  </tr>
+</table>
+
+<table *ngIf='!show'>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+  </tr>
+  <tr *ngFor='let person of people'>
+    <td>{{person.firstname | titlecase}} {{person.lastname | titlecase}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.birthday | date:"MM/dd/yy"}}</td>
+  </tr>
+</table>

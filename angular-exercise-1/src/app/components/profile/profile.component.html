@@ -1,0 +1,5 @@
+<hr> <br>
+<button type="button" (click)='showInfo()'>{{btnText}}</button>
+
+<p *ngIf='show'>{{user.name}} {{user.lastname}}, {{user.age}}</p>
+<p *ngIf='!show'></p>

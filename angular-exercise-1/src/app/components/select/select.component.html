@@ -1,0 +1,60 @@
+<hr> <br>
+
+
+<!-- 
+<label>Pick One</label>
+    <div class="form-group">
+        <div class="radio">
+            <label>
+                Animals
+            </label>
+            <input type="radio" id="animal" name="animals" value="animal" (click)="isSelected('animal')" ng-model="formData.choices">
+
+        </div>
+        <div class="radio">
+            <label>
+                Colors
+            </label>
+            <input type="radio" id="colors" name="colors" value="colors" (click)="isSelected('colors')" ng-model="formData.choices">
+
+        </div>
+        <div class="radio">
+            <label>
+                Days
+            </label>
+            <input type="radio" id="days" name="days" value="days" (click)="isSelected('days')" ng-model="formData.choices">
+
+        </div>
+    </div> -->
+
+
+
+<!-- <input type="radio" name="choice"  [checked]="idx === 0" (change)="onSelectionChange(entry)">Animals<br>
+<input type="radio" name="choice"  ng-checked='showInfo' id='colors'> Colors<br>
+<input type="radio" name="choice"  ng-checked='showInfo' id='days'> Days <br>
+ -->
+
+    <input type="radio" name="a" id='animal' (click)="animalDisplay()">Animals<br>
+<input type="radio" name="a" id='colors' (click)="colorDisplay()"> Colors<br>
+<input type="radio" name="a" id='days' (click)="daysDisplay()"> Days <br>
+
+<div *ngIf = 'animals.length > 0'>
+<ul>
+    <li *ngFor="let animal of animals">{{animal}}</li>
+</ul> 
+    </div>
+
+<div *ngIf = 'colors.length > 0'>
+        <ul>
+            <li *ngFor="let color of colors">{{color}}</li>
+        </ul> 
+</div>
+
+<div *ngIf = 'days.length>0'>
+        <ul>
+            <li *ngFor="let day of days">{{day}}</li>
+        </ul> 
+ </div>
+
+
+
