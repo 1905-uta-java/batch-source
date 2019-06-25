@@ -20,7 +20,7 @@ public class ValidationUtil {
 		boolean hasDot = false;
 		
 		// Make sure there are no illegal characters
-		if(this.validateIllegalChars(eMail)) {
+		if(!this.validateIllegalChars(eMail)) {
 			return false;
 		}
 		
@@ -47,17 +47,17 @@ public class ValidationUtil {
 		List<Manager> mans = mDao.getManagers();
 		
 		// Make sure there are no illegal characters
-		if(this.validateIllegalChars(uName)) {
+		if(!this.validateIllegalChars(uName)) {
 			return false;
 		}
 		
 		for(Employee emp : emps) {
-			if(emp.getUserName() == uName) {
+			if(emp.getUserName().equals(uName)) {
 				return true;
 			}
 		}
 		for(Manager man : mans) {
-			if(man.getUserName() == uName) {
+			if(man.getUserName().equals(uName)) {
 				return true;
 			}
 		}

@@ -24,7 +24,7 @@ public class LoginDeligate {
 		boolean validInfo = true;
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
-		
+		System.out.println(uName);
 		if(!valid.validateUname(uName) || !valid.validatePword(pWord)) {
 			validInfo = false;
 		}
@@ -32,7 +32,6 @@ public class LoginDeligate {
 		if(validInfo) {
 			Employee e = eDao.getEmployeeByLogin(uName, pWord);
 			Manager m = mDao.getManagerByLogin(uName, pWord);
-			
 			String s = "";
 			
 			if(e != null) {
@@ -45,8 +44,10 @@ public class LoginDeligate {
 				response.setHeader("Authentic", s);
 			} else {
 				System.out.println("reached bad");
-				response.sendError(405, "User Information Incorrect");
+				response.sendError(405, "Login Information Incorrect");
 			}
+		} else {
+			response.sendError(405, "Invalid Login Information");
 		}
 	}
 	
@@ -97,7 +98,7 @@ public class LoginDeligate {
 		
 		if(!validInfo) {
 			System.out.println("Reached the wrong thing");
-			response.sendError(405, "Input is Invalid");
+			response.sendError(405, "Cannot create user: Input is Invalid");
 		}
 	}
 }

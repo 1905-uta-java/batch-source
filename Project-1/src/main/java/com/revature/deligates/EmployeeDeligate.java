@@ -38,15 +38,19 @@ public class EmployeeDeligate {
 			this.createRequest(request, response);
 			break;
 		case "/change":
+			this.changeEmployee(request, response);
 			break;
 		default:
-			
+			response.sendError(404, "Page is not found");
 		}
 	}
 	
 	public void getEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Get the information from the request
 		int id = valid.validateInt(request.getParameter("employeeId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get employee information: id was invalid");
+		}
 		Employee e = eServe.getEmployee(id);
 		
 		// Get the information of the requested employee and send it back
@@ -66,6 +70,9 @@ public class EmployeeDeligate {
 		int eId = valid.validateInt(request.getParameter("employeeId"));
 		double amount = valid.validateAmount(request.getParameter("amount"));
 		String reason = request.getParameter("reason");
+		if(eId == -1 || amount == -1.00) {
+			response.sendError(405, "Could not create request: Input is Invalid");
+		}
 		
 		Request r = new Request(id, eId, amount, reason, -1);
 		eServe.newRequest(r);
@@ -73,6 +80,9 @@ public class EmployeeDeligate {
 	
 	public void getRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get requests: id was invalid");
+		}
 		List<Request> rList = eServe.getRequests(id);
 		
 		PrintWriter pw = response.getWriter();
@@ -82,6 +92,9 @@ public class EmployeeDeligate {
 	
 	public void getApproved(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get approved requests: id was invalid");
+		}
 		List<Request> rList = eServe.getRequests(id);
 		List<Request> result = new ArrayList<Request>();
 		
@@ -96,7 +109,10 @@ public class EmployeeDeligate {
 	}
 	
 	public void changeEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int eId = valid.validateInt(request.getParameter("managerId"));
+		int eId = valid.validateInt(request.getParameter("employeeId"));
+		if(eId == -1) {
+			response.sendError(405, "Could not change employee information: id was invalid");
+		}
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
 		String eMail = request.getParameter("email");

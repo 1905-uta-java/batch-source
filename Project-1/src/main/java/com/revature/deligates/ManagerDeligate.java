@@ -42,12 +42,15 @@ public class ManagerDeligate {
 			this.changeManager(request, response);
 			break;
 		default:
-			
+			response.sendError(404, "Page is not found");
 		}
 	}
 	
 	public void getManager(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("managerId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get manager information: id was invalid");
+		}
 		Manager m = mServe.getManager(id);
 		
 		PrintWriter pw = response.getWriter();
@@ -57,6 +60,9 @@ public class ManagerDeligate {
 	
 	public void getEmployees(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("managerId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get employees: id was invalid");
+		}
 		List<Employee> eList = mServe.getEmployees(id);
 		
 		PrintWriter pw = response.getWriter();
@@ -66,6 +72,9 @@ public class ManagerDeligate {
 	
 	public void getEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get employee: id was invalid");
+		}
 		Employee e = mServe.getEmployee(id);
 		
 		PrintWriter pw = response.getWriter();
@@ -75,6 +84,9 @@ public class ManagerDeligate {
 	
 	public void getRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("managerId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get requests: id was invalid");
+		}
 		List<Employee> eList = mServe.getEmployees(id);
 		
 		List<Request> rList = mServe.getRequests(eList);
@@ -87,12 +99,18 @@ public class ManagerDeligate {
 	public void approveRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int mId = valid.validateInt(request.getParameter("managerId"));
 		int rId = valid.validateInt(request.getParameter("requestId"));
+		if(mId == -1 || rId == -1) {
+			response.sendError(405, "Could not get approve the request: an id was invalid");
+		}
 		
 		mServe.approveRequest(rId, mId);
 	}
 	
 	public void changeManager(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int mId = valid.validateInt(request.getParameter("managerId"));
+		if(mId == -1) {
+			response.sendError(405, "Could not change manager information: id was invalid");
+		}
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
 		String eMail = request.getParameter("email");
