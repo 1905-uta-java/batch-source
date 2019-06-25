@@ -25,11 +25,12 @@ Angular
 		Made up of components, pipes, services, smaller modules, ...
 	<app-root> HTML Directive
 		Not normally implemented in HTML, added by Angular
+		Used to define area of HTML that will be overwritten by Angular HTML
 	Decorators
 		Functions that manage class metadata
 		Denoted by @DecoratorName
 		Syntax:
-			@Name ({
+			@Decorator ({
 				declarations
 				imports
 				providers
@@ -59,7 +60,7 @@ Angular
 			Combination of Property and Event binding
 			"Banana in a box notation"
 			[(html_id)]='var_name'
-			Both ways between HTML and 
+			Both ways between HTML and TS
 			Value changed in one place will change in the other
 	Directives
 		Components

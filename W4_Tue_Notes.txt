@@ -47,4 +47,4 @@ Servlets and Client-Server communication
 			A redirect would change URL, forwarding doesn't
 		Response comes from servlet that was forwarded to
 		Include - Gives response from both servlets instead of just second one
-		
+		AJAX calls don't change URL at all, invisiblle to user
