@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <script src="script.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbg">
+          <a class="navbar-brand" href="#">Welcome to the ERS</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <div class="wrapper">
+                <nav id="sidebar">
+                        <div class="sidebar-header">
+                        <h3>Welcome</h3>
+                    </div>
+            
+                    <ul class="list-unstyled components">
+                        <p></p>
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Login</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                        <form onsubmit=false'>
+                                                <div class="form-group">
+                                                  <label for="enterUser">Username</label>
+                                                  <input type="text" class="form-control" id="usernameId" placeholder="Enter username">                                                </div>
+                                                <div class="form-group">
+                                                  <label for="enterPass">Password</label>
+                                                  <input type="password" class="form-control" id="passwordId" placeholder="Password">
+                                                </div>
+                                                <button type="button" id="login-btn" class="btn btn-secondary">Login</button>
+<!--                                                <button type="submit" id="login-btn" class="btn btn-secondary">Login</button>-->
+                                              </form>
+                                </li>
+                            </ul>                
+                    </ul>
+                </nav>
+                <div id="content">
+                        <nav class="navbar">
+                            <div class="container-fluid">
+                                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                                    <span>|||</span>
+                                </button>
+                    
+                            </div>
+                        </nav>
+                    </div>
+            </div>  
+
+<hr>
+<hr>
+<div class="text-center">
+			<h2 class=""text-center"> Welcome to the Reimbursement Program. </h2>
+
+		<p> Please sign in using the side bar to access your profile.</p>
+		
+		<p> Log in using your username and password</p>
+
+		<p> Thank you! </p>
+		
+		</div>
+
+
+        <div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+
+<script src="scripts/indexHomeScript.js"></script>
+</body>
+</html>

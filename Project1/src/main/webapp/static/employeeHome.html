@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/homepage.css">
+    <script src="static/script.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbg">
+          <a class="navbar-brand" href="#">Welcome to the ERS</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <div class="wrapper">
+                <nav id="sidebar">
+                        <div class="sidebar-header">
+                        <h3>Welcome</h3>
+                    </div>
+            
+                    <ul class="list-unstyled components">
+                        <p></p>
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Make A Request</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                        <form onsubmit=false>
+                                                <div class="form-group">
+                                                  <label for="enterUser">Amount</label>
+                                                  <input type="text" class="form-control" id="amountId" placeholder="Enter amount">                                                </div>
+                                                <div class="form-group">
+                                                  <label for="enterReason">Reason</label>
+                                                  <input type="text" class="form-control" id="reasonId" placeholder="Enter Reason">
+                                                </div>
+                                                <button type="button" id="submitBtnId" class="btn btn-secondary">Submit Request</button>
+                                              </form>
+                                </li>
+                            </ul>    
+                            <li>
+                            <br>
+                            <hr>
+                            <button type="button" id="logoutBtn" class="btn btn-outline-secondary">Log out</button>
+                </nav>
+                <div id="content">
+                        <nav class="navbar">
+                            <div class="container-fluid">
+                                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                                    <span>|||</span>
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+            </div>  
+            
+            
+            <br> <hr>
+            <div class="jumbotron jumbotron-fluid">
+ 			 <div class="container">
+	    	<h1 id="empName" class="display-4"></h1>
+	   		 <p id="empId" class="lead"></p>
+	   		 <p id="empEmail" class="lead"></p>
+	   		      <ul class="list-unstyled components">
+                        <p></p>
+                        <li class="active">
+                            <a href="#editMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Edit Profile</a>
+                            <ul class="collapse list-unstyled" id="editMenu">
+                                <li>
+                                        <form onsubmit=false>
+                                                <div class="form-group">
+                                                  <label for="firstName">First Name</label>
+                                                  <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">                                                </div>
+                                                <div class="form-group">
+                                                  <label for="LastName">Last Name</label>
+                                                  <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                                                </div>
+                                                  <div class="form-group">
+                                                 <label for="Email">Email</label>
+                                                 <input type="text" class="form-control" id="emailChange" placeholder="Enter Email">
+                                                </div>
+                                                <button id="editProfBtn" type="button" class="btn btn-secondary">Update Profile</button>
+                                              </form>
+                                </li>
+                            </ul>          
+                    </ul>
+	 		 </div>
+			</div>
+
+          <!-- ---------------------  REIMBURSEMENT REQUEST ACCORDIANS --------------------------- -->
+      <!-- ----------------- PENDING REIMBURSEMENTS ------------------ -->
+          <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button id="current-pend-btn" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Current Pending Reimbursement Requests
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <table class="table" id="pendingReTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Emp.Id</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>            </div>
+          </div>
+        </div>
+
+        <!-- ---------------------- PAST REIMBURSEMENTS ---------------------- -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button id="pastRe-btn" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Past Reimbursement Requests 
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <table class="table" id="pastReTable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <hr>
+      <hr>
+      
+
+<!-- --------------------- PAGE BORDER ------------------------ -->
+        <div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+
+<script src="static/scripts/empRequestScript.js"></script>
+</body>
+</html>
