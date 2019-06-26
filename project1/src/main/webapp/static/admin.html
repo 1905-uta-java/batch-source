@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Administration Home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type='text/css' href="static/css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='static/css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='static/css/admin.css'>
+</head>
+<body>
+    <div class = 'clearfix'>
+        <nav id = 'nav' class ='navbar navbar-expand-lg bg-light navbar-light'>
+            <div class = 'collapse navbar-collapse'>
+                <ul class = 'navbar-nav'>
+                    <li class = 'nav-item active' id = 'empInfoLi'>
+                        <label for = 'empInfoNav' class = 'nav-link'>Manager Information</label>
+                        <input type = 'radio' id = 'empInfoNav' class = 'nav-link btn btn-link' name = 'navStuff'>
+                    </li>
+                    <li class = 'nav-item' id = 'remInfoLi'>
+                        <label for = 'reburseNav' class = 'nav-link'>Reimbursement Requests</label>
+                        <input type = 'radio' id = 'reburseNav' class = 'nav-link btn btn-link'name = 'navStuff'>
+                    </li>
+                    <li class = 'nav-item' id = 'allEmpLi'>
+                        <label for = 'addEmpNav' class = 'nav-link' >View All Employees</label>
+                        <input type='radio' id = 'addEmpNav' class = 'nav-link btn btn-link' name = 'navStuff'>
+                    </li>
+                    <!-- <li class = 'nav-item' id = 'empInfoLi'>
+                        <label for = 'addEmpNav' class = 'nav-link' >Add Employee</label>
+                        <input type='radio' id = 'addEmpNav' class = 'nav-link btn btn-link' data-toggle='modal' data-target='#newEmpModal' name = 'navStuff'>
+                    </li>-->
+                </ul>
+            </div>
+            <button id = 'edit_btn' class = 'float-right btn-default btn' data-toggle='modal' data-target='#updEmpModal'>Edit Info</button>
+            <button id = 'logout_btn' class = 'float-right btn-danger btn'>Logout</button>
+        </nav>
+    </div>
+    
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = "empInfo">
+        <div class = 'clearfix bg-light contain'>
+            <h1 id= 'yourInfoTitle'>Your Information</h1>
+            <hr>
+            <div class = 'container' id = 'infoContainer'>
+                <section id = 'personalInfoSec'>
+                    <div class = 'row'>
+                        <div class = 'col-12'>
+                            <h4 id = 'personalInfoHead' class = 'headers'>Personal Information</h4>
+                        </div>
+                    </div>
+                    <div class = 'row justify-content-center form-group'>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'firstNameDiv'>
+                            <label for = 'fNameView' id = 'fNameLbl' class = 'empLabel'>
+                                First Name
+                            </label>
+                            <div id = 'fNameView' class = 'empView'></div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'lastNameDiv'>
+                            <label for = 'lNameView' id = 'lNameLbl' class = 'empLabel'>
+                                Last Name
+                            </label>
+                            <div id = 'lNameView' class = 'empView'></div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'bdayDiv'>
+                            <label for = 'bdayView' id = 'bdayLbl' class = 'empLabel'>
+                                Birth Date
+                            </label>
+                            <div id = 'bdayView' class = 'empView'></div>
+                        </div>
+                    </div>
+                    <div class = 'row justify-content-center form-group'>
+                        <div class = 'col-lg-8 col-md-12 col-sm-12' id = 'emailDiv'>
+                            <label for = 'emailView' id = 'emailLbl' class = 'empLabel'>
+                                Email Address
+                            </label>
+                            <div id = 'emailView' class = 'empView'></div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'firstNameDiv'>
+                            <label for = 'positionView' id = 'addrLbl' class = 'empLabel'>
+                                Position
+                            </label>
+                            <div id = 'positionView' class = 'empView'></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <section id = 'empLoginSec'>
+                    <div class = 'row'>
+                        <hr>
+                    </div>
+                    <div class = 'row form-group' >
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'usernameDiv'>
+                            <label for = 'usernameView' id = 'usernameLbl' class = 'empLabel'>
+                                Username
+                            </label>
+                            <div id = 'usernameView' class = 'empView'>
+                                
+                            </div>
+                        </div>
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'passwordDiv'>
+                            <label for = 'passwordView' id = 'passwordLbl' class = 'empLabel'>
+                                Password
+                            </label>
+                            <div id = 'passwordView' class = 'empView'>
+                                &#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                            </div>
+                        </div>
+                        
+                        <div class = 'col-lg-4 col-md-6 col-sm-12' id = 'empIdDiv'>
+                            <label for = 'empIdView' id = 'empIdLbl' class = 'empLabel'>
+                                ID
+                            </label>
+                            <div id = 'empIdView' class = 'empView'></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- REIMBURSEMENT REQUESTS -->
+
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = 'remInfo' hidden>
+        <div id = 'reqCommandBar' class = 'container'>
+        	<div class = 'row justify-content-end'>
+       			<div id = 'selContainer' class = 'col-lg-4'>
+					<!-- <label for = 'selectView'>Select Filter</label>-->
+					<select id = 'selectView' class = 'form-control'>
+						<option  value = 'dis' disabled selected>Select Filter</option>
+						<option id = 'defaultSel' value = 'default'>Default</option>
+						<option id = 'byEmp' value = 'byEmp'>By Employee</option>
+						<option id = 'allRequests' value = 'allReq'>All Requests</option>
+					</select>
+                   </div>
+        		
+        		<div id = 'refContainer' class = 'col-lg-3'>
+         	       <button id = 'save-admin-req-btn' class = 'btn btn-primary'>Save</button>
+                </div>	
+        	</div>
+        </div>
+        
+        <div id = 'requestMain'>
+	        <div class = 'clearfix bg-light' id = 'contain'>
+	            <div class = 'container' id = 'infoContainer'>
+	                <div class = 'row' id = 'headAndBtn'>
+	                    <div class = 'col-12'>
+	                        <h1>Pending Requests</h1>
+	                    </div>
+	                </div>
+	                <div class = 'row'>
+	                    <div class = 'col-12'>
+	                        <table id = 'pendReqTable' class = 'table table-hover'>
+	                        </table>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class = 'clearfix bg-light' id = 'contain'>
+	            <div class = 'container' id = 'infoContainer'>
+	                <div class = 'row'>
+	                    <div class = 'col-12'>
+	                        <h1>Resolved Requests</h1>
+	                    </div>
+	                </div>
+	                <div class = 'row'>
+	                    <div class = 'col-12'>
+	                        <table id = 'resReqTable' class = 'table'>
+	                        </table>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+    </div>
+    
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = 'allEmps' hidden>
+        <div class = 'clearfix bg-light' id = 'contain'>
+            <div class = 'container' id = 'infoContainer'>
+                <div class = 'row' id = 'headAndBtn'>
+                    <div class = 'col-12'>
+                        <h1>All Employees</h1>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <table id = 'empTable' class = 'table table-hover'>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = 'allRems'>
+        <div class = 'clearfix bg-light' id = 'contain'>
+            <div class = 'container' id = 'infoContainer'>
+                <div class = 'row' id = 'headAndBtn'>
+                    <div class = 'col-12'>
+                        <h1>All Finalized Reimbursements</h1>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <table id = 'allRemTable' class = 'table table-hover'>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = 'col-lg-10 col-md-12 col-sm-12 offset-lg-1 bigContainer' id = 'allEmpRems'>
+        <div class = 'clearfix bg-light' id = 'contain'>
+            <div class = 'container' id = 'infoContainer'>
+                <div class = 'row' id = 'headAndBtn'>
+                    <div class = 'col-12'>
+                        <h1>Reimbursements</h1>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-12'>
+                        <div id = 'allEmpRems'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id = 'updEmpModal' class = 'modal fade' tabindex="-1" role='dialog'>
+        <div class = 'modal-dialog' role = 'document'>
+            <div class = 'modal-content'>
+                <div class = 'modal-header'>
+                    <h5 class = 'modal-title'>Update Information</h5>
+                    <button type = 'button' class = 'close' data-dismiss = 'modal' aria-labelledby='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class = 'modal-body'>
+                    <div class = 'row'>
+                        <div class = 'col-lg-4'>
+                            <label for = 'fNameIn'>First Name</label>
+                            <input type = 'text' maxlength='50' class = 'form-control' id = 'fNameIn'>
+                        </div>
+                        <div class = 'col-lg-4'>
+                            <label for = 'lNameIn'>Last Name</label>
+                            <input type = 'text' maxlength ='50' class = 'form-control' id = 'lNameIn'>
+                        </div>
+                        <div class = 'col-lg-4'>
+                            <label for = 'bDateIn'>Birth Date</label>
+                            <input type = 'text' class = 'form-control' id = 'bDateIn'>
+                        </div>
+                    </div>
+                    <div class = 'row'>
+                    	<div class = 'col-6'>
+                            <label for = 'emailIn'>Email</label>
+                    		<input type = 'text' class = 'form-control' id = 'emailIn'>
+                    	</div>
+                    	<div class = 'col-6'>
+                    		<label for = 'passwordIn'>Password</label>
+                    		<input type = 'text' class = 'form-control' id = 'passwordIn'>
+                    	</div>
+                    </div>
+                </div>
+                <div class = 'modal-footer'>
+                    <button type = 'button' class = 'btn btn-primary' id='updEmpInfo' data-dismiss="modal">Update</button>
+                    <button type = 'button' class = 'btn btn-default' data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id = 'newEmpModal' class = 'modal fade' tabindex="-1" role='dialog'>
+        <div class = 'modal-dialog' role = 'document'>
+            <div class = 'modal-content'>
+                <div class = 'modal-header'>
+                    <h5 class = 'modal-title'>New Employee and Login</h5>
+                    <button type = 'button' class = 'close' data-dismiss = 'modal' aria-labelledby='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class = 'modal-body'>
+                    <div class = 'row form-group'>
+                        <div class = 'col-lg-4'>
+                            <label for = 'newEmpFName'>First Name</label>
+                            <input type = 'text' maxlength='50' class = 'form-control' id = 'newEmpFName'>
+                        </div>
+                        <div class = 'col-lg-4'>
+                            <label for = 'newEmpLName'>Last Name</label>
+                            <input type = 'text' maxlength ='50' class = 'form-control' id = 'newEmpLName'>
+                        </div>
+                        <div class = 'col-lg-4'>
+                            <label for = 'newEmpBDate'>Birth Date</label>
+                            <input type = 'text' class = 'form-control' id = 'newEmpBDate'>
+                        </div>
+                    </div>
+                    <div class = 'row form-group'>
+                    	<div class = 'col-5'>
+                            <label for = 'newEmpEmail'>Email</label>
+                    		<input type = 'text' class = 'form-control' id = 'newEmpEmail'>
+                    	</div>
+                    	
+                    	<div class = 'col-4'>
+                    		<label for = 'newEmpPosition'>Position</label>
+                    		<input type = 'text' class = 'form-control' id = 'newEmpPosition'>
+                    	</div>
+                    	<div class = 'col-3'>
+                    		<label for = 'newEmpUserRole'>User Role</label>
+                    		<select id = 'newEmpUserRole' class = 'form-control'>
+                    			<option id = 'userSel' value = 'user'>user</option>
+                    			<option id = 'adminSel' value = 'admin'>admin</option>
+                    		</select>
+                    	</div>
+                    </div>
+                    <div class = 'row form-group'>
+                   		<div class = 'col-4'>
+                   			<label for = 'newEmpUsername'>Username</label>
+                    		<input type = 'text' class = 'form-control' id = 'newEmpUsername'>
+                   		</div>
+                    	<div class = 'col-4'>
+                    		<label for = 'newEmpPassword'>Password</label>
+                    		<input type = 'text' class = 'form-control' id = 'newEmpPassword'>
+                    	</div>
+                    	<div class = 'col-4'>
+                    		<label for = 'newEmpManagerId'>Manager Id</label>
+                    		<input type = 'text' class = 'form-control' id = 'newEmpManagerId'>
+                    	</div>
+                    </div>
+                </div>
+                <div class = 'modal-footer'>
+                    <button type = 'button' class = 'btn btn-primary' id='addEmpInfo' data-dismiss="modal">Save</button>
+                    <button type = 'button' class = 'btn btn-default' >Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = 'editReqModal' class = 'modal fade' tabindex="-1" role='dialog'>
+        <div class = 'modal-dialog' role = 'document'>
+            <div class = 'modal-content'>
+                <div class = 'modal-header'>
+                    <h5 class = 'modal-title'>New Reimbursement Request</h5>
+                    <button type = 'button' class = 'close' data-dismiss = 'modal' aria-labelledby='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>
+                <div class = 'modal-body'>
+                    <div class = 'row'>
+                        <div class = 'col-lg-3'>
+                            <label for = 'idIn'>Request ID</label>
+                            <input type = 'number' maxlength='5' minlength='5' class = 'form-control' id = 'idIn' value = '12345' disabled>
+                        </div>
+                        <div class = 'col-lg-6'>
+                            <label for = 'descInput'>Description</label>
+                            <input type = 'text' maxlength ='50' value = 0 class = 'form-control' id = 'descInput'>
+                        </div>
+                        <div class = 'col-lg-3'>
+                            <label for = 'amtInput'>Amount</label>
+                            $<input type = 'number' maxlength='6' value = 0 class = 'form-control' id = 'amtInput'>
+                        </div>
+                    </div>
+                </div>
+                <div class = 'modal-footer'>
+                    <button type = 'button' class = 'btn btn-primary' id='sendRequest'>Send Request</button>
+                    <button type = 'button' class = 'btn btn-default' data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='static/scripts/updEmp.js'></script>
+    <script src='static/scripts/admin.js'></script>
+    <script src='static/scripts/logout.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

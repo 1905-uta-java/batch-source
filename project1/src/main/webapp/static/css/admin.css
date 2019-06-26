@@ -1,0 +1,17 @@
+#selectView, #save-admin-req-btn{
+	width: 100% !important;
+}
+
+#refContainer{
+	margin-top: 0 !important;
+}
+
+[type='radio']{
+	display:none;
+}
+
+#allRems, #allEmpRems{
+	display: none;
+	
+}
+

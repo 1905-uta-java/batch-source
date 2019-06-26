@@ -49,11 +49,11 @@
     width: 100%;
 }
 
-.rejected{
+.Rejected{
     color: red;
 }
 
-.accepted{
+.Accepted{
     color: green;
 }
 
@@ -83,6 +83,11 @@ input[type=number] {
 
 .modal-dialog{
     max-width: 700px !important;
+}
+
+
+#save-req-btn{
+	display:none;
 }
 
 
