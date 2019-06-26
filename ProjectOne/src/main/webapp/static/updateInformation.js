@@ -20,7 +20,11 @@ function updateInfo()
 		{
            console.log("YOU GOT THE REQUEST TO EXECUTE SUCCESSFULLY!");
            window.location.href = "http://localhost:8080/ProjectOne/employeehome";
-		}
+        }
+        else if (this.readyState === 4 && this.status != 200)
+        {
+            document.getElementById("error").hidden = false;
+        }
     }
 
     var username = document.getElementById("username").value;

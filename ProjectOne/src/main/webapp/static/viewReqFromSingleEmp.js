@@ -12,9 +12,17 @@ function getReqsFromSingleEmp()
 		if (this.readyState === 4 && this.status === 200)
 		{
 			console.log("YOU GOT THE REQUEST TO EXECUTE SUCCESSFULLY!");
+			document.getElementById("error").hidden = true;
 			displayRequests(this);
 		}
-	}
+
+		else if (this.readyState === 4 && this.status != 200)
+		{
+		  document.getElementById("error").hidden = false;
+		}
+		
+    }
+  
 
 	let enteredNumber = document.getElementById("id-box").value;
 	// VALIDATE INPUT HERE!

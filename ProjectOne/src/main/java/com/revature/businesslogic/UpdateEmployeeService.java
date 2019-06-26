@@ -17,37 +17,8 @@ public class UpdateEmployeeService
 		super();
 	}
 	
-	public void updateEmployeeInfo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	public void updateEmployeeInfo(HttpServletRequest request, HttpServletResponse response, String username, String password, String stringId) throws IOException, ServletException
 	{
-		
-		// get request body and split it into array
-		System.out.println(request);
-		System.out.println("REQUEST LENGTH: " + request.getContentLength());
-		String fullBody = request.getReader().readLine();
-		System.out.println("Full request body is: " + fullBody);
-		String[] splitBodyAmp = fullBody.split("&");
-//		for (String string : splitBodyAmp)
-//		{
-//			System.out.println(string);
-//		}
-		
-		// isolate username and password from request body and put the full declaration into an array
-		String fullBodyUsername = splitBodyAmp[0];
-		String fullBodyPassword = splitBodyAmp[1];
-		String fullBodyId = splitBodyAmp[2];
-		
-//		System.out.println("FULL BODY USERNAME " + fullBodyUsername);
-//		System.out.println("FULL BODY PASSWORD " + fullBodyPassword);
-//		System.out.println("FULL BODY ID " + fullBodyId);
-		
-		// split username, password and ID arrays to obtain JUST the username, password, and ID
-		String[]splitUsername = fullBodyUsername.split("=");
-		String[]splitPassword = fullBodyPassword.split("=");
-		String[]splitId = fullBodyId.split("=");
-		
-		String username = splitUsername[1];
-		String password = splitPassword[1];
-		String stringId = splitId[1];
 		
 		// verify fields are correct and parse stringID to an int
 		System.out.println("USERNAME IS: " + username);
@@ -71,10 +42,12 @@ public class UpdateEmployeeService
 	{
 		if (username == null)
 		{
+			System.out.println("Username is null!");
 			return false;
 		}
 		else
 		{
+			System.out.println("Username is not null!");
 			return true;
 		}
 	}
@@ -83,10 +56,12 @@ public class UpdateEmployeeService
 	{
 		if (password == null)
 		{
+			System.out.println("Password is null!");
 			return false;
 		}
 		else
 		{
+			System.out.println("Password is not null");
 			return true;
 		}
 	}
@@ -95,22 +70,26 @@ public class UpdateEmployeeService
 	{
 		if (username == "")
 		{
+			System.out.println("Username is empty!");
 			return false;
 		}
 		else
 		{
+			System.out.println("Username is not empty!");
 			return true;
 		}
 	}
 	
 	public boolean updatedPasswordNotEmpty(String password)
 	{
-		if (password == null)
+		if (password == "")
 		{
+			System.out.println("Password is empty!");
 			return false;
 		}
 		else
 		{
+			System.out.println("Password is not empty!");
 			return true;
 		}
 	}

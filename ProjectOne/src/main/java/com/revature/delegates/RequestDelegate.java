@@ -73,6 +73,25 @@ public class RequestDelegate
 	public void toSelectAllForSingleEmp(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{
 		System.out.println("GOIN TO SELECT REQUEST SERVICE FOR SINGLE EMPLOYEE!");
+		String id = request.getParameter("enteredNumber");
+		
+		// validate numerical input
+		boolean nonNumber = selectRequestTool.enteredIdIsNonNumber(id);
+		if (nonNumber)
+		{
+			response.sendError(400, "You did not enter a number as a request ID!");
+			return;
+		}
+		
+		// validate maxId
+		boolean idTooHigh = selectRequestTool.enteredIdAboveMaxId(id);
+		System.out.println("ID TOO HIGH IS: " + idTooHigh);
+		if (idTooHigh)
+		{
+			System.out.println("ENTERED ID IS NOT ABOVE MAX ID!");
+			response.sendError(400, "You entered above the max ID!");
+			return;
+		}
 		selectRequestTool.getAllReqsForSingleEmp(request, response);
 	}
 	

@@ -20,30 +20,33 @@ public class UpdateUsernameTests
 	@Test
 	public void testUpdatedUsernameNotNull()
 	{
-		
+		String username = null;
+		updateEmpService.updatedUsernameNotEmpty(username);
+		assertFalse(updateEmpService.updatedPasswordNotNull(username));
 	}
 	
 	@Test
 	public void testUpdatedPasswordNotNull()
 	{
-		
+		String password = null;
+		updateEmpService.updatedPasswordNotEmpty(password);
+		assertFalse(updateEmpService.updatedPasswordNotNull(password));
 	}
+	
 	
 	@Test
 	public void testUpdatedUsernameNotEmpty()
 	{
-		
+		String username = "";
+		updateEmpService.updatedUsernameNotEmpty(username);
+		assertFalse(updateEmpService.updatedUsernameNotEmpty(username));
 	}
 	
 	@Test
 	public void testUpdatedPasswordNotEmpty()
 	{
-		
-	}
-	
-	@Test
-	public void testUpdatedUsernameNotTaken()
-	{
-		
+		String password = "";
+		updateEmpService.updatedUsernameNotEmpty(password);
+		assertFalse(updateEmpService.updatedPasswordNotEmpty(password));
 	}
 }

@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.dao.EmployeeDAOImpl;
 import com.revature.dao.RequestDAOImpl;
 import com.revature.models.Request;
 
 public class SelectRequestService
 {
 	RequestDAOImpl reqDaoObject = new RequestDAOImpl();
+	EmployeeDAOImpl empDaoObject = new EmployeeDAOImpl();
 	
 	public SelectRequestService()
 	{
@@ -93,5 +95,34 @@ public class SelectRequestService
 		PrintWriter pw = response.getWriter();
 		pw.write(new ObjectMapper().writeValueAsString(allRequests));
 		pw.close();
+	}
+	
+	public boolean enteredIdIsNonNumber(String id)
+	{
+		if (id.matches("^[0-9]+$"))
+		{
+			return false;
+		}
+		else
+		{
+			System.out.println("ID is nonNumbers=!");
+			return true;
+		}
+	}
+	
+	public boolean enteredIdAboveMaxId(String id)
+	{
+		int enteredId = Integer.parseInt(id);
+		int maxId = empDaoObject.getMaxEmpID();
+		
+		if (enteredId > maxId)
+		{
+			System.out.println("Theres no way that " + enteredId + "can be an Id!" + maxId + "is less than that!");
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
