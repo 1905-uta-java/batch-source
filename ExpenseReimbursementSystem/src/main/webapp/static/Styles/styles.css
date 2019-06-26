@@ -1,0 +1,146 @@
+/* Created by Benjamin Onwenu on October 4, 2018 */
+
+img.About {
+   float:none; 
+   margin:10px;
+}
+
+td.thirtyThreeCNoC {
+  border: 1px solid #04376C;
+  border-collapse: collapse;
+  width: 33%;
+  padding: 5px;
+  text-align: center;
+  border-width: 3px;
+}
+
+td.thirtyThree {
+  border: 1px solid #04376C;
+  border-collapse: collapse;
+  width: 33%;
+  padding: 5px;
+  border-width: 3px;
+  background-color:#FF9700;
+}
+
+td.sixtySixL {
+  border: 1px solid #04376C;
+  border-collapse: collapse;
+  width: 66%;
+  text-align: left;
+  border-width: 3px;
+}
+
+td.sixtySixCO {
+  border: 1px solid #04376C;
+  border-collapse: collapse;
+  width: 66%;
+  text-align: center;
+  border-width: 3px;
+  background-color:#FF9700;
+}
+
+table#t01 {
+  margin-top:80px;
+  width: 100%;
+  background-color: #689CD2;
+  border-collapse: collapse;
+}
+
+table#t02 {
+  margin-top:15px;
+  width: 100%;
+  background-color: #689CD2;
+  border-collapse: collapse;
+}
+
+h1{
+  text-align: center; 
+  font-size: 2.1em; 
+  font-family: Arial, Helvetica, sans-serif;
+  color:#284C73;
+  padding:30px;
+  
+}
+h1.noP{
+  text-align: center; 
+  font-size: 2.1em; 
+  font-family: Arial, Helvetica, sans-serif;
+  color:#284C73;
+  
+  
+}
+
+h2{
+  text-align:center; 
+  font-size: 1.5em; 
+  font-family: Arial, Helvetica, sans-serif;
+  color:#284C73;
+}
+
+h2.h2L {
+  text-align: left;
+}
+
+body {
+  background-color:#689CD2; 
+  color:black;
+}
+
+li a.navR { 
+  display: block; 
+  color: white; 
+  text-align: right; 
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a.nav {
+  display: block; 
+  color: white; 
+  text-align: left; 
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:link {
+  color: #A66200;
+}
+
+a:visited {
+  color: #A66F00;
+}
+
+ul.ulBlack{
+color: black;
+}
+
+ul.nav {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: fixed;
+  top: 0px;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background-color: rgb(10, 0, 65);
+}
+
+li.nav {
+  float: left;
+  
+}
+
+li.navR {
+  float: right;
+}
+
+p {
+  color:black;
+  margin:30px;
+}
+
+li a:hover {
+  background-color:#A66100;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Manager Reinbursements Specify</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/Styles/styles.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <ul class="nav">
+        <li class="navR"><a class="navR" href="http://localhost:8080/ERS/mhome">Home</a></li>
+        <li class="nav"><a class="nav" href="https://people.emich.edu/bonwenu/">Annoncements</a></li>
+        <li class="nav"><a class="nav" href="http://localhost:8080/ERS/mreimbursements">Reimbursement</a></li>
+		<li class="nav"><a class="nav" href="http://localhost:8080/ERS/mprofile">Profile</a></li>
+		<li class="nav"><a class="nav" href="http://localhost:8080/ERS/login">Log out</a></li>
+        
+    </ul>
+    <br><br>
+    <hr style= "border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:3mm">
+    
+    <h2 style ="text-align: left; padding-left: 4mm" >Reimbursement Request (Management)</h2>
+    
+    <hr style="border-width:1mm ;border-color:rgba(8, 4, 59, 0.24);background-color:rgb(32, 43, 138); height:2.5mm">
+	<br> 
+	<button style = 'margin-left: 20px' class="btn btn-primary" onclick="location.href='http://localhost:8080/ERS/mreimbursements'" type="button">
+		Back</button>
+		<br><br>
+
+		<h4 style  ="margin-left: 70px">Enter Employee ID</h4>
+		<div class = "container">
+        <input type="number" id="empID">
+		<button class="btn btn-primary"  id = "getD" >Get Employee Requests</button>
+		<br>
+	</div>
+
+		<div class="container">
+	
+	
+			<table class = "table table-striped" id = "spec-table">
+				<tr id="header-row3">
+					<th>Request ID</th>
+					<th>Employee ID</th>
+					<th>Amount</th>
+					<th>Description</th>
+					<th>Status</th>
+					<th>Resolved By</th>
+				</tr>
+			</table>
+		</div> <br><br>
+
+
+		<script src='static/Scripts/specifyR.js'></script>
+</body>
+</html>
