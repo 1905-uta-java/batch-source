@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ERS - Service</title>
+    <script src="static/js/redirectScript.js"></script>
+    <!--Styles-->
+    <!--Bootstrap cdn css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--My CSS-->
+    <link rel="stylesheet" href="static/css/indexStyles.css">
+
+    <!--Bootstrap cdn js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body>
+    <h1 class="jumbotron">Mo's Neighborly Pharmacy RX</h1>
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active home" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active createReq" href="#">Create Reimbursement Request</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active viewReq" href="#">View Reimbursement Requests</a>
+                </li>
+
+                <li class="nav-item viewUsers">
+                    <a class="nav-link active viewUsers" href="#">View Users</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active profile" href="#">View/Update Profile</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active logout" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+        
+        <!--Default Subwindow after logging in-->
+        <div class="col-md-8">
+            <!--Subwindow for creating a request-->
+            <h4>Create a reimbursement request: </h4>
+            <br>
+            <div class="wCreateReq container">
+                <div class="row">
+                    <h6 class="col-sm-2">Amount: </h6>
+                    <input class="col-sm-6 amount" type="number">
+                </div>
+                <br>
+                <div class="row">
+                    <h6 class="col-sm-2">Comments: </h6>
+                    <input class="col-sm-6 comments" type="text">
+                </div>
+                <br>
+                <button class="btn btn-primary create-req-btn">Submit</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="static/js/indexScript.js"></script>
+<script src="static/js/createReqScript.js"></script>
+<footer>
+
+</footer>
+
+</html>
