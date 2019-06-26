@@ -131,7 +131,7 @@ public class ManagerDeligate {
 	public void approveRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int mId = valid.validateInt(request.getParameter("managerId"));
 		int rId = valid.validateInt(request.getParameter("requestId"));
-		if(mId == -1 || rId == -1 || mServe.reqExists(rId)) {
+		if(mId == -1 || rId == -1 || !mServe.reqExists(rId)) {
 			response.sendError(405, "Could not approve the request: an id was invalid");
 		}
 		
@@ -168,7 +168,7 @@ public class ManagerDeligate {
 	public void denyRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int mId = valid.validateInt(request.getParameter("managerId"));
 		int rId = valid.validateInt(request.getParameter("requestId"));
-		if(mId == -1 || rId == -1 || mServe.reqExists(rId)) {
+		if(mId == -1 || rId == -1 || !mServe.reqExists(rId)) {
 			response.sendError(405, "Could not deny the request: an id was invalid");
 		}
 		
