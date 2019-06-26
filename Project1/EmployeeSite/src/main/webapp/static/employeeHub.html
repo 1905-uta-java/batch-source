@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="google" content="notranslate">
+    <title>Employee Hub</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='static/CSS/employeHub.css'>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<body class="bg-secondary">
+
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+        <a class="navbar-brand text-white" href="#">CompanyName</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <button class="btn nav-item nav-link text-white active"  onclick="showPage('employee-overview')">Overview<span class="sr-only">(current)</span></button>
+                <button class="btn nav-item nav-link text-white" onclick="showPage('view-reimbursement')">Reimbursement</button>
+                <button class="btn nav-item nav-link manager text-white"  onclick="showPage('employee-list')" hidden>Employees</button>
+                <button class="btn nav-item nav-link text-white" onclick="showPage('settings')">Settings</button>
+                <button class="btn nav-item nav-link text-white" onclick="" id="logout-button">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-secondary">
+        <!--Presistent Information-->
+        <div class="presistent row bg-dark text-white">
+            <div class="col-sm-1"></div>
+            <div class="col" id="presName">Name: </div>
+            <div class="col" id="presEmail">Email: </div>
+            <div class="col" id="presId">Employee ID: </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <!--Employee Overview-->
+        <div id="employee-overview" class="view-page" hidden>
+            <div class="row top-row">
+                <div class="col-sm-3">
+                    
+                    <!--Left column to display work news and for managers display manager notifications-->
+                    <div class = "col-sm-11 offset-sm-1">
+
+                        <!--Display any pending requests for the current manager here-->
+                        <div class="row notification-container" >
+                            <div class="col-sm-12 overview-container bg-light text-dark manager">
+                                <!--Number of pending requests-->
+                                <div>
+                                    <h3>Notifications</h3>
+                                    <div class="notifs">
+                                        <h5 class="manager">Pending Requests: <span id="pending-notif"></span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row work-news">
+                            <div class="col-sm-12 overview-container bg-light text-dark">
+                                <h3>Work News</h3>
+                                <div class="news-info">
+                                            
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+
+
+                </div>
+                <div class="col-sm-5">
+                    <div class="row middle-info">
+                        <!--Middle column to display -->
+                        <div class = "col-sm-11 offset-sm-1 overview-container bg-light text-dark">
+                            <h3>Messages</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <!--Right column to display date and events-->
+                    <div class = "col-sm-10 offset-sm-1">
+                        <div class="row date">
+                            <div class="col-sm-12 overview-container bg-light text-dark">
+                                <div class="date-info" id="event-date" >
+                                    <div class="date-title">Today</div>
+                                    <div class="date-current" id="current-date">22nd  April  2018</div>
+                                </div>
+                                <div class="date-info-event" id="event-add" hidden>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <span id="lbl-event-add-date">Date</span> <input type="datetime-local" id="event-add-date" class="form-control">
+                                            <span id="lbl-event-add-desc">Description</span>
+                                            <input type="text" id="event-info" class="form-control"><br>
+                                        </div>
+                                        <div class="col-4">
+                                            <br>
+                                            <button class="btn btn-outline-success" id="new-event">Add Event</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Event container-->
+                        <div class="row events">
+                            <div class="col-sm-12 overview-container bg-light text-dark">
+                                <!--Add an event to database-->
+                                <div class="add-event">
+                                    <em class="fas fa-plus" id="toggle-new-event"></em>
+                                </div>
+                                <div>
+                                <table class="table table-bordered table-striped mb-0 event-table">
+                                    <colgroup>
+                                        <col span="1" style="width: 10%;">
+                                        <col span="1" style="width: 90%;">
+                                    </colgroup>
+                                    <tr>
+                                        <td class="td-date">DateTime</td>
+                                        <td class="td-desc">Description</td>
+                                    </tr>
+                                </table>
+                                </div>
+                                <div class="events-scroll">
+                                    <table class="table table-bordered table-striped mb-0 event-table" id="table-of-events">
+                                        <colgroup>
+                                            <col span="1" style="width: 10%;">
+                                            <col span="1" style="width: 90%;">
+                                        </colgroup>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col-sm-1"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Reimbursement View-->
+        <div id="view-reimbursement" class="bg-light text-dark view-page" hidden>
+            <h3 class="reim-title">Reimbursements</h3>
+            <div class="reim-table-titles">
+                <!--Display all the reimbursement infromation-->
+                <table id="" class="table table-striped table-sm">
+                    <colgroup>
+                        <col span="1" style="width: 5%;">
+                        <col span="1" style="width: 5%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 6%;">
+                        <col span="1" style="width: 8%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 46%;">
+                    </colgroup>
+                    <thead>
+                        <tr class="reim-head">
+                            <th class="th-sm"> </th>
+                            <th class="th-sm">ID</th>
+                            <th class="th-sm">Status</th>
+                            <th class="th-sm">Date</th>
+                            <th class="th-sm">Employee</th>
+                            <th class="th-sm">Amount</th>
+                            <th class="th-sm">Reason</th>
+                            <th class="th-sm">Employee Notes</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="inner-reim-container">
+                <table id="reim-table" class="table table-striped table-sm">
+                    <colgroup>
+                        <col span="1" style="width: 5%;">
+                        <col span="1" style="width: 5%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 6%;">
+                        <col span="1" style="width: 8%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 10%;">
+                        <col span="1" style="width: 46%;">
+                    </colgroup>
+                    <tbody id = "table-of-requests">
+                        <tr>
+                            <td><em class="fas fa-check"></em>     <em class="fas fa-ban"></em></td>
+                            <td>12345</td>
+                            <td>Pending</td>
+                            <td>06/21/16</td>
+                            <td>109374</td>
+                            <td>124.83</td>
+                            <td>Travel</td>
+                            <td>Traveling to work at another site</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row reim-table-controls">
+                <div class="col-sm-1">
+                   <h6 class="search-right">Search:</h6>
+                </div>
+                <div>
+                    <input type="text" id="reim-search" class="form-control"> 
+                </div>
+            </div>
+            <!--New Reimbursments-->
+            <div class="reim-new-request">
+                <h3 id="h3-new-req">New Reimbursement</h3>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label for="inp-amount" id="lbl-req-amount">Amount</label>
+                            <input type="text" name="" id="inp-amount" class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="sel-reason">Reason</label>
+                            <select name="" id="sel-reason" class="form-control">
+                                <option value="travel">Travel</option>
+                                <option value="meal">Meal</option>
+                                <option value="damage">Damage</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="inp-info">Additional Information</label>
+                            <input type="text" name="" id="inp-info" class="form-control">
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-outline-success submit-request" id="inp-submit-request">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Manager Employee List-->
+        <div id="employee-list" class="view-page bg-light text-dark" hidden>
+            <div class="row inner-emp-container">
+                <div class="col emp-container">
+                    <h3 class="emp-title">Employees</h3>
+                    <div class = "emp-list-titles">
+                        <!--Display all the employees-->
+                        <table id="" class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="th-sm" style="width:50px;">ID</th>
+                                    <th class="th-sm" style="width:90px;">Employee</th>
+                                    <th class="th-sm" style="width:90px;">Phone</th>
+                                    <th class="th-sm" style="width:120px;">Email</th>
+                                    <th class="th-sm" style="width:20px; text-align: right;">Manager</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class = "emp-list">
+                        <table id="emp-table" class="table table-striped table-sm">
+                            <tbody id = "table-of-employees">
+                                <tr>
+                                    <td>003843</td>
+                                    <td>Susan Johnson</td>
+                                    <td>1-715-891-1069</td>
+                                    <td>susJohn95@company.com</td>
+                                    <td>104839</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row emp-table-controls">
+                        <div class="col-sm-1">
+                            <h6 class="search-right">Search:    </h6>
+                        </div>
+                        <div>
+                            <input type="text" id="emp-search" class="form-control"> 
+                        </div>
+                    </div>
+                </div>
+
+                <!--Add/Update/Remove Employees-->
+                <div class="col emp-edit">
+                    <!--Add Employee-->
+                    <h4 id="h4-add-emp">Add Employee</h4>
+                    <div action="">
+                        <div class="row add-emp-div">
+                                <div class="col-sm-5">
+                                    <label for="emp-add-first" id="lbl-add-first">First Name</label>
+                                    <input type="text" name="emp-firstname" id="emp-add-first" class="form-control">
+                                    <label for="emp-upd-phone" id="lbl-add-phone">Phone Number</label>
+                                    <input type="text" name="emp-phonenumber" id="emp-add-phone" class="form-control">
+                                </div>
+                                <div class="col-sm-5">
+                                    <label for="emp-add-last" id="lbl-add-last">Last Name</label>
+                                    <input type="text" name="emp-lastname" id="emp-add-last" class="form-control">
+                                    <label for="emp-add-manager" id="lbl-add-manager">Manager ID</label>
+                                    <select name="emp-manager" id="emp-add-manager" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2">
+                                </div>
+                                <button class="btn btn-outline-success add-emp-submit" id="emp-add-submit">Add</button>
+                        </div>
+                    </div>
+
+                    <!--Update Employee-->
+                    <h4 id="h4-upd-emp">Update Employee</h4>
+                    <div action="">
+                        <div class="row update-emp-div">
+                                <div class="col-sm-3">
+                                    <label for="emp-upd-id" id="lbl-upd-id">Employee ID</label>
+                                    <select name="emp-idupd" id="emp-upd-id" class="form-control">
+                                        <option value=""></option>
+                                    </select> 
+                                    <label for="emp-upd-manager" id="lbl-upd-manager">Manager</label>
+                                    <select name="emp-managerupd" id="emp-upd-manager" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="emp-upd-first" id="lbl-upd-first">First Name</label>
+                                    <input type="text" name="empfirstname" id="emp-upd-first" class="form-control">
+                                    <label for="emp-upd-phone" id="lbl-upd-phone">Phone Number</label>
+                                    <input type="text" name="empphoennumber" id="emp-upd-phone" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                        <label for="emp-upd-last" id="lbl-upd-last">Last Name</label>
+                                        <input type="text" name="emplastname" id="emp-upd-last" class="form-control">
+                                </div>
+                                <button class="btn btn-outline-primary upd-emp-submit" id="emp-upd-submit">Update</button>
+                        </div>
+                    </div>
+                    <!--Remove Employee-->
+                    <div class="row remove-emp-div">
+                        <div class="col-sm-6">
+                            <h4>Remove Employee</h4>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="del-emp" id="lbl-del-emp">Employee ID</label>
+                                    <select name="" id="del-emp" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-outline-danger del-emp-submit" id="emp-del-submit">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 promote-emp-border">
+                            <h4>Promote Employee</h4>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="promote-emp" id="lbl-promote-emp">Employee ID</label>
+                                    <select name="" id="promote-emp" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-outline-success del-emp-submit" id="emp-promote-submit">Promote</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Settings-->
+        <div id="settings" class="view-page settings-window bg-light text-dark" hidden>
+            <h3 class="settings-title">Settings</h3>
+            <div class="change-pass">
+                <h5>Change Password</h5>
+                <div>
+                    <label for="cur-pass" id="lbl-cur-pass">Current Password</label>
+                    <input type="password" name="" id="cur-pass" class="form-control pass-change-inputs">
+                    <label for="new-pass-1" id="lbl-new-pass-1">Enter New Password</label>
+                    <input type="password" name="" id="new-pass-1" class="form-control pass-change-inputs">
+                    <label for="new-pass-2" id="lbl-new-pass-2">Renter New Password</label>
+                    <input type="password" name="" id="new-pass-2" class="form-control pass-change-inputs">
+                    <button class="btn btn-outline-success submit-pass" id="update-password">Submit</button>
+                </div>
+            </div>
+            <div class="update-info">
+                <h5 id="update-info-emp">Update Info</h5>
+                <div >
+                    <label for="new-first" id="lbl-first">First Name</label>
+                    <input type="text" name="" id="new-first" class="form-control pass-change-inputs" placeholder="">
+                    <label for="new-last" id="lbl-last">Last Name</label>
+                    <input type="text" name="" id="new-last" class="form-control pass-change-inputs" placeholder="">
+                    <label for="new-phone" id="lbl-phone">Phone Number</label>
+                    <input type="text" name="" id="new-phone" class="form-control pass-change-inputs" placeholder="">
+                    <button class="btn btn-outline-success submit-info" id="update-employee-info">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Loading Screen-->
+    <div id="loading" class="view-page">
+        <div class="spinner-border spinner-border-lg spinner-middle">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <script src='static/JS/employeeHub.js'></script>
+</body>
+</html>

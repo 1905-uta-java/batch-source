@@ -1,0 +1,40 @@
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.left{
+    
+    background-image: url(../Images/wood.jpg);
+    background-color: #cccccc;
+}
+
+.right{
+    background-color: white !important;
+
+}
+
+.login-menu{
+    background-color: ivory;
+    margin-top: 20vh;
+    margin-bottom: 100vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: solid black 5px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.514);
+}
+
+.fit-carousel{
+    bottom: 0;
+    width: 100%;
+}
+
+.fail{
+    color: red;
+}
