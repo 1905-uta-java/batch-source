@@ -24,7 +24,6 @@ public class LoginDeligate {
 		boolean validInfo = true;
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
-		System.out.println(uName);
 		if(!valid.validateUname(uName) || !valid.validatePword(pWord)) {
 			validInfo = false;
 		}
@@ -35,15 +34,12 @@ public class LoginDeligate {
 			String s = "";
 			
 			if(e != null) {
-				System.out.println("reached emp");
 				s = new ObjectMapper().writeValueAsString(e.getId());
 				response.setHeader("Authentic", s);
 			} else if(m != null) {
-				System.out.println("reached man");
 				s = new ObjectMapper().writeValueAsString(m.getId());
 				response.setHeader("Authentic", s);
 			} else {
-				System.out.println("reached bad");
 				response.sendError(405, "Login Information Incorrect");
 			}
 		} else {
