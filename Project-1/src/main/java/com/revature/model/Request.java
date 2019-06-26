@@ -11,19 +11,21 @@ public class Request implements Serializable {
 	private double amount;
 	private String reason;
 	private int approvedBy;
+	private int deniedBy;
 	
 	public Request() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Request(int id, int empId, double amount, String reason, int approvedBy) {
+	public Request(int id, int empId, double amount, String reason, int approvedBy, int deniedBy) {
 		super();
 		this.id = id;
 		this.empId = empId;
 		this.amount = amount;
 		this.reason = reason;
 		this.approvedBy = approvedBy;
+		this.deniedBy = deniedBy;
 	}
 	
 	public int getId() {
@@ -56,6 +58,12 @@ public class Request implements Serializable {
 	public void setApprovedBy(int approvedBy) {
 		this.approvedBy = approvedBy;
 	}
+	public int getDeniedBy() {
+		return deniedBy;
+	}
+	public void setDeniedBy(int deniedBy) {
+		this.deniedBy = deniedBy;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -65,6 +73,7 @@ public class Request implements Serializable {
 		temp = Double.doubleToLongBits(amount);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + approvedBy;
+		result = prime * result + deniedBy;
 		result = prime * result + empId;
 		result = prime * result + id;
 		result = prime * result + ((reason == null) ? 0 : reason.hashCode());
@@ -84,6 +93,8 @@ public class Request implements Serializable {
 			return false;
 		if (approvedBy != other.approvedBy)
 			return false;
+		if (deniedBy != other.deniedBy)
+			return false;
 		if (empId != other.empId)
 			return false;
 		if (id != other.id)
@@ -99,7 +110,7 @@ public class Request implements Serializable {
 	@Override
 	public String toString() {
 		return "Request [id=" + id + ", empId=" + empId + ", amount=" + amount + ", reason=" + reason + ", approvedBy="
-				+ approvedBy + "]";
+				+ approvedBy + ", deniedBy=" + deniedBy + "]";
 	}
 	
 	

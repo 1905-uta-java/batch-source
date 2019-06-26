@@ -58,7 +58,7 @@ public class RequestHelper {
 				lDel.returnCreateUser(request, response);
 				break;
 			default:
-				response.sendError(405, "THIS IS NOT GOOD LOSER");
+				response.sendError(404, "Page not found");
 			}
 		}
 	}

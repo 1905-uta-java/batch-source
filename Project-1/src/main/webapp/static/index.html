@@ -21,7 +21,7 @@
     <body>
         <div id="everything" class="container">
             <div id="row" class="row justify-content-center">
-                <div id="main" class="text-left col-md-6">
+                <div id="main" class="text-left col-md-6 bg-light mt-3 p-3">
                     <div id="header">
                         <h1 class="text-left">Employee Login</h1>
                         <h4 class="text-left">Please enter your credentials</h2>
@@ -37,7 +37,7 @@
                             <button id="login" class="btn btn-outline-secondary">Login</button>
                     </div>
                 </div>
-                <div id="newUser" class="text-right col-md-6">
+                <div id="newUser" class="text-right col-md-6 bg-light mt-3 p-3">
                     <h1 class="text-right">New User</h1>
                         <label>Username:</label>
                         <input type="text" id="newUserName"/>
@@ -61,6 +61,26 @@
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="notifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="notifyTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4 id="notifyMessage"></h4>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <script src="main.js"></script>
     </body>
 </html>

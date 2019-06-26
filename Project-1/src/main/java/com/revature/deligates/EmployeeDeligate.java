@@ -31,8 +31,8 @@ public class EmployeeDeligate {
 		case "/requests":
 			this.getRequests(request, response);
 			break;
-		case "/approved":
-			this.getApproved(request, response);
+		case "/resolved":
+			this.getResolved(request, response);
 			break;
 		case "/submit":
 			this.createRequest(request, response);
@@ -62,10 +62,11 @@ public class EmployeeDeligate {
 	public void createRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Get the information from the request
 		RequestDao rDao = new RequestDaoImp();
-		int num = rDao.getRequests().size() - 1;
 		int id = 1;
-		if(num != -1) {
-			id = rDao.getRequests().get(num).getId() + 1;
+		for(Request r : rDao.getRequests()) {
+			if(r.getId() >= id) {
+				id = r.getId() + 1;
+			}
 		}
 		int eId = valid.validateInt(request.getParameter("employeeId"));
 		double amount = valid.validateAmount(request.getParameter("amount"));
@@ -74,7 +75,7 @@ public class EmployeeDeligate {
 			response.sendError(405, "Could not create request: Input is Invalid");
 		}
 		
-		Request r = new Request(id, eId, amount, reason, -1);
+		Request r = new Request(id, eId, amount, reason, -1, -1);
 		eServe.newRequest(r);
 	}
 	
@@ -84,13 +85,19 @@ public class EmployeeDeligate {
 			response.sendError(405, "Could not get requests: id was invalid");
 		}
 		List<Request> rList = eServe.getRequests(id);
+		List<Request> result = new ArrayList<Request>();
 		
+		for(Request r : rList) {
+			if(!(r.getApprovedBy() >= 20000) && !(r.getDeniedBy() >= 20000)) {
+				result.add(r);
+			}
+		}
 		PrintWriter pw = response.getWriter();
-		pw.write(new ObjectMapper().writeValueAsString(rList));
+		pw.write(new ObjectMapper().writeValueAsString(result));
 		pw.close();
 	}
 	
-	public void getApproved(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void getResolved(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
 		if(id == -1) {
 			response.sendError(405, "Could not get approved requests: id was invalid");
@@ -99,7 +106,7 @@ public class EmployeeDeligate {
 		List<Request> result = new ArrayList<Request>();
 		
 		for(Request r : rList) {
-			if(r.getApprovedBy() != 0) {
+			if(r.getApprovedBy() >= 20000 || r.getDeniedBy() >= 20000) {
 				result.add(r);
 			}
 		}
@@ -115,14 +122,14 @@ public class EmployeeDeligate {
 		}
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
-		String eMail = request.getParameter("email");
+		String eMail = request.getParameter("eMail");
 		boolean validInfo = true;
 		
-		if(valid.validateUname(uName)) {
+		if(valid.validateUname(uName) && uName != "") {
 			validInfo = false;
-		} if(!valid.validatePword(pWord)) {
+		} if(!valid.validatePword(pWord) && pWord != "") {
 			validInfo = false;
-		} if(!valid.validateEmail(eMail)) {
+		} if(!valid.validateEmail(eMail) && eMail != "") {
 			validInfo = false;
 		}
 		

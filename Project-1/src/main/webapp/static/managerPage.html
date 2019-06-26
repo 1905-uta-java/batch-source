@@ -21,30 +21,66 @@
     <body>
         <div id="everything" class="container">
             <div id="row" class="row justify-content-center">
-                <div id="main" class="text-left col-md-8">
+                <div id="main" class="text-left bg-light mt-3 p-3">
                     <div id="header">
                         <h1 class="text-center">Manager Portal</h1>
                         <div id="nav" class="text-center">
                             <button id="profile" class="btn btn-outline-secondary">Profile</button>
-                            <button id="request" class="btn btn-outline-secondary">Reimbursement Requests</button>
-                            <button id="approved" class="btn btn-outline-secondary">Approved Requests</button>
+                            <button id="request" class="btn btn-outline-secondary">Pending Reimbursement Requests</button>
+                            <button id="resolved" class="btn btn-outline-secondary">Resolved Requests</button>
                             <button id="emps" class="btn btn-outline-secondary">Employees</button>
+                            <button id="empReqs" class="btn btn-outline-secondary">Employee Requests</button>
                             <button class="btn btn-outline-secondary" id="logout">Log Out</button>
                         </div>
                     </div>
-                    <div id="inputStuff">
-                        <h2 class="text-center">Approve Reimbursment Request</h2>
-                        <label class="mx-auto">Request Id: </label>
-                        <input type="text" id="reqId" class="mx-auto">
-                        <br/>
-                        <button id="approve" class="btn btn-outline-secondary mx-auto">Approve</button>
-                    </div>
-                    <div id="infoStuff">
-                        
-                    </div>
+                </div>
+            </div>
+            <div id="bodyStuff" class="row justify-content-center">
+                <div id="infoStuff" class="text-left col-md-6 mt-3">
+                    <h4>Welcome to the Manager Portal. Use the input to Approve a Reimbursement Request by its id, or update your profile information. Or retrieve information from one of the links in the Nav Bar, or click Log Out to exit.</h4>
+                </div>
+                <div id="inputStuff" class="text-right col-md-6 bg-light mt-3 p-3">
+                    <h4 class="text-right">Resolve Reimbursment Request</h4>
+                    <label class="mx-auto">Request Id: </label>
+                    <input type="text" id="reqId" class="mx-auto">
+                    <br/>
+                    <button id="approve" class="btn btn-outline-secondary mx-auto">Approve</button>
+                    <button id="deny" class="btn btn-outline-secondary mx-auto">Deny</button>
+                    <br/>
+                    <h4>Update Profile Info</h4>
+                    <label>Username: </label>
+                    <input type="text" id="uName">
+                    <br/>
+                    <label>Email: </label>
+                    <input type="text" id="eMail">
+                    <br/>
+                    <label>Password: </label>
+                    <input type="password" id="pWord">
+                    <br/>
+                    <button id="update" class="btn btn-outline-secondary mx-auto">Update Info</button>
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="notifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="notifyTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4 id="notifyMessage"></h4>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <script src="man.js"></script>
     </body>
 </html>

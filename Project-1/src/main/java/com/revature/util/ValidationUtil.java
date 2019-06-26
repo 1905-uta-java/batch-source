@@ -144,7 +144,7 @@ public class ValidationUtil {
 		char[] inputChars = name.toCharArray();
 		
 		for(char c : inputChars) {
-			if(!(c >= 97 && c <= 122) || !(c >= 65 && c <= 90)) {
+			if(!(c >= 97 && c <= 122) && !(c >= 65 && c <= 90)) {
 				return false;
 			}
 		}

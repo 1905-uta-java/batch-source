@@ -29,7 +29,8 @@ public class RequestDaoImp implements RequestDao {
 				double amount = rs.getDouble("AMOUNT");
 				String reason = rs.getString("REASON");
 				int appBy = rs.getInt("APPROVED_BY");
-				requests.add(new Request(reimId, empId, amount, reason, appBy));
+				int denBy = rs.getInt("DENIED_BY");
+				requests.add(new Request(reimId, empId, amount, reason, appBy, denBy));
 			}
 		} catch (SQLException e) {
 			System.out.println("Failed to retrieve all the requests");
@@ -53,7 +54,8 @@ public class RequestDaoImp implements RequestDao {
 				double amount = rs.getDouble("AMOUNT");
 				String reason = rs.getString("REASON");
 				int appBy = rs.getInt("APPROVED_BY");
-				requests.add(new Request(reimId, empId, amount, reason, appBy));
+				int denBy = rs.getInt("DENIED_BY");
+				requests.add(new Request(reimId, empId, amount, reason, appBy, denBy));
 			}
 			rs.close();
 		} catch (SQLException e) {
@@ -77,7 +79,8 @@ public class RequestDaoImp implements RequestDao {
 				double amount = rs.getDouble("AMOUNT");
 				String reason = rs.getString("REASON");
 				int appBy = rs.getInt("APPROVED_BY");
-				reim = new Request(reimId, empId, amount, reason, appBy);
+				int denBy = rs.getInt("DENIED_BY");
+				reim = new Request(reimId, empId, amount, reason, appBy, denBy);
 			}
 			rs.close();
 		} catch (SQLException e) {
@@ -101,7 +104,8 @@ public class RequestDaoImp implements RequestDao {
 				double amount = rs.getDouble("AMOUNT");
 				String reason = rs.getString("REASON");
 				int appBy = rs.getInt("APPROVED_BY");
-				reim = new Request(reimId, empId, amount, reason, appBy);
+				int denBy = rs.getInt("DENIED_BY");
+				reim = new Request(reimId, empId, amount, reason, appBy, denBy);
 			}
 			rs.close();
 		} catch (SQLException e) {
@@ -112,7 +116,7 @@ public class RequestDaoImp implements RequestDao {
 
 	public int createRequest(Request r) {
 		int reimCreated = 0;
-		String sql = "INSERT INTO REIMBURSE_REQUEST VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO REIMBURSE_REQUEST VALUES (?,?,?,?,?,?)";
 		
 		// Attempt to insert the new Request
 		try(Connection con = ConnectionUtil.getConnection();
@@ -125,6 +129,11 @@ public class RequestDaoImp implements RequestDao {
 				ps.setInt(5, r.getApprovedBy());
 			} else {
 				ps.setNull(5, Types.NULL);
+			}
+			if(r.getDeniedBy() >= 20000) {
+				ps.setInt(6, r.getDeniedBy());
+			} else {
+				ps.setNull(6, Types.NULL);
 			}
 			reimCreated = ps.executeUpdate();
 		} catch (SQLException e) {
@@ -163,6 +172,24 @@ public class RequestDaoImp implements RequestDao {
 			reimUpdated = ps.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Failed to approve the specified request id: " + id + " manager id: " + mId);
+		}
+		return reimUpdated;
+	}
+	
+	public int denyRequest(int id, int mId) {
+		int reimUpdated = 0;
+		String sql = "UPDATE REIMBURSE_REQUEST " + 
+				"SET DENIED_BY = ? " + 
+				"WHERE REIMID = ?";
+		
+		// Attempt to update the value holding the id of the manager who has approved the request
+		try(Connection con = ConnectionUtil.getConnection();
+				PreparedStatement ps = con.prepareStatement(sql);){
+			ps.setInt(1, mId);
+			ps.setInt(2, id);
+			reimUpdated = ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Failed to deny the specified request id: " + id + " manager id: " + mId);
 		}
 		return reimUpdated;
 	}

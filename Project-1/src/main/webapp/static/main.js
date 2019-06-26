@@ -24,7 +24,11 @@ function login() {
             }
         }
         else if(this.readyState === 4) {
-            console.log("didn't work" + this.statusText);
+            if(this.status === 405) {
+                notifyUser(""+this.status, "Invalid Input");
+            } if (this.status === 404) {
+                notifyUser(""+this.status, "Page Not Found");
+            }
         }
     }
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -44,15 +48,27 @@ function createUser() {
     xhr.onreadystatechange = function() {
         if(this.readyState === 4 && this.status === 200) {
             tokenize(xhr);
-        }
-        if(sessionStorage.getItem("token") >= 10000 && sessionStorage.getItem("token") < 20000) {
-            window.location.href = "http://localhost:8080/Project1/static/employeePage.html";
-        } else if(sessionStorage.getItem("token") >= 20000) {
-            window.location.href = "http://localhost:8080/Project1/static/managerPage.html";
+            if(sessionStorage.getItem("token") >= 10000 && sessionStorage.getItem("token") < 20000) {
+                window.location.href = "http://localhost:8080/Project1/static/employeePage.html";
+            } else if(sessionStorage.getItem("token") >= 20000) {
+                window.location.href = "http://localhost:8080/Project1/static/managerPage.html";
+            }
+        } else if(this.readyState === 4) {
+            if(this.status === 405) {
+                notifyUser(""+this.status, "Invalid Input");
+            } if (this.status === 404) {
+                notifyUser(""+this.status, "Page Not Found");
+            }
         }
     }
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(requestBod);
+}
+
+function notifyUser(title, message) {
+    document.getElementById("notifyTitle").innerHTML = title;
+    document.getElementById("notifyMessage").innerHTML = message;
+    $("#notifier").modal('toggle');
 }
 
 document.getElementById("login").addEventListener("click", login);

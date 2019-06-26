@@ -20,6 +20,21 @@ public class ManagerService {
 	RequestDao rDao = new RequestDaoImp();
 	ValidationUtil valid = new ValidationUtil();
 	
+	// Check if the Employee you are looking for exists
+	public boolean empExists(int id) {
+		if(!eDao.getEmployeeById(id).equals(null)) {
+			return true;
+		}
+		return false;
+	}
+	// Check if the Request you are looking for exists
+	public boolean reqExists(int id) {
+		if(!rDao.getRequestById(id).equals(null)) {
+			return true;
+		}
+		return false;
+	}
+	
 	// Attempt to get the manager object the user is trying to login to
 	public Manager getLogin(String uName, String pWord) {
 		if(valid.validateUname(uName)) {
@@ -34,17 +49,38 @@ public class ManagerService {
 		return mDao.getManagerById(id);
 	}
 	
-	// Attempt to get all of the requests
+	// Attempt to get all of the pending requests
 	public List<Request> getRequests(List<Employee> eList) {
 		List<Request> rList = new ArrayList<Request>();
 		for(Employee e : eList) {
 			List<Request> eRequests = rDao.getEmpRequests(e.getId());
 			for(Request r : eRequests) {
-				rList.add(r);
+				if(!(r.getApprovedBy() >= 20000) && !(r.getDeniedBy() >= 20000)) {
+					rList.add(r);
+				}
 			}
 		}
 		return rList;
 	}
+	
+	// Attempt to get all of the Resolved requests
+	public List<Request> getResolvedRequests(List<Employee> eList) {
+		List<Request> rList = new ArrayList<Request>();
+		for(Employee e : eList) {
+			List<Request> eRequests = rDao.getEmpRequests(e.getId());
+			for(Request r : eRequests) {
+				if(r.getApprovedBy() >= 20000 || r.getDeniedBy() >= 20000) {
+					rList.add(r);
+				}
+			}
+		}
+		return rList;
+	}
+	
+	// Attempt to get all of the Resolved requests
+		public List<Request> getEmployeeRequests(int eId) {
+			return rDao.getEmpRequests(eId);
+		}
 	
 	// Attempt to get all of the employees
 	public List<Employee> getEmployees(int id) {
@@ -58,6 +94,10 @@ public class ManagerService {
 	
 	// Attempt to approve a request
 	public int approveRequest(int id, int mId) {
+		Request r = rDao.getRequestById(id);
+		if(r.getDeniedBy() != 0) {
+			return -1;
+		}
 		return rDao.approveRequest(id, mId);
 	}
 	
@@ -71,5 +111,13 @@ public class ManagerService {
 			mDao.changePWord(id, pWord);
 		}
 		return 0;
+	}
+	
+	public int denyRequest(int id, int mId) {
+		Request r = rDao.getRequestById(id);
+		if(r.getApprovedBy() != 0) {
+			return -1;
+		}
+		return rDao.denyRequest(id, mId);
 	}
 }

@@ -12,4 +12,5 @@ public interface RequestDao {
 	public int createRequest(Request r);
 	public int deleteRequest(int id);
 	public int approveRequest(int id, int mId);
+	public int denyRequest(int id, int mId);
 }

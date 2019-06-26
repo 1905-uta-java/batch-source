@@ -21,32 +21,66 @@
     <body>
         <div id="everything" class="container">
             <div id="row" class="row justify-content-center">
-                <div id="main" class="text-left col-md-8">
+                <div id="main" class="text-left bg-light mt-3 p-3">
                     <div id="header">
                         <h1 class="text-center">Employee Portal</h1>
                         <div id="nav" class="text-center">
                             <button class="btn btn-outline-secondary" id="profile">Profile</button>
                             <button class="btn btn-outline-secondary" id="requests">Reimbursement Requests</button>
-                            <button class="btn btn-outline-secondary" id="approved">Approved Requests</button>
+                            <button class="btn btn-outline-secondary" id="resolved">Resolved Requests</button>
                             <button class="btn btn-outline-secondary" id="logout">Log Out</button>
                         </div>
                     </div>
-                    <div id="inputStuff">
-                        <h2 class="text-center">Make a Reimbursement Request</h2>
-                        <label>Amount: </label>
-                        <input type="text" id="amount">
-                        <br/>
-                        <label>Reason for Request: </label>
-                        <input type="text" id="reason">
-                        <br/>
-                        <button id="submitRequest" class="btn btn-outline-secondary">Submit Request</button>
-                    </div>
-                    <div id="infoStuff">
-                        
-                    </div>
+                </div>
+            </div>
+            <div id="bodyStuff" class="row justify-content-center">
+                <div id="infoStuff" class="text-left col-md-6 mt-3">
+                    <h4>Welcome to the Employee Portal. Use the input to create a Reimbursement Request, or update your profile information. Or retrieve information from one of the links in the Nav Bar, or click Log Out to exit.</h4>
+                </div>
+                <div id="inputStuff" class="text-right col-md-6 bg-light mt-3 p-3">
+                    <h4 class="text-right">Make a Reimbursement Request</h4>
+                    <label>Amount: </label>
+                    <input type="text" id="amount">
+                    <br/>
+                    <label>Reason for Request: </label>
+                    <input type="text" id="reason">
+                    <br/>
+                    <button id="submitRequest" class="btn btn-outline-secondary">Submit Request</button>
+                    <br/>
+                    <h4>Update Profile Info</h4>
+                    <label>Username: </label>
+                    <input type="text" id="uName">
+                    <br/>
+                    <label>Email: </label>
+                    <input type="text" id="eMail">
+                    <br/>
+                    <label>Password: </label>
+                    <input type="password" id="pWord">
+                    <br/>
+                    <button id="update" class="btn btn-outline-secondary mx-auto">Update Info</button>
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="notifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="notifyTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h4 id="notifyMessage"></h4>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <script src="emp.js"></script>
     </body>
 </html>

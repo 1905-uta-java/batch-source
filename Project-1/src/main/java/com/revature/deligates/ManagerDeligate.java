@@ -32,14 +32,20 @@ public class ManagerDeligate {
 		case "/requests":
 			this.getRequests(request, response);
 			break;
-		case "/approved":
-			// May implement later
+		case "/resolved":
+			this.getResolvedRequests(request, response);
 			break;
 		case "/approve":
 			this.approveRequest(request, response);
 			break;
+		case "/deny":
+			this.denyRequest(request, response);
+			break;
 		case "/change":
 			this.changeManager(request, response);
+			break;
+		case "/empreqs":
+			this.getEmployeeRequests(request, response);
 			break;
 		default:
 			response.sendError(404, "Page is not found");
@@ -96,14 +102,42 @@ public class ManagerDeligate {
 		pw.close();
 	}
 	
+	public void getResolvedRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = valid.validateInt(request.getParameter("managerId"));
+		if(id == -1) {
+			response.sendError(405, "Could not get requests: id was invalid");
+		}
+		List<Employee> eList = mServe.getEmployees(id);
+		
+		List<Request> rList = mServe.getResolvedRequests(eList);
+		
+		PrintWriter pw = response.getWriter();
+		pw.write(new ObjectMapper().writeValueAsString(rList));
+		pw.close();
+	}
+	
+	public void getEmployeeRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = valid.validateInt(request.getParameter("employeeId"));
+		if(id == -1 || mServe.empExists(id)) {
+			response.sendError(405, "Could not get requests: id was invalid");
+		}
+		List<Request> rList = mServe.getEmployeeRequests(id);
+		
+		PrintWriter pw = response.getWriter();
+		pw.write(new ObjectMapper().writeValueAsString(rList));
+		pw.close();
+	}
+	
 	public void approveRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int mId = valid.validateInt(request.getParameter("managerId"));
 		int rId = valid.validateInt(request.getParameter("requestId"));
-		if(mId == -1 || rId == -1) {
-			response.sendError(405, "Could not get approve the request: an id was invalid");
+		if(mId == -1 || rId == -1 || mServe.reqExists(rId)) {
+			response.sendError(405, "Could not approve the request: an id was invalid");
 		}
 		
-		mServe.approveRequest(rId, mId);
+		if(mServe.approveRequest(rId, mId) == -1) {
+			response.sendError(405, "This request has already been resolved");
+		}
 	}
 	
 	public void changeManager(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -113,14 +147,14 @@ public class ManagerDeligate {
 		}
 		String uName = request.getParameter("userName");
 		String pWord = request.getParameter("passWord");
-		String eMail = request.getParameter("email");
+		String eMail = request.getParameter("eMail");
 		boolean validInfo = true;
 		
-		if(valid.validateUname(uName)) {
+		if(valid.validateUname(uName) && uName != "") {
 			validInfo = false;
-		} if(!valid.validatePword(pWord)) {
+		} if(!valid.validatePword(pWord) && pWord != "") {
 			validInfo = false;
-		} if(!valid.validateEmail(eMail)) {
+		} if(!valid.validateEmail(eMail) && eMail != "") {
 			validInfo = false;
 		}
 		
@@ -128,6 +162,18 @@ public class ManagerDeligate {
 			mServe.changeManager(mId, eMail, uName, pWord);
 		} else {
 			response.sendError(405, "Could not change Manager information: Input is Invalid");
+		}
+	}
+	
+	public void denyRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int mId = valid.validateInt(request.getParameter("managerId"));
+		int rId = valid.validateInt(request.getParameter("requestId"));
+		if(mId == -1 || rId == -1 || mServe.reqExists(rId)) {
+			response.sendError(405, "Could not deny the request: an id was invalid");
+		}
+		
+		if(mServe.denyRequest(rId, mId) == -1) {
+			response.sendError(405, "This request has already been resolved");
 		}
 	}
 }
