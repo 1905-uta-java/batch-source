@@ -28,8 +28,6 @@ function startup(xhr){
 		addData(tableRow, "Employee");
 		addData(tableRow, "Manager");
 		addData(tableRow, "Transaction Log");
-		addData(tableRow, "Accept Button");
-		addData(tableRow, "Deny Button");
 		table.appendChild(tableRow);
 		
 		
@@ -41,6 +39,59 @@ function startup(xhr){
 		
 		function rowCreation(rowNum, javaObj, jst){
 			let tr = document.createElement('tr');
+			tr.className=rowNum;
+			tr.addEventListener("click", function(){
+			console.log(rowNum);
+				
+				
+				
+			});
+			let id = jst.id;
+			let amount = jst.amount;
+			let eid = javaObj.empName;
+			let mid = javaObj.manName;
+			let log = jst.log;
+			
+			tr.append(data(id));
+			tr.append(data(amount));
+			tr.append(data(eid));
+			tr.append(data(mid));
+			tr.append(data(log));
+			table.append(tr);
+			
+			
+		}
+	}
+	
+	else if(empid[6] == 2){
+		let type = document.getElementById('type');
+		type.innerHTML = "Manager: " + xhr.getResponseHeader("manager");
+		
+		addData(tableRow, "Transaction ID");
+		addData(tableRow, "Amount");
+		addData(tableRow, "Employee");
+		addData(tableRow, "Manager");
+		addData(tableRow, "Transaction Log");
+		addData(tableRow, "Buttons");
+		table.appendChild(tableRow);
+
+		
+		
+		
+		let javaObj = JSON.parse(xhr.response);
+		
+		for(let i = 0; i < javaObj.length; i++){
+			running(javaObj[i], i);
+		}
+		function running(javaObj, j){
+			for(let i = 0; i < javaObj.transactions.length; i++){
+				rowCreation(j ,javaObj, javaObj.transactions[i]);
+			}
+		}
+		
+		function rowCreation(rowNum, javaObj, jst){
+			let tr = document.createElement('tr');
+			
 			let AButton = document.createElement("button");
 			AButton.innerHTML = "Accept";
 			AButton.className="AcceptButton" + rowNum;
@@ -48,9 +99,28 @@ function startup(xhr){
 			DButton.innerHTML = "Deny";
 			DButton.className = "DenyButton" + rowNum;
 			tr.className=rowNum;
-			tr.addEventListener("click", function(){
-				console.log(rowNum);
+			AButton.addEventListener("click", function(){
+				let xhr = new XMLHttpRequest();
 				
+				xhr.open("POST", "http://localhost:8080/transactionHandle");
+				
+				xhr.onreadystatechange = function(){
+					if(this.readyState === 4){
+						console.log(jst.id);
+					}
+				}
+			    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.send("id="+jst.id);
+				
+				location.reload();
+			
+				
+				
+				
+			});
+			DButton.addEventListener("click", function(){
+				console.log(rowNum);
+				console.log(this.className);
 				
 				
 			});
@@ -67,58 +137,6 @@ function startup(xhr){
 			tr.append(data(log));
 			tr.append(AButton);
 			tr.append(DButton);
-			table.append(tr);
-			
-			
-		}
-	}
-	
-	else if(empid[6] == 2){
-		let type = document.getElementById('type');
-		type.innerHTML = "Manager: " + xhr.getResponseHeader("manager");
-		
-		addData(tableRow, "Transaction ID");
-		addData(tableRow, "Amount");
-		addData(tableRow, "Employee");
-		addData(tableRow, "Manager");
-		addData(tableRow, "Transaction Log");
-		table.appendChild(tableRow);
-		
-		
-		
-		let javaObj = JSON.parse(xhr.response);
-		
-		for(let i = 0; i < javaObj.length; i++){
-			running(javaObj[i]);
-		}
-		function running(javaObj){
-			for(let i = 0; i < javaObj.transactions.length; i++){
-				rowCreation(i ,javaObj, javaObj.transactions[i]);
-			}
-		}
-		
-		function rowCreation(rowNum, javaObj, jst){
-			let tr = document.createElement('tr');
-			tr.className=rowNum;
-			//let button = //create button that passes rownum and allows more views
-			tr.addEventListener("click", function(){
-				
-				console.log(rowNum);
-				
-				
-				
-			});
-			let id = jst.id;
-			let amount = jst.amount;
-			let eid = javaObj.empName;
-			let mid = javaObj.manName;
-			let log = jst.log;
-			
-			tr.append(data(id));
-			tr.append(data(amount));
-			tr.append(data(eid));
-			tr.append(data(mid));
-			tr.append(data(log));
 			table.append(tr);
 			
 			

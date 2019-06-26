@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.revature.model.Transaction;
 import com.revature.util.ConnectionDb;
@@ -115,4 +116,22 @@ public class TransactionDoa {
 		}
 		return null;
 	}
+	
+	public void updateTransaction(int i) {
+		
+		String statement = "UPDATE TRANSACTION_TBL SET TRANS_AMOUNT = 0 WHERE TRANS_ID = ?";
+		
+		try(Connection conn = ConnectionDb.getConnection();
+				PreparedStatement ps = conn.prepareStatement(statement);){
+			ps.setInt(1, i);
+			ps.executeUpdate();
+			System.out.println("transaction added");
+		}
+		catch(SQLException e) {
+			System.out.println("Transaction Doa SQL Exception");
+		}
+		
+		
+	}
+	
 }

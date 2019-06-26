@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.web.LoginPage;
 import com.revature.web.NewEmployee;
+import com.revature.web.TransactionHandler;
 import com.revature.web.TransactoinDisplay;
 import com.revature.web.newTransaction;
 
@@ -18,6 +19,7 @@ public class RequestHelp{
 	NewEmployee ne = new NewEmployee();
 	TransactoinDisplay td = new TransactoinDisplay();
 	newTransaction nt = new newTransaction();
+	TransactionHandler th = new TransactionHandler();
 	
 	protected void processGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		processPost(request, response);
@@ -52,6 +54,8 @@ public class RequestHelp{
 			case "/addTransaction":
 				nt.addtrans(request, response);
 				break;
+			case "/transactionHandle":
+				th.handleTransaction(request, response);
 			default:
 				System.out.println("defualt");
 				break;
