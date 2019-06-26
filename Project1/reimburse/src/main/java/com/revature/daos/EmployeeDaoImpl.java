@@ -10,16 +10,6 @@ import java.util.List;
 import com.revature.models.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
-	
-	// 
-//	public EmployeeDaoImpl() {
-//		employees.add(new Employee(1, "Lisa Jones", 1300, 2));
-//		employees.add(new Employee(2, "Perry Hansen", 2500, 1));
-//		employees.add(new Employee(3, "Cindy Jenkins", 2000, 1));
-//		employees.add(new Employee(4, "Julie Smith", 1600, 3));
-//		employees.add(new Employee(5, "Ron Mitchell", 1250, 3));
-//		employees.add(new Employee(6, "Paul Paulson", 1500, 4));
-//	}
 
 	@Override
 	public List<Employee> getEmployees() throws SQLException {

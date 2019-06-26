@@ -9,9 +9,5 @@ public interface UserDao {
 	public List<User> getAll();
 	public User getById(int id);
 	public User authenticatedUser(String username, String pass);
-
-
 	
-	
-	// other crud methods
 }
