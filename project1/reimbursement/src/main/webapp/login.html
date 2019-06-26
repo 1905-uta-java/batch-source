@@ -14,7 +14,7 @@
 
 
 
-	<title>Welcome Page</title>
+	<title>Login</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 			<div class="col-sm-12 my-auto">
 				<div class="d-flex justify-content-center align-items-center container ">
 
-					<form method="post" action="/" id="loginForm" class="form-inline justify-content-center">
+					<form method="post" action="login" id="loginForm" class="form-inline justify-content-center">
 
 						<label class="singleLined">u:&nbsp<input type="text" class="form-rounded" name="username" autofocus /></label>
 
@@ -33,9 +33,7 @@
 								onfocus="formInUse = true;" /></label>
 
 						<p />
-						<button type="submit" class="border button g-recaptcha"
-							data-sitekey="6LduHjEUAAAAALQZpICmAtjpboL3ZfISVFItJIXs"
-							data-callback="recaptchaSubmit">Enter</button>
+						<button type="submit" class="border button g-recaptcha" value="login">Enter</button>
 						<p></p>
 						<img src="login.png" alt="login" />
 						<input type="hidden" name="loginKey" value="58912444efc8">
