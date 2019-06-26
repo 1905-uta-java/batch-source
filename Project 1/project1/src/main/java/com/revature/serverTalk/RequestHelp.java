@@ -30,8 +30,6 @@ public class RequestHelp{
 	
 	protected void processPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String directory = request.getRequestURI().substring(request.getContextPath().length());
-		System.out.println("request dirctory: " + directory);
-
 		switch(directory){
 			case "/static":
 				request.getRequestDispatcher("/static/index.html").forward(request, response);;
@@ -57,7 +55,6 @@ public class RequestHelp{
 			case "/transactionHandle":
 				th.handleTransaction(request, response);
 			default:
-				System.out.println("defualt");
 				break;
 	}
 	

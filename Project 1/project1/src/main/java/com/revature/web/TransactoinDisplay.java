@@ -28,7 +28,6 @@ public class TransactoinDisplay {
 	
 	public void displayTransaction(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String empId  = request.getParameter("empId");
-		System.out.println(empId);
 		
 		if(EmployeeAuthentication.isEmployeeId(empId)) {
 			response.setHeader("employee", ed.getEmployeeById(Integer.parseInt(empId)).getFirstName() + " " + ed.getEmployeeById(Integer.parseInt(empId)).getLastName());
@@ -45,7 +44,6 @@ public class TransactoinDisplay {
 		else if(ManagerAuthentication.isManagerId(empId)) {
 			response.setHeader("manager", md.getManagerById(Integer.parseInt(empId)).getFirstName() + " " + md.getManagerById(Integer.parseInt(empId)).getLastName());
 			PrintWriter pw = response.getWriter();
-			System.out.println("TranactoinDisplay: " + td.getTransactionsByManagerId(empId));
 			List<Transaction> trans = td.getTransactionsByManagerId(empId);
 			if(trans.size() > 0) {
 				List<FullTransaction> ftList = new ArrayList();

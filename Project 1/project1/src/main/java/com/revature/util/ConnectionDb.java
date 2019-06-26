@@ -24,9 +24,7 @@ public class ConnectionDb {
 			if(connection == null || connection.isClosed()) {
 				Driver d = new oracle.jdbc.OracleDriver();
 				DriverManager.registerDriver(d);
-				connection = DriverManager.getConnection(url, username, password);
-				System.out.println("DataBase call made in ConnectionDB");
-			}
+				connection = DriverManager.getConnection(url, username, password);			}
 		} catch (Exception e) {
 			System.out.println("No luck");
 		}

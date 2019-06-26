@@ -40,7 +40,6 @@ public class TransactionDoa {
 		catch(SQLException e) {
 			
 		}
-		System.out.println("Oh no");
 		return null;
 	}
 	
@@ -58,7 +57,6 @@ public class TransactionDoa {
 			ps.setInt(i++, t.getManagerId());
 			ps.setString(i++, t.getLog());
 			ps.executeUpdate();
-			System.out.println("called ps");
 		}
 		
 		
@@ -125,7 +123,6 @@ public class TransactionDoa {
 				PreparedStatement ps = conn.prepareStatement(statement);){
 			ps.setInt(1, i);
 			ps.executeUpdate();
-			System.out.println("transaction added");
 		}
 		catch(SQLException e) {
 			System.out.println("Transaction Doa SQL Exception");

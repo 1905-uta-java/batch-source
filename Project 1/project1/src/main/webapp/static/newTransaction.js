@@ -11,8 +11,13 @@ function callaback(){
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState === 4){
 			console.log("4");
+			document.getElementById("amount").style.border = " 3px solid green"; 
+			document.getElementById("reason").style.border = " 3px solid green"; 
 		}
-		
+		else{
+			document.getElementById("amount").style.border = " 5px solid green"; 
+			document.getElementById("value").style.border = " 5px solid green"; 
+		}
 	}
 	body = "amount="+amount+"&log="+log+"&id="+id.id;
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
