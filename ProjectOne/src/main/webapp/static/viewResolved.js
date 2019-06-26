@@ -32,7 +32,7 @@ function sendPostRequest(url, callback)
   {
     console.log("Display function is called!");
     let requests = JSON.parse(xhr.response);
-    let table = document.getElementById("tableResolved");
+    let table = document.getElementById("table");
     console.log(requests);
     for (let i in requests)
     {
@@ -47,7 +47,7 @@ function sendPostRequest(url, callback)
         <td>${requests[i].resolvedBy}</td>
         <td>${requests[i].outcome}</td>`
 
-        document.getElementById("table").innerHTML += newRow;
+       // document.getElementById("table").innerHTML += newRow;
         table.appendChild(newRow);
     }
     

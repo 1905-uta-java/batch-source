@@ -21,13 +21,13 @@ function displayRequests(xhr)
 {
 	console.log("THE DISPLAY FUNCITON IS EXECUTING!!");
   let requests = JSON.parse(xhr.response);
-  let table = document.getElementById("table");
+  let table = document.getElementById("tableResolved");
   console.log(requests);
   for (let i in requests)
   	{
 	  let newRow = document.createElement("tr");
 
-	  newRow.innerHTML = 
+	  newRow.innerHTML += 
 	  `<td>${requests[i].reqID}</td>
 	  <td>${requests[i].ammount}</td>
 	  <td>${requests[i].reason}</td>
