@@ -13,7 +13,8 @@ public class ConnectionUtil {
 	public static Connection getHardCodedConnection() throws SQLException{
 		String url = "jdbc:oracle:thin:@java-may28.cvdi2ikw3pvp.us-east-2.rds.amazonaws.com:1521:ORCL";
 		String username = "sensei";
-		String password = "masterpass";
+		//change the password to the DB master password
+		String password = "*********";
 		if(connection == null || connection.isClosed()) {
 			connection = DriverManager.getConnection(url, username, password);
 		}

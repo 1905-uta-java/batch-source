@@ -56,7 +56,6 @@ public class ReimbursementDelegate {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		String[] data = br.readLine().split("&");
-		System.out.println(data[0].split("=")[1] + data[1].split("=")[1] + data[2].split("=")[1]);
 		
 		//get rServ to set status, resolvedBy into a request specified by ID.
 		if(data.length == 3) {
