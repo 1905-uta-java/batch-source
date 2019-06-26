@@ -78,7 +78,7 @@ public class ManagerDeligate {
 	
 	public void getEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
-		if(id == -1) {
+		if(id == -1 || !mServe.empExists(id)) {
 			response.sendError(405, "Could not get employee: id was invalid");
 		}
 		Employee e = mServe.getEmployee(id);
@@ -118,7 +118,7 @@ public class ManagerDeligate {
 	
 	public void getEmployeeRequests(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = valid.validateInt(request.getParameter("employeeId"));
-		if(id == -1 || mServe.empExists(id)) {
+		if(id == -1 || !mServe.empExists(id)) {
 			response.sendError(405, "Could not get requests: id was invalid");
 		}
 		List<Request> rList = mServe.getEmployeeRequests(id);
