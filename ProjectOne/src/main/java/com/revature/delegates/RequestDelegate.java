@@ -25,6 +25,24 @@ public class RequestDelegate
 	public void toCreateRequestService(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{
 		System.out.println("Made it to CREATE REQUEST SERVICE!");
+		
+		// perform introductory validation with reason and ammount
+		String reason = request.getParameter("reason");
+		boolean numbersInReason = createRequestTool.numbersInReason(reason);
+		if (numbersInReason)
+		{
+			response.sendError(400);
+			return;
+		}
+		
+		String ammount = request.getParameter("ammount");
+		boolean nonNumbersInAmmount = createRequestTool.nonNumbersInAmmount(ammount);
+		if (nonNumbersInAmmount)
+		{
+			response.sendError(400);
+			return;
+		}
+		
 		createRequestTool.makeRequest(request, response);
 	}
 	

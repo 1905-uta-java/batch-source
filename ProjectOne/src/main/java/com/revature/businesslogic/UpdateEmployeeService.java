@@ -66,4 +66,54 @@ public class UpdateEmployeeService
 		empDaoObject.updateEmployee(empToUpdate);
 		
 	}
+	
+	public boolean updatedUsernameNotNull(String username)
+	{
+		if (username == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	public boolean updatedPasswordNotNull(String password)
+	{
+		if (password == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	public boolean updatedUsernameNotEmpty(String username)
+	{
+		if (username == "")
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	public boolean updatedPasswordNotEmpty(String password)
+	{
+		if (password == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	
 }

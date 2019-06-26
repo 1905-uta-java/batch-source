@@ -17,7 +17,7 @@ public class CreateRequestService
 	{
 		super();
 	}
-	
+		
 	public void makeRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		System.out.println("MADE IT TO THE SERVICE METHOD WHICH CREATES THE REQUEST!");
@@ -33,6 +33,9 @@ public class CreateRequestService
 		String reason = request.getParameter("reason");
 		String token = request.getParameter("token");
 		String ammount = request.getParameter("ammount");
+		
+		
+		
 		String status = "PENDING";
 		System.out.println(request.getParameter("token"));
 		
@@ -52,8 +55,39 @@ public class CreateRequestService
 		
 		System.out.println(testRequest.toString());
 		
+		// VALIDATE HERE!
+		
 		// sendRequest to database
 		reqDaoObject.createRequest(testRequest);
+	}
+	
+	public boolean numbersInReason(String reason)
+	{
+		String[] numbers = {"1","2","3","4","5","6","7","8","9","0"};
+		
+		for (String n : numbers)
+		{
+			if (reason.contains(n))
+			{
+				System.out.println("THIS REASON HAS NUMBERS IN IT!");
+				return true;
+			}
+		}
+		System.out.println("THIS REASON IS OKAY!");
+		return false;
+	}
+	
+	public boolean nonNumbersInAmmount(String ammount)
+	{
+		if (ammount.matches("^[0-9]+$"))
+		{
+			return false;
+		}
+		else
+		{
+			System.out.println("String has nonNumbers!");
+			return true;
+		}
 	}
 	
 }

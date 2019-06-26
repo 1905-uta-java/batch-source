@@ -30,8 +30,6 @@ public class AuthenticationDelegate
 			// authenticate the user by getting the username and password they entered
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-//			boolean usernameValid = authenticationTool.usernameIsNotNull(username);
-//			boolean passwordNotNull = authenticationTool.passwordIsNotNull(password);
 			
 			String token = "";
 			boolean goodToken = false;

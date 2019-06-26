@@ -3,7 +3,6 @@ let url = "http://localhost:8080/ProjectOne/api/viewPending";
   
 function sendPostRequest(url, callback)
 {
-      // console.log("THE LOGOUT REQUEST IS BEING SENT!");
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.onreadystatechange = function()
@@ -11,8 +10,6 @@ function sendPostRequest(url, callback)
       if (this.readyState === 4 && this.status === 200)
       {
           callback(this);
-        //   console.log("REQUEST SUCCESSFUL!");
-        //   window.location.href = window.location.href= "http://localhost:8080/ProjectOne/employeehome";
       }
   }
   

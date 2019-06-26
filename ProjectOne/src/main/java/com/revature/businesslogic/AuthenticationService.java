@@ -43,13 +43,13 @@ public class AuthenticationService
 	
 	public boolean isAuthorized(String token) 
 	{
-		if(token != null && token.split(":").length == 2) 
+		if (token != null && token.split(":").length == 2) 
 		{
 			String idStr = token.split(":")[0];
 			System.out.println("ID is: " + idStr);
 			String position = token.split(":")[1];
 			System.out.println("Position is: " + position);
-			if(idStr.matches("^\\d+$")) 
+			if (idStr.matches("^\\d+$")) 
 			{
 				Employee e = empDaoObject.getEmployeeByID(Integer.parseInt(idStr));
 				if(e != null && e.getPosition().equals(position)) 
@@ -99,6 +99,30 @@ public class AuthenticationService
 		{
 			System.out.println("Password is null!");
 			return false;
+		}
+	}
+	
+	public boolean usernameIsNotBlank(String username)
+	{
+		if (username == "")
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	public boolean passwordIsNotBlank(String password)
+	{
+		if (password == "")
+		{
+			return false;
+		}
+		else
+		{
+			return true;
 		}
 	}
 

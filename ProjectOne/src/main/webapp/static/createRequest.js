@@ -1,5 +1,6 @@
 
 document.getElementById("createReq").addEventListener("click", createRequest);
+
 function createRequest()
 {
    // console.log("THE LOGOUT REQUEST IS BEING SENT!");
@@ -12,7 +13,12 @@ function createRequest()
 		{
             console.log("REQUEST SUCCESSFUL!");
             window.location.href = window.location.href= "http://localhost:8080/ProjectOne/employeehome";
-		}
+            document.getElementById("error").hidden = true;
+    }
+    else if (this.readyState === 4 && this.status != 200)
+    {
+      document.getElementById("error").hidden = false;
+    }
   }
     
     var token = sessionStorage.getItem("token");
