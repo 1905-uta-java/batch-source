@@ -81,6 +81,10 @@ public class UserService {
 	
 	
 	public User getCurrentUser() {
+//		if(u = null) {
+//			
+//		}
+//		
 		return u;
 	}
 }

@@ -54,7 +54,7 @@ public class UserDelegate {
 
 	public void returnUserInfo(HttpServletRequest request, HttpServletResponse response, String username) throws IOException, ServletException{ 
 		User u = uService.getByUsername(username);
-		
+		uService.updateUser(u);
 		System.out.println(u);
 		
 		PrintWriter pw = response.getWriter();
@@ -70,6 +70,7 @@ public class UserDelegate {
 		u.setPassword(password);
 		
 		uService.updateUser(u);
+		uService.updateUserDB(u);
 	}
 
 

@@ -145,19 +145,18 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public int updateLogin(User u) {
-		String sql = "{call UPD_LOGIN (?,?,?,?)";
+		String sql = "{call UPD_LOGIN (?,?,?)";
 		
 		try(Connection con = ConnectionUtil.getHardCodedConnection();
 				CallableStatement cs = con.prepareCall(sql);){
 			cs.setString(1, u.getUsername());
 			cs.setString(2, u.getPassword());
-			cs.setString(3, u.getCreateDate());
-			cs.setString(4, u.getUserRole());
+			cs.setString(3, u.getUserRole());
 			
 			cs.execute();
 			cs.close();
 		} catch (SQLException e) {
-			return e.getErrorCode();
+			System.out.println(e.getErrorCode());
 		}
 		return 0;
 	}
