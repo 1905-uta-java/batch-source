@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="static/scripts/ProfileScript.js"></script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+		<ul class="nav nav-pills">
+        	<li class="nav-item">
+        		<a class="nav-link" href="http://localhost:8080/Project1/home">Profile</a>
+        	</li>
+        	
+        	<li class="nav-item">
+        		<a class="nav-link" href="http://localhost:8080/Project1/manage">Update Profile</a>
+        	</li>
+        	
+        	<li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/Project1/requests">Create a request</a>
+        	</li>	
+        </ul> 
+        </div>
+    </nav>
+    <div class="container">
+        <h3 id="user-title"></h3>
+        <br>
+        <h4 id="name-field">Name:</h4>
+        <br>
+        <h4 id="id-field">Employee Number:</h4>
+        <br>
+        <h5 id="fullname-field"></h5>
+        <br>
+        <h5 id="email-field"></h5>
+        <br>
+        <h5 id="manager-field"></h5>
+        <br>
+    </div>
+    <div id="tableDiv" class="container">
+    	<table class="table table-bordered" id="table">
+    		<tr>
+    			<th>Request ID</th>
+    			<th>Amount</th>
+    			<th>Status</th>
+    			<th>Comments</th>
+    		</tr>
+    	</table>
+    </div>
+    <div id="empDiv" class="container">
+    	<table class="table table-bordered" id="tableEmp">
+    		<tr>
+    			<th>Employee ID</th>
+    			<th>Full Name</th>
+    			<th>Email</th>
+    			<th>Manager ID</th>
+    			<th>Check Requests</th>
+    		</tr>
+    	</table>    </div>
+    <div id="reqDiv" class="container">
+    	<table class="table table-bordered" id="tableAllReq">
+    		<tr>
+    			<th>Employee ID</th>
+    			<th>Request ID</th>
+    			<th>Amount</th>
+    			<th>Status</th>
+    			<th>Comments</th>
+    			<th>Resolved By</th>
+    			<th>Approve/Reject</th>
+    		</tr>
+    	</table>
+    </div>
+    <div class="container">
+    <div class="btn-group" id="links">
+            <button id="logout" class="btn btn-secondary">Logout</button>
+            <button id="review" class="btn btn-secondary">Review Requests</button>
+            <button id="manage" class="btn btn-secondary" style="display : none;">See Employees</button>
+            <button id="managereq" class="btn btn-secondary" style="display : none;">See All Requests</button>
+    </div>
+    </div>
+</body>
+</html>

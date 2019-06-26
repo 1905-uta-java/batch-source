@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Reimbursement form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+		<ul class="nav nav-pills">
+        	<li class="nav-item">
+        		<a class="nav-link" href="http://localhost:8080/Project1/home">Profile</a>
+        	</li>
+        	
+        	<li class="nav-item">
+        		<a class="nav-link" href="http://localhost:8080/Project1/manage">Update Profile</a>
+        	</li>
+        	
+        	<li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/Project1/requests">Create a request</a>
+        	</li>	
+        </ul> 
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Welcome to an Expense Reimbursement System</h1>
+    </div>
+
+    <div class="container">
+        <form action="api/request" method="POST">
+            <h3>Fill in all the fields with the required information</h3>
+            <h5>Name</h5>
+            <input type="text" name="name" id="name-input" class="form-control"><br>
+            <h5>Email</h5>
+            <input type="text" name="email" id="email-input" class="form-control"><br>
+            <h5>Comments</h5>
+            <input type="text" name="comments" id="comments-input" class="form-control"><br>
+            <h5>Amount</h5>
+            <input type="number" name="amount" id="amount-input" class="form-constrol"><br>
+            <br>
+            <button type="submit" id="submit-req" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+ 
+    
+</body>
+</html>
