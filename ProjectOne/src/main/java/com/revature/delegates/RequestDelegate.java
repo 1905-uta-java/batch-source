@@ -97,7 +97,27 @@ public class RequestDelegate
 	
 	public void toApproveOrDenyRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{
+		int reqIdInt;
+		String reqIdString = request.getParameter("reqId");
+		try
+		{
+			reqIdInt = Integer.parseInt(reqIdString);
+		}
+		catch(NumberFormatException e)
+		{
+			response.sendError(400, "You entered an invalid ID!");
+			return;
+		}
+		
 		System.out.println("GOIN TO SELECT REQUEST SERVICE FOR APPROVE OR DENY REQUEST!");
+		boolean idTooHigh = selectRequestTool.enteredIdAboveMaxId(reqIdInt);
+		System.out.println("ID TOO HIGH IS: " + idTooHigh);
+		if (idTooHigh)
+		{
+			System.out.println("ENTERED ID IS NOT ABOVE MAX ID!");
+			response.sendError(400, "You entered above the max ID!");
+			return;
+		}
 		updateRequestTool.updateRequest(request, response);
 	}
 	

@@ -12,7 +12,12 @@ function updateRequest()
 		if (this.readyState === 4 && this.status === 200)
 		{
 			console.log("YOU GOT THE REQUEST TO EXECUTE SUCCESSFULLY!");
-            window.location.href = window.location.href= "http://localhost:8080/ProjectOne/employeehome";
+			window.location.href = window.location.href= "http://localhost:8080/ProjectOne/employeehome";
+			document.getElementById("error").hidden = true;
+		}
+		else if (this.readyState === 4 && this.status != 200)
+		{
+			document.getElementById("error").hidden = false;
 		}
 	}
 

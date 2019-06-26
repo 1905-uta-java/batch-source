@@ -112,12 +112,26 @@ public class SelectRequestService
 	
 	public boolean enteredIdAboveMaxId(String id)
 	{
-		int enteredId = Integer.parseInt(id);
+		int enteredId;
+		try
+		{
+			 enteredId = Integer.parseInt(id);
+		}
+		catch(NumberFormatException e)
+		{
+			return false;
+		}
+		
+		return enteredIdAboveMaxId(enteredId);
+	}
+	
+	public boolean enteredIdAboveMaxId(int id)
+	{
 		int maxId = empDaoObject.getMaxEmpID();
 		
-		if (enteredId > maxId)
+		if (id > maxId)
 		{
-			System.out.println("Theres no way that " + enteredId + "can be an Id!" + maxId + "is less than that!");
+			System.out.println("Theres no way that " + id + "can be an Id!" + maxId + "is less than that!");
 			return true;
 		}
 		else

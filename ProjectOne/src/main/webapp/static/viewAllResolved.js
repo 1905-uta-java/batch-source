@@ -22,6 +22,7 @@ function displayRequests(xhr)
 	console.log("THE DISPLAY FUNCITON IS EXECUTING!!");
   let requests = JSON.parse(xhr.response);
   let table = document.getElementById("tableResolved");
+  console.log(JSON.stringify(table));
   console.log(requests);
   for (let i in requests)
   	{
