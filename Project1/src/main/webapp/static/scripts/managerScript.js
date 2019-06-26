@@ -4,7 +4,7 @@ let counter = 0;
 document.getElementById("logoutBtn").addEventListener("click", logout);
 document.getElementById("getEmpsBtn").addEventListener("click", viewAllEmps);
 document.getElementById("getReimByEmp").addEventListener("click", viewReimByEmp);
-document.getElementById("getEmpReimBtn").addEventListener("click", viewReimByEmp);	
+document.getElementById("pastReimReqBtn").addEventListener("click", makeRequest);
 
 
 function makeRequest(){
@@ -16,6 +16,7 @@ function makeRequest(){
 		if(this.readyState === 4 && this.status === 200){
 			console.log('MakeRequest has succeeded')
 			AddReimbursement(xhr);
+			AddPastReimbursement(xhr);
 		}
 	}
 
@@ -44,11 +45,11 @@ function openPastRe(){
 }
 
 function AddPastReimbursement(xhr) {
-	let parent = document.getElementById("pendingReTable");
+	let parent = document.getElementById("pastReimTable");
 	for(var i = parent.rows.length - 1; i > 0; i--)
 	{
 	    parent.deleteRow(i);
-	}
+	};
 	reimbursement = xhr.getResponseHeader("Reimbursement");
 	console.log(xhr.getResponseHeader("Reimbursement"));
 	console.log ('AddingReimbursement');
@@ -58,11 +59,10 @@ function AddPastReimbursement(xhr) {
 	let status = "Pending";
 	
 	let tableValues = JSON.parse(reimbursement);
-	console.log('Table Values: ' + tableValues)
-	
+	console.log('Table Values: ' + tableValues);
 	for (reim of tableValues) {
-		if ((reim.status === "Approved" && reim.id === staticEmpId) || (reim.status === "Denied" && reim.id === staticEmpId)) {
-			addRowPas(reim.id, reim.num, reim.amount, reim.reason, reim.status);
+		if (reim.status === "Approved" || reim.status === "Denied") {
+			empReimTable(reim.id, reim.num, reim.amount, reim.reason, reim.status);
 		} 
 	}
 }
@@ -357,6 +357,27 @@ function viewAllEmps(){
 }
 
 function empReimTable(id, amount, reason, status, rows) {
+	let table = document.getElementById("pastReimTable");
+	let row = document.createElement("tr");
+	let cell1 = document.createElement("td");
+	let cell2 = document.createElement("td");
+	let cell3 = document.createElement("td");
+	let cell4 = document.createElement("td");
+	
+	cell1.innerHTML = id;
+	cell2.innerHTML = amount;
+	cell3.innerHTML = reason;
+	cell4.innerHTML = status;
+	
+	row.appendChild(cell1);
+	row.appendChild(cell2);
+	row.appendChild(cell3);
+	row.appendChild(cell4);
+	
+	table.appendChild(row);
+}
+
+function byIdTable(id, amount, reason, status, rows) {
 	let table = document.getElementById("empReimTable");
 	let row = document.createElement("tr");
 	let cell1 = document.createElement("td");
@@ -402,7 +423,7 @@ function viewReimByEmp(id){
 				if (employee.id == id) {
 					console.log("Iterating");
 					rows++;
-					empReimTable(employee.id, employee.amount, employee.reason, employee.status, rows++);
+					byIdTable(employee.id, employee.amount, employee.reason, employee.status, rows++);
 					
 					}
 			}

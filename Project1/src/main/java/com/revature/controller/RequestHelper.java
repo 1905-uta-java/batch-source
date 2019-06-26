@@ -91,6 +91,11 @@ public class RequestHelper {
 			
 		
 			Employee e = new Employee();
+			if (userName != null) {
+				UserAccount user = uad.getUserAccountByUsername(userName);
+				empId = user.getId();
+				e = empDao.getEmployeeById(empId);
+			}
 			
 			System.out.println(username);
 			if (userName == null) {
@@ -119,11 +124,7 @@ public class RequestHelper {
 								
 			String auth = ad.authenticate(username, password);
 			System.out.println("Emp ID is: " + empId);
-			if (userName != null) {
-				UserAccount user = uad.getUserAccountByUsername(userName);
-				empId = user.getId();
-				e = empDao.getEmployeeById(empId);
-			}
+
 			System.out.println(e);
 			
 			String empString = om.writeValueAsString(e);

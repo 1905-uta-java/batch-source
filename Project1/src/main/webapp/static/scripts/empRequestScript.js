@@ -3,7 +3,6 @@ document.getElementById("submitBtnId").addEventListener("click", submitReimburse
 document.getElementById("pastRe-btn").addEventListener("click", openPastRe);
 document.getElementById("editProfBtn").addEventListener("click", updateEmpInfo);
 document.getElementById("logoutBtn").addEventListener("click", logout);
-document.getElementById("pastReimReqBtn").addEventListener("click", AddPastReimbursement);
 window.onload = displayEmployeeInfo();
 let counter = 0;
 let staticEmpId;
