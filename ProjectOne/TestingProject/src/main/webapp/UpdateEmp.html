@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="https://revature.com"><span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orangered">Revature</span></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="UpdateEmp.html">Home</a></li>
+            <li><a href="Employee.html">Reimburstment</a></li>
+            <li><a href="Index.html"><span>LogOut</span></a></li>
+          </ul>
+        </div>
+      </nav><br><br><br><br><br><br><br><br>
+      
+      <div class="container">
+  <h4 style="text-align:center;color:cornflowerblue;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Update Employee Detail:</h4>
+  <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+      </div>
+      <div class="panel-body">
+        <div class="container">
+        <form action="UpdateEmp" method="post">
+		        	<div class="form-group">
+		       <div class="form-group">
+		      <label class="control-label col-sm-2" for="name">Name</label>
+		      <div class="col-sm-10">          
+		        <input type="text" class="form-control" id="name" placeholder="Enter password" name="txtname"style="width:50%">
+		      </div>
+		    </div>
+		      <label class="control-label col-sm-2" for="email">Email</label>
+		      <div class="col-sm-10">
+		        <input type="text" class="form-control" id="email" placeholder="Enter Reason" name="txtemail"style="width:50%">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="pwd">Password</label>
+		      <div class="col-sm-10">          
+		        <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="txtpassword"style="width:50%">
+		      </div>
+		    </div>
+		    <div class="form-group">        
+		      <div class="col-sm-offset-2 col-sm-10">
+		        <button type="submit" class="btn btn-primary"onclick="alert('Updated')">Submit</button>
+		      </div>
+		    </div>
+        </form>
+        </div>
+      </div>
+  </div>
+  
+</div>  
+</body>
+</html>
