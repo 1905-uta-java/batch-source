@@ -77,8 +77,10 @@ public class ProfileDelegate {
 			}
 		}
 		//call upon eServe to update employee information or profService for username/password changes
-//		response.setStatus(200);
-		request.getRequestDispatcher("/static/views/Profile.html").forward(request, response);
+		System.out.println("Reached the end");
+		response.setStatus(201);
+//		request.getRequestDispatcher("/static/views/Profile.html").forward(request, response);
+		response.sendRedirect("../home");
 		
 	}
 

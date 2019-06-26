@@ -26,7 +26,6 @@ function submitPressed(event){
 	xhr.open("PUT", url)
 	xhr.onreadystatechange = function(){
 		if(this.readyState === 4 && this.status === 201){
-			alert("Reached")
 			openNewProfile(this);
 		}
 	}

@@ -49,7 +49,7 @@ public class ReimbursementDelegate {
 		int empId = eServe.getEmployeeByName(name).getEmpNum();
 		
 		rServ.createRebe(reqId, empId, Integer.parseInt(amount), comments);
-		request.getRequestDispatcher("/static/views/Profile.html").forward(request, response);		
+		response.sendRedirect("../home");
 	}
 	
 	public void updateRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
