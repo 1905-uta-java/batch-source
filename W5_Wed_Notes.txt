@@ -1,0 +1,47 @@
+AWS
+	Amazon Web Services
+	Amazon hosts data storage and web pages for you
+	Can handle security for data
+	Security groups
+		Ports and IPs allowed to access which parts of the data
+	IAM
+		Identity and Access Management
+		Able to create roles for users
+	Has different availability zones
+		Will normally host small applications on one zone
+		Will want a zone nearby to lower access times
+	RDS
+		Relational Database System
+	EC2
+		Elastic Computer Cloud
+		Amazon Machine Image - AMI
+			OS and base installation you start with when creating an EC2
+			Can create custom AMIs
+		Elastic Block Storage - EBS
+			Volumes of block storage attatched to EC2
+			Can resize attatched amount
+		Autoscaling
+			Lower your usage at low-access times to minimize costs
+			Increase your usage at high-access times to allow more users at once
+		Elastic Load Balancing
+			Balance clients between available servers to reduce load on any one server
+		Cloud DNS
+			Route 53
+			Allows monitoring of traffic and ports
+	S3
+		Simple Storage Services
+		Object storage with metatata
+		Objects identified by "bucket", key, and version id
+		Extremely high storage capacity
+		Highly available
+			Will not be lost if one availability zone goes down
+			General purpose  	Highest Availability/price
+			infrequent access	|						 |
+			glacier				Lowest Availability/price
+		Durable
+			Will be able to be returned once uploaded
+			"99.999999999%"
+		Static Web Hosting
+Maven
+	Package manager
+	Builds project
