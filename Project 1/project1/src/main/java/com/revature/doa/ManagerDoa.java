@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.model.Employee;
 import com.revature.model.Manager;
-
-import util.ConnectionDb;
+import com.revature.util.ConnectionDb;
 
 /*
  * This is the class that accesses the manager table and allows me to use that data
@@ -41,7 +41,7 @@ public class ManagerDoa {
 		catch(SQLException e) {
 			
 		}
-		System.out.println("Oh no");
+		System.out.println("Oh no getManagers error ManagerDoa");
 		return null;
 	}
 	
@@ -54,4 +54,36 @@ public class ManagerDoa {
 		}
 		return null;
 	}
+	
+	public int managerCount() {
+		int i = 0;
+		for(Manager m : getManagers()) {
+			i++;
+		}
+		return i;
+	}
+	
+	public int highestIdNumber() {
+		int id = 0;
+		List<Manager>managers = getManagers();
+		for(Manager m : managers) {
+			if(m.getId() > id)
+				id = m.getId();
+		}
+		id++;
+		return id;
+	}
+	
+	public List<Employee>employeesUnderManager(int manId){
+		EmployeeDoa ed = new EmployeeDoa();
+		List<Employee> e = ed.getEmployees();
+		List<Employee> emps = new ArrayList();
+		for(Employee emp : e) {
+			if(emp.getManagerId() == manId) {
+				emps.add(emp);
+			}
+		}
+		return emps;
+	}
+	
 }

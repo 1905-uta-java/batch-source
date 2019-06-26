@@ -83,5 +83,9 @@ public class Manager {
 				+ ", password=" + password + "]";
 	}
 	
+	public Manager safeManager() {
+		return new Manager(this.id, this.firstName, this.lastName, this.username, null);
+	}
+	
 	
 }

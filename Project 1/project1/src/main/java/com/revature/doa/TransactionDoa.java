@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.model.Transaction;
-
-import util.ConnectionDb;
+import com.revature.util.ConnectionDb;
 
 /*
  *Accesses the Transaction table in the database 
@@ -44,11 +43,74 @@ public class TransactionDoa {
 		return null;
 	}
 	
-	public Transaction getTransactionById(int i) {
-		List<Transaction>transactions = getTransactions();
-		for(Transaction t : transactions) {
-			if(i == t.getId()) {
-				return t;
+	public void createNewTransaction(Transaction t) throws SQLException {
+		
+		String statement = "INSERT INTO TRANSACTION_TBL VALUES(?,?,?,?,?)";
+		
+		try(Connection conn = ConnectionDb.getConnection();
+				PreparedStatement ps = conn.prepareStatement(statement);){
+			int i = 1;
+			
+			ps.setInt(i++, t.getEmployeeId());
+			ps.setDouble(i++, t.getAmount());
+			ps.setInt(i++, t.getEmployeeId());
+			ps.setInt(i++, t.getManagerId());
+			ps.setString(i++, t.getLog());
+			ps.executeUpdate();
+			System.out.println("called ps");
+		}
+		
+		
+	}
+	
+	public List<Transaction> getTransactionByEmployeeId(int i) {
+		List<Transaction>transactions = new ArrayList<>();
+		List<Transaction> trans = getTransactions();
+		for(Transaction t : trans) {
+			if(i == t.getEmployeeId()) {
+				transactions.add(t);
+			}
+		}
+		return transactions;
+	}
+	
+	public List<Transaction> getTransactionByEmployeeId(String i) {
+		if(Integer.parseInt(i) > 0) {
+			int id = Integer.parseInt(i);
+			if(id < 20000) {
+				return getTransactionByEmployeeId(id);
+			}
+		}
+		return null;
+	}
+	
+	public int nextId() {
+		List<Transaction> trans = getTransactions();
+		int index = 0;
+		for(Transaction t : trans) {
+			if(t.getId() >= index) {
+				index = t.getId() + 1;
+			}
+		}
+		return index;
+	}
+	
+	public List<Transaction> getTransactionsByManagerId(int manId){
+		List<Transaction>transactions = new ArrayList<>();
+		List<Transaction> trans = getTransactions();
+		for(Transaction t : trans) {
+			if(manId == t.getManagerId()) {
+				transactions.add(t);
+			}
+		}
+		return transactions;
+	}
+	
+	public List<Transaction> getTransactionsByManagerId(String i) {
+		if(Integer.parseInt(i) > 0) {
+			int id = Integer.parseInt(i);
+			if(id > 20000) {
+				return getTransactionsByManagerId(id);
 			}
 		}
 		return null;

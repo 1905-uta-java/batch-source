@@ -93,5 +93,9 @@ public class Employee {
 				+ ", password=" + password + ", managerId=" + managerId + "]";
 	}
 	
+	public Employee safeEmployee() {
+		return new Employee(this.id, this.firstName, this.lastName, this.username, null, this.managerId);
+	}
+	
 	
 }

@@ -1,4 +1,4 @@
-package util;
+package com.revature.util;
 
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -25,7 +25,7 @@ public class ConnectionDb {
 				Driver d = new oracle.jdbc.OracleDriver();
 				DriverManager.registerDriver(d);
 				connection = DriverManager.getConnection(url, username, password);
-				System.out.println("WHoo");
+				System.out.println("DataBase call made in ConnectionDB");
 			}
 		} catch (Exception e) {
 			System.out.println("No luck");
