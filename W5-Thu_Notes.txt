@@ -1,0 +1,48 @@
+Software as a service (SAAS) - Ex Google Drive
+	Application 	-
+	Data			-
+Platform as a service (PAAS) - Ex Beanstalk
+	Runtime			--
+	Middleware		--
+Infrastructure as a service (IAAS) - Ex EC2
+	OS				---
+	Virtualization	---
+	Servers			---
+	Storage			---
+	Network			---
+Hibernate
+	ORM Framework
+		Object Relational Mapping
+	Framework for connections to databases
+	Abstracts away some repeated connection code
+	Code first vs DB first approaches
+	Configuration
+		Application wide config (hibernate.cfg.xml)
+			db credentials
+			Driver, dialect
+			hbm2dll
+			show sql
+			mapping classes/files
+		Hibernate Mapping
+			Specific files: XML mapping files (<>.hbm.xml)
+			Annotations
+	Session
+		Represents a connection instance to DB
+		Handles CRUD methods on DB for you
+		Methods
+			Get, load, update, mere, delete, save, persist saveorupdate
+		Can use raw SQL or HQL
+		Can use Criteria / CriteriaQuery
+		Object States
+			Transient
+				Not yet part of database at all
+				Created, but not yet added to DB
+			Persistent
+				Linked to DB row, any changes made will affect DB
+				Automatic dirty checking
+			Detatched
+				Session closed but object still exists
+				Changes made will not affect DB instance
+	SessionFactory
+		Used to create Sessions
+		Thread safe singleton
