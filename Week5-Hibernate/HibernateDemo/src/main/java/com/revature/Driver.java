@@ -36,11 +36,34 @@ public class Driver {
 
 		BearDao bd = new BearDaoImpl();
 
-		List<Bear> bears = bd.getBears();
-		for(Bear b: bears) {
-			System.out.println(b);
-		}
+//		List<Bear> bears = bd.getBears();
+//		for(Bear b: bears) {
+//			System.out.println(b);
+//		}
 		
+//		System.out.println(bd.getBearById(2));
+		
+//		List<Bear> bears = bd.getBearsByName("Yogi");
+//		for(Bear b: bears) {
+//			System.out.println(b);
+//		}
+		
+//		System.out.println(bd.getBearById(2));
+		
+//		List<Bear> bears = bd.getBearsByNameWithCritQ("Yogi");
+//		for(Bear b: bears) {
+//			System.out.println(b);
+//		}
+//		
+//		List<Bear> yBears = bd.getYBears();
+//		for(Bear b: yBears) {
+//			System.out.println(b);
+//		}
+		
+		System.out.println(bd.getBearCount());
+		bd.deleteBearById(53);
+		System.out.println(bd.getBearCount());
+
 		HibernateUtil.closeSessionFactory();
 
 	}

@@ -14,7 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
+
+@NamedQueries({@NamedQuery(name="getByIdQuery", query="from Bear where id = :idVar")})
 
 @Entity
 public class Bear {
@@ -36,7 +40,7 @@ public class Bear {
 	private Cave cave;
 	
 //	@Transient
-	@ManyToMany //(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(
 			name="BEAR_BEEHIVE",
 			joinColumns = {@JoinColumn(name="BEAR_ID")},
@@ -46,7 +50,12 @@ public class Bear {
 	public Bear() {
 		super();
 	}
-
+	
+	public Bear(int id) {
+		super();
+		this.id = id;
+	}
+		
 	public Bear(int id, String name, Date birthday, Cave cave, List<Beehive> beehives) {
 		super();
 		this.id = id;

@@ -11,5 +11,9 @@ public interface BearDao {
 	public int createBear(Bear b);
 	public void updateBear(Bear b);
 	public void deleteBearById(int bearId);
+	public List<Bear> getBearsByName(String name);
+	public List<Bear> getBearsByNameWithCritQ(String name);
+	public List<Bear> getYBears();
+	public long getBearCount();
 
 }
