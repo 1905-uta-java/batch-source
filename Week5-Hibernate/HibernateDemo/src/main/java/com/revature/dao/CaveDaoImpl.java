@@ -2,7 +2,7 @@ package com.revature.dao;
 
 import java.util.List;
 
-
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -11,6 +11,17 @@ import com.revature.models.Cave;
 import com.revature.util.HibernateUtil;
 
 public class CaveDaoImpl implements CaveDao {
+	
+	/*
+	 * TRACE
+	 * DEBUG
+	 * INFO
+	 * WARN
+	 * ERROR
+	 * FATAL
+	 * 
+	 */
+	private static Logger log = Logger.getRootLogger();
 
 	@Override
 	public List<Cave> getCaves() {
@@ -18,6 +29,7 @@ public class CaveDaoImpl implements CaveDao {
 		Query<Cave> q = s.createQuery("from Cave", Cave.class);
 		List<Cave> caves = q.list();
 		s.close();
+		log.info("getting all caves");
 		return caves;
 	}
 
@@ -26,6 +38,7 @@ public class CaveDaoImpl implements CaveDao {
 		Session s = HibernateUtil.getSession();
 		Cave c = s.get(Cave.class, id);
 		s.close();
+		log.info("getting cave by id: "+id);
 		return c;
 	}
 
@@ -36,6 +49,7 @@ public class CaveDaoImpl implements CaveDao {
 		int cavePK = (int) s.save(c);
 		tx.commit();
 		s.close();
+		log.info("created cave: "+c);
 		return cavePK;
 	}
 
@@ -45,6 +59,7 @@ public class CaveDaoImpl implements CaveDao {
 		Transaction tx = s.beginTransaction();
 		s.merge(c);
 		tx.commit();
+		log.info("updated cave to: "+c);
 		s.close();
 	}
 
@@ -56,6 +71,7 @@ public class CaveDaoImpl implements CaveDao {
 //		c.setId(caveId);
 		s.delete(new Cave(caveId));
 		tx.commit();
+		log.warn("deleted cave with id: "+caveId);
 		s.close();
 		
 	}

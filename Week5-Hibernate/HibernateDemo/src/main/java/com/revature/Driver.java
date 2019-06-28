@@ -60,10 +60,17 @@ public class Driver {
 //			System.out.println(b);
 //		}
 		
-		System.out.println(bd.getBearCount());
-		bd.deleteBearById(53);
-		System.out.println(bd.getBearCount());
+//		System.out.println(bd.getBearCount());
+//		bd.deleteBearById(53);
+//		System.out.println(bd.getBearCount());
 
+		CaveDao cd = new CaveDaoImpl();
+		cd.createCave(new Cave("ATM Cave"));
+		for(Cave c : cd.getCaves()) {
+			System.out.println(c);
+		}
+//		cd.deleteCaveById(10);
+		
 		HibernateUtil.closeSessionFactory();
 
 	}
