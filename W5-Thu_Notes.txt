@@ -46,3 +46,15 @@ Hibernate
 	SessionFactory
 		Used to create Sessions
 		Thread safe singleton
+	Annotations
+		@Entity 	- Define a table
+		@Table 		- Rename table to something other than object name
+		@Id
+		@Column 	- Name a column
+		@Transient	- Make a variable not commit to database
+		@OneToMany
+		@ManyToOne
+		@ManyToMany
+		@JoinTables
+		@JoinColumns
+		...

@@ -1,0 +1,38 @@
+Caching in Hibernate
+	Level 1 - Session scope
+		Within same session, does not make second request if they're the same
+	Level 2 - SessionFactory scope
+		Within program life, will not make another request with same result
+		ehcache
+Inheritence strategies
+	Table per heiarchy
+		Animal -> Cow; Animal -> Horse; Animal, all use the Animal table
+		No normalization
+	Table per subclass
+		Animal -> Cow; Animal -> Horse; each have their own table, but also share Animal table
+	Table per concrete class
+		Eacch animal gets their own table, with no animal table.
+Software Development Life Cycle
+	Big Bang
+		No real organized process
+		Implement until it works
+		Works well only for very small projects
+	Waterfall
+		Specific phases of design to completion
+		Do not move on from one phase until complete
+		Analyze -> Design -> Implement -> Test -> Deploy -> Maintain
+		Used with well documented and stable requirements
+		If something goes wrong, have to start from beginning
+	Agile
+		Able to adapt to changing requirements and design problems easily
+		Modular work that can be easily and quickly changed
+		SCRUM
+			Work broken into 2-4 week sprints
+			Sprint backlog - What we want done by end of sprint
+			Product backlog - What we want done by end of project
+			User Stories - Events that specific user roles can complete
+				Often ranked by how much time each will take to complete
+			Sprint retrospective - What did we get done last sprint, what problems occured
+			Stand-up meetings - Short meeting with team for what got done yesterday/what needs done today
+			Product owner - Manages sprint/product backlog
+			
