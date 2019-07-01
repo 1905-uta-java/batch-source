@@ -11,7 +11,7 @@ public abstract class Bear {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bear(int id, String name, boolean isAlsoACat, Cave cave) {
+	public Bear(int id, String name, Cave cave) {
 		super();
 		this.id = id;
 		this.name = name;

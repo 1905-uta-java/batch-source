@@ -11,8 +11,10 @@ public class BearWithAutomagic extends Bear {
 
 	@Override
 	public String toString() {
-		return "BearWithAutomagic [cave=" + cave + "]";
+		return "BearWithAutomagic [id=" + id + ", name=" + name + ", cave=" + cave +"]";
 	}
+
+
 
 
 	

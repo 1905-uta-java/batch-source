@@ -4,12 +4,10 @@ public class BearWithConstructor extends Bear {
 
 	public BearWithConstructor() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public BearWithConstructor(int id, String name, boolean isAlsoACat, Cave cave) {
-		super(id, name, isAlsoACat, cave);
-		// TODO Auto-generated constructor stub
+	public BearWithConstructor(int id, String name, Cave cave) {
+		super(id, name, cave);
 	}
 	
 	public BearWithConstructor(Cave cave) {
