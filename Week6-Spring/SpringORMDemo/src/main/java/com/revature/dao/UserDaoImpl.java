@@ -11,18 +11,26 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.User;
 
+@Repository
 public class UserDaoImpl implements UserDao {
 
+	@Autowired
+	private SessionFactory sf;
+	
 	@Override
+	@Transactional(propagation=Propagation.SUPPORTS)
 	public List<User> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		Session s = sf.getCurrentSession();
+		List<User> users = s.createQuery("from User").list();
+		return users;
 	}
 
 	@Override
+	@Transactional//(propagation=Propagation.MANDATORY)
 	public User getUserById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Session s = sf.getCurrentSession();
+		User u = (User) s.get(User.class, id);
+		return u;
 	}
 
 	

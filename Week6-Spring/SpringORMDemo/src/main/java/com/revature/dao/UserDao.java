@@ -8,6 +8,7 @@ public interface UserDao {
 	
 	public List<User> getUsers();
 	public User getUserById(int id);
+	
 	// other CRUD methods
 
 }

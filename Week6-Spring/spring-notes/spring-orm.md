@@ -50,7 +50,7 @@ NEVER
 - an existing cannot already be open; exception will be thrown if one is
 - must execute non-transactionally
 
-SUPPORTED
+SUPPORTS
 - executes within the scope of existing transaction, otherwise will execute non-transactionally
 
 NOT_SUPPORTED
