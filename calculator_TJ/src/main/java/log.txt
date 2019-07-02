@@ -1,0 +1,54 @@
+2019-07-02 10:09:33 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:09:33 CDT 2019]; root of context hierarchy
+2019-07-02 10:09:33 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:09:35 INFO  root:16 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:10:18 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:10:18 CDT 2019]; root of context hierarchy
+2019-07-02 10:10:18 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:10:19 INFO  root:16 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:13:04 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:13:04 CDT 2019]; root of context hierarchy
+2019-07-02 10:13:05 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:13:05 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:13:41 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:13:41 CDT 2019]; root of context hierarchy
+2019-07-02 10:13:42 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:13:42 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:17:56 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:17:56 CDT 2019]; root of context hierarchy
+2019-07-02 10:17:56 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:17:56 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:18:19 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:18:19 CDT 2019]; root of context hierarchy
+2019-07-02 10:18:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:18:19 WARN  ClassPathXmlApplicationContext:546 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'calculator' defined in file [C:\Users\Tristan\Documents\workspace-sts-3.9.7.RELEASE\calculator_TJ\target\classes\com\revature\beans\Calculator.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 22
+execution(int add(int a, int b))
+                      ^
+
+2019-07-02 10:18:51 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:18:51 CDT 2019]; root of context hierarchy
+2019-07-02 10:18:51 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:18:51 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:19:25 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:19:25 CDT 2019]; root of context hierarchy
+2019-07-02 10:19:26 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:19:26 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:26:10 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:26:10 CDT 2019]; root of context hierarchy
+2019-07-02 10:26:10 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:26:11 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:28:56 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:28:56 CDT 2019]; root of context hierarchy
+2019-07-02 10:28:56 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:28:57 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:30:23 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:30:23 CDT 2019]; root of context hierarchy
+2019-07-02 10:30:23 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:30:24 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:32:09 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@22927a81: startup date [Tue Jul 02 10:32:09 CDT 2019]; root of context hierarchy
+2019-07-02 10:32:09 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:32:09 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:50:11 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@22927a81: startup date [Tue Jul 02 10:50:11 CDT 2019]; root of context hierarchy
+2019-07-02 10:50:11 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:50:12 INFO  root:23 - 5 + 5 = 10
+2019-07-02 10:50:12 INFO  root:17 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:53:22 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@22927a81: startup date [Tue Jul 02 10:53:22 CDT 2019]; root of context hierarchy
+2019-07-02 10:53:22 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:53:22 INFO  root:24 - 5 + 5 = 10
+2019-07-02 10:53:22 INFO  root:18 - int com.revature.beans.Calculator.add(int,int): 
+2019-07-02 10:53:22 INFO  root:18 - int com.revature.beans.Calculator.subtract(int,int): 
+2019-07-02 10:53:22 INFO  root:29 - 8 - 3 = 5
+2019-07-02 10:53:22 INFO  root:18 - int com.revature.beans.Calculator.multiply(int,int): 
+2019-07-02 10:53:22 INFO  root:34 - 4 * 5 = 20
+2019-07-02 10:53:22 INFO  root:39 - 8 / 2 = 4
+2019-07-02 10:53:22 INFO  root:18 - int com.revature.beans.Calculator.divide(int,int): 
+2019-07-02 10:53:22 ERROR root:43 - Divided by zero.
