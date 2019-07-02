@@ -20,9 +20,9 @@ public class LoggingAspect {
 		log.info(jp.getSignature()+" was called");
 	}
 	
-	@AfterThrowing("within(com.revature.beans.Bear)")
-	public void logAfterException(JoinPoint jp) {
-		log.error(jp.getSignature()+ " threw an exception");
+	@AfterThrowing(pointcut="within(com.revature.beans.Bear)", throwing="ex")
+	public void logAfterException(JoinPoint jp, Exception ex) {
+		log.error(jp.getSignature()+ " threw an exception: "+ex);
 	}
 	
 	@After("execution(void bearHibernates())")
