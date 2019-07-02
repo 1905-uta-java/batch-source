@@ -55,9 +55,15 @@ E.g. if add(2, 3) is called, “2 + 3 = 5” is logged
 - prevent the division method from executing if division is attempted by 0 and log an error
 
 Joshua + Benjamin
+
 Wolfe + Brooke
+
 Tristan + Joey
+
 Allen + Dustin
+
 Omar + Ian
+
 Anthony + Mantu
+
 Jason + Matthew
