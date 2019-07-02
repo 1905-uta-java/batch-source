@@ -1,0 +1,22 @@
+2019-07-02 10:44:29 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:44:29 CDT 2019]; root of context hierarchy
+2019-07-02 10:44:29 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:44:30 INFO  root:18 - int com.revature.beans.Calculator.add(int,int)was called
+2019-07-02 10:44:30 INFO  root:50 - Can't log execution, method does not exist
+2019-07-02 10:44:30 INFO  root:18 - int com.revature.beans.Calculator.sub(int,int)was called
+2019-07-02 10:44:30 INFO  root:41 - 1 - 2 = -1
+2019-07-02 10:44:30 INFO  root:18 - int com.revature.beans.Calculator.mult(int,int)was called
+2019-07-02 10:44:30 INFO  root:44 - 1 * 2 = 2
+2019-07-02 10:44:30 INFO  root:18 - int com.revature.beans.Calculator.div(int,int)was called
+2019-07-02 10:44:30 INFO  root:47 - 4 / 2 = 2
+2019-07-02 10:44:30 INFO  root:24 - int com.revature.beans.Calculator.div(int,int) threw java.lang.ArithmeticException: Cannot divide by zero
+2019-07-02 10:45:11 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:45:11 CDT 2019]; root of context hierarchy
+2019-07-02 10:45:12 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:45:13 INFO  root:18 - int com.revature.beans.Calculator.add(int,int)was called
+2019-07-02 10:45:13 INFO  root:38 - 1 + 2 = 3
+2019-07-02 10:45:13 INFO  root:18 - int com.revature.beans.Calculator.sub(int,int)was called
+2019-07-02 10:45:13 INFO  root:41 - 1 - 2 = -1
+2019-07-02 10:45:13 INFO  root:18 - int com.revature.beans.Calculator.mult(int,int)was called
+2019-07-02 10:45:13 INFO  root:44 - 1 * 2 = 2
+2019-07-02 10:45:13 INFO  root:18 - int com.revature.beans.Calculator.div(int,int)was called
+2019-07-02 10:45:13 INFO  root:47 - 4 / 2 = 2
+2019-07-02 10:45:13 INFO  root:24 - int com.revature.beans.Calculator.div(int,int) threw java.lang.ArithmeticException: Cannot divide by zero
