@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Can specify what is the primary key, can specify types (hibernate types) -->
+	<!-- id = primary key -->
+	<class name="models.Cave" table = "CAVE">
+		<id name="id" column = "CAVE_ID">
+			<generator class = "increment"></generator> <!-- automatically increments a new row id -->
+		</id>
+		<property name = "name" column = "CAVE_NAME"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+2019-07-02 10:35:59 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Tue Jul 02 10:35:59 CDT 2019]; root of context hierarchy
+2019-07-02 10:35:59 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:36:38 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Tue Jul 02 10:36:38 CDT 2019]; root of context hierarchy
+2019-07-02 10:36:38 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:37:42 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f2410ac: startup date [Tue Jul 02 10:37:42 CDT 2019]; root of context hierarchy
+2019-07-02 10:37:42 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:37:42 INFO  root:19 - double com.revature.calculator2.Calculator.add(double,double) was called upon.
+2019-07-02 10:37:42 INFO  root:29 - 1.0 + 2.0=3.0
+2019-07-02 10:37:42 INFO  root:19 - double com.revature.calculator2.Calculator.subtract(double,double) was called upon.
+2019-07-02 10:37:42 INFO  root:33 - 4.0 - 1.0=3.0
+2019-07-02 10:37:42 INFO  root:19 - double com.revature.calculator2.Calculator.multiply(double,double) was called upon.
+2019-07-02 10:37:42 INFO  root:36 - 3.0 * 3.0=9.0
+2019-07-02 10:37:42 INFO  root:19 - double com.revature.calculator2.Calculator.division(double,double) was called upon.
+2019-07-02 10:37:42 ERROR root:48 - double com.revature.calculator2.Calculator.division(double,double) threw an exception. Cannot divide by 0.

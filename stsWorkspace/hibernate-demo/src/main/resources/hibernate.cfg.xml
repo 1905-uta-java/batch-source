@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        <hibernate-configuration>
+        	<session-factory>
+        	<!-- db credentials -->
+        	<property name="hibernate.connection.url">jdbc:oracle:thin:@java-ers.coeznpxgwkui.us-east-2.rds.amazonaws.com:1521:ORCLO</property>
+        	<property name="hibernate.connection.username">Admin</property>
+        	<property name="hibernate.connection.password">606820Gh</property>
+        	
+        	<!-- Dialect -->
+        	<property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>
+        	
+        	<!-- Connection through jdbc -->
+        	<property name ="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        	
+        	<!-- Show SQL -->
+        	<property name="hibernate.show_sql">true</property>
+        	
+        	<!-- HBM to DDL -->
+        	<property name = "hibernate.hbm2ddl.auto">update</property> <!-- Can also be: create, validate -->
+        	
+        	<!-- Include mapping resources here i.e. cave.hbm.xml -->
+        	<mapping resource = "mapping/cave.hbm.xml"/>
+        	
+        	<!-- instead of resource, you can use annotations instead of creating an xml file for mapping. 
+        			Class replaces resource -->
+        	
+        	</session-factory>
+        </hibernate-configuration>
