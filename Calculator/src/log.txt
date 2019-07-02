@@ -1,0 +1,12 @@
+2019-07-02 10:48:09 INFO  ClassPathXmlApplicationContext:578 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@573fd745: startup date [Tue Jul 02 10:48:09 CDT 2019]; root of context hierarchy
+2019-07-02 10:48:09 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-02 10:48:10 INFO  root:21 - float com.revature.calculate.Calculator.add(float,float)
+2019-07-02 10:48:10 INFO  root:26 - 3.0 + 7.0 = 10.0
+2019-07-02 10:48:10 INFO  root:21 - float com.revature.calculate.Calculator.subtract(float,float)
+2019-07-02 10:48:10 INFO  root:31 - 3.0 - 1.0 = 2.0
+2019-07-02 10:48:10 INFO  root:21 - float com.revature.calculate.Calculator.multiply(float,float)
+2019-07-02 10:48:10 INFO  root:36 - 3.0 * 2.0 = 6.0
+2019-07-02 10:48:10 INFO  root:21 - float com.revature.calculate.Calculator.divide(float,float)
+2019-07-02 10:48:10 INFO  root:41 - 3.0 / 3.0 = 1.0
+2019-07-02 10:48:10 ERROR root:48 - Tried to divide by 0
+2019-07-02 10:48:10 INFO  root:41 - 3.0 / 0.0 = 0.0
