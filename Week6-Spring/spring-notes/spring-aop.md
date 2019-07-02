@@ -44,7 +44,7 @@
 - args: limits matching to jp's where arguments are instances of the given types
 
 
-<!-- # Paired Programming Spring AOP Exercise
+# Paired Programming Spring AOP Exercise
 
 Create a calculator java application with which you can perform basic arithmetic operations
 
@@ -60,4 +60,4 @@ Tristan + Joey
 Allen + Dustin
 Omar + Ian
 Anthony + Mantu
-Jason + Matthew -->
+Jason + Matthew
