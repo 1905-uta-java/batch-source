@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name = "hibernate.connection.url">jdbc:oracle:thin:@my-test-database-1.cs7hw5kxdpak.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name = "hibernate.connection.username">admin</property>
+		<property name = "hibernate.connection.password">Pannell1</property>
+		
+		<property name = "dialect">org.hibernate.dialect.Oracle12cDialect</property>
+		<property name = "hibernate.hbm2ddl.auto">update</property>
+		<property name = "hibernate.show_sql">true</property>
+		
+		<mapping class = "com.revature.models.User"/>
+		<mapping class = "com.revature.models.Manager"/>
+		<mapping class = "com.revature.models.Driver"/>
+		<mapping class = "com.revature.models.Admin"/>
+		
+		<mapping class = "com.revature.models.Route"/>
+		<mapping class = "com.revature.models.RouteNode"/>
+	</session-factory>
+</hibernate-configuration>
