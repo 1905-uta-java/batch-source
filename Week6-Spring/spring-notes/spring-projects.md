@@ -16,6 +16,15 @@
 - Spring Boot Actuator
 - Spring Boot Development tools
 
+#### Running a Spring Boot Application
+- annotate the class with your main method with @SpringBootApplication
+    - @Configuration 
+    - @EnableAutoConfiguration 
+    - @ComponentScan
+- in main method SpringApplication.run(Driver.class, args);
+
+
+
 # Spring Data JPA
 - Spring Data JPA is a Spring Boot project which abstracts away our data persistence layer
 - provides repository support for the Java Persistence API (JPA)
