@@ -1,0 +1,9 @@
+# making a reference to a config server to provide config from github 
+
+spring:
+  cloud:
+    config:
+      name: account-service
+      discovery:
+        service-id: config
+        enabled: true

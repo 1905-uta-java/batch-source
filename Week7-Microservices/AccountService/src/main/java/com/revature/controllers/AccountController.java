@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,12 @@ public class AccountController {
 			}
 		}
 		return null;
+	}
+	
+	@GetMapping("/customer/{customerId}")
+	public List<Account> getAccountsByCustomerId(@PathVariable("customerId") Integer customerId){
+		return accounts.stream().filter(acct -> acct.getCustomerId() == customerId)
+				.collect(Collectors.toList());
 	}
 
 }
