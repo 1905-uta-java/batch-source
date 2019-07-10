@@ -1,0 +1,10 @@
+2019-06-28 14:24:12 WARN  DriverManagerConnectionProviderImpl:73 method: configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-06-28 14:24:18 WARN  SqlExceptionHelper:137 method: logExceptions - SQL Error: 2292, SQLState: 23000
+2019-06-28 14:24:18 ERROR SqlExceptionHelper:142 method: logExceptions - ORA-02292: integrity constraint (ADMIN.FK97Q9JOBT33H71RUW8ONQ5B2D6) violated - child record found
+
+2019-06-28 14:24:18 ERROR ExceptionMapperStandardImpl:39 method: mapManagedFlushFailure - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-06-28 14:28:09 WARN  DriverManagerConnectionProviderImpl:73 method: configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-06-28 14:30:05 WARN  DriverManagerConnectionProviderImpl:73 method: configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-06-28 14:30:11 WARN  CaveDaoImpl:74 method: deleteCaveById - deleted cave with id: 10
+2019-06-28 14:31:35 WARN  DriverManagerConnectionProviderImpl:73 method: configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2019-06-28 14:31:42 ERROR ExceptionMapperStandardImpl:39 method: mapManagedFlushFailure - HHH000346: Error during managed flush [Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1]

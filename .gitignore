@@ -92,3 +92,7 @@ Servers/
 
 #sonar
 .sonarlint/
+
+*/.vscode
+
+Week1-CoreJava/TheGame/src/main/resources/Associates.txt
