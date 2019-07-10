@@ -10,3 +10,13 @@ eureka:
     fetch-registry: true
   instance:
     lease-renewal-interval-in-seconds: 2
+    
+feign:
+  hystrix:
+    enabled: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
