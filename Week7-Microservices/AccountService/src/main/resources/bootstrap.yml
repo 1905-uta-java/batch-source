@@ -3,7 +3,7 @@
 spring:
   cloud:
     config:
-      name: customer-service
+      name: account-service
       discovery:
         service-id: config
         enabled: true
