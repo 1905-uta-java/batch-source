@@ -1,16 +1,16 @@
-#server:
-#  port: 2333
-#
-#spring:
-#  application:
-#    name: account-service
-#
-#eureka:
-#  client:
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
-#  instance:
-#    hostname: localhost
-#    lease-expiration-duration-in-seconds: 4
-#    lease-renewal-interval-in-seconds: 2
+server:
+  port: 2333
+
+spring:
+  application:
+    name: account-service
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 4
+    lease-renewal-interval-in-seconds: 2
